@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News — CSAT | UC3M</title>
+  <meta name="description" content="CSAT — Center for Space Technology and nano/micro SATellites at UC3M.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body data-page="blog">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item" data-nav="home">
+          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <section class="page-hero" style="min-height:52vh;display:grid;place-items:center">
+      <div class="container">
+        <span class="eyebrow" data-i18n="soon.eyebrow">Coming soon</span>
+        <h1 data-i18n="nav.blog">News</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="soon.body">This section is being prepared and will be available shortly.</p>
+        <div class="hero__cta" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem">
+          <a class="btn btn-primary" href="index.html" data-i18n="soon.home">Back to home</a>
+          <a class="btn btn-ghost" href="contact.html" data-i18n="soon.contact">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-banner"><span data-i18n="footer.banner">Reaching for orbit</span></div>
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for Space Technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@csat.uc3m.es">info@csat.uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span>csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/global.js"></script>
+</body>
+</html>

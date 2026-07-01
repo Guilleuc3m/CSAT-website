@@ -1,0 +1,54 @@
+/* Team page: faculty & staff cards */
+
+.team-group + .team-group { margin-top: clamp(2.5rem, 5vw, 4rem); }
+.team-group__title {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 1.6rem;
+}
+.team-group__title::after {
+  content: ""; flex: 1; height: 1px; background: var(--border);
+}
+
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+
+.member {
+  text-align: center;
+  padding: 2rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+}
+.member::before {
+  /* accent glow that appears on hover */
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(300px 140px at 50% 0%, rgba(47,123,255,.16), transparent 70%);
+  opacity: 0; transition: opacity .3s var(--ease);
+}
+.member:hover::before { opacity: 1; }
+.member__photo {
+  width: 118px; height: 118px; border-radius: 50%;
+  margin: 0 auto 1.1rem; position: relative;
+  background: linear-gradient(140deg, var(--surface-2), var(--surface));
+  border: 2px solid var(--border);
+  display: grid; place-items: center;
+  color: var(--text-muted); font-size: 2rem; font-weight: 700;
+  transition: border-color .3s var(--ease), transform .3s var(--ease);
+  overflow: hidden;
+}
+.member:hover .member__photo { border-color: var(--accent); transform: scale(1.04); }
+.member__photo img { width: 100%; height: 100%; object-fit: cover; }
+.member__name { font-size: 1.15rem; font-weight: 700; margin-bottom: .15rem; position: relative; }
+.member__role { color: var(--text-muted); font-size: .9rem; margin-bottom: 1rem; position: relative; }
+.member__links { display: flex; justify-content: center; gap: .6rem; position: relative; }
+.member__links a {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: grid; place-items: center;
+  border: 1px solid var(--border); color: var(--text-muted);
+  transition: all .25s var(--ease);
+}
+.member__links a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); background: var(--surface-2); }
+.member__links svg { width: 18px; height: 18px; }
+
+.team-note { margin-top: 2.5rem; font-size: .9rem; }
+
+@media (max-width: 980px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .team-grid { grid-template-columns: 1fr; } }
