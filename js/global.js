@@ -11,6 +11,13 @@
   var STORAGE_LANG = "csat-lang";
   var root = document.documentElement;
 
+  /* ===== CONFIG =============================================================
+     St3llarsat external site. When the project gets its own website, put the
+     URL here and the "Project website" menu item starts working automatically.
+     Leave it empty ("") until then and the link stays inert. */
+  var STELLARSAT_URL = "";
+  /* ========================================================================= */
+
   /* ---- Theme -------------------------------------------------------------
      The initial theme is set by an inline <head> script to avoid flashing.
      Here we only wire the toggle button. */
@@ -79,6 +86,18 @@
         document.body.classList.remove("nav-open");
       });
     });
+
+    // St3llarsat external link: activate it only once STELLARSAT_URL is set
+    var stellarLink = document.getElementById("stellarsat-external");
+    if (stellarLink) {
+      if (STELLARSAT_URL) {
+        stellarLink.setAttribute("href", STELLARSAT_URL);
+      } else {
+        stellarLink.classList.add("is-disabled");
+        stellarLink.setAttribute("aria-disabled", "true");
+        stellarLink.addEventListener("click", function (e) { e.preventDefault(); });
+      }
+    }
 
     // Sticky header shadow on scroll
     var header = document.querySelector(".site-header");

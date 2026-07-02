@@ -119,6 +119,8 @@
       "nav.fac_colmenarejo": "CSAT — Colmenarejo",
       "nav.contact": "Contacto",
       "nav.blog": "Noticias",
+      "nav.stellarsat_overview": "Descripción del programa",
+      "nav.stellarsat_site": "Sitio web del proyecto",
       "lang.toggle": "EN",
       "lang.label": "Cambiar idioma",
       "theme.label": "Alternar modo oscuro",
@@ -155,33 +157,52 @@
   };
 
   const DEFAULT_LANG = "en";
+  const ES = I18N.es;   // Spanish translations
+  const EN = I18N.en;   // English strings used programmatically from JS (e.g. form status)
 
+  /* English is authored directly in the HTML (source of truth). We capture it
+     from the DOM once, before any translation is applied, so you can edit the
+     English text right in the .html files and it just shows. Spanish lives in
+     the `es` dictionary above; any missing ES key falls back to the English. */
+  let captured = false;
+  function captureEnglish() {
+    if (captured) return; captured = true;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { el.__enText = el.textContent; });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) { el.__enHtml = el.innerHTML; });
+    document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
+      el.__enAttr = {};
+      el.getAttribute("data-i18n-attr").split(",").forEach(function (pair) {
+        const a = pair.split(":")[0].trim();
+        if (a) el.__enAttr[a] = el.getAttribute(a);
+      });
+    });
+  }
+
+  // For JS-injected strings (not present in the DOM), e.g. contact form status.
   function t(key, lang) {
-    const l = I18N[lang] ? lang : DEFAULT_LANG;
-    return (I18N[l] && I18N[l][key] != null) ? I18N[l][key] : I18N[DEFAULT_LANG][key];
+    if (lang === "es" && ES[key] != null) return ES[key];
+    return EN[key] != null ? EN[key] : key;
   }
 
   function applyLang(lang) {
-    const l = I18N[lang] ? lang : DEFAULT_LANG;
-    document.documentElement.setAttribute("lang", l);
+    captureEnglish();
+    const es = lang === "es";
+    document.documentElement.setAttribute("lang", es ? "es" : "en");
 
-    // textContent
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      const val = t(el.getAttribute("data-i18n"), l);
-      if (val != null) el.textContent = val;
+      const k = el.getAttribute("data-i18n");
+      el.textContent = (es && ES[k] != null) ? ES[k] : el.__enText;
     });
-    // innerHTML
     document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
-      const val = t(el.getAttribute("data-i18n-html"), l);
-      if (val != null) el.innerHTML = val;
+      const k = el.getAttribute("data-i18n-html");
+      el.innerHTML = (es && ES[k] != null) ? ES[k] : el.__enHtml;
     });
-    // attributes: "placeholder:key, aria-label:key2"
     document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
       el.getAttribute("data-i18n-attr").split(",").forEach(function (pair) {
         const parts = pair.split(":");
         if (parts.length !== 2) return;
-        const attr = parts[0].trim();
-        const val = t(parts[1].trim(), l);
+        const attr = parts[0].trim(), key = parts[1].trim();
+        const val = (es && ES[key] != null) ? ES[key] : (el.__enAttr ? el.__enAttr[attr] : null);
         if (val != null) el.setAttribute(attr, val);
       });
     });

@@ -34,25 +34,45 @@
 }
 .hero__inner { position: relative; z-index: 2; text-align: center; padding-top: var(--header-h); }
 .hero__eyebrow { color: var(--brand-cyan); }
+/* Title keeps the original sans (Inter) look */
 .hero h1 {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2.4rem, 7.5vw, 5.6rem);
-  font-weight: 700;
-  letter-spacing: .05em;
-  margin-bottom: .5rem;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 800;
+  margin-bottom: .3rem;
   background: linear-gradient(180deg, #ffffff, #bcd4ff);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   text-shadow: 0 0 60px rgba(77,159,255,.35);
 }
+/* Subtitle uses Cinzel; real capitals are enlarged so they stand out from the
+   small-caps (Cinzel renders lowercase as small caps) */
 .hero__subtitle {
   font-family: 'Cinzel', serif;
-  font-size: clamp(.95rem, 2vw, 1.35rem);
-  letter-spacing: .06em;
+  font-size: clamp(.9rem, 1.9vw, 1.3rem);
+  letter-spacing: .05em;
   color: #cfddf7;
-  max-width: 46ch;
+  max-width: 48ch;
   margin: 0 auto 2rem;
 }
-.hero__cta { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
+.hero__subtitle .cap { font-size: 1.38em; font-weight: 600; }
+.hero__cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* Both hero buttons share the same outlined style (no filled blue) */
+.btn-hero {
+  background: rgba(255, 255, 255, .04);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, .6);
+  font-weight: 600;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: transform .2s var(--ease), background-color .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.btn-hero:hover {
+  background: rgba(255, 255, 255, .14);
+  border-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
+  text-decoration: none;
+}
 .hero__scroll {
   position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
   z-index: 2; color: #9fb8e6; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
