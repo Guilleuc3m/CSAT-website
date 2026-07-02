@@ -138,11 +138,16 @@
       "soon.home": "Volver al inicio",
       "soon.contact": "Contáctanos",
 
+      "location.eyebrow": "Sobre nosotros",
+      "location.title": "Dónde encontrarnos",
+      "location.intro": "CSAT opera en tres sedes de la UC3M en la Comunidad de Madrid. A continuación puedes ver dónde se ubica cada una de nuestras instalaciones.",
+      "location.open_maps": "Abrir en Google Maps",
+
       "home.hero.cta_primary": "Explora nuestras instalaciones",
       "home.hero.cta_secondary": "Conoce al equipo",
       "home.hero.scroll": "Desplázate para descubrir",
 
-      "team.hero.title": "Nuestro equipo",
+      "team.hero.title": "Nuestro equipo en Leganés",
       "team.faculty": "Profesorado",
       "team.staff": "Personal",
       "team.linkedin": "Perfil de LinkedIn",

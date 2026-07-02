@@ -34,15 +34,17 @@
 }
 .hero__inner { position: relative; z-index: 2; text-align: center; padding-top: var(--header-h); }
 .hero__eyebrow { color: var(--brand-cyan); }
-/* Title keeps the original sans (Inter) look */
+/* Title keeps the original sans (Inter) look, a touch smaller now */
 .hero h1 {
-  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-size: clamp(2.4rem, 6.5vw, 5rem);
   font-weight: 800;
   margin-bottom: .3rem;
   background: linear-gradient(180deg, #ffffff, #bcd4ff);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   text-shadow: 0 0 60px rgba(77,159,255,.35);
 }
+/* the divider dash is kept subordinate so UC3M / CSAT stay the focus */
+.hero h1 .dash { font-size: .5em; font-weight: 300; opacity: .5; margin: 0 .04em; vertical-align: middle; }
 /* Subtitle uses Cinzel; real capitals are enlarged so they stand out from the
    small-caps (Cinzel renders lowercase as small caps) */
 .hero__subtitle {
@@ -53,7 +55,7 @@
   max-width: 48ch;
   margin: 0 auto 2rem;
 }
-.hero__subtitle .cap { font-size: 1.38em; font-weight: 600; }
+.hero__subtitle .cap { font-size: 1.18em; }
 .hero__cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
 /* Both hero buttons share the same outlined style (no filled blue) */

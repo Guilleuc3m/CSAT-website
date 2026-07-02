@@ -99,6 +99,12 @@
       }
     }
 
+    // Inactive links (e.g. team email icons): keep the hover/press animation
+    // but don't navigate anywhere for now.
+    document.querySelectorAll("a.is-inactive").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); });
+    });
+
     // Sticky header shadow on scroll
     var header = document.querySelector(".site-header");
     if (header) {

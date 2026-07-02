@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/location.css">
 </head>
 <body data-page="about">
 
@@ -82,15 +83,78 @@
   </header>
 
   <main class="page-top">
-    <section class="page-hero" style="min-height:52vh;display:grid;place-items:center">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
       <div class="container">
-        <span class="eyebrow" data-i18n="soon.eyebrow">Coming soon</span>
-        <h1 data-i18n="nav.location">Location</h1>
-        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="soon.body">This section is being prepared and will be available shortly.</p>
-        <div class="hero__cta" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem">
-          <a class="btn btn-primary" href="index.html" data-i18n="soon.home">Back to home</a>
-          <a class="btn btn-ghost" href="contact.html" data-i18n="soon.contact">Contact us</a>
-        </div>
+        <span class="eyebrow" data-i18n="location.eyebrow">About Us</span>
+        <h1 data-i18n="location.title">Where to find us</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="location.intro">CSAT operates across three UC3M sites in the Madrid region. Below you'll find where each of our facilities is located.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container locations">
+
+        <!-- Leganés -->
+        <article class="location-row reveal">
+          <div class="location-map">
+            <iframe title="Map — CSAT Leganés" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Universidad%20Carlos%20III%20de%20Madrid%20Legan%C3%A9s&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+          <div class="location-info">
+            <h2>CSAT — Leganés</h2>
+            <p class="address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Universidad Carlos III de Madrid, Escuela Politécnica Superior. Avenida de la Universidad, 30, 28911 Leganés, Madrid.</span>
+            </p>
+            <p>Short description of the CSAT facility at the Leganés campus goes here. <em>(placeholder text — to be provided)</em></p>
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&query=Universidad%20Carlos%20III%20de%20Madrid%20Legan%C3%A9s">
+              <span data-i18n="location.open_maps">Open in Google Maps</span> ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PTL -->
+        <article class="location-row reveal">
+          <div class="location-map">
+            <iframe title="Map — CSAT PTL" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Parque%20Cient%C3%ADfico%20UC3M%20Legan%C3%A9s&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+          <div class="location-info">
+            <h2>CSAT — PTL</h2>
+            <p class="address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Parque Científico-Tecnológico de la UC3M (Leganés Technology Park). <em>(address to be confirmed)</em></span>
+            </p>
+            <p>Short description of the CSAT facility at the PTL (Leganés Technology Park) goes here. <em>(placeholder text — to be provided)</em></p>
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&query=Parque%20Cient%C3%ADfico%20UC3M%20Legan%C3%A9s">
+              <span data-i18n="location.open_maps">Open in Google Maps</span> ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Colmenarejo -->
+        <article class="location-row reveal">
+          <div class="location-map">
+            <iframe title="Map — CSAT Colmenarejo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Universidad%20Carlos%20III%20de%20Madrid%20Colmenarejo&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+          <div class="location-info">
+            <h2>CSAT — Colmenarejo</h2>
+            <p class="address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Universidad Carlos III de Madrid, Campus de Colmenarejo. Avenida de la Universidad Carlos III, 22, 28270 Colmenarejo, Madrid.</span>
+            </p>
+            <p>Short description of the CSAT facility at the Colmenarejo campus goes here. <em>(placeholder text — to be provided)</em></p>
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&query=Universidad%20Carlos%20III%20de%20Madrid%20Colmenarejo">
+              <span data-i18n="location.open_maps">Open in Google Maps</span> ↗
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
   </main>
