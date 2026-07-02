@@ -243,8 +243,11 @@ p  { margin: 0 0 1rem; }
 }
 .dropdown a:hover { background: var(--surface-2); color: var(--accent); text-decoration: none; }
 
-/* Header controls (lang + theme) */
-.header-controls { display: flex; align-items: center; gap: .4rem; }
+/* Header controls (lang + theme) — set a bit apart from the nav links */
+.header-controls { display: flex; align-items: center; gap: .4rem; margin-left: .6rem; }
+@media (min-width: 821px) {
+  .header-controls { margin-left: 1.4rem; padding-left: 1.4rem; border-left: 1px solid var(--border); }
+}
 .icon-btn {
   display: inline-flex;
   align-items: center;
@@ -347,6 +350,20 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 }
 .footer-bottom .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
 
+/* Funding acknowledgement banner (main page only) — the image has a white
+   background, so it sits on a white band spanning the footer width. */
+.footer-funding {
+  background: #ffffff;
+  padding: 22px clamp(18px, 4vw, 40px);
+  text-align: center;
+}
+.footer-funding img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin-inline: auto;
+}
+
 /* ---------- Layout scaffolding -------------------------------------------- */
 body { display: flex; flex-direction: column; min-height: 100vh; }
 main { flex: 1 0 auto; }
@@ -430,3 +447,47 @@ main { flex: 1 0 auto; }
   .footer-main { grid-template-columns: 1fr; }
   .brand span { display: none; }
 }
+
+/* ---------- Lightbox (click any content image to enlarge) ----------------- */
+/* Content images inside <main> are zoomable unless marked .no-zoom */
+main img:not(.no-zoom) { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw;
+  background: rgba(3, 6, 14, 0.92);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: zoom-out;
+  opacity: 0;
+  transition: opacity .25s var(--ease);
+}
+.lightbox.open { display: flex; opacity: 1; }
+.lightbox img {
+  max-width: 96vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
+  animation: lbZoom .28s var(--ease);
+}
+@keyframes lbZoom { from { transform: scale(.94); opacity: .4; } to { transform: scale(1); opacity: 1; } }
+.lightbox__close {
+  position: absolute;
+  top: 16px; right: 22px;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  font-size: 2rem; line-height: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.lightbox__close:hover { background: rgba(255, 255, 255, .2); }

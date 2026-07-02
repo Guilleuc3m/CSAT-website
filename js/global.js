@@ -112,5 +112,41 @@
     } else {
       reveals.forEach(function (el) { el.classList.add("in"); });
     }
+
+    // Lightbox: click any content image inside <main> to enlarge it.
+    // Opt out with class "no-zoom" on the <img>.
+    var main = document.querySelector("main");
+    if (main) {
+      var lb = document.createElement("div");
+      lb.className = "lightbox";
+      lb.setAttribute("role", "dialog");
+      lb.setAttribute("aria-modal", "true");
+      lb.innerHTML = '<button class="lightbox__close" type="button" aria-label="Close">×</button><img alt="">';
+      document.body.appendChild(lb);
+      var lbImg = lb.querySelector("img");
+
+      var openLb = function (src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || "";
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+      };
+      var closeLb = function () {
+        lb.classList.remove("open");
+        document.body.style.overflow = "";
+        lbImg.src = "";
+      };
+
+      main.addEventListener("click", function (e) {
+        var t = e.target;
+        if (t && t.tagName === "IMG" && !t.classList.contains("no-zoom")) {
+          openLb(t.currentSrc || t.src, t.alt);
+        }
+      });
+      lb.addEventListener("click", closeLb); // click anywhere (incl. image/close) dismisses
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lb.classList.contains("open")) closeLb();
+      });
+    }
   });
 })();

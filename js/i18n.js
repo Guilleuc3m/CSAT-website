@@ -78,10 +78,11 @@
       "team.faculty": "Faculty",
       "team.staff": "Staff",
       "team.role.faculty": "Faculty Member",
+      "team.role.director": "Director",
       "team.role.staff": "Laboratory Staff",
       "team.linkedin": "LinkedIn profile",
       "team.email": "Send email",
-      "team.note": "Photos and full profiles are placeholders and will be updated soon.",
+      "team.note": "Some contact links are still being added.",
 
       /* --- contact --- */
       "contact.hero.eyebrow": "Get in touch",
