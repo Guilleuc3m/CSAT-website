@@ -43,8 +43,17 @@
   -webkit-background-clip: text; background-clip: text; color: transparent;
   text-shadow: 0 0 60px rgba(77,159,255,.35);
 }
-/* the divider dash is kept subordinate so UC3M / CSAT stay the focus */
-.hero h1 .dash { font-size: .5em; font-weight: 300; opacity: .5; margin: 0 .04em; vertical-align: middle; }
+/* the divider dash is kept subordinate so UC3M / CSAT stay the focus.
+   It needs its own colour: the h1 uses a clipped gradient with transparent
+   fill, which a child span would otherwise inherit and render invisible. */
+.hero h1 .dash {
+  font-size: .5em;
+  font-weight: 300;
+  margin: 0 .14em;
+  vertical-align: middle;
+  color: #a9c0ea;
+  -webkit-text-fill-color: #a9c0ea;
+}
 /* Subtitle uses Cinzel; real capitals are enlarged so they stand out from the
    small-caps (Cinzel renders lowercase as small caps) */
 .hero__subtitle {

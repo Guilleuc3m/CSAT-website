@@ -1,6 +1,6 @@
 /* Location page: alternating map + info rows */
 
-.locations { display: grid; gap: clamp(2.2rem, 5vw, 4rem); }
+.locations { display: grid; gap: clamp(3rem, 6.5vw, 6rem); }
 
 .location-row {
   display: grid;
@@ -22,6 +22,7 @@
 }
 .location-map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+.location-info { display: flex; flex-direction: column; }
 .location-info h2 { margin-bottom: .5rem; }
 .location-info .address {
   display: flex; gap: .5rem; align-items: flex-start;
@@ -29,7 +30,7 @@
 }
 .location-info .address svg { flex: none; width: 18px; height: 18px; margin-top: .15rem; color: var(--accent); }
 .location-info p { margin-bottom: 1.2rem; }
-.location-info .btn { gap: .5rem; }
+.location-info .btn { gap: .5rem; align-self: center; margin-top: .3rem; }
 
 @media (max-width: 820px) {
   .location-row { grid-template-columns: 1fr; }

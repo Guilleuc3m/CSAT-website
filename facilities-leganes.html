@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/facilities.css">
 </head>
 <body data-page="facilities">
 
@@ -82,14 +83,62 @@
   </header>
 
   <main class="page-top">
-    <section class="page-hero" style="min-height:52vh;display:grid;place-items:center">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
       <div class="container">
-        <span class="eyebrow" data-i18n="soon.eyebrow">Coming soon</span>
+        <span class="eyebrow" data-i18n="nav.facilities">Facilities</span>
         <h1 data-i18n="nav.fac_leganes">CSAT — Leganés</h1>
-        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="soon.body">This section is being prepared and will be available shortly.</p>
-        <div class="hero__cta" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem">
-          <a class="btn btn-primary" href="index.html" data-i18n="soon.home">Back to home</a>
-          <a class="btn btn-ghost" href="contact.html" data-i18n="soon.contact">Contact us</a>
+      </div>
+    </section>
+
+    <!-- COMMON INTRO: director + text + image -->
+    <section class="section">
+      <div class="container facility-intro">
+        <div class="facility-intro__info reveal">
+          <div class="facility-director">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Site director:&nbsp;<strong>[Name — to be provided]</strong></span>
+          </div>
+          <h2>Our main facility</h2>
+          <p class="lead">Introductory text about the CSAT facility at UC3M's Leganés campus. This is our main site, home to the cleanroom, integration labs and mission control center. <em>(placeholder text — to be provided)</em></p>
+        </div>
+        <div class="img-ph facility-intro__media">Leganés — main image (placeholder)</div>
+      </div>
+    </section>
+
+    <!-- LEGANÉS ONLY: the different spaces within the site -->
+    <section class="section spaces">
+      <div class="container">
+        <div class="spaces__head">
+          <span class="eyebrow">Inside Leganés</span>
+          <h2>Our spaces</h2>
+          <p class="muted">A closer look at the different spaces and equipment within the Leganés facility. <em>(placeholder — to be expanded)</em></p>
+        </div>
+
+        <div class="spaces-list">
+          <article class="space-row reveal">
+            <div class="img-ph space-row__media">Cleanroom — photo (placeholder)</div>
+            <div class="space-row__info">
+              <h3>Cleanroom</h3>
+              <p>Description of the cleanroom, its class, equipment and typical use for satellite assembly and integration. <em>(placeholder text — to be provided)</em></p>
+            </div>
+          </article>
+
+          <article class="space-row reveal">
+            <div class="img-ph space-row__media">Integration Lab — photo (placeholder)</div>
+            <div class="space-row__info">
+              <h3>Integration Lab</h3>
+              <p>Description of the integration laboratory, its instruments and the assembly and verification work carried out here. <em>(placeholder text — to be provided)</em></p>
+            </div>
+          </article>
+
+          <article class="space-row reveal">
+            <div class="img-ph space-row__media">Mission Control Center — photo (placeholder)</div>
+            <div class="space-row__info">
+              <h3>Mission Control Center</h3>
+              <p>Description of the mission control center used to operate and monitor missions. <em>(placeholder text — to be provided)</em></p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
