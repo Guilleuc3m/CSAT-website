@@ -126,7 +126,7 @@
       "theme.label": "Alternar modo oscuro",
       "menu.label": "Abrir menú",
 
-      "footer.tagline": "Centro de Tecnología Espacial y nano/micro SATélites",
+      "footer.tagline": "Centro de tecnología espacial y nano/micro SATélites",
       "footer.explore": "Explorar",
       "footer.contact": "Contacto",
       "footer.address": "Universidad Carlos III de Madrid · Leganés, España",
@@ -145,6 +145,36 @@
       "location.desc_leganes": "Nuestra instalación principal, situada en el campus de Leganés de la UC3M, al sur de Madrid. Alberga nuestra sala limpia, los laboratorios de integración y el centro de control de misiones.",
       "location.desc_ptl": "Situada en el Parque Científico de Leganés, esta instalación acoge nuestro laboratorio de fotónica, dedicado al desarrollo de cargas útiles avanzadas de comunicaciones ópticas.",
       "location.desc_colmenarejo": "Situada en el campus de Colmenarejo de la UC3M, al oeste de Madrid. Esta instalación alberga nuestros equipos avanzados de radiometría para medidas electromagnéticas y ensayo de cargas útiles de satélites.",
+
+      "fac.director": "Director:",
+
+      "fac.leg.h2": "Nuestra instalación principal",
+      "fac.leg.intro": "El centro CSAT-Leganés es la instalación central de CSAT. Está ubicado en el <a href=\"location.html#leganes\">campus de Leganés de la UC3M</a> y es donde se realizan las principales actividades de Investigación y Desarrollo (I+D), así como de Ensamblaje, Integración, Verificación y Ensayo (AIVT) para tecnología espacial y nano/microsatélites. Está compuesto por:",
+      "fac.leg.li1": "Un área central de AIV de 70 m²",
+      "fac.leg.li2": "Una sala limpia ISO-8 de 70 m²",
+      "fac.leg.li3": "Un Centro de Operaciones de CubeSats (CSOC)",
+      "fac.leg.li4": "Un laboratorio Software/Hardware-In-The-Loop (SIL/HIL-lab)",
+      "fac.leg.li5": "Un laboratorio de ensayo del sistema de determinación y control de actitud (ADCS-lab)",
+      "fac.leg.spaces_eyebrow": "Dentro de Leganés",
+      "fac.leg.spaces_title": "Nuestros espacios",
+      "fac.leg.aiv.title": "Área central de AIV",
+      "fac.leg.aiv.text": "La sala principal de AIV es el espacio de trabajo central de CSAT-Leganés, donde se llevan a cabo las principales actividades de ensamblaje e integración. Cuenta con una zona central de alta funcionalidad con mesas de trabajo protegidas frente a descargas electrostáticas (ESD), capaces de soportar estructuras de satélite pesadas, y equipada con un conjunto completo de instrumentos electrónicos de ensayo y medida —incluyendo fuentes de alimentación, osciloscopios, analizadores de espectro, generadores de señal, multímetros y un microscopio digital—. La sala dispone además de herramientas mecánicas de precisión y equipos de calibración. Este espacio está diseñado para dar soporte a todo el trabajo de desarrollo e integración que no requiere condiciones de sala limpia, sirviendo como el espacio de trabajo cotidiano de la instalación.",
+      "fac.leg.clean.title": "Sala limpia",
+      "fac.leg.clean.text": "La sala limpia ISO-8 es el entorno de mayor grado dentro de CSAT-Leganés, diseñada para las etapas más sensibles del ensamblaje e integración de satélites. Con niveles controlados de polvo y contaminación, garantiza que los componentes y cargas útiles más delicados se manipulen en condiciones que cumplen los estándares de cualificación espacial. La sala limpia está equipada con las mismas capacidades electrónicas de ensayo y medida que la sala principal de AIV, lo que permite continuar el trabajo de integración sin interrupciones en un entorno limpio. Es el último paso en la preparación en tierra de un satélite antes de estar listo para el lanzamiento.",
+      "fac.leg.csoc.title": "CSOC",
+      "fac.leg.csoc.text": "El Centro de Operaciones de CubeSats (CSOC) es el centro de control de misiones de CSAT-Leganés. Desde aquí, el equipo gestiona las comunicaciones con los satélites a través de una antena UHF/VHF instalada en el campus de Leganés, encargándose de la recepción de telemetría y la transmisión de comandos a los satélites activos en órbita. El CSOC está operado por UC3-BASE, la asociación de radioaficionados de estudiantes y profesorado de la UC3M, lo que lo convierte también en un espacio de formación práctica para la próxima generación de operadores de satélites.",
+      "fac.leg.sil.title": "Laboratorio SIL/HIL",
+      "fac.leg.sil.text": "El laboratorio SIL/HIL es donde se realiza la validación de software y hardware antes de integrar cualquier componente en el satélite. Está equipado con un simulador GNSS de alta fidelidad capaz de reproducir condiciones orbitales reales, así como con instrumentos avanzados de generación y análisis de señal que cubren un amplio rango de frecuencias. Esto permite a los ingenieros ensayar rigurosamente los sistemas de a bordo en un entorno espacial simulado sin salir de tierra. El laboratorio alberga también la estación de soldadura de la instalación, mantenida separada de las áreas principales de integración para garantizar un entorno de trabajo limpio y controlado.",
+      "fac.leg.adcs.title": "Laboratorio ADCS",
+      "fac.leg.adcs.text": "El laboratorio ADCS está dedicado a la validación de los sistemas de determinación y control de actitud —la tecnología responsable de orientar y estabilizar un satélite en órbita—. Cuenta con una plataforma de baja fricción que permite a los satélites girar libremente, simulando las condiciones casi sin fricción del espacio, junto con una jaula de Helmholtz que genera un entorno de campo magnético controlado para replicar el campo magnético terrestre en cualquier órbita. Un simulador solar completa el conjunto, permitiendo ensayos realistas de los sistemas de seguimiento solar y generación de energía. En conjunto, estas capacidades permiten una validación completa de extremo a extremo del comportamiento del control de actitud de un satélite, para plataformas que van desde pequeños CubeSats hasta microsatélites de hasta 200 kg.",
+
+      "fac.ptl.h2": "Laboratorio de fotónica en el Parque Científico",
+      "fac.ptl.intro": "CSAT-PTL es nuestra instalación centrada en fotónica, ubicada en el <a href=\"location.html#ptl\">Parque Científico de Leganés</a>. Está especializada en el ensamblaje y encapsulado de chips fotónicos, lo que permite el desarrollo de cargas útiles de satélite con capacidades avanzadas de comunicación óptica — un servicio actualmente único en España.",
+      "fac.ptl.visit": "Visitar la web de PTL ↗",
+
+      "fac.col.h2": "Instalación de radiometría en Colmenarejo",
+      "fac.col.intro": "CSAT-Colmenarejo es nuestra instalación de radiometría, ubicada en el <a href=\"location.html#colmenarejo\">campus de Colmenarejo de la UC3M</a>. Ofrece capacidades avanzadas de medida y calibración electromagnética, dando soporte al desarrollo y ensayo de cargas útiles de comunicación por satélite y tecnologías de antenas de nueva generación.",
+      "fac.col.visit": "Visitar la web de Colmenarejo ↗",
 
       "home.hero.eyebrow": "UC3M · Laboratorio de Tecnología Espacial",
       "home.hero.subtitle": "<span class=\"cap\">C</span>entro de Tecnología Espacial y nano/micro <span class=\"cap\">SAT</span>élites",
@@ -169,7 +199,7 @@
       "home.news.title": "Noticias y novedades",
       "home.news.all": "Ver todas las noticias",
       "home.news.placeholder.title": "Próximamente",
-      "home.news.placeholder.body": "Aquí aparecerán nuestras noticias. Añade la primera entrada desde la sección de noticias.",
+      "home.news.placeholder.body": "Aquí aparecerán nuestras noticias.",
 
       "team.hero.eyebrow": "Sobre nosotros",
       "team.hero.title": "Nuestro equipo en Leganés",
@@ -178,15 +208,29 @@
       "team.staff": "Personal",
       "team.role.director": "Director",
       "team.role.faculty": "Miembro del profesorado",
-      "team.role.staff": "Personal de laboratorio",
+      "team.role.staff": "Investigador y personal de laboratorio",
       "team.linkedin": "Perfil de LinkedIn",
       "team.email": "Enviar correo",
 
-      "contact.form.send": "Enviar mensaje",
+      "contact.hero.eyebrow": "Ponte en contacto",
+      "contact.hero.title": "Contacta con CSAT",
+      "contact.hero.subtitle": "Preguntas, colaboraciones o visitas: nos encantaría saber de ti.",
+      "contact.form.title": "Envíanos un mensaje",
       "contact.form.name": "Nombre",
       "contact.form.email": "Correo electrónico",
       "contact.form.subject": "Asunto",
-      "contact.form.message": "Mensaje"
+      "contact.form.message": "Mensaje",
+      "contact.form.name_ph": "Tu nombre",
+      "contact.form.email_ph": "tucorreo@ejemplo.com",
+      "contact.form.subject_ph": "¿Sobre qué quieres escribirnos?",
+      "contact.form.message_ph": "Escribe tu mensaje…",
+      "contact.form.send": "Enviar mensaje",
+      "contact.form.sending": "Enviando…",
+      "contact.form.success": "¡Gracias! Tu mensaje se ha enviado.",
+      "contact.form.error": "Algo ha ido mal. Inténtalo de nuevo o escríbenos directamente por correo.",
+      "contact.info.email_label": "Correo electrónico",
+      "contact.info.address_label": "Dirección",
+      "contact.info.address": "Universidad Carlos III de Madrid, Avda. de la Universidad 30, 28911 Leganés, Madrid, España"
     }
   };
 

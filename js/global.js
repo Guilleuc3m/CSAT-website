@@ -105,6 +105,24 @@
       a.addEventListener("click", function (e) { e.preventDefault(); });
     });
 
+    // Deep-link centering: when the page loads with a #hash pointing at an
+    // element (e.g. location.html#leganes), center that section in the viewport.
+    // Done instantly (not smooth) once everything has laid out, so it's reliable.
+    var centerHash = function () {
+      if (location.hash.length <= 1) return;
+      var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!el) return;
+      var prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      el.scrollIntoView({ block: "center" });
+      root.style.scrollBehavior = prev;
+    };
+    if (location.hash.length > 1) {
+      window.addEventListener("load", function () { setTimeout(centerHash, 40); });
+      // also try soon after DOM ready in case load already fired
+      setTimeout(centerHash, 120);
+    }
+
     // Sticky header shadow on scroll
     var header = document.querySelector(".site-header");
     if (header) {

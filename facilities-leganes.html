@@ -96,13 +96,20 @@
       <div class="container facility-intro">
         <div class="facility-intro__info reveal">
           <div class="facility-director">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span>Site director:&nbsp;<strong>[Name — to be provided]</strong></span>
+            <img class="facility-director__avatar no-zoom" src="images/team/andres.jpg" alt="Andrés Marcos Esteban">
+            <span><span data-i18n="fac.director">Director:</span>&nbsp;<strong><a href="https://aero.uc3m.es/people/andres-marcos-esteban/" target="_blank" rel="noopener">Andrés Marcos Esteban</a></strong></span>
           </div>
-          <h2>Our main facility</h2>
-          <p class="lead">Introductory text about the CSAT facility at UC3M's Leganés campus. This is our main site, home to the cleanroom, integration labs and mission control center. <em>(placeholder text — to be provided)</em></p>
+          <h2 data-i18n="fac.leg.h2">Our main facility</h2>
+          <p class="lead" data-i18n-html="fac.leg.intro">The CSAT-Leganés site is the central facility of the CSAT. It is located at <a href="location.html#leganes">UC3M Leganés campus</a> and is where the main activities for Research and Development (R&amp;D) as well Assembly, Integration, Verification and Testing (AIVT) for space technology and nano/micro-satellites are carried out. It is composed of:</p>
+          <ul class="facility-list">
+            <li data-i18n="fac.leg.li1">A central AIV area of 70 m²</li>
+            <li data-i18n="fac.leg.li2">An ISO-8 clean-room of 70 m²</li>
+            <li data-i18n="fac.leg.li3">A CubeSat Operations Center (CSOC)</li>
+            <li data-i18n="fac.leg.li4">A Software/Hardware-In-The-Loop laboratory (SIL/HIL-lab)</li>
+            <li data-i18n="fac.leg.li5">An Attitude Determination Control System testing laboratory (ADCS-lab)</li>
+          </ul>
         </div>
-        <div class="img-ph facility-intro__media">Leganés — main image (placeholder)</div>
+        <div class="facility-intro__media is-free"><img src="images/facilities/leganes/main.png" alt="CSAT — Leganés facility"></div>
       </div>
     </section>
 
@@ -110,33 +117,48 @@
     <section class="section spaces">
       <div class="container">
         <div class="spaces__head">
-          <span class="eyebrow">Inside Leganés</span>
-          <h2>Our spaces</h2>
-          <p class="muted">A closer look at the different spaces and equipment within the Leganés facility. <em>(placeholder — to be expanded)</em></p>
+          <span class="eyebrow" data-i18n="fac.leg.spaces_eyebrow">Inside Leganés</span>
+          <h2 data-i18n="fac.leg.spaces_title">Our spaces</h2>
         </div>
 
         <div class="spaces-list">
           <article class="space-row reveal">
-            <div class="img-ph space-row__media">Cleanroom — photo (placeholder)</div>
+            <div class="space-row__media"><img src="images/facilities/leganes/central-aiv.jpg" alt="Central AIV area"></div>
             <div class="space-row__info">
-              <h3>Cleanroom</h3>
-              <p>Description of the cleanroom, its class, equipment and typical use for satellite assembly and integration. <em>(placeholder text — to be provided)</em></p>
+              <h3 data-i18n="fac.leg.aiv.title">Central AIV area</h3>
+              <p data-i18n="fac.leg.aiv.text">The Main AIV room is the core workspace of CSAT-Leganés, where the primary assembly and integration activities take place. It features a high-functionality central area with ESD-protected workbenches capable of supporting heavy satellite structures, equipped with a full suite of electronic test and measurement instruments — including power supplies, oscilloscopes, spectrum analyzers, signal generators, multimeters and a digital microscope. The room is also equipped with precision mechanical tools and calibration equipment. This space is designed to support all development and integration work that does not require cleanroom conditions, serving as the everyday workhorse of the facility.</p>
             </div>
           </article>
 
           <article class="space-row reveal">
-            <div class="img-ph space-row__media">Integration Lab — photo (placeholder)</div>
+            <div class="space-row__media"><img src="images/facilities/leganes/cleanroom.jpg" alt="ISO-8 cleanroom"></div>
             <div class="space-row__info">
-              <h3>Integration Lab</h3>
-              <p>Description of the integration laboratory, its instruments and the assembly and verification work carried out here. <em>(placeholder text — to be provided)</em></p>
+              <h3 data-i18n="fac.leg.clean.title">Clean room</h3>
+              <p data-i18n="fac.leg.clean.text">The ISO-8 cleanroom is the highest-grade environment within CSAT-Leganés, designed for the most sensitive stages of satellite assembly and integration. With controlled levels of dust and contamination, it ensures that delicate components and payloads are handled in conditions that meet space qualification standards. The cleanroom is equipped with the same electronic test and measurement capabilities as the main AIV room, allowing integration work to continue seamlessly within a clean environment. It is the final step in the on-ground preparation of a satellite before it is ready for launch.</p>
             </div>
           </article>
 
           <article class="space-row reveal">
-            <div class="img-ph space-row__media">Mission Control Center — photo (placeholder)</div>
+            <div class="space-row__media"><img src="images/facilities/leganes/csoc.jpg" alt="CubeSat Operations Center (CSOC)"></div>
             <div class="space-row__info">
-              <h3>Mission Control Center</h3>
-              <p>Description of the mission control center used to operate and monitor missions. <em>(placeholder text — to be provided)</em></p>
+              <h3 data-i18n="fac.leg.csoc.title">CSOC</h3>
+              <p data-i18n="fac.leg.csoc.text">The CubeSat Operations Center (CSOC) is the mission control hub of CSAT-Leganés. From here, the team manages satellite communications through a UHF/VHF antenna installed on the Leganés campus, handling telemetry reception and command transmission to active satellites in orbit. The CSOC is operated by UC3-BASE, UC3M's student and faculty amateur radio association, making it also a hands-on training ground for the next generation of satellite operators.</p>
+            </div>
+          </article>
+
+          <article class="space-row reveal">
+            <div class="space-row__media"><img src="images/facilities/leganes/sil-hil.jpg" alt="SIL/HIL laboratory"></div>
+            <div class="space-row__info">
+              <h3 data-i18n="fac.leg.sil.title">SIL/HIL lab</h3>
+              <p data-i18n="fac.leg.sil.text">The SIL/HIL lab is where software and hardware validation takes place before any component is integrated into the satellite. It is equipped with a high-fidelity GNSS simulator capable of reproducing real orbital conditions, as well as advanced signal generation and analysis instruments covering a wide frequency range. This allows engineers to rigorously test onboard systems in a simulated space environment without leaving the ground. The lab also hosts the facility's soldering station, kept separate from the main integration areas to ensure a clean and controlled working environment.</p>
+            </div>
+          </article>
+
+          <article class="space-row reveal">
+            <div class="space-row__media"><img src="images/facilities/leganes/adcs.jpg" alt="ADCS laboratory"></div>
+            <div class="space-row__info">
+              <h3 data-i18n="fac.leg.adcs.title">ADCS lab</h3>
+              <p data-i18n="fac.leg.adcs.text">The ADCS lab is dedicated to the validation of attitude determination and control systems — the technology responsible for orienting and stabilizing a satellite in orbit. It features a low-friction platform that allows satellites to rotate freely, simulating the near-frictionless conditions of space, along with a Helmholtz cage that generates a controlled magnetic field environment to replicate Earth's magnetic field at any orbit. A solar simulator completes the setup, enabling realistic testing of sun-tracking and power generation systems. Together, these capabilities allow full end-to-end validation of a satellite's attitude control behavior, for platforms ranging from small CubeSats up to microsatellites of up to 200 kg.</p>
             </div>
           </article>
         </div>
@@ -150,7 +172,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <img src="images/logo/csat-logo.png" alt="CSAT">
-          <p data-i18n="footer.tagline">Center for Space Technology &amp; nano/micro SATellites</p>
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
         </div>
         <div>
           <h4 data-i18n="footer.explore">Explore</h4>
