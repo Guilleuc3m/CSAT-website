@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <title>MLPLUS — CSAT | UC3M</title>
+  <meta name="description" content="MLPLUS-CM — consolidation of a microsatellite platform and advanced technologies for space scientific research. A CSAT project at UC3M.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+</head>
+<body data-page="projects">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+            <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <!-- PAGE HERO -->
+    <section class="page-hero project-hero">
+      <div class="container">
+        <span class="eyebrow" data-i18n="proj.eyebrow">CSAT Project</span>
+        <h1>MLPLUS</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="mlplus.fullname">MLPLUS-CM — Consolidation of a Microsatellite Platform and Technologies for Advanced Space Scientific Research</p>
+        <div class="project-hero__cta">
+          <a class="btn btn-primary" href="https://martinlaraplus.webnode.es/" target="_blank" rel="noopener">
+            <span data-i18n="proj.website">Project website</span> ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACT SHEET: people + key data -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="project-facts reveal">
+          <div class="project-people">
+            <div class="person">
+              <img class="person__avatar" src="images/team/andres.jpg" alt="Andrés Marcos Esteban">
+              <span class="person__meta">
+                <span class="person__role" data-i18n="mlplus.role.coordinator">Project Coordinator</span>
+                <span class="person__name"><a href="https://aero.uc3m.es/people/andres-marcos-esteban/" target="_blank" rel="noopener">Prof. Andrés Marcos Esteban</a></span>
+              </span>
+            </div>
+            <div class="person">
+              <img class="person__avatar" src="images/team/diego.jpg" alt="Diego Navarro-Tapia">
+              <span class="person__meta">
+                <span class="person__role" data-i18n="mlplus.role.manager">Project Manager</span>
+                <span class="person__name">Dr. Diego Navarro-Tapia</span>
+              </span>
+            </div>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <span class="fact__label" data-i18n="proj.fact.funding">Funding</span>
+              <span class="fact__value fact__value--lg" data-i18n="mlplus.funding">€1,026,000</span>
+            </div>
+            <div class="fact">
+              <span class="fact__label" data-i18n="proj.fact.duration">Duration</span>
+              <span class="fact__value" data-i18n="mlplus.duration">4 years · 2025–2028</span>
+            </div>
+            <div class="fact">
+              <span class="fact__label" data-i18n="proj.fact.reference">Reference</span>
+              <span class="fact__value">TEC-2024/TEC-263</span>
+            </div>
+            <div class="fact fact--wide">
+              <span class="fact__label" data-i18n="proj.fact.agency">Funding agency</span>
+              <span class="fact__value" data-i18n="mlplus.agency">Comunidad de Madrid — Convocatoria TECNOLOGÍAS 2024</span>
+            </div>
+            <div class="fact fact--wide">
+              <span class="fact__label" data-i18n="proj.fact.partners">Partners</span>
+              <span class="fact__value" data-i18n="mlplus.partners">UC3M (GI, EP2, GOTL), UPM (IDR, DIEMAG) and UCM (AEGORA) — with associated partners INTA &amp; GEOSIGN.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section" style="padding-top:0">
+      <div class="container project-body">
+        <p class="lead" data-i18n="mlplus.summary">MLPLUS-CM represents the consolidation phase of a space mission for the in-orbit demonstration of a microsatellite equipped with advanced technologies for scientific observation, quantum communication, control and electric propulsion.</p>
+
+        <h2 data-i18n="mlplus.mission.h">The MARTINLARA mission</h2>
+        <p data-i18n="mlplus.mission.p1">The In-Orbit-Demonstration (IOD) mission MARTINLARA (ML) was born from the need to address some of the main challenges facing our society — from climate action to sustainable economic development, both goals set by the United Nations and priorities for the European Union. Its feasibility study and preliminary definition were successfully achieved in the precursor project MARTINLARA-CM, which also proved the ability to take novel technologies from concept to flight preparation and to transfer that knowledge to other university space missions in Madrid.</p>
+        <p data-i18n="mlplus.mission.p2">The mission develops a nano/micro-satellite platform carrying payloads for radioastronomy, Earth observation, space photonics and plasma micro-propulsion. These technologies have a direct impact on social problems such as climate change and on sustainable access to space — enabling nano/micro-satellite observation constellations that meet present and future debris rules. The project interweaves aerospace engineering, telecommunications, astronomy, geodesy and geophysics. In the short term ML builds new capabilities and a collaborative space-technology hub in the Community of Madrid; in the medium and long term it aims to enable participation in international projects on radioastronomy, Earth Science and propulsion, and ultimately to launch ML.</p>
+
+        <h2 data-i18n="mlplus.precursor.h">From MARTINLARA-CM to MLPLUS</h2>
+        <p data-i18n="mlplus.precursor.p">The precursor project MARTINLARA-CM leveraged the knowledge and experience available in the Community of Madrid to tackle these challenges through innovation in space technology and science. Among its results:</p>
+        <ul class="result-list">
+          <li data-i18n-html="mlplus.result1"><strong>Collaboration between 6 groups</strong> to develop an advanced radiometer from concept phase to its integration into UPMSat-3, the third satellite of the Universidad Politécnica de Madrid, ready for launch in 2024/2025.</li>
+          <li data-i18n-html="mlplus.result2"><strong>Collaboration between 3 groups</strong> for the development, integration and verification tests of MARTINLARA's FlatSat.</li>
+          <li data-i18n-html="mlplus.result3"><strong>Collaboration between 4 groups</strong> to evaluate and define the engineering requirements to integrate a method of acquiring and processing scientific data from the radiometers for observation of Earth's atmosphere.</li>
+          <li data-i18n-html="mlplus.result4"><strong>Collaboration between 3 groups</strong> for the mission and platform of MARTINLARA. This work was transferred beyond the project, benefiting UPMSat-3 and the first student CubeSat at UC3M, ST3LLARsat1 "Boira" — a transfer that was key for UC3M to become the first university in the Comunidad de Madrid chosen by ESA for its Fly-Your-Satellite! Design Booster programme.</li>
+        </ul>
+        <p data-i18n="mlplus.precursor.p2">MLPLUS-CM consolidates the short-term objective of MARTINLARA-CM by continuing the established collaborative hub, and supports its medium and long-term goals by maturing ML's developments towards launch-readiness. Specifically, it evolves the mission design from a 'preliminary' to a 'detailed definition' level — from phase B to phase C in the European Space Agency's terminology.</p>
+      </div>
+
+      <div class="container" style="margin-top:clamp(2rem,5vw,3.5rem)">
+        <h2 data-i18n="mlplus.lines.h">Three lines of development</h2>
+        <p class="muted" style="max-width:60ch;margin-bottom:1.6rem" data-i18n="mlplus.lines.sub">MLPLUS-CM is articulated through three main lines of work.</p>
+        <div class="num-cards">
+          <div class="num-card reveal">
+            <span class="num-card__n">1</span>
+            <h3 data-i18n="mlplus.line1.h">Mission &amp; platform</h3>
+            <p data-i18n="mlplus.line1.p">Consolidation of the IOD mission and the nano/micro-satellite platform.</p>
+          </div>
+          <div class="num-card reveal d1">
+            <span class="num-card__n">2</span>
+            <h3 data-i18n="mlplus.line2.h">Technologies &amp; methods</h3>
+            <p data-i18n="mlplus.line2.p">Consolidation of the space technologies and scientific methods, specifically:</p>
+            <ul>
+              <li data-i18n="mlplus.line2.i1">A robust and powerful new micro-propulsion plasma motor.</li>
+              <li data-i18n="mlplus.line2.i2">A control system for demanding scientific requirements.</li>
+              <li data-i18n="mlplus.line2.i3">A novel interwoven-photons generator for quantum applications.</li>
+              <li data-i18n="mlplus.line2.i4">Scientific software for observation of Earth's magnetic field.</li>
+            </ul>
+          </div>
+          <div class="num-card reveal d2">
+            <span class="num-card__n">3</span>
+            <h3 data-i18n="mlplus.line3.h">Verification &amp; validation</h3>
+            <p data-i18n="mlplus.line3.p">Verification and validation of the platform, technologies and methods.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:gtaponte@pa.uc3m.es">gtaponte@pa.uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span>csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/global.js"></script>
+</body>
+</html>
