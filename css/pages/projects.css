@@ -1,0 +1,128 @@
+/* Projects pages (MLPLUS, IPFI, …): a reusable layout so every project page
+   shares the same structure — hero, a "fact sheet" card of key data, a prose
+   overview, and highlight/numbered cards. New projects reuse these classes. */
+
+/* ---- Hero: keep the shared band for coherence, but more compact than the
+   default page hero so it doesn't dominate the project pages ---- */
+.project-hero { padding-block: clamp(38px, 5.5vw, 64px) clamp(26px, 4vw, 44px); }
+.project-hero .project-hero__cta { margin-top: 1.4rem; }
+
+/* ---- Fact sheet: people + key data, unified in one card ---- */
+.project-facts {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.3rem, 3vw, 2rem);
+  display: grid;
+  gap: 1.4rem;
+  margin-top: clamp(6px, 1.5vw, 14px); /* small gap below the hero to separate the card */
+  position: relative;
+  z-index: 2;
+}
+
+/* People row (coordinator / manager / PI) */
+.project-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 2.4rem;
+}
+.person { display: inline-flex; align-items: center; gap: .7rem; }
+.person__avatar {
+  width: 46px; height: 46px; border-radius: 50%; flex: none;
+  object-fit: cover;
+  display: grid; place-items: center;
+  background: var(--surface-2); color: var(--text-muted);
+  font-size: .8rem; font-weight: 700; letter-spacing: .02em;
+  border: 1px solid var(--border);
+}
+.person__meta { display: flex; flex-direction: column; line-height: 1.25; }
+.person__role {
+  font-size: .72rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--accent);
+}
+.person__name { color: var(--text); font-weight: 600; }
+.person__name a { color: inherit; text-decoration: underline; text-decoration-color: rgba(47,123,255,.45); text-underline-offset: 3px; transition: color .2s var(--ease), text-decoration-color .2s var(--ease); }
+.person__name a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* Key-data grid */
+.facts {
+  border-top: 1px solid var(--border);
+  padding-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.2rem 1.6rem;
+}
+.fact { display: flex; flex-direction: column; gap: .25rem; min-width: 0; }
+.fact--wide { grid-column: 1 / -1; }
+.fact__label {
+  font-size: .72rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.fact__value { color: var(--text); font-weight: 600; }
+.fact__value--lg { font-size: 1.45rem; letter-spacing: -.01em; }
+.fact__value a { color: var(--accent); text-decoration: none; }
+.fact__value a:hover { text-decoration: underline; }
+
+/* ---- Prose overview (comfortable reading width) ---- */
+.project-body { max-width: 70ch; }
+.project-body h2 { margin: 2.4rem 0 .7rem; }
+.project-body h2:first-child { margin-top: 0; }
+.project-body p { color: var(--text-muted); margin-bottom: 1rem; }
+.project-body p.lead { color: var(--text); }
+
+/* ---- Highlight list (e.g. precursor results, deployment challenges) ---- */
+.result-list { list-style: none; margin: .4rem 0 1rem; padding: 0; display: grid; gap: .8rem; }
+.result-list li {
+  position: relative;
+  padding-left: 1.7rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.result-list li::before {
+  content: "";
+  position: absolute; left: 0; top: .55em;
+  width: .55rem; height: .55rem; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(47,123,255,.15);
+}
+.result-list strong { color: var(--text); font-weight: 600; }
+
+/* ---- Numbered cards (lines of development / problems addressed) ---- */
+.num-cards { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.num-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+}
+.num-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-strong); border-color: var(--accent); }
+.num-card__n {
+  font-size: 1.05rem; font-weight: 800;
+  width: 2.2rem; height: 2.2rem; border-radius: 12px;
+  display: grid; place-items: center; margin-bottom: .9rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand-blue), var(--accent-strong));
+  box-shadow: 0 6px 16px rgba(47,123,255,.35);
+}
+.num-card h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+.num-card p { color: var(--text-muted); margin: 0; }
+.num-card ul { margin: .7rem 0 0; padding-left: 1.1rem; color: var(--text-muted); display: grid; gap: .35rem; }
+.num-card ul li::marker { color: var(--accent); }
+
+/* ---- Tag chips (disciplines, methods) ---- */
+.tags { display: flex; flex-wrap: wrap; gap: .55rem; margin: .4rem 0 1rem; }
+.tag {
+  font-size: .82rem; font-weight: 500;
+  padding: .4rem .85rem; border-radius: 999px;
+  background: var(--surface-2); color: var(--text);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .project-facts { margin-top: 0; }
+}

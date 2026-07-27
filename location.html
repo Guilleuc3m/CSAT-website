@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
   <title>Location — CSAT | UC3M</title>
   <meta name="description" content="CSAT — Center for Space Technology and nano/micro SATellites at UC3M.">
   <script>
@@ -18,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/location.css">
 </head>
 <body data-page="about">
 
@@ -28,9 +31,6 @@
         <img src="images/logo/csat-logo.png" alt="CSAT">
       </a>
       <nav class="nav" aria-label="Main navigation">
-        <div class="nav-item" data-nav="home">
-          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
-        </div>
         <div class="nav-item has-dropdown" data-nav="about">
           <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
             <span data-i18n="nav.about">About Us</span>
@@ -50,6 +50,26 @@
             <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
             <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
             <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+            <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
           </div>
         </div>
         <div class="nav-item" data-nav="contact">
@@ -75,27 +95,89 @@
   </header>
 
   <main class="page-top">
-    <section class="page-hero" style="min-height:52vh;display:grid;place-items:center">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
       <div class="container">
-        <span class="eyebrow" data-i18n="soon.eyebrow">Coming soon</span>
-        <h1 data-i18n="nav.location">Location</h1>
-        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="soon.body">This section is being prepared and will be available shortly.</p>
-        <div class="hero__cta" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem">
-          <a class="btn btn-primary" href="index.html" data-i18n="soon.home">Back to home</a>
-          <a class="btn btn-ghost" href="contact.html" data-i18n="soon.contact">Contact us</a>
-        </div>
+        <span class="eyebrow" data-i18n="location.eyebrow">About Us</span>
+        <h1 data-i18n="location.title">Where to find us</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="location.intro">CSAT operates across three UC3M sites in the Madrid region, Leganés campus, Science Park (PTL) and Colmenarejo. Our main facility is located in Leganés campus.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container locations">
+
+        <!-- Leganés -->
+        <article class="location-row reveal" id="leganes">
+          <div class="location-map">
+            <iframe title="Map — CSAT Leganés" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Universidad%20Carlos%20III%20de%20Madrid%20Legan%C3%A9s&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+          <div class="location-info">
+            <h2>CSAT — Leganés</h2>
+            <p class="address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Universidad Carlos III de Madrid, Escuela Politécnica Superior. Avenida de la Universidad, 30, 28911 Leganés, Madrid.</span>
+            </p>
+            <p data-i18n="location.desc_leganes">Our main facility, located at UC3M's Leganés campus in the south of Madrid. Home to our cleanroom, integration labs and mission control center.</p>
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.uc3m.es/about-uc3m/how-to-get-here/leganes-campus">
+              <span data-i18n="location.directions">How to get here</span> ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- PTL -->
+        <article class="location-row reveal" id="ptl">
+          <div class="location-map">
+            <iframe title="Map — CSAT PTL" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Parque%20Tecnol%C3%B3gico%2C%20Av.%20Gregorio%20Peces%20Barba%2C%201%2C%2028919%20Legan%C3%A9s&t=&z=16&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+          <div class="location-info">
+            <h2>CSAT — PTL</h2>
+            <p class="address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Parque Tecnológico, Av. Gregorio Peces Barba, 1, 28919 Leganés, Madrid.</span>
+            </p>
+            <p data-i18n="location.desc_ptl">Located at the Leganés Science Park, this facility hosts our photonics lab, dedicated to the development of advanced optical communication payloads.</p>
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.uc3m.es/about-uc3m/how-to-get-here/science-park+">
+              <span data-i18n="location.directions">How to get here</span> ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Colmenarejo -->
+        <article class="location-row reveal" id="colmenarejo">
+          <div class="location-map">
+            <iframe title="Map — CSAT Colmenarejo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Universidad%20Carlos%20III%20de%20Madrid%20Colmenarejo&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+          <div class="location-info">
+            <h2>CSAT — Colmenarejo</h2>
+            <p class="address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Universidad Carlos III de Madrid, Campus de Colmenarejo. Avenida de la Universidad Carlos III, 22, 28270 Colmenarejo, Madrid.</span>
+            </p>
+            <p data-i18n="location.desc_colmenarejo">Located at UC3M's Colmenarejo campus, west of Madrid. This facility houses our advanced radiometry equipment for electromagnetic measurement and satellite payload testing.</p>
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://www.uc3m.es/about-uc3m/how-to-get-here/colmenarejo-campus">
+              <span data-i18n="location.directions">How to get here</span> ↗
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
   </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-    <div class="footer-banner"><span data-i18n="footer.banner">Reaching for orbit</span></div>
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
           <img src="images/logo/csat-logo.png" alt="CSAT">
-          <p data-i18n="footer.tagline">Center for Space Technology &amp; nano/micro SATellites</p>
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
         </div>
         <div>
           <h4 data-i18n="footer.explore">Explore</h4>
@@ -109,7 +191,7 @@
         <div>
           <h4 data-i18n="footer.contact">Contact</h4>
           <ul class="footer-links">
-            <li><a href="mailto:info@csat.uc3m.es">info@csat.uc3m.es</a></li>
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
             <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
           </ul>
         </div>

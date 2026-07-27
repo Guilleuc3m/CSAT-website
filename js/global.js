@@ -11,6 +11,13 @@
   var STORAGE_LANG = "csat-lang";
   var root = document.documentElement;
 
+  /* ===== CONFIG =============================================================
+     St3llarsat external site. When the project gets its own website, put the
+     URL here and the "Project website" menu item starts working automatically.
+     Leave it empty ("") until then and the link stays inert. */
+  var STELLARSAT_URL = "";
+  /* ========================================================================= */
+
   /* ---- Theme -------------------------------------------------------------
      The initial theme is set by an inline <head> script to avoid flashing.
      Here we only wire the toggle button. */
@@ -80,6 +87,42 @@
       });
     });
 
+    // St3llarsat external link: activate it only once STELLARSAT_URL is set
+    var stellarLink = document.getElementById("stellarsat-external");
+    if (stellarLink) {
+      if (STELLARSAT_URL) {
+        stellarLink.setAttribute("href", STELLARSAT_URL);
+      } else {
+        stellarLink.classList.add("is-disabled");
+        stellarLink.setAttribute("aria-disabled", "true");
+        stellarLink.addEventListener("click", function (e) { e.preventDefault(); });
+      }
+    }
+
+    // Inactive links (e.g. team email icons): keep the hover/press animation
+    // but don't navigate anywhere for now.
+    document.querySelectorAll("a.is-inactive").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); });
+    });
+
+    // Deep-link centering: when the page loads with a #hash pointing at an
+    // element (e.g. location.html#leganes), center that section in the viewport.
+    // Done instantly (not smooth) once everything has laid out, so it's reliable.
+    var centerHash = function () {
+      if (location.hash.length <= 1) return;
+      var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!el) return;
+      var prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      el.scrollIntoView({ block: "center" });
+      root.style.scrollBehavior = prev;
+    };
+    if (location.hash.length > 1) {
+      window.addEventListener("load", function () { setTimeout(centerHash, 40); });
+      // also try soon after DOM ready in case load already fired
+      setTimeout(centerHash, 120);
+    }
+
     // Sticky header shadow on scroll
     var header = document.querySelector(".site-header");
     if (header) {
@@ -111,6 +154,42 @@
       reveals.forEach(function (el) { io.observe(el); });
     } else {
       reveals.forEach(function (el) { el.classList.add("in"); });
+    }
+
+    // Lightbox: click any content image inside <main> to enlarge it.
+    // Opt out with class "no-zoom" on the <img>.
+    var main = document.querySelector("main");
+    if (main) {
+      var lb = document.createElement("div");
+      lb.className = "lightbox";
+      lb.setAttribute("role", "dialog");
+      lb.setAttribute("aria-modal", "true");
+      lb.innerHTML = '<button class="lightbox__close" type="button" aria-label="Close">×</button><img alt="">';
+      document.body.appendChild(lb);
+      var lbImg = lb.querySelector("img");
+
+      var openLb = function (src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || "";
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+      };
+      var closeLb = function () {
+        lb.classList.remove("open");
+        document.body.style.overflow = "";
+        lbImg.src = "";
+      };
+
+      main.addEventListener("click", function (e) {
+        var t = e.target;
+        if (t && t.tagName === "IMG" && !t.classList.contains("no-zoom")) {
+          openLb(t.currentSrc || t.src, t.alt);
+        }
+      });
+      lb.addEventListener("click", closeLb); // click anywhere (incl. image/close) dismisses
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lb.classList.contains("open")) closeLb();
+      });
     }
   });
 })();

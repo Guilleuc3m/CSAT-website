@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
   <title>Team — CSAT | UC3M</title>
   <meta name="description" content="The faculty and staff behind CSAT — Center for Space Technology and nano/micro SATellites at UC3M.">
   <script>
@@ -29,9 +31,6 @@
         <img src="images/logo/csat-logo.png" alt="CSAT">
       </a>
       <nav class="nav" aria-label="Main navigation">
-        <div class="nav-item" data-nav="home">
-          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
-        </div>
         <div class="nav-item has-dropdown" data-nav="about">
           <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
             <span data-i18n="nav.about">About Us</span>
@@ -51,6 +50,26 @@
             <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
             <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
             <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+            <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
           </div>
         </div>
         <div class="nav-item" data-nav="contact">
@@ -80,8 +99,8 @@
     <section class="page-hero">
       <div class="container">
         <span class="eyebrow" data-i18n="team.hero.eyebrow">About Us</span>
-        <h1 data-i18n="team.hero.title">Our Team</h1>
-        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="team.hero.subtitle">The faculty and staff behind CSAT's research and operations.</p>
+        <h1 data-i18n="team.hero.title">Our Team in Leganés</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="team.hero.subtitle">The faculty and staff behind CSAT's research and operations in Leganés facility.</p>
       </div>
     </section>
 
@@ -92,30 +111,30 @@
           <h2 class="team-group__title" data-i18n="team.faculty">Faculty</h2>
           <div class="team-grid">
             <div class="card member reveal">
-              <div class="member__photo">A</div>
-              <div class="member__name">Andrés</div>
-              <div class="member__role" data-i18n="team.role.faculty">Faculty Member</div>
+              <div class="member__photo"><img src="images/team/andres.jpg" alt="Andrés Marcos Esteban" class="no-zoom"></div>
+              <div class="member__name"><a href="https://aero.uc3m.es/people/andres-marcos-esteban/" target="_blank" rel="noopener">Andrés Marcos Esteban</a></div>
+              <div class="member__role" data-i18n="team.role.director">Director</div>
               <div class="member__links">
-                <a href="#" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
-                <a href="mailto:#" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="https://www.linkedin.com/in/andres-marcos-40254bb/" target="_blank" rel="noopener" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
+                <a href="#" class="is-inactive" aria-disabled="true" tabindex="-1" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
               </div>
             </div>
             <div class="card member reveal d1">
-              <div class="member__photo">D</div>
-              <div class="member__name">Diego</div>
+              <div class="member__photo"><img src="images/team/diego.jpg" alt="Diego Navarro - Tapia" class="no-zoom"></div>
+              <div class="member__name">Diego Navarro - Tapia</div>
               <div class="member__role" data-i18n="team.role.faculty">Faculty Member</div>
               <div class="member__links">
-                <a href="#" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
-                <a href="mailto:#" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="https://www.linkedin.com/in/diego-navarrotapia/" target="_blank" rel="noopener" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
+                <a href="mailto:dinavarr@ing.uc3m.es" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
               </div>
             </div>
             <div class="card member reveal d2">
-              <div class="member__photo">G</div>
-              <div class="member__name">Gabriele</div>
+              <div class="member__photo"><img src="images/team/gabriele.jpg" alt="Gabriele Dessena" class="no-zoom"></div>
+              <div class="member__name"><a href="https://aero.uc3m.es/people/gabriele-dessena/" target="_blank" rel="noopener">Gabriele Dessena</a></div>
               <div class="member__role" data-i18n="team.role.faculty">Faculty Member</div>
               <div class="member__links">
-                <a href="#" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
-                <a href="mailto:#" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="https://www.linkedin.com/in/gabriele-dessena/" target="_blank" rel="noopener" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
+                <a href="mailto:gdessena@ing.uc3m.es" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
               </div>
             </div>
           </div>
@@ -126,30 +145,28 @@
           <h2 class="team-group__title" data-i18n="team.staff">Staff</h2>
           <div class="team-grid">
             <div class="card member reveal">
-              <div class="member__photo">G</div>
-              <div class="member__name">Guillermo</div>
-              <div class="member__role" data-i18n="team.role.staff">Laboratory Staff</div>
+              <div class="member__photo"><img src="images/team/guillermo.jpg" alt="Guillermo Toledo Aponte" class="no-zoom"></div>
+              <div class="member__name">Guillermo Toledo Aponte</div>
+              <div class="member__role" data-i18n="team.role.staff">Researcher &amp; Laboratory Staff</div>
               <div class="member__links">
-                <a href="#" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
-                <a href="mailto:#" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+                <a href="https://www.linkedin.com/in/guillermotoledoa/" target="_blank" rel="noopener" data-i18n-attr="aria-label:team.linkedin" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
+                <a href="mailto:gtaponte@pa.uc3m.es" data-i18n-attr="aria-label:team.email" aria-label="Send email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="muted center team-note" data-i18n="team.note">Photos and full profiles are placeholders and will be updated soon.</p>
       </div>
     </section>
   </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-    <div class="footer-banner"><span data-i18n="footer.banner">Reaching for orbit</span></div>
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
           <img src="images/logo/csat-logo.png" alt="CSAT">
-          <p data-i18n="footer.tagline">Center for Space Technology &amp; nano/micro SATellites</p>
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
         </div>
         <div>
           <h4 data-i18n="footer.explore">Explore</h4>
@@ -163,7 +180,7 @@
         <div>
           <h4 data-i18n="footer.contact">Contact</h4>
           <ul class="footer-links">
-            <li><a href="mailto:info@csat.uc3m.es">info@csat.uc3m.es</a></li>
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
             <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
           </ul>
         </div>
