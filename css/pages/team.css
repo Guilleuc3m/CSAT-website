@@ -61,6 +61,8 @@
   transition: all .25s var(--ease);
 }
 .member__links a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); background: var(--surface-2); }
+/* Inactive social button: same look as the others, but no hover glow and no action on click */
+.member__links a.is-inactive { cursor: default; pointer-events: none; }
 .member__links svg { width: 18px; height: 18px; }
 
 .team-note { margin-top: 2.5rem; font-size: .9rem; }

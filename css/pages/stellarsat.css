@@ -1,0 +1,261 @@
+/* ST3LLARsat — program overview.
+   This page deliberately shares the project-page vocabulary (it also loads
+   css/pages/projects.css for .project-facts, .facts, .result-list, .tags),
+   and adds the pieces a *program* needs and a project does not: a leadership
+   board, headline metrics, in-page navigation, captioned figures, an
+   acknowledgements wall and the full team roster. */
+
+/* ---- Hero: same compact band as the project pages ---- */
+.program-hero { padding-block: clamp(38px, 5.5vw, 64px) clamp(26px, 4vw, 44px); }
+
+/* ---- Leadership board (inside the fact-sheet card) ------------------------
+   Bigger than the project pages' .person row: three people with real photos,
+   laid out as equal columns. */
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.4rem;
+}
+.board-member { display: flex; align-items: center; gap: .9rem; min-width: 0; }
+.board-member__photo {
+  width: 58px; height: 58px; border-radius: 50%; flex: none;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  background: var(--surface-2);
+  transition: border-color .3s var(--ease);
+}
+.board-member:hover .board-member__photo { border-color: var(--accent); }
+.board-member__meta { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
+.board-member__role {
+  font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--accent);
+}
+.board-member__name { font-weight: 600; color: var(--text); }
+.board-member__dept { font-size: .85rem; color: var(--text-muted); }
+
+/* ---- Headline metrics ----------------------------------------------------
+   The signature element of this page: the program at a glance. */
+.metrics-head {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .35rem; margin-bottom: 1.6rem; text-align: center;
+}
+.metrics-head h2 { margin: 0; }
+.metrics-head .as-of {
+  font-size: .78rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.metrics {
+  display: grid;
+  /* 290px keeps the six metrics on a clean 3x2 grid at desktop width */
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.1rem;
+}
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.3rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+}
+.metric::before {
+  /* accent bar that grows on hover */
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--brand-blue), var(--accent-strong));
+  transform: scaleY(0); transform-origin: top;
+  transition: transform .3s var(--ease);
+}
+.metric:hover { transform: translateY(-5px); box-shadow: var(--shadow-strong); border-color: var(--accent); }
+.metric:hover::before { transform: scaleY(1); }
+.metric__n {
+  font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 800; line-height: 1;
+  letter-spacing: -.02em; color: var(--accent); margin-bottom: .45rem;
+}
+.metric__label { font-weight: 600; color: var(--text); line-height: 1.35; }
+.metric__note { font-size: .84rem; color: var(--text-muted); margin-top: .3rem; }
+
+/* ---- In-page navigation (long page → let readers jump) ---- */
+.jump-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin-top: 1.8rem; }
+.jump-nav a {
+  font-size: .85rem; font-weight: 500;
+  padding: .45rem .95rem; border-radius: 999px;
+  background: var(--surface-2); color: var(--text);
+  border: 1px solid var(--border);
+  transition: all .22s var(--ease);
+}
+.jump-nav a:hover {
+  text-decoration: none; color: var(--accent);
+  border-color: var(--accent); transform: translateY(-2px);
+}
+
+/* ---- Sections separated by a hairline instead of heavy blocks ---- */
+.program-section { border-top: 1px solid var(--border); scroll-margin-top: calc(var(--header-h) + 16px); }
+
+/* Centred composition: the reading column sits in the middle of the container
+   and the paragraphs stay left-aligned, which is what reads well.
+   --prose-w is the single source of truth for that column's width, so the
+   headings of the text sections can line up with it exactly. */
+.program-section { --prose-w: 707px; } /* ≈ the 70ch of .project-body at the site's base size */
+.program-section > .container > h2 { margin-bottom: 1.2rem; text-align: center; }
+.program-section .project-body { max-width: var(--prose-w); margin-inline: auto; }
+.program-section .tags { justify-content: center; }
+
+/* Sections built around a block of prose read better with the heading over the
+   text: left-aligned, but sharing the reading column's left edge. The standalone
+   sections (metrics, acknowledgements, team) keep their centred headings. */
+.program-section--prose > .container > h2 {
+  text-align: left;
+  max-width: var(--prose-w);
+  margin-inline: auto;
+}
+
+/* ---- Captioned figures ----
+   Kept close to the width of the reading column so they don't dwarf the text. */
+.figure { margin: 2rem auto 0; max-width: 760px; }
+.figure__frame {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: clamp(.8rem, 2vw, 1.4rem);
+  display: grid; place-items: center;
+}
+.figure__frame img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.figure figcaption {
+  margin-top: .7rem; font-size: .87rem; color: var(--text-muted); text-align: center;
+}
+.figure figcaption strong { color: var(--text); font-weight: 600; }
+.figure figcaption a { color: var(--accent); }
+
+/* Figure 1 sits next to its size legend */
+.figure--split .figure__frame { display: grid; grid-template-columns: 200px 1fr; gap: clamp(1rem, 3vw, 2rem); align-items: center; }
+.size-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; font-weight: 600; color: var(--text); }
+.size-legend li { display: flex; gap: .5rem; font-variant-numeric: tabular-nums; }
+.size-legend b { color: var(--accent); min-width: 2.6rem; }
+
+/* Placeholder frame (Figure 3, until the collage is ready) */
+.figure__frame.is-placeholder {
+  border-style: dashed;
+  box-shadow: none;
+  background:
+    radial-gradient(600px 300px at 30% 20%, rgba(47,123,255,.14), transparent 60%),
+    linear-gradient(140deg, var(--surface-2), var(--surface));
+  min-height: 240px;
+  color: var(--text-muted);
+  font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+  text-align: center;
+}
+
+/* ---- Acknowledgements wall ---- */
+.ack-wall {
+  display: grid;
+  /* 320px keeps the six acknowledgements on a 3x2 grid, mirroring the metrics */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+.ack {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.4rem;
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 1rem;
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease);
+}
+.ack:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); }
+.ack__logos { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; min-height: 84px; }
+.ack__logos img { max-height: 84px; max-width: 100%; width: auto; height: auto; object-fit: contain; }
+/* Near-square logos (ESA) look undersized at the shared cap — give them more
+   height so their visual weight matches the wide ones. */
+.ack__logos--tall { min-height: 132px; }
+.ack__logos--tall img { max-height: 132px; }
+.ack p { margin: 0; color: var(--text-muted); font-size: .93rem; line-height: 1.5; }
+.ack strong { color: var(--text); font-weight: 600; }
+/* Dark theme: several logos are dark-on-transparent, keep them legible */
+[data-theme="dark"] .ack__logos img { background: #fff; border-radius: 8px; padding: 6px 10px; }
+
+/* ---- Team ---- */
+.crew-group + .crew-group { margin-top: clamp(2.2rem, 4vw, 3.2rem); }
+.crew-group__title {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 1.4rem;
+  font-size: 1.15rem;
+}
+.crew-group__title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+.crew {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 1.2rem;
+}
+.crew-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+}
+.crew-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-strong); border-color: var(--accent); }
+.crew-card__photo {
+  width: 82px; height: 82px; border-radius: 50%;
+  object-fit: cover; margin-bottom: .9rem;
+  border: 2px solid var(--border);
+  background: var(--surface-2);
+  transition: border-color .3s var(--ease), transform .3s var(--ease);
+}
+.crew-card:hover .crew-card__photo { border-color: var(--accent); transform: scale(1.04); }
+/* Initials avatar for the members whose photo is not available yet */
+.crew-card__photo--ph {
+  display: grid; place-items: center;
+  color: var(--text-muted); font-size: 1.1rem; font-weight: 700; letter-spacing: .04em;
+  border-style: dashed;
+}
+.crew-card__role {
+  font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: .3rem;
+}
+.crew-card__name { font-size: 1.05rem; font-weight: 700; margin-bottom: .15rem; }
+.crew-card__dept { font-size: .87rem; color: var(--text-muted); margin-bottom: .8rem; }
+.crew-card__since {
+  font-size: .74rem; font-weight: 600; letter-spacing: .04em;
+  padding: .25rem .7rem; border-radius: 999px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted);
+  margin-bottom: .9rem;
+}
+.crew-card__exp { font-size: .9rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+.crew-card__exp .lbl {
+  display: block; font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--text-muted); opacity: .75; margin-bottom: .2rem;
+}
+
+/* Associate members: a compact roster — no photos in the source document, so a
+   clean list reads better (and faster) than half-empty cards. */
+.roster { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.roster li {
+  display: grid; grid-template-columns: 130px 1fr; gap: 1rem; align-items: baseline;
+  padding: .8rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color .22s var(--ease), transform .22s var(--ease);
+}
+.roster li:hover { border-color: var(--accent); transform: translateX(3px); }
+.roster__since {
+  font-size: .76rem; font-weight: 700; letter-spacing: .04em;
+  color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.roster__who strong { color: var(--text); font-weight: 600; }
+.roster__who { color: var(--text-muted); font-size: .95rem; line-height: 1.5; }
+
+@media (max-width: 720px) {
+  .figure--split .figure__frame { grid-template-columns: 1fr; }
+  .size-legend { justify-items: center; }
+  .roster li { grid-template-columns: 1fr; gap: .2rem; }
+}
+@media (max-width: 640px) {
+  .metrics-head { margin-bottom: 1.2rem; }
+}

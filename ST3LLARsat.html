@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="images/logo/favicon.png">
   <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
   <title>ST3LLARsat — CSAT | UC3M</title>
-  <meta name="description" content="ST3LLARsat — CSAT's nano/micro-satellite (CubeSat) program at UC3M.">
+  <meta name="description" content="ST3LLARsat — UC3M's student-based CubeSat program: educational integration in the Master in Space Engineering, participation in ESA Fly Your Satellite! Design Booster, team and metrics.">
   <script>
     (function () {
       try {
@@ -20,6 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+  <link rel="stylesheet" href="css/pages/stellarsat.css">
 </head>
 <body data-page="stellarsat">
 
@@ -94,17 +96,376 @@
   </header>
 
   <main class="page-top">
-    <section class="page-hero" style="min-height:52vh;display:grid;place-items:center">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="page-hero program-hero">
       <div class="container">
-        <span class="eyebrow" data-i18n="soon.eyebrow">Coming soon</span>
+        <span class="eyebrow" data-i18n="st.eyebrow">CSAT Program</span>
         <h1>ST3LLARsat</h1>
-        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="soon.body">This section is being prepared and will be available shortly.</p>
-        <div class="hero__cta" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem">
-          <a class="btn btn-primary" href="index.html" data-i18n="soon.home">Back to home</a>
-          <a class="btn btn-ghost" href="contact.html" data-i18n="soon.contact">Contact us</a>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="st.tagline">UC3M's student-based CubeSat program</p>
+      </div>
+    </section>
+
+    <!-- ===================== FACT SHEET ===================== -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="project-facts reveal">
+
+          <!-- Leadership board -->
+          <div class="board">
+            <div class="board-member">
+              <img class="board-member__photo" src="images/team/andres.jpg" alt="Andrés Marcos Esteban">
+              <div class="board-member__meta">
+                <span class="board-member__role" data-i18n="st.role.director">Director</span>
+                <span class="board-member__name">Prof. Andrés Marcos Esteban</span>
+                <span class="board-member__dept">DAE</span>
+              </div>
+            </div>
+            <div class="board-member">
+              <img class="board-member__photo" src="images/team/diego.jpg" alt="Diego Navarro-Tapia">
+              <div class="board-member__meta">
+                <span class="board-member__role" data-i18n="st.role.codirector">Co-Director</span>
+                <span class="board-member__name">Dr. Diego Navarro-Tapia</span>
+                <span class="board-member__dept">DAE</span>
+              </div>
+            </div>
+            <div class="board-member">
+              <img class="board-member__photo" src="images/team/gabriele.jpg" alt="Gabriele Dessena">
+              <div class="board-member__meta">
+                <span class="board-member__role" data-i18n="st.role.codirector">Co-Director</span>
+                <span class="board-member__name">Prof. Gabriele Dessena</span>
+                <span class="board-member__dept">DAE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key data -->
+          <div class="facts">
+            <div class="fact">
+              <span class="fact__label" data-i18n="st.fact.duration">Duration</span>
+              <span class="fact__value" data-i18n="st.duration">Started in September 2022 — ongoing</span>
+            </div>
+            <div class="fact fact--wide">
+              <span class="fact__label" data-i18n="st.fact.webpages">External webpages</span>
+              <span class="fact__value">
+                <a href="https://st3llar.uc3m.es/" target="_blank" rel="noopener">st3llar.uc3m.es</a>
+                &nbsp;·&nbsp;
+                <a href="https://aero.uc3m.es/?s=st3llar+boira" target="_blank" rel="noopener">aero.uc3m.es</a>
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- ===================== METRICS ===================== -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="metrics-head">
+          <h2 data-i18n="st.metrics.h">The program in numbers</h2>
+          <span class="as-of" data-i18n="st.metrics.asof">as of July 2026</span>
+        </div>
+        <div class="metrics reveal">
+          <div class="metric">
+            <div class="metric__n">172</div>
+            <div class="metric__label" data-i18n="st.metric1.label">Students involved</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">732</div>
+            <div class="metric__label" data-i18n="st.metric2.label">ECTS credits obtained by the students</div>
+            <div class="metric__note" data-i18n="st.metric2.note">= 18,300 hours (1 ECTS = 25 hours)</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">16</div>
+            <div class="metric__label" data-i18n="st.metric3.label">Theses defended</div>
+            <div class="metric__note" data-i18n="st.metric3.note">4 undergraduate, 12 master (+ 3 ongoing)</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">21</div>
+            <div class="metric__label" data-i18n="st.metric4.label">Dissemination outputs</div>
+            <div class="metric__note" data-i18n="st.metric4.note">12 posters, 4 presentations, 5 conference articles</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">38</div>
+            <div class="metric__label" data-i18n="st.metric5.label">Students accepted to ESA training courses</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">1,108</div>
+            <div class="metric__label" data-i18n="st.metric6.label">Teaching hours received in ESA training courses</div>
+          </div>
+        </div>
+
+        <nav class="jump-nav" aria-label="On this page">
+          <a href="#cubesats" data-i18n="st.jump.cubesats">CubeSats</a>
+          <a href="#mise" data-i18n="st.jump.mise">Educational integration</a>
+          <a href="#esa" data-i18n="st.jump.esa">ESA FYS! Design Booster</a>
+          <a href="#acknowledgements" data-i18n="st.jump.ack">Acknowledgements</a>
+          <a href="#team" data-i18n="st.jump.team">Team</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO ===================== -->
+    <section class="section program-section">
+      <div class="container">
+        <div class="project-body">
+          <p class="lead" data-i18n-html="st.intro.p1"><strong>ST3LLARsat</strong> is the student-based CubeSat program at the <a href="https://www.uc3m.es/" target="_blank" rel="noopener">Universidad Carlos III de Madrid</a> (UC3M), a public Spanish university founded in 1989. The program is integrated in <strong>UC3M's Master in Space Engineering</strong> (<strong><a href="https://www.uc3m.es/master/space-engineering" target="_blank" rel="noopener">MISE</a></strong>) and was proposed in early 2021 but officially began in September 2022 with the start of <strong>its first mission, ST3LLARsat1 &ldquo;Boira&rdquo;</strong>.</p>
+          <p data-i18n="st.intro.p2">Its aim is to provide UC3M engineering students with hands-on training on a real space project as well as non-academic skills such as team dynamics and leadership, engineering trade-offs (considering not only performance, but also practical constraints such as cost and complexity), and awareness and use of space standards.</p>
+          <p data-i18n-html="st.intro.p3">The name of the program comes from the funding source that enabled to start the 1st mission: the <strong>UC3M-SENER aerospace chair <a href="https://st3llar.uc3m.es/" target="_blank" rel="noopener">ST3LLAR</a></strong>. This University-Industry chair was active from 2018 until 2024 and was established to enhance the educational and research collaboration in space technology between 6 UC3M research groups (from 4 departments) and the aerospace division of <a href="https://www.group.sener/mercados/espacio/" target="_blank" rel="noopener">SENER</a>, one of the largest Spanish technological companies.</p>
+          <p data-i18n="st.intro.p4">Since the ST3LLARsat program began, more than 170 students have participated as volunteers or receiving ECTS credits for their work, 16 undergraduate/graduate theses have been defended, and 21 dissemination outputs produced. Similarly, the supervisory team has grown from 2 to 9 professors plus 7 experts that provide occasional support or were involved in previous years.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CUBESATS ===================== -->
+    <section class="section program-section program-section--prose" id="cubesats">
+      <div class="container">
+        <h2 data-i18n="st.cubesats.h">Brief introduction to CubeSats</h2>
+        <div class="project-body">
+          <p data-i18n="st.cubesats.p1">The idea of CubeSats started in 1999 by profs Bob Twiggs (Space Systems Development Lab, Stanford University) and prof. Jordi Puig-Suari (California Polytechnic State University, CalPoly). Their aim was to teach students space engineering by establishing a hands-on project where the goal was to design, integrate, verify, launch, and operate a satellite the size of a 10 cm cube.</p>
+          <p data-i18n="st.cubesats.p2">Generally, CubeSats are defined as a standardized satellite characterized by:</p>
+          <ul class="result-list">
+            <li data-i18n-html="st.cubesats.i1">A <strong>modular size</strong> of a 10x10x10 cm cube (known as the &ldquo;1U&rdquo; format)</li>
+            <li data-i18n-html="st.cubesats.i2">A <strong>weight per cube</strong> between 1.33 – 2 kg (depending on the agency: ESA, NASA)</li>
+            <li data-i18n-html="st.cubesats.i3">All the <strong>functionalities and subsystems</strong> of a standard satellite: structure, power, on-board computer/software, telecommunications, control/estimation, thermal, payload…</li>
+            <li data-i18n-html="st.cubesats.i4"><strong>Scalability:</strong> from 1U to a maximum of 27U (from 1 to 50 kg in weight), see Figure 1.</li>
+          </ul>
+        </div>
+
+        <figure class="figure figure--split">
+          <div class="figure__frame">
+            <ul class="size-legend">
+              <li><b>1U</b> 10x10x10 cm</li>
+              <li><b>2U</b> 10x10x20 cm</li>
+              <li><b>3U</b> 10x10x30 cm</li>
+              <li><b>6U</b> 10x20x30 cm</li>
+              <li><b>12U</b> 20x20x30 cm</li>
+              <li><b>27U</b> 30x30x30 cm</li>
+            </ul>
+            <img src="images/st3llarsat_overview/Im_1.png" alt="CubeSat size range, from 1U to 12U">
+          </div>
+          <figcaption data-i18n-html="st.fig1.cap"><strong>Figure 1.</strong> CubeSats size range. Source: <a href="https://www.nasa.gov/what-are-smallsats-and-cubesats/" target="_blank" rel="noopener">NASA — What are SmallSats and CubeSats?</a></figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="st.cubesats.p3">Of some 29,000 estimated universities in the world, only about 200 have successfully launched a satellite. Most, for their first mission, used a 1U CubeSat platform due to its 'ease' and low cost, especially since the success rate for a first university mission is around 50%, which increases to 75-80% for the second attempt. This demonstrates that it is a learning experience and that it is wise to carry out a first mission at a low cost and low risk (such as for 1U-2U) and then carry out more complex missions (from the perspective of size or scientific-technical payload).</p>
+          <p data-i18n="st.cubesats.p4">Their success is that, despite their size, it has been shown that they can perform all kinds of missions:</p>
+        </div>
+        <div class="tags" style="margin-top:.2rem">
+          <span class="tag" data-i18n="st.cubesats.t1">Educational</span>
+          <span class="tag" data-i18n="st.cubesats.t2">Scientific — monitoring of Earth (climate/atmosphere/…) and of Space (X-rays/Sun/…)</span>
+          <span class="tag" data-i18n="st.cubesats.t3">Commercial — telecommunication, Internet-of-Things, navigation, security…</span>
+          <span class="tag" data-i18n="st.cubesats.t4">In-Orbit Demonstration (IOD) of technology</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MISE INTEGRATION ===================== -->
+    <section class="section program-section program-section--prose" id="mise">
+      <div class="container">
+        <h2 data-i18n="st.mise.h">ST3LLARsat educational integration in the Master in Space Engineering (MISE)</h2>
+        <div class="project-body">
+          <p data-i18n="st.mise.p1">As an educational program, a CubeSat development project is one of the most comprehensive and challenging that can be found at universities — especially the first time it is done. They are multidisciplinary and multifaceted, requiring expertise and knowledge on theory and practice, software and hardware, academic knowledge and engineering application, procurement and legal, and of course all the engineering branches: space, mechanical, electronics, computers, mathematics, and telecommunications among others.</p>
+          <p data-i18n="st.mise.p2">To make it work, but specially to guarantee the continuity of the program beyond a first mission, the best approach is to formally integrate such program within the curricula of a degree, so that at least part of the professors' time is formally covered by their teaching and supervision duties and part of the students' time is also covered by credit-awarded work.</p>
+          <p data-i18n-html="st.mise.p3"><strong>ST3LLARsat is integrated, see Figure 2, within <a href="https://www.uc3m.es/master/space-engineering" target="_blank" rel="noopener">UC3M's Master in Space Engineering</a> (MISE)</strong>, which is a 1.5-years degree (90 ECTS) involving 8 departments at UC3M and led by the aerospace engineering department (DAE). The MISE was established in 2018/19 with the aim to provide the comprehensive and specialized training required by the space industry. It is taught in English and consists of a 1st year of core formative courses, and a 2nd year formed by a mix of elective courses and thesis/projects options.</p>
+          <p data-i18n="st.mise.p4">Since 2022 it has been adapted to formally include the student CubeSat program in its curricula by performing a CubeSat feasibility study during the 1st year core &ldquo;Spacecraft Pre-Design (SPD)&rdquo; course and then performing the development of the current ST3LLARsat# mission via 2nd year Master thesis (TFM) projects and/or the optional &ldquo;Integral Project (IP)&rdquo; course. During the latter, the credit-registered 2nd year students assume the role of subsystem leaders and are supported by 1st year MISE volunteers. The conclusion of the 2nd year MISE-IP course is around December while the start of the 1st year MISE-SPD course is in January and lasts until late May, so the handover and transfer of knowledge between students of the different cohorts can be smoothly aligned except for the Summer (where TFM work and practical training are used to bridge the gap in time between academic years).</p>
+        </div>
+
+        <figure class="figure">
+          <div class="figure__frame">
+            <img src="images/st3llarsat_overview/Im_2.png" alt="Integration of the ST3LLARsat program in the MISE curriculum">
+          </div>
+          <figcaption data-i18n-html="st.fig2.cap"><strong>Figure 2.</strong> Integration of the ST3LLARsat program in the MISE.</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2.4rem">
+          <p data-i18n-html="st.mise.p5">A CubeSat program benefits from being integrated in a formal degree, but the benefit is mutual since the documentation developed during the former as well as the software/hardware tools can be introduced into the latter's curricula, resulting in a more practical and real-life learning experience for all the students. In the case of UC3M's ST3LLARsat and the MISE, the benefit for the latter from the former was possible to be quantified since <a href="https://buscadordetitulos.madrimasd.org/es/info-titulo/44845" target="_blank" rel="noopener">the MISE's first accreditation</a> (the official process in Spain by which the education authorities evaluate the quality of a degree) was performed in early 2024 (5 years after the start of the MISE and 1.5 after the start of ST3LLARsat) and was awarded 2 'A's out of 6, which positioned the MISE as 1 of only 5 engineering masters in the Comunidad de Madrid with that highest result (from a total of 192 masters at that time). The accreditation team explicitly highlighted the CubeSat program as a key aspect for this outcome.</p>
+          <p data-i18n="st.mise.p6">An example from the curricula perspective of this symbiotic interaction is the evolution that the MISE-SPD course has undergone since 2021/22, when the course was reoriented to focus on CubeSat missions. Specially since 2024/25, the third year of ST3LLARsat1, the course has been adapted following ECSS and CubeSat-CalPoly standards, ESA Academy procedures (acquired from our participation in ESA Fly-Your-Satellite! Design Booster program, see next) and by introducing software and hardware labs based on the tests performed for ST3LLARsat1.</p>
+          <p data-i18n-html="st.mise.p7">The SW labs include the use of specialized SW such as: a.i. solutions' <a href="https://ai-solutions.com/" target="_blank" rel="noopener">FreeFlyer</a> (to estimate orbit lifetime and coverage analysis), ESA's <a href="https://sdup.esoc.esa.int/" target="_blank" rel="noopener">DRAMA</a> (to calculate deorbiting times and debris probability risks), and ADCS detumbling simulators (to calculate the performance of the student teams' control equipment choices and to show them the need to estimate well the MCI (mass/center-mass/moments-inertia) characteristics of their platform). The HW labs, see Figure 3, cover from: (a) building a 3D-printed 1U CubeSat structure: first calculating stresses and maximum loads, and then seeing if it supports the estimated load by physically loading it with weight; (b) building a DIY magnetorquer and testing it in the 3D-printed 1U CubeSat: experiencing first-hand the practical issues of wiring, heat, power-depletion, and space constraints; (c) measuring solar-panel efficiency: and again, experiencing the issue of wiring and of the mismatch between theoretical calculations and actual performance.</p>
+        </div>
+
+        <figure class="figure">
+          <div class="figure__frame is-placeholder">
+            <span data-i18n="st.fig3.ph">Image coming soon</span>
+          </div>
+          <figcaption data-i18n-html="st.fig3.cap"><strong>Figure 3.</strong> MISE-SPD HW labs: ADCS, structural and solar-panel.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== ESA FYS! ===================== -->
+    <section class="section program-section program-section--prose" id="esa">
+      <div class="container">
+        <h2 data-i18n="st.esa.h">Participation in ESA FYS! Design Booster program</h2>
+        <div class="project-body">
+          <p data-i18n="st.esa.p1">The introduction of the CubeSat challenge in the 2021/22 MISE-SPD course and the planned starting date of the ST3LLARsat1 program for September 2022 were not by chance. During 2021, the program director (prof. Marcos) had already been looking for information and support to establish the CubeSat program at UC3M, and in December 2021 he attended an information session by ESA Academy on its 4th Fly-Your-Satellite! (FYS!) program edition. In this presentation, ESA announced the opening of a new, more compact program, the 1.5-year FYS! Design Booster, which was expected to open in Spring 2022 and represented a great opportunity for ST3LLARsat.</p>
+          <p data-i18n="st.esa.p2">The 2021/22 MISE-SPD concluded around end of May '22, and the 1st official information session on ESA's FYS! Design Booster program was held online on 8th June 2022 by ESA Education Office. The proposal submission deadline was set for 2nd October 2022 and thus, ESA FYS!-DB program aligned very well with our planning. The proposal submission, performed in the 2022/23 MISE-IP course, consisted mainly in adapting to the targeted 2U dimension the preliminary analyses from one of the proposed student missions in the 2021/22 MISE-SPD. It is a testament to the work of our MISE students that we were selected in December 2022 by ESA to participate in its FYS! Design Booster program (one of only 5 European university teams, out of 12 pre-selected teams — some of which had already developed and sent CubeSats to space).</p>
+          <p data-i18n="st.esa.p3">Starting in January 2023, the organization and development of ST3LLARsat1 was reshaped around the timeline of the ESA FYS! Design Booster program, which was substantially shorter than our internal planning from June 2022. The high-level ESA objectives for BDR (March '23) were to perform trade-off studies, freeze requirements, select system and subsystems concepts, and establish the CubeSat baseline design. And for FDR (June '24), to finalize system and subsystem analyses, detail the definition of interfaces, and plan the AIVT activities for the future.</p>
+          <p data-i18n="st.esa.p4">ESA FYS! team assigned to ST3LLARsat1 two main contact points (Dr. Loris Franchi and Mr. David Palma), provided a common repository (to facilitate the exchange within the team and with ESA), and established regular status update videoconferences with pre-defined agendas in order to support the ST3LLARsat1 team complete the FDR phase of the program. Dedicated sessions with other ESA experts took place also periodically to discuss trade-offs and component selection, as well as numerous RIDs sessions after the BDR/FDR milestones, all of which resulted in communication exchanges with ESA almost bi-weekly. Internal ST3LLARsat1 meetings were intertwined with the ESA meetings in order to prepare properly for them.</p>
+          <p data-i18n="st.esa.p5">Our participation in ESA's FYS! Design Booster program was challenging, with an intense pace and many documents and collocation meetings, but above all, the program was a really good opportunity to learn, and it helped us take our mission from a feasibility concept to many steps closer to a consolidated system. Thus, the experience was very helpful and fruitful, if a bit stressful and demanding. We would like to acknowledge and thank the support from all the ESA FYS! Design Booster team and experts, and specially from Dr. Loris Franchi and Mr. David Palma.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACKNOWLEDGEMENTS ===================== -->
+    <section class="section program-section" id="acknowledgements">
+      <div class="container">
+        <h2 data-i18n="st.ack.h">Acknowledgements</h2>
+        <div class="ack-wall reveal">
+          <div class="ack">
+            <div class="ack__logos"><img src="images/st3llarsat_overview/Ack_1.png" alt="Gobierno de España · Comunidad de Madrid · UC3M"></div>
+            <p data-i18n-html="st.ack1">Prof. A. Marcos gladly acknowledges the <strong>&ldquo;Senior Distinguished Beatriz Galindo&rdquo; award</strong> by the Spanish government &amp; additional funding by the VPRICIT framework of the Comunidad de Madrid-UC3M.</p>
+          </div>
+          <div class="ack">
+            <div class="ack__logos"><img src="images/st3llarsat_overview/Ack_2.png" alt="ST3LLAR · SENER Aeroespacial"></div>
+            <p data-i18n-html="st.ack2">For funding and expert support, many thanks to the <strong>UC3M-SENER aerospace chair ST3LLAR</strong> and SENER.</p>
+          </div>
+          <div class="ack">
+            <div class="ack__logos ack__logos--tall"><img src="images/st3llarsat_overview/Ack_3.png" alt="ESA · Fly Your Satellite!"></div>
+            <p data-i18n-html="st.ack3">To <strong>ESA Academy</strong> for their expert support, training and providing access to their facilities to our students.</p>
+          </div>
+          <div class="ack">
+            <div class="ack__logos"><img src="images/st3llarsat_overview/Ack_4.png" alt="ESATAN-TMS thermal modelling suite"></div>
+            <p data-i18n-html="st.ack4">For providing free of charge their <strong>thermal modeling software</strong>.</p>
+          </div>
+          <div class="ack">
+            <div class="ack__logos"><img src="images/st3llarsat_overview/Ack_5.png" alt="Ansys STK"></div>
+            <p data-i18n-html="st.ack5">For providing free of charge their <strong>Mission Analysis software</strong>.</p>
+          </div>
+          <div class="ack">
+            <div class="ack__logos"><img src="images/st3llarsat_overview/Ack_6.png" alt="UC3-BASE"></div>
+            <p data-i18n-html="st.ack6">To UC3M's radio-amateur certified student society, for our joint <strong>Ground-Station development</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEAM ===================== -->
+    <section class="section program-section" id="team">
+      <div class="container">
+        <h2 data-i18n="st.team.h">ST3LLAR &amp; ST3LLARsat1 team</h2>
+
+        <!-- Directors -->
+        <div class="crew-group">
+          <h3 class="crew-group__title" data-i18n="st.team.directors">Directors</h3>
+          <div class="crew">
+            <div class="crew-card">
+              <img class="crew-card__photo" src="images/team/andres.jpg" alt="Andrés Marcos">
+              <span class="crew-card__role" data-i18n="st.role.director">Director</span>
+              <div class="crew-card__name">Prof. Andrés Marcos</div>
+              <div class="crew-card__dept">DAE</div>
+              <span class="crew-card__since" data-i18n="st.since.1">2021</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.andres">ADCS, SIL/HIL, AIVT, plus 'jack-of-all-trades' for: electronics, OBSW, thermal, GNSS, TT&amp;C, ConOps</span></p>
+            </div>
+            <div class="crew-card">
+              <img class="crew-card__photo" src="images/team/diego.jpg" alt="Diego Navarro-Tapia">
+              <span class="crew-card__role" data-i18n="st.role.codirector">Co-Director</span>
+              <div class="crew-card__name">Dr. Diego Navarro-Tapia</div>
+              <div class="crew-card__dept">DAE</div>
+              <span class="crew-card__since" data-i18n="st.since.2">June '23</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.diego">ADCS, TT&amp;C, GNSS, ADCS-SIL/HIL</span></p>
+            </div>
+            <div class="crew-card">
+              <img class="crew-card__photo" src="images/team/gabriele.jpg" alt="Gabriele Dessena">
+              <span class="crew-card__role" data-i18n="st.role.codirector">Co-Director</span>
+              <div class="crew-card__name">Prof. Gabriele Dessena</div>
+              <div class="crew-card__dept">DAE</div>
+              <span class="crew-card__since" data-i18n="st.since.3">September '23</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.gabriele">Structures, vibration AIVT, power, thermal</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supervisory team -->
+        <div class="crew-group">
+          <h3 class="crew-group__title" data-i18n="st.team.supervisory">ST3LLARsat1 supervisory team</h3>
+          <div class="crew">
+            <div class="crew-card">
+              <div class="crew-card__photo crew-card__photo--ph" aria-hidden="true">AM</div>
+              <div class="crew-card__name">Dr. Andoni Moral</div>
+              <div class="crew-card__dept">DAE / INTA</div>
+              <span class="crew-card__since" data-i18n="st.since.4">September '22</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.andoni">AIVT</span></p>
+            </div>
+            <div class="crew-card">
+              <div class="crew-card__photo crew-card__photo--ph" aria-hidden="true">AA</div>
+              <div class="crew-card__name">Prof. Antonio Acosta</div>
+              <div class="crew-card__dept">TFD</div>
+              <span class="crew-card__since" data-i18n="st.since.5">September '23</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.antonio">Thermal</span></p>
+            </div>
+            <div class="crew-card">
+              <div class="crew-card__photo crew-card__photo--ph" aria-hidden="true">VG</div>
+              <div class="crew-card__name">Prof. Víctor Gil</div>
+              <div class="crew-card__dept">TSC</div>
+              <span class="crew-card__since" data-i18n="st.since.6">September '24</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.victor">TT&amp;C</span></p>
+            </div>
+            <div class="crew-card">
+              <img class="crew-card__photo" src="images/team/behrad.jpg" alt="Behrad Vatankhahghadim">
+              <div class="crew-card__name">Prof. Behrad Vatankhahghadim</div>
+              <div class="crew-card__dept">DAE</div>
+              <span class="crew-card__since" data-i18n="st.since.7">April '24</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.behrad">GNC</span></p>
+            </div>
+            <div class="crew-card">
+              <div class="crew-card__photo crew-card__photo--ph" aria-hidden="true">JH</div>
+              <span class="crew-card__role" data-i18n="st.role.phd">PhD candidate</span>
+              <div class="crew-card__name">Mr. Juan María Herrera</div>
+              <div class="crew-card__dept">TSC</div>
+              <span class="crew-card__since" data-i18n="st.since.8">January '22</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.juan">GS</span></p>
+            </div>
+            <div class="crew-card">
+              <div class="crew-card__photo crew-card__photo--ph" aria-hidden="true">GS</div>
+              <span class="crew-card__role" data-i18n="st.role.phd">PhD candidate</span>
+              <div class="crew-card__name">Mr. Ghasem Sharifi</div>
+              <div class="crew-card__dept">DAE</div>
+              <span class="crew-card__since" data-i18n="st.since.9">November '22</span>
+              <p class="crew-card__exp"><span class="lbl" data-i18n="st.team.expertise">Technical expertise</span><span data-i18n="st.crew.ghasem">ADCS SIL/HIL/AIVT, GS</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Associate members -->
+        <div class="crew-group">
+          <h3 class="crew-group__title" data-i18n="st.team.associates">ST3LLARsat1 associate members</h3>
+          <ul class="roster">
+            <li>
+              <span class="roster__since" data-i18n="st.adate.1">Nov '22</span>
+              <span class="roster__who" data-i18n-html="st.assoc1"><strong>Prof. Manuel Sanjurjo</strong>, DAE.</span>
+            </li>
+            <li>
+              <span class="roster__since" data-i18n="st.adate.2">Nov '22</span>
+              <span class="roster__who" data-i18n-html="st.assoc2"><strong>Prof. Gonzalo Sánchez-Arriaga</strong>, DAE.</span>
+            </li>
+            <li>
+              <span class="roster__since" data-i18n="st.adate.3">Sep '23 – Jun '24</span>
+              <span class="roster__who" data-i18n-html="st.assoc3"><strong>Mr. Jesús Zurera</strong>, SENER. Technical expertise: OBSW.</span>
+            </li>
+            <li>
+              <span class="roster__since" data-i18n="st.adate.4">Sep '23 – Jun '24</span>
+              <span class="roster__who" data-i18n-html="st.assoc4"><strong>Prof. Almudena Lindoso</strong>, Electronics. Technical expertise: OBSW.</span>
+            </li>
+            <li>
+              <span class="roster__since" data-i18n="st.adate.5">Sep '25</span>
+              <span class="roster__who" data-i18n-html="st.assoc5"><strong>Prof. Kun Wang</strong>, DAE. Technical expertise: ADCS HIL, GNC.</span>
+            </li>
+            <li>
+              <span class="roster__since" data-i18n="st.adate.6">Sep '25 – Jun '26</span>
+              <span class="roster__who" data-i18n-html="st.assoc6"><strong>Prof. Luis Entrena</strong>, Electronics. Technical expertise: PCB-ADCS, radiation.</span>
+            </li>
+            <li>
+              <span class="roster__since" data-i18n="st.adate.7">May '26</span>
+              <span class="roster__who" data-i18n-html="st.assoc7"><strong>Prof. Miguel Ángel Gómez</strong>, DAE/INTA. Technical expertise: GNSS/PNT, AIVT.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -127,7 +488,7 @@
         <div>
           <h4 data-i18n="footer.contact">Contact</h4>
           <ul class="footer-links">
-            <li><a href="mailto:gtaponte@pa.uc3m.es">gtaponte@pa.uc3m.es</a></li>
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
             <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
           </ul>
         </div>
