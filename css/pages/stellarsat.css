@@ -232,6 +232,89 @@
   text-transform: uppercase; color: var(--text-muted); opacity: .75; margin-bottom: .2rem;
 }
 
+/* Names that link to a personal profile — same faint-underline affordance as
+   the team page, so the hint reads identically across the site. */
+.board-member__name a,
+.crew-card__name a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(47, 123, 255, .4);
+  text-underline-offset: 4px;
+  transition: color .2s var(--ease), text-decoration-color .2s var(--ease);
+}
+.board-member__name a:hover,
+.crew-card__name a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* "Ongoing" arrow -----------------------------------------------------------
+   Marks the dates that run to the present. The plain "→" character renders
+   with a hairline head in Inter and reads as a dash, so the arrow is drawn
+   from an SVG mask instead: same shape everywhere, and it takes its colour
+   and size from the surrounding text. */
+.is-ongoing::after {
+  content: "";
+  display: inline-block;
+  width: 1.1em; height: .66em;
+  margin-left: .4em;
+  vertical-align: -.01em;
+  background: currentColor;
+  -webkit-mask: var(--arrow-right) no-repeat center / contain;
+          mask: var(--arrow-right) no-repeat center / contain;
+}
+:root {
+  --arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 12'%3E%3Cpath d='M0 4.4h10.6V0L20 6l-9.4 6V7.6H0z'/%3E%3C/svg%3E");
+}
+/* Without mask support the ::after box would be a solid rectangle — fall back
+   to the text arrow there. */
+@supports not ((-webkit-mask-image: url("#a")) or (mask-image: url("#a"))) {
+  .is-ongoing::after {
+    content: "\2192";
+    width: auto; height: auto;
+    background: none;
+  }
+}
+
+/* Department acronyms ------------------------------------------------------
+   Every DAE/TFD/TSC/ETD mention on the page links down to the key below.
+   These references must read as links without competing with the accent-blue
+   links that leave the site, so they keep the surrounding text colour and are
+   marked only by a dotted underline. */
+.affil-ref {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, currentColor 50%, transparent);
+  transition: color .2s var(--ease), text-decoration-color .2s var(--ease);
+}
+.affil-ref:hover, .affil-ref:focus-visible { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* The key itself: a quiet legend that closes the team section. */
+.dept-key {
+  margin-top: clamp(2.2rem, 4vw, 3.2rem);
+  padding: 1.4rem 1.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+.dept-key__title {
+  font-size: .74rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+.dept-list {
+  margin: 0;
+  display: grid;
+  /* min() keeps the column from forcing overflow on narrow phones */
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: .65rem 2.2rem;
+}
+.dept-item { display: grid; grid-template-columns: 3.2rem 1fr; gap: .7rem; align-items: baseline; }
+.dept-item dt { font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.dept-item dd { margin: 0; color: var(--text-muted); font-size: .95rem; }
+
 /* Associate members: a compact roster — no photos in the source document, so a
    clean list reads better (and faster) than half-empty cards. */
 .roster { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
