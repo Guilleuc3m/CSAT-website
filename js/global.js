@@ -73,7 +73,7 @@
     // Dropdowns: hover on desktop (CSS), click/tap toggle on mobile
     document.querySelectorAll(".nav-item.has-dropdown > .nav-link").forEach(function (link) {
       link.addEventListener("click", function (e) {
-        if (window.matchMedia("(max-width: 820px)").matches) {
+        if (window.matchMedia("(max-width: 1024px)").matches) {
           e.preventDefault();
           link.parentElement.classList.toggle("open");
         }
@@ -221,6 +221,114 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && lb.classList.contains("open")) closeLb();
       });
+    }
+
+    // On-this-page index. Built at runtime from the elements a page tags with
+    // data-toc, so the labels are the headings themselves: they follow the
+    // EN/ES switch with no second list to keep in sync. Wide screens get a
+    // rail parked in the left margin — it is fixed to the viewport, not part
+    // of the layout, so the content stays exactly where it was. Narrow ones
+    // get a sticky strip of pills under the header instead.
+    var tocMain = document.querySelector("main");
+    var tocTargets = tocMain ? tocMain.querySelectorAll("[data-toc][id]") : [];
+    if (tocTargets.length > 2) {
+      var toc = document.createElement("nav");
+      toc.className = "toc";
+      var tocLabel = function () {
+        var i18n = window.CSAT_I18N;
+        return (i18n && i18n.t) ? i18n.t("toc.label", getLang()) : "On this page";
+      };
+      toc.setAttribute("aria-label", tocLabel());
+      var list = document.createElement("ul");
+      list.className = "toc__list";
+
+      var links = [];
+      Array.prototype.forEach.call(tocTargets, function (target) {
+        var tag = target.tagName;
+        var heading = (tag === "H2" || tag === "H3") ? target : target.querySelector("h2, h3");
+        if (!heading) return;
+        var li = document.createElement("li");
+        li.className = "toc__item" + (target.getAttribute("data-toc") === "sub" ? " toc__item--sub" : "");
+        var a = document.createElement("a");
+        a.className = "toc__link";
+        a.href = "#" + target.id;
+        a.innerHTML = '<span class="toc__tick" aria-hidden="true"></span><span class="toc__text"></span>';
+        a.querySelector(".toc__text").textContent = heading.textContent.trim();
+        li.appendChild(a);
+        list.appendChild(li);
+        links.push({ a: a, target: target, heading: heading });
+      });
+      if (links.length > 2) {
+        var tocHead = document.createElement("p");
+        tocHead.className = "toc__label";
+        tocHead.textContent = tocLabel();
+        toc.appendChild(tocHead);
+        toc.appendChild(list);
+        // Dropped in after the page hero, so the narrow-screen pill strip
+        // starts below the title block instead of on top of it.
+        var tocHero = tocMain.querySelector(".page-hero");
+        tocMain.insertBefore(toc, tocHero ? tocHero.nextSibling : tocMain.firstChild);
+        document.body.classList.add("has-toc");
+
+        // Re-read the headings after a language switch.
+        document.addEventListener("csat:langchange", function () {
+          toc.setAttribute("aria-label", tocLabel());
+          tocHead.textContent = tocLabel();
+          links.forEach(function (l) {
+            l.a.querySelector(".toc__text").textContent = l.heading.textContent.trim();
+          });
+        });
+
+        // Clicking scrolls with the sticky header accounted for, and keeps the
+        // pill strip from jumping by writing the hash without a second jump.
+        links.forEach(function (l) {
+          l.a.addEventListener("click", function (e) {
+            e.preventDefault();
+            var offset = parseInt(getComputedStyle(document.documentElement)
+              .getPropertyValue("--header-h"), 10) || 68;
+            var y = l.target.getBoundingClientRect().top + window.scrollY - offset - 18;
+            window.scrollTo({ top: y, behavior: "smooth" });
+            history.replaceState(null, "", "#" + l.target.id);
+          });
+        });
+
+        // Scroll spy: the active entry is the last one whose top has passed
+        // just under the header.
+        var ticking = false;
+        var markActive = function () {
+          ticking = false;
+          var headerH = parseInt(getComputedStyle(document.documentElement)
+            .getPropertyValue("--header-h"), 10) || 68;
+          // The margin panel only appears once the hero is out of the way.
+          toc.classList.toggle("is-visible",
+            !tocHero || tocHero.getBoundingClientRect().bottom <= headerH + 18);
+          var line = window.scrollY + headerH + 90;
+          var current = links[0];
+          links.forEach(function (l) {
+            if (l.target.getBoundingClientRect().top + window.scrollY <= line) current = l;
+          });
+          // At the very bottom the last entry wins, even if its top is above.
+          if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+            current = links[links.length - 1];
+          }
+          links.forEach(function (l) {
+            l.a.classList.toggle("is-active", l === current);
+          });
+          var activeEl = current && current.a;
+          if (activeEl && toc.scrollWidth > toc.clientWidth) {
+            // keep the active pill in view on the narrow strip
+            var ar = activeEl.getBoundingClientRect(), tr = toc.getBoundingClientRect();
+            if (ar.left < tr.left + 8 || ar.right > tr.right - 8) {
+              toc.scrollLeft += ar.left - tr.left - 16;
+            }
+          }
+        };
+        markActive();
+        window.addEventListener("scroll", function () {
+          if (!ticking) { ticking = true; requestAnimationFrame(markActive); }
+        }, { passive: true });
+        window.addEventListener("resize", markActive);
+      }
     }
   });
 })();

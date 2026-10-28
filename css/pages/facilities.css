@@ -149,8 +149,13 @@
 .spec-cards {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  align-items: start;
+  /* A fixed 2-column track, not auto-fit: two short cards then pair up and fill
+     the row instead of leaving a ragged gap above the next full-width card. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch; /* cards sharing a row end at the same height */
+}
+@media (max-width: 900px) {
+  .spec-cards { grid-template-columns: minmax(0, 1fr); }
 }
 .spec-card {
   background: var(--surface-2);

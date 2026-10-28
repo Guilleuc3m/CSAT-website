@@ -76,6 +76,9 @@
             <a href="INTACT.html">INTACT</a>
           </div>
         </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
+        </div>
         <div class="nav-item" data-nav="contact">
           <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
         </div>
@@ -137,10 +140,6 @@
               <span class="fact__label" data-i18n="proj.fact.duration">Duration</span>
               <span class="fact__value" data-i18n="intact.duration">1.5 years · Oct 2026 – Feb 2028</span>
             </div>
-            <div class="fact">
-              <span class="fact__label" data-i18n="proj.fact.reference">Reference</span>
-              <span class="fact__value">TEC-2024/TEC-263</span>
-            </div>
             <div class="fact fact--wide">
               <span class="fact__label" data-i18n="proj.fact.agency">Funding agency</span>
               <span class="fact__value" data-i18n="intact.agency">ESA — European Space Agency</span>
@@ -160,7 +159,7 @@
         <p class="lead" data-i18n="intact.summary">INTACT main objective is to develop and validate advanced integrated Guidance, Navigation and Control (GNC) algorithms capable of coordinating multiple actuators throughout challenging launcher flight phases and operational conditions.</p>
         <p data-i18n="intact.context">This project addresses a fundamental limitation of current launcher GNC architecture, which is that the utilization of simplified and decoupled GNC strategies is no longer fully compatible with the requirements of next-generation reusable and highly maneuverable launcher stages. Increasing actuator diversity, considering in the design phase the dynamical couplings, and addressing the higher reliability expectations and the more demanding mission scenarios, require a transition towards integrated and multivariable GNC strategies capable of adaptive actuator management.</p>
 
-        <h2 data-i18n="intact.obj.h">Technical objectives</h2>
+        <h2 id="objectives" data-i18n="intact.obj.h">Technical objectives</h2>
         <p data-i18n-html="intact.obj1"><strong>The first technical objective is to design and optimize advanced integrated GNC solutions</strong> capable of coordinating heterogeneous actuators, including clustered gimballed engines, differential throttling, aerodynamic surfaces and RCS thrusters across representative ascent, descent and landing scenarios. These solutions are expected to move beyond traditional decoupled architectures by explicitly addressing multivariable couplings, actuator interactions, and adaptive reconfiguration <strong>to fully exploit the performance and robustness</strong> inherent in integrated design, ultimately enhancing controllability and operational flexibility under nominal and off-nominal conditions.</p>
         <p data-i18n="intact.obj1.chain">The activity is not limited to GNC synthesis alone, but it encompasses the complete development chain from mission and scenario definition to detailed design (including “smart” control allocation strategies) and up to high-fidelity verification and processor-level validation. Through representative proof-of-concept (PoCs) cases and detailed trade-off analyses, a comparative evaluation of traditional and integrated strategies will be conducted in terms of:</p>
         <ul class="result-list">
@@ -172,26 +171,16 @@
         </ul>
         <p data-i18n-html="intact.obj2"><strong>The second technical objective is to verify the maturity and practical implementability of the developed algorithms</strong> through a comprehensive validation campaign based on high-fidelity simulations and representative embedded processing environments. The proposed integrated control solutions should demonstrate performance improvements in simulation, but also it is required to prove their compatibility with realistic flight software and avionics constraints via MIL/PIL verification activities and autocoded implementations. Thus, the <strong>targeted outcome of the activity is the achievement of TRL 4 for the developed technologies</strong>, together with a clear assessment of their benefits, limitations, and deployment potential toward future launcher applications.</p>
 
-        <h2 data-i18n="intact.apps.h">Industrial applications</h2>
+        <h2 id="applications" data-i18n="intact.apps.h">Industrial applications</h2>
         <p data-i18n="intact.apps.p">Two industrial applications relevant to the launcher industry will be used:</p>
 
-        <h3 data-i18n="intact.app1.h">Application #1: a two-stage launcher ascent</h3>
+        <h3 id="app1" data-i18n="intact.app1.h">Application #1: a two-stage launcher ascent</h3>
         <p data-i18n="intact.app1.p1">This application focus on two scenarios, which we consider connected at design-level: 1) Seamless control allocation in nominal and off-nominal flights, and 2) Aerothermal load relief using multiple actuators. The 2nd scenario is particularly relevant to the integrated GNC challenge since it requires simultaneous optimization of structural loads, trajectory generation/tracking, and attitude stability through coordinated use of engines’ throttling and gimbals, and fins. This represents a significant evolution from current state-of-practice relief strategies, which are based primarily on using only engine gimballing.</p>
         <p data-i18n="intact.app1.p2">For this application, an advanced Functional Engineering Simulator (FES) of the ascent phase for a 2-stage clustered-engine launcher from launch to first main engine cut-off (MECO) will be used. The reference case will consider a two-stage-to-orbit launcher with a five-engine first stage, TVC actuation on the outer engines, cold-gas RCS for roll control, and a reference ascent trajectory generated for a Kourou-to-SSO mission. The FES will also include comprehensive aerodynamics (multi-engine, fins, aerothermal) and exogenous (wind/gust) and endogenous (faults) effects.</p>
 
-        <h3 data-i18n="intact.app2.h">Application #2: Descent and Retro-Propulsive Landing</h3>
+        <h3 id="app2" data-i18n="intact.app2.h">Application #2: Descent and Retro-Propulsive Landing</h3>
         <p data-i18n="intact.app2.p1">This application focuses on precise retro-propulsive landing and targets highly robust solutions for terminal flight under severe constraints. The proposed framework aims at developing a control strategy that divides control authority optimally among actuators (clustered engine, RCS, aerodynamic surfaces) during one of the most demanding mission segments — the descent and landing phase. The highly demanding nature of the task comes from the need to simultaneously satisfy numerous stringent constraints to ensure safe and successful touchdown, such as near-zero velocity and vertical attitude for the vehicle. The conventional paradigm of designing independent controllers for each axis is highly disadvantaged in this phase, where tight coupling between translational and rotational movement exists and there is little to no time for corrective manoeuvres. Additionally, external factor such as winds or engine plume can potentially affect the realized trajectory and how well the constraints are respected in a realistic environment. The engine plume impingement and other proximity to the ground related phenomena constitute a fundamental motivation for developing an adaptive control allocation strategy, considering the altitude-dependent nature of the problem. Moreover, the reduced combustion stability, plume impingement and/or potential debris ingestion are among the numerous risk factors that steer the design toward a fault-tolerant approach. It is deemed essential that the control solution is developed in conjunction with a dedicated or integrated Fault Detection, Isolation and Recovery (FDIR) logic to account for any potential faults into the system.</p>
         <p data-i18n="intact.app2.p2">AGILE’s OTIS reusable Orbital Transfer Vehicle, which is currently under development, will be used as the benchmark for this application.</p>
-      </div>
-
-      <div class="container">
-        <p class="muted" style="max-width:70ch;margin-top:clamp(1.8rem,4vw,2.6rem)" data-i18n="intact.fig.intro">A visual summary of the project is given in the following figure:</p>
-        <figure class="figure figure--wide">
-          <div class="figure__frame">
-            <img src="images/projects/intact-overview.jpg" alt="INTACT project overview: ascent phase and descent and landing phase study cases, their dedicated flight execution simulators, and the expected benefits.">
-          </div>
-          <figcaption data-i18n-html="intact.fig.cap"><strong>Figure 1.</strong> INTACT project.</figcaption>
-        </figure>
       </div>
     </section>
   </main>

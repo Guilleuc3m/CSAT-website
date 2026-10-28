@@ -70,7 +70,11 @@
           <div class="dropdown">
             <a href="MLPLUS.html">MLPLUS</a>
             <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
           </div>
+        </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
         </div>
         <div class="nav-item" data-nav="contact">
           <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
@@ -104,7 +108,7 @@
     </section>
 
     <!-- COMMON INTRO: director + text + image -->
-    <section class="section">
+    <section class="section" id="main-facility" data-toc>
       <div class="container facility-intro">
         <div class="facility-intro__info reveal">
           <div class="facility-director">
@@ -138,7 +142,7 @@
     </section>
 
     <!-- LEGANÉS ONLY: the different spaces within the site -->
-    <section class="section spaces">
+    <section class="section spaces" id="spaces" data-toc>
       <div class="container">
         <div class="spaces__head">
           <span class="eyebrow" data-i18n="fac.leg.spaces_eyebrow">Inside Leganés</span>
@@ -148,7 +152,7 @@
         <div class="spaces-list">
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/central-aiv.jpg" alt="Central AIV area"></div>
-            <header class="space-row__head">
+            <header class="space-row__head" id="aiv" data-toc="sub">
               <h3 data-i18n="fac.leg.aiv.title">Central AIV area</h3>
             </header>
             <div class="space-row__info">
@@ -158,7 +162,7 @@
 
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/cleanroom.jpg" alt="ISO-8 cleanroom"></div>
-            <header class="space-row__head">
+            <header class="space-row__head" id="cleanroom" data-toc="sub">
               <h3 data-i18n="fac.leg.clean.title">Clean room</h3>
             </header>
             <div class="space-row__info">
@@ -194,7 +198,7 @@
                         <span class="spec-group__label" data-i18n="fac.spec.ctrl">Controller</span>
                         <ul class="spec-list">
                           <li data-i18n="fac.spec.ctrl.1">4 channels, profiles: sine/random/shock</li>
-                          <li data-i18n="fac.spec.ctrl.2">4 triaxial accelerometers: 10 mV/g</li>
+                          <li data-i18n="fac.spec.ctrl.2">2 triaxial and 2 single-axis accelerometers: 10 mV/g</li>
                         </ul>
                       </div>
                     </div>
@@ -209,7 +213,7 @@
 
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/csoc.jpg" alt="CubeSat Operations Center (CSOC)"></div>
-            <header class="space-row__head">
+            <header class="space-row__head" id="csoc" data-toc="sub">
               <h3 data-i18n="fac.leg.csoc.title">CSOC</h3>
             </header>
             <div class="space-row__info">
@@ -219,7 +223,7 @@
 
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/sil-hil.jpg" alt="SIL/HIL laboratory"></div>
-            <header class="space-row__head">
+            <header class="space-row__head" id="sil-hil" data-toc="sub">
               <h3 data-i18n="fac.leg.sil.title">SIL/HIL lab</h3>
             </header>
             <div class="space-row__info">
@@ -275,7 +279,7 @@
 
           <article class="space-row reveal">
             <div class="space-row__media is-natural"><img src="images/facilities/leganes/dipole-cage.png" alt="In-house dipole measurement cage (DMC) with a device under test inside"></div>
-            <header class="space-row__head">
+            <header class="space-row__head" id="magnetic" data-toc="sub">
               <h3 data-i18n="fac.leg.mag.title">Magnetic Measurement &amp; Dipole Estimation</h3>
             </header>
             <div class="space-row__info">
@@ -336,8 +340,7 @@
                     </ul>
                   </div>
                   <figure class="spec-figure">
-                    <img src="images/facilities/leganes/hf-magnetometer.jpg" alt="Bartington Mag-13MS1000 three-axis high-fidelity magnetometer">
-                    <figcaption>© Bartington Instruments Limited</figcaption>
+                    <img src="images/facilities/leganes/hf-magnetometer.jpg" alt="High-fidelity three-axis magnetometer used to calibrate the Helmholtz cage">
                   </figure>
                 </div>
               </div>
@@ -347,7 +350,7 @@
 
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/adcs.jpg" alt="ADCS laboratory"></div>
-            <header class="space-row__head">
+            <header class="space-row__head" id="adcs" data-toc="sub">
               <h3 data-i18n="fac.leg.adcs.title">ADCS lab</h3>
             </header>
             <div class="space-row__info">
@@ -361,9 +364,9 @@
                 <li data-i18n="fac.leg.adcs.vvt3">Recreation of constant &amp; varying mag-field using: Telemetry, user-input or simulated orbit</li>
                 <li data-i18n="fac.leg.adcs.vvt4">Automated DUT CoG estimation</li>
                 <li data-i18n="fac.leg.adcs.vvt5">Reaction Wheel &amp; CMG momentum desaturation / dumping</li>
-                <li data-i18n-html="fac.leg.adcs.vvt6">Attitude determination algorithm verification and validation <span class="fn-ref">*</span></li>
-                <li data-i18n-html="fac.leg.adcs.vvt7">Detumbling testing <span class="fn-ref">*</span></li>
-                <li data-i18n-html="fac.leg.adcs.vvt8">Nadir-pointing &amp; Agile maneuvering characterization &amp; testing <span class="fn-ref">*</span></li>
+                <li data-i18n-html="fac.leg.adcs.vvt6">Attitude determination algorithm verification and validation&nbsp;<span class="fn-ref">*</span></li>
+                <li data-i18n-html="fac.leg.adcs.vvt7">Detumbling testing&nbsp;<span class="fn-ref">*</span></li>
+                <li data-i18n-html="fac.leg.adcs.vvt8">Nadir-pointing &amp; Agile maneuvering characterization &amp; testing&nbsp;<span class="fn-ref">*</span></li>
               </ul>
               <p class="footnote" data-i18n-html="fac.leg.adcs.vvt_note"><span class="fn-ref">*</span> It can be done only on ABT or complemented with MAG-field, Sun &amp; GNSS sensor excitation.</p>
 

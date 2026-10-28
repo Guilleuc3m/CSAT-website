@@ -180,7 +180,7 @@ p  { margin: 0 0 1rem; }
 }
 /* Transparent 16:9 logo — fills (almost) the whole header height, no tile.
    It's navy artwork, so on dark backgrounds we tint it white via a filter. */
-.brand { height: 100%; }
+.brand { height: 100%; flex: none; } /* never let a long nav squeeze the logo away */
 .brand img { height: calc(var(--header-h) - 14px); width: auto; transition: filter .3s var(--ease); }
 [data-theme="dark"] .brand img { filter: brightness(0) invert(1); }
 .brand:hover { text-decoration: none; }
@@ -226,13 +226,14 @@ body[data-page="home"] .site-header:not(.scrolled):hover .nav-toggle { backgroun
 body[data-page="home"] .site-header:not(.scrolled):hover .nav-toggle span { background: var(--text); }
 
 /* Nav */
-.nav { display: flex; align-items: center; gap: .35rem; }
+.nav { display: flex; align-items: center; gap: .15rem; }
 .nav-item { position: relative; }
 .nav-link {
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  padding: .5rem .85rem;
+  padding: .5rem .7rem;
+  white-space: nowrap; /* keep a tab on one line when the Spanish label is longer */
   color: var(--text);
   font-weight: 500;
   border-radius: 8px;
@@ -309,7 +310,7 @@ body[data-page="home"] .site-header:not(.scrolled):hover .nav-toggle span { back
 
 /* Header controls (lang + theme) — set a bit apart from the nav links */
 .header-controls { display: flex; align-items: center; gap: .4rem; margin-left: .6rem; }
-@media (min-width: 821px) {
+@media (min-width: 1025px) {
   .header-controls { margin-left: 1.4rem; padding-left: 1.4rem; border-left: 1px solid var(--border); }
 }
 .icon-btn {
@@ -515,7 +516,7 @@ main { flex: 1 0 auto; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 1024px) {
   .nav-toggle { display: flex; }
   .nav {
     position: fixed;
@@ -629,3 +630,187 @@ main img:not(.no-zoom) { cursor: zoom-in; }
 .to-top:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(47, 123, 255, .5); }
 .to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .to-top svg { width: 21px; height: 21px; }
+
+/* Between the hamburger breakpoint and a roomy desktop the Spanish labels are
+   long enough to crowd the header, so the tabs tighten up instead of clipping. */
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .nav { gap: 0; }
+  .nav-link { padding: .5rem .45rem; font-size: .93rem; }
+  .nav-link .caret { width: 9px; height: 9px; }
+}
+
+/* ===================== ON-THIS-PAGE INDEX =====================
+   Injected by js/global.js on pages that tag sections with data-toc.
+   Two shapes: a panel parked in the window's left margin on wide screens —
+   fixed to the viewport, never part of the layout, so the page content keeps
+   its own centring, and only revealed once the hero has scrolled past — and a
+   sticky strip of pills under the header on anything narrower, where a side
+   panel has nowhere to live. */
+.toc {
+  --toc-top: calc(var(--header-h) + 18px);
+  font-size: .9rem;
+  line-height: 1.35;
+}
+.toc__list { list-style: none; margin: 0; padding: 0; }
+.toc__label {
+  margin: 0 0 .6rem;
+  font-size: .69rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.toc__link {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color .2s var(--ease);
+}
+.toc__link:hover { color: var(--accent); text-decoration: none; }
+.toc__link.is-active { color: var(--accent); font-weight: 600; }
+
+/* ---- Narrow screens: sticky strip of pills under the header ---- */
+@media (max-width: 1319px) {
+  .toc {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 70;
+    display: flex;
+    margin-bottom: clamp(1rem, 3vw, 1.6rem);
+    padding: .5rem clamp(18px, 4vw, 40px);
+    background: var(--bg-header-scrolled, var(--surface));
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .toc::-webkit-scrollbar { display: none; }
+  .toc__label { display: none; }
+  .toc__list { display: flex; gap: .4rem; }
+  .toc__item { flex: none; }
+  .toc__link {
+    padding: .35rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    white-space: nowrap;
+    font-size: .85rem;
+  }
+  .toc__link.is-active { border-color: var(--accent); background: var(--surface-2); }
+  .toc__tick { display: none; }
+  /* Main sections read as headings; subsections sit a step down. */
+  .toc__link { font-weight: 600; color: var(--text); }
+  .toc__item--sub .toc__link {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    border-style: dashed;
+    padding: .3rem .65rem;
+  }
+  .toc__item--sub .toc__link.is-active { border-style: solid; color: var(--accent); }
+}
+
+/* ---- Wide screens: panel in the left margin ---- */
+@media (min-width: 1320px) {
+  .toc {
+    position: fixed;
+    top: var(--toc-top);
+    z-index: 80; /* below the header (100) and the back-to-top button (90) */
+    max-height: calc(100vh - var(--toc-top) - 24px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    /* Kept out of sight until the hero has scrolled past, so the index never
+       sits beside the page title block. */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .25s var(--ease), visibility .25s var(--ease);
+  }
+  .toc.is-visible { opacity: 1; visibility: visible; pointer-events: auto; }
+  .toc__list { display: grid; gap: .15rem; }
+  .toc__link { padding: .34rem 0; align-items: flex-start; }
+  .toc__tick {
+    flex: none;
+    width: 18px; height: 2px;
+    margin-top: .62em; /* line up with the first line of a wrapped label */
+    border-radius: 2px;
+    background: var(--border);
+    transition: width .2s var(--ease), background-color .2s var(--ease);
+  }
+  /* Main sections read as headings; subsections sit a step down: lighter,
+     smaller and indented, with a shorter dash. */
+  .toc__link { font-weight: 600; color: var(--text); }
+  .toc__item--sub .toc__link {
+    font-weight: 400;
+    font-size: .87em;
+    color: var(--text-muted);
+    padding-left: 14px;
+  }
+  .toc__link:hover, .toc__link.is-active { color: var(--accent); }
+  .toc__item--sub .toc__tick { width: 9px; margin-left: 0; }
+  /* Breathing room where a subsection list ends and a new section starts. */
+  .toc__item--sub + .toc__item:not(.toc__item--sub) { margin-top: .5rem; }
+  .toc__link:hover .toc__tick,
+  .toc__link.is-active .toc__tick { background: var(--accent); width: 26px; }
+  .toc__item--sub .toc__link:hover .toc__tick,
+  .toc__item--sub .toc__link.is-active .toc__tick { width: 14px; }
+}
+
+/* Between 1320px and 1600px the margin is too narrow for the labels, so the
+   panel collapses to its ticks and slides the labels out on hover or focus. */
+@media (min-width: 1320px) and (max-width: 1599px) {
+  .toc {
+    left: calc((100vw - 1180px) / 2 - 54px);
+    width: 38px;
+    padding: .55rem .5rem;
+    border-radius: var(--radius);
+    background: transparent;
+    border: 1px solid transparent;
+    transition: opacity .25s var(--ease), visibility .25s var(--ease), width .22s var(--ease), background-color .22s var(--ease), border-color .22s var(--ease), box-shadow .22s var(--ease);
+  }
+  .toc__label { display: none; }
+  .toc__text {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity .18s var(--ease), max-width .22s var(--ease);
+  }
+  .toc:hover, .toc:focus-within {
+    width: 290px;
+    padding: .9rem 1rem 1rem;
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-strong);
+  }
+  .toc:hover .toc__label,
+  .toc:focus-within .toc__label { display: block; }
+  .toc:hover .toc__text,
+  .toc:focus-within .toc__text { opacity: 1; max-width: 224px; white-space: normal; }
+}
+
+/* Wide enough for the labels to live in the margin permanently: a proper
+   panel, with its own surface so it reads as an index and not as stray text.
+   The width follows the gutter, so a bigger screen gets a roomier panel. */
+@media (min-width: 1600px) {
+  .toc {
+    --toc-w: clamp(172px, calc((100vw - 1180px) / 2 - 48px), 264px);
+    width: var(--toc-w);
+    left: calc((100vw - 1180px) / 2 - var(--toc-w) - 24px);
+    padding: .9rem 1rem 1rem;
+    font-size: .95rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toc, .toc__text, .toc__tick { transition: none; }
+}
