@@ -114,7 +114,12 @@
       if (!el) return;
       var prev = root.style.scrollBehavior;
       root.style.scrollBehavior = "auto";
-      el.scrollIntoView({ block: "center" });
+      // Centring suits a short target (the location.html campus rows), but a
+      // tall one, e.g. ST3LLARsat.html#team, would leave its heading far above
+      // the viewport. Those align to the top instead, where the section's own
+      // scroll-margin-top clears the sticky header.
+      var fits = el.getBoundingClientRect().height < window.innerHeight * 0.8;
+      el.scrollIntoView({ block: fits ? "center" : "start" });
       root.style.scrollBehavior = prev;
     };
     if (location.hash.length > 1) {
@@ -155,6 +160,32 @@
     } else {
       reveals.forEach(function (el) { el.classList.add("in"); });
     }
+
+    // Back-to-top button. Injected from here rather than written into all 11
+    // pages, and it only reveals itself once you are far enough down that
+    // scrolling back is a chore — so on short pages it never appears at all.
+    var toTopLabel = function () {
+      var i18n = window.CSAT_I18N;
+      return (i18n && i18n.t) ? i18n.t("toTop.label", getLang()) : "Back to top";
+    };
+    var toTop = document.createElement("button");
+    toTop.className = "to-top";
+    toTop.type = "button";
+    toTop.setAttribute("aria-label", toTopLabel());
+    toTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>';
+    document.body.appendChild(toTop);
+
+    var toTopOnScroll = function () {
+      toTop.classList.toggle("show", window.scrollY > 600);
+    };
+    toTopOnScroll();
+    window.addEventListener("scroll", toTopOnScroll, { passive: true });
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    document.addEventListener("csat:langchange", function () {
+      toTop.setAttribute("aria-label", toTopLabel());
+    });
 
     // Lightbox: click any content image inside <main> to enlarge it.
     // Opt out with class "no-zoom" on the <img>.

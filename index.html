@@ -3,22 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="images/logo/favicon.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
   <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
-  <title>CSAT | UC3M</title>
+  <title>CSAT | Center for Space Technology and Nano/Micro SATellites</title>
   <meta name="description" content="CSAT — Center for Space Technology and nano/micro SATellites at Universidad Carlos III de Madrid (UC3M).">
   <link rel="canonical" href="https://csat.uc3m.es/">
   <!-- Social sharing (Open Graph / Twitter) -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="CSAT — UC3M">
-  <meta property="og:title" content="CSAT | UC3M">
+  <meta property="og:site_name" content="CSAT">
+  <meta property="og:title" content="CSAT | Center for Space Technology and Nano/Micro SATellites">
   <meta property="og:description" content="Center for Space Technology &amp; nano/micro SATellites at Universidad Carlos III de Madrid (UC3M).">
   <meta property="og:url" content="https://csat.uc3m.es/">
   <meta property="og:image" content="https://csat.uc3m.es/images/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CSAT | UC3M">
+  <meta name="twitter:title" content="CSAT | Center for Space Technology and Nano/Micro SATellites">
   <meta name="twitter:description" content="Center for Space Technology &amp; nano/micro SATellites at UC3M.">
   <meta name="twitter:image" content="https://csat.uc3m.es/images/hero.jpg">
+  <!-- Site name for search results. Google reads WebSite.name (together with
+       og:site_name) to decide the name shown above the result title. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CSAT",
+    "alternateName": "CSAT — Center for Space Technology and Nano/Micro SATellites",
+    "url": "https://csat.uc3m.es/"
+  }
+  </script>
   <!-- Organisation structured data (helps search engines link the name + logo) -->
   <script type="application/ld+json">
   {
@@ -27,7 +40,7 @@
     "name": "CSAT — Center for Space Technology & nano/micro SATellites",
     "alternateName": "CSAT",
     "url": "https://csat.uc3m.es/",
-    "logo": "https://csat.uc3m.es/images/logo/favicon.png",
+    "logo": "https://csat.uc3m.es/images/logo/favicon-192.png",
     "parentOrganization": {
       "@type": "CollegeOrUniversity",
       "name": "Universidad Carlos III de Madrid",
@@ -89,6 +102,7 @@
           </a>
           <div class="dropdown">
             <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+            <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
             <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
           </div>
         </div>
@@ -100,6 +114,7 @@
           <div class="dropdown">
             <a href="MLPLUS.html">MLPLUS</a>
             <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
           </div>
         </div>
         <div class="nav-item" data-nav="contact">
@@ -155,6 +170,42 @@
       </div>
     </section>
 
+
+    <!-- ===================== WHAT WE DO ===================== -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="capabilities__head">
+          <span class="eyebrow" data-i18n="home.cap.eyebrow">What we do</span>
+          <h2 data-i18n="home.cap.title">Our key VV&amp;T capabilities</h2>
+        </div>
+        <div class="cap-grid">
+          <article class="cap-card reveal">
+            <h3 data-i18n="home.cap.sil.h">SIL/HIL testing</h3>
+            <p data-i18n="home.cap.sil.p">We have a wide array of electronic equipment for signal generation and analysis to support Software-In-the-Loop (SIL) and Hardware-In-the-Loop (HIL) testing.</p>
+          </article>
+          <article class="cap-card reveal d1">
+            <h3 data-i18n="home.cap.mag.h">Magnetic measurement and dipole characterization</h3>
+            <p data-i18n="home.cap.mag.p">We can use an inhouse-developed system with 12-magnetometers sensors to characterize the dipole of systems up to 27U and take measurements and perform calibrations with a high-fidelity magnetometer.</p>
+          </article>
+          <article class="cap-card reveal d2">
+            <h3 data-i18n="home.cap.abt.h">Frictionless motion recreation</h3>
+            <p data-i18n="home.cap.abt.p">We can test ADCS systems in 3-DOF, zero-gravity-like, rotational motion using one of our two spherical Air Bearing Tables (ABT), one for devices under test (DUT) up to 40 kg and the other from 40-200 kg.</p>
+          </article>
+          <article class="cap-card reveal">
+            <h3 data-i18n="home.cap.hhc.h">LEO Magnetic Field recreation</h3>
+            <p data-i18n="home.cap.hhc.p">Using our 2.5 meters’ 3-axis Helmholtz Cage (HHC) we can recreate Earth’s magnetic field at a given orbital path or a constant position. This can be used for magnetometer calibration and/or magnetorquer testing, as well as to perform and validate satellite detumbling, nadir-pointing, and agility-based maneuvers.</p>
+          </article>
+          <article class="cap-card reveal d1">
+            <h3 data-i18n="home.cap.sun.h">Sun Simulator</h3>
+            <p data-i18n="home.cap.sun.p">The two previous capabilities can be complemented by a LED-based Sun simulator with 130,000 Lux@1m (&gt;1 Sun) to excite the satellite’s solar panels and sensors.</p>
+          </article>
+          <article class="cap-card reveal d2">
+            <h3 data-i18n="home.cap.gnss.h">GNSS/GPS Simulator</h3>
+            <p data-i18n="home.cap.gnss.p">In addition to recreating the motion, the magnetic-field, and the Sun for LEO orbits, an all-bands / all-frequencies GNSS simulator (capable of generating more than 700 simultaneous signals from all constellations) can also be added (or used independently) to verify the satellite’s onboard navigation solutions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
     <!-- ===================== EXPLORE ===================== -->
     <section class="section" style="background:var(--bg-elevated);border-block:1px solid var(--border)">
       <div class="container">
@@ -200,19 +251,16 @@
             <div class="thumb">16 : 9</div>
             <span class="date">— · — · 2026</span>
             <h3 data-i18n="home.news.placeholder.title">Coming soon</h3>
-            <p class="muted" data-i18n="home.news.placeholder.body">Our news feed will appear here.</p>
           </article>
           <article class="card news-card reveal d1">
             <div class="thumb">16 : 9</div>
             <span class="date">— · — · 2026</span>
             <h3 data-i18n="home.news.placeholder.title">Coming soon</h3>
-            <p class="muted" data-i18n="home.news.placeholder.body">Our news feed will appear here.</p>
           </article>
           <article class="card news-card reveal d2">
             <div class="thumb">16 : 9</div>
             <span class="date">— · — · 2026</span>
             <h3 data-i18n="home.news.placeholder.title">Coming soon</h3>
-            <p class="muted" data-i18n="home.news.placeholder.body">Our news feed will appear here.</p>
           </article>
         </div>
       </div>
@@ -224,6 +272,14 @@
     <!-- Funding acknowledgement banner — main page only -->
     <div class="footer-funding">
       <img src="images/funding-logo.jpeg" alt="This equipment was procured with Spanish Government infrastructure award EQC2021-007562-P, funded by the Spanish AEI/10.13039/501100011033 and the European Union's NextGenerationEU/PRTR">
+    </div>
+    <!-- María de Maeztu Unit of Excellence — deliberately English-only in both
+         languages (no data-i18n), it is the wording of the official award. -->
+    <div class="footer-excellence">
+      <div class="footer-excellence__inner">
+        <img src="images/mdm-logo.png" alt="Ministerio de Ciencia, Innovación y Universidades · Agencia Estatal de Investigación · Excelencia María de Maeztu">
+        <p>The Department of Aerospace Engineering at Universidad Carlos III de Madrid has been accredited as a Unit of Excellence &ldquo;María de Maeztu&rdquo;, a distinction awarded by the Spanish State Research Agency for the period 01/01/2026-31/12/2031.</p>
+      </div>
     </div>
     <div class="container">
       <div class="footer-main">

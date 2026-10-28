@@ -68,6 +68,7 @@
 .project-body { max-width: 70ch; }
 .project-body h2 { margin: 2.4rem 0 .7rem; }
 .project-body h2:first-child { margin-top: 0; }
+.project-body h3 { font-size: 1.12rem; margin: 1.8rem 0 .55rem; }
 .project-body p { color: var(--text-muted); margin-bottom: 1rem; }
 .project-body p.lead { color: var(--text); }
 
@@ -126,3 +127,31 @@
 @media (max-width: 640px) {
   .project-facts { margin-top: 0; }
 }
+
+/* ---- Secondary note under a headline figure (e.g. the overall project budget
+   next to this centre's own share) ---- */
+.fact__note {
+  display: block;
+  margin-top: .15rem;
+  font-size: .8rem; font-weight: 500; letter-spacing: 0;
+  color: var(--text-muted);
+}
+
+/* ---- Captioned figure (same treatment as the ST3LLARsat pages, but allowed to
+   run wider than the 70ch reading column for landscape infographics) ---- */
+.figure { margin: 1.4rem auto 0; max-width: 760px; }
+.figure--wide { max-width: 1000px; }
+.figure__frame {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: clamp(.8rem, 2vw, 1.4rem);
+  display: grid; place-items: center;
+}
+.figure__frame img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.figure figcaption {
+  margin-top: .7rem; font-size: .87rem; color: var(--text-muted); text-align: center;
+}
+.figure figcaption strong { color: var(--text); font-weight: 600; }
+.figure figcaption a { color: var(--accent); }

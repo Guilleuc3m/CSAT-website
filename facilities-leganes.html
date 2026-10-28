@@ -123,6 +123,18 @@
         </div>
         <div class="facility-intro__media is-free"><img src="images/facilities/leganes/main.png" alt="CSAT — Leganés facility"></div>
       </div>
+      <div class="container facility-allows reveal">
+        <p data-i18n="fac.leg.allows.h">Together, these facilities allow to:</p>
+        <ul class="facility-list facility-list--cols">
+          <li data-i18n="fac.leg.allows.1">Perform space technology SIL/HIL testing.</li>
+          <li data-i18n="fac.leg.allows.2">Measure and calibrate the magnetic and dipole characteristics of a system.</li>
+          <li data-i18n="fac.leg.allows.3">Recreate zero-g-like frictionless motion.</li>
+          <li data-i18n="fac.leg.allows.4">Recreate LEO Magnetic Fields.</li>
+          <li data-i18n="fac.leg.allows.5">Properly excite solar panels and sun sensors.</li>
+          <li data-i18n="fac.leg.allows.6">Feed the navigation solution with adequate GNSS signals based on orbit position.</li>
+          <li data-i18n="fac.leg.allows.7">Recreate and measure RW/CMG desaturation, detumbling, nadir &amp; agile pointing.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- LEGANÉS ONLY: the different spaces within the site -->
@@ -136,41 +148,298 @@
         <div class="spaces-list">
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/central-aiv.jpg" alt="Central AIV area"></div>
-            <div class="space-row__info">
+            <header class="space-row__head">
               <h3 data-i18n="fac.leg.aiv.title">Central AIV area</h3>
+            </header>
+            <div class="space-row__info">
               <p data-i18n="fac.leg.aiv.text">The Main AIV room is the core workspace of CSAT-Leganés, where the primary assembly and integration activities take place. It features a high-functionality central area with ESD-protected workbenches capable of supporting heavy satellite structures, equipped with a full suite of electronic test and measurement instruments — including power supplies, oscilloscopes, spectrum analyzers, signal generators, multimeters and a digital microscope. The room is also equipped with precision mechanical tools and calibration equipment. This space is designed to support all development and integration work that does not require cleanroom conditions, serving as the everyday workhorse of the facility.</p>
             </div>
           </article>
 
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/cleanroom.jpg" alt="ISO-8 cleanroom"></div>
-            <div class="space-row__info">
+            <header class="space-row__head">
               <h3 data-i18n="fac.leg.clean.title">Clean room</h3>
+            </header>
+            <div class="space-row__info">
               <p data-i18n="fac.leg.clean.text">The ISO-8 cleanroom is the highest-grade environment within CSAT-Leganés, designed for the most sensitive stages of satellite assembly and integration. With controlled levels of dust and contamination, it ensures that delicate components and payloads are handled in conditions that meet space qualification standards. The cleanroom is equipped with the same electronic test and measurement capabilities as the main AIV room, allowing integration work to continue seamlessly within a clean environment. It is the final step in the on-ground preparation of a satellite before it is ready for launch.</p>
+              <p data-i18n="fac.leg.clean.text2">In addition, the clean room contains the environmental testing equipment. Currently, it is only equipped with an 11 kN vibrational bench formed by a shaker and a slip-table. This bench allows testing for the forces experienced during launch. It is capable of testing DUTs of up to 40 kg and dimensions 60 × 60 cm — depending on their mass-center-inertia (MCI) characteristics.</p>
+            </div>
+            <div class="space-row__extra">
+              <p class="specs-intro" data-i18n="fac.leg.clean.specs_h">The equipment technical specs are as follows:</p>
+              <div class="spec-cards">
+                <div class="spec-card spec-card--wide spec-card--media spec-card--media-lg">
+                  <div>
+                    <h4 class="spec-card__title">Vibrational Testbench (Vib-TB)</h4>
+                    <div class="spec-groups">
+                      <div class="spec-group">
+                        <span class="spec-group__label" data-i18n="fac.spec.shaker">Shaker</span>
+                        <ul class="spec-list">
+                          <li data-i18n="fac.spec.shaker.1">Max. frequency: 4,500 Hz</li>
+                          <li data-i18n="fac.spec.shaker.2">Rated force: sine 11 kN, random 11 kN rms, shock 22 kN</li>
+                          <li data-i18n="fac.spec.shaker.3">Max. accelerations: sine 1,090 m/s², random 630 m/s² rms, shock 2,000 m/s² peak</li>
+                          <li data-i18n="fac.spec.shaker.4">Max. Velocity: continuous 2.0 m/s, peak 2.5 m/s</li>
+                          <li data-i18n="fac.spec.shaker.5">Max. displacement: 51 mm pk-2-pk</li>
+                          <li data-i18n="fac.spec.shaker.6">Armature diameter: 210 mm</li>
+                        </ul>
+                      </div>
+                      <div class="spec-group">
+                        <span class="spec-group__label" data-i18n="fac.spec.slip">Horizontal slip table</span>
+                        <ul class="spec-list">
+                          <li data-i18n="fac.spec.slip.1">600 × 600 mm table with gridded M8 pattern</li>
+                          <li data-i18n="fac.spec.slip.2">Usable frequency range: DC – 2,000 Hz</li>
+                        </ul>
+                      </div>
+                      <div class="spec-group">
+                        <span class="spec-group__label" data-i18n="fac.spec.ctrl">Controller</span>
+                        <ul class="spec-list">
+                          <li data-i18n="fac.spec.ctrl.1">4 channels, profiles: sine/random/shock</li>
+                          <li data-i18n="fac.spec.ctrl.2">4 triaxial accelerometers: 10 mV/g</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <figure class="spec-figure">
+                    <img src="images/facilities/leganes/vibration-bench.jpg" alt="11 kN vibrational test bench: shaker and horizontal slip table inside the clean room">
+                  </figure>
+                </div>
+              </div>
             </div>
           </article>
 
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/csoc.jpg" alt="CubeSat Operations Center (CSOC)"></div>
-            <div class="space-row__info">
+            <header class="space-row__head">
               <h3 data-i18n="fac.leg.csoc.title">CSOC</h3>
+            </header>
+            <div class="space-row__info">
               <p data-i18n="fac.leg.csoc.text">The CubeSat Operations Center (CSOC) is the mission control hub of CSAT-Leganés. From here, the team manages satellite communications through a UHF/VHF antenna installed on the Leganés campus, handling telemetry reception and command transmission to active satellites in orbit. The CSOC is operated by UC3-BASE, UC3M's student and faculty amateur radio association, making it also a hands-on training ground for the next generation of satellite operators.</p>
             </div>
           </article>
 
           <article class="space-row reveal">
             <div class="space-row__media"><img src="images/facilities/leganes/sil-hil.jpg" alt="SIL/HIL laboratory"></div>
-            <div class="space-row__info">
+            <header class="space-row__head">
               <h3 data-i18n="fac.leg.sil.title">SIL/HIL lab</h3>
+            </header>
+            <div class="space-row__info">
               <p data-i18n="fac.leg.sil.text">The SIL/HIL lab is where software and hardware validation takes place before any component is integrated into the satellite. It is equipped with a high-fidelity GNSS simulator capable of reproducing real orbital conditions, as well as advanced signal generation and analysis instruments covering a wide frequency range. This allows engineers to rigorously test onboard systems in a simulated space environment without leaving the ground. The lab also hosts the facility's soldering station, kept separate from the main integration areas to ensure a clean and controlled working environment.</p>
+            </div>
+            <div class="space-row__extra">
+              <p class="specs-intro" data-i18n="fac.leg.sil.specs_h">The equipment technical specs in the SIL/HIL lab are:</p>
+              <div class="spec-cards">
+                <div class="spec-card spec-card--wide">
+                  <h4 class="spec-card__title">GNSS Simulator (GNSSsim)</h4>
+                  <ul class="spec-list spec-list--cols">
+                    <li data-i18n="fac.spec.gnss.1">All GNSS bands</li>
+                    <li data-i18n="fac.spec.gnss.2">All frequencies (including S-band)</li>
+                    <li data-i18n="fac.spec.gnss.3">All constellations: GNSS/GPS/Galileo/BeiDou …</li>
+                    <li data-i18n="fac.spec.gnss.4">Simultaneous signal generation: 700</li>
+                    <li data-i18n="fac.spec.gnss.5">Multiple-frequency bandwidth: 125 Msps</li>
+                    <li data-i18n="fac.spec.gnss.6">Simulation iteration rate: 1,000 Hz</li>
+                    <li data-i18n="fac.spec.gnss.7">HIL latency: 10 ms</li>
+                    <li data-i18n="fac.spec.gnss.8">LEO dynamic sim.: up to 150,000 m/s</li>
+                  </ul>
+                </div>
+                <div class="spec-card">
+                  <h4 class="spec-card__title">Signal generator (SigGen)</h4>
+                  <ul class="spec-list">
+                    <li data-i18n="fac.spec.siggen.1">Frequency range: 100 kHz to 44 GHz</li>
+                    <li data-i18n="fac.spec.siggen.2">Internal RF modulation bandwidth up to 2 GHz</li>
+                    <li data-i18n="fac.spec.siggen.3">5G NR signal generation for FR1/2 up to 44 GHz</li>
+                  </ul>
+                </div>
+                <div class="spec-card">
+                  <h4 class="spec-card__title">Signal and spectrum analyzer (SigAn)</h4>
+                  <ul class="spec-list">
+                    <li data-i18n="fac.spec.sigan.1">Frequency range: 10 Hz – 7.5 GHz</li>
+                    <li data-i18n="fac.spec.sigan.2">Phase noise: &lt; –114 dBc (1 Hz)</li>
+                    <li data-i18n="fac.spec.sigan.3">DANL @ 1 GHz: &lt; –162 dBm/Hz</li>
+                    <li data-i18n="fac.spec.sigan.4">Max. analysis bandwidth: 200 MHz</li>
+                  </ul>
+                </div>
+                <div class="spec-card spec-card--wide">
+                  <h4 class="spec-card__title" data-i18n="fac.spec.solder">Soldering equipment</h4>
+                  <ul class="spec-list spec-list--cols">
+                    <li data-i18n="fac.spec.solder.1">Soldering station: 260 W / 200-480 °C</li>
+                    <li data-i18n="fac.spec.solder.2">Hot air rework station: 650 W / 100-480 °C</li>
+                    <li data-i18n="fac.spec.solder.3">Desoldering station: 75 W / 380-480 °C</li>
+                    <li data-i18n="fac.spec.solder.4">Hot-melt glue gun: warm-up time &lt;3 min, 190 °C</li>
+                    <li data-i18n="fac.spec.solder.5">Stereo-microscope with a 4 Mpixels / 300X screen</li>
+                    <li data-i18n="fac.spec.solder.6">Weller filtration Zero Smog system</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
 
           <article class="space-row reveal">
-            <div class="space-row__media"><img src="images/facilities/leganes/adcs.jpg" alt="ADCS laboratory"></div>
+            <div class="space-row__media is-natural"><img src="images/facilities/leganes/dipole-cage.png" alt="In-house dipole measurement cage (DMC) with a device under test inside"></div>
+            <header class="space-row__head">
+              <h3 data-i18n="fac.leg.mag.title">Magnetic Measurement &amp; Dipole Estimation</h3>
+            </header>
             <div class="space-row__info">
+              <p data-i18n="fac.leg.mag.text1">One of the main internal disturbances in satellites is the residual magnetic dipole (RMD), which is the magnetic field created by the electrical paths and magnetic components onboard. Its characterization is important to help reduce the pointing error of the Attitude Determination and Control Subsystem (ADCS) and it might require wiring/component rearrangement or additional shielding of the final flight hardware.</p>
+              <p data-i18n="fac.leg.mag.text2">Typically, a prelaunch magnetic cleanliness test campaign should be conducted on the ground by the satellite prime, but this is an expensive test and requires very specialized facilities. Several alternate, (relatively) low-cost methods have been developed to provide a measure of the RMD without requiring such expensive testing. An in-house dipole measurement cage (DMC) was developed at the CSAT in the frame of a PhD thesis to facilitate the characterization of the RMD based on a nonmetallic structure equipped with 12 low-cost magnetometers and an estimation algorithm that determines the satellite’s RMD parameters. The DMC unit can be calibrated with an external magnetometer, which due to its high-fidelity specifications is typically used to calibrate the magnetic Helmholtz cage.</p>
+            </div>
+            <div class="space-row__extra">
+              <p class="specs-intro" data-i18n="fac.leg.mag.specs_h">The equipment technical specs are as follows:</p>
+              <div class="spec-cards">
+                <div class="spec-card spec-card--wide">
+                  <h4 class="spec-card__title">Dipole Measurement Cage (DMC)</h4>
+                  <div class="spec-groups spec-groups--2">
+                    <div class="spec-group">
+                      <ul class="spec-list">
+                        <li data-i18n="fac.spec.dmc.1">12-magnetometers sensing unit</li>
+                        <li data-i18n="fac.spec.dmc.2">Internal dimension: 40 × 40 × 60 cm</li>
+                        <li data-i18n="fac.spec.dmc.3">Measurement:</li>
+                        <li>
+                          <ul class="spec-sub">
+                            <li data-i18n="fac.spec.dmc.3a">Range = ±1100 µT</li>
+                            <li data-i18n="fac.spec.dmc.3b">Noise = 15 nT</li>
+                            <li data-i18n="fac.spec.dmc.3c">Bias = 100 nT</li>
+                            <li data-i18n="fac.spec.dmc.3d">Sensitivity = 13 nT</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="spec-group">
+                      <ul class="spec-list">
+                        <li data-i18n="fac.spec.dmc.4">Errors:</li>
+                        <li>
+                          <ul class="spec-sub">
+                            <li data-i18n="fac.spec.dmc.4a">Magnitude 6%</li>
+                            <li data-i18n="fac.spec.dmc.4b">Direction 8°</li>
+                            <li data-i18n="fac.spec.dmc.4c">Position 8 mm</li>
+                          </ul>
+                        </li>
+                        <li data-i18n="fac.spec.dmc.5">Test conditions:</li>
+                        <li>
+                          <ul class="spec-sub">
+                            <li data-i18n="fac.spec.dmc.5a">Ambient noise &lt;200 nT</li>
+                            <li data-i18n="fac.spec.dmc.5b">Dipole moment &gt;0.02 A·m²</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="spec-card spec-card--media spec-card--wide">
+                  <div>
+                    <h4 class="spec-card__title">High-Fidelity Magnetometer (HF-MMT)</h4>
+                    <ul class="spec-list">
+                      <li data-i18n="fac.spec.hfm.1">Measuring range: ±1000 µT</li>
+                      <li data-i18n="fac.spec.hfm.2">Scaling: 10 mV/µT — error: ±0.5%</li>
+                      <li data-i18n="fac.spec.hfm.3">Linearity error: 0.0015% (LSQ fit)</li>
+                      <li data-i18n="fac.spec.hfm.4">Noise: STD ≤10 pT rms/√Hz @ 1 Hz; LOW &lt;6 pT rms/√Hz @ 1 Hz</li>
+                      <li data-i18n="fac.spec.hfm.5">Zero field offset: ≤ ±50 nT</li>
+                    </ul>
+                  </div>
+                  <figure class="spec-figure">
+                    <img src="images/facilities/leganes/hf-magnetometer.jpg" alt="Bartington Mag-13MS1000 three-axis high-fidelity magnetometer">
+                    <figcaption>© Bartington Instruments Limited</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="space-row reveal">
+            <div class="space-row__media"><img src="images/facilities/leganes/adcs.jpg" alt="ADCS laboratory"></div>
+            <header class="space-row__head">
               <h3 data-i18n="fac.leg.adcs.title">ADCS lab</h3>
+            </header>
+            <div class="space-row__info">
               <p data-i18n="fac.leg.adcs.text">The ADCS lab is dedicated to the validation of attitude determination and control systems — the technology responsible for orienting and stabilizing a satellite in orbit. It features a low-friction platform that allows satellites to rotate freely, simulating the near-frictionless conditions of space, along with a Helmholtz cage that generates a controlled magnetic field environment to replicate Earth's magnetic field at any orbit. A solar simulator completes the setup, enabling realistic testing of sun-tracking and power generation systems. Together, these capabilities allow full end-to-end validation of a satellite's attitude control behavior, for platforms ranging from small CubeSats up to microsatellites of up to 200 kg.</p>
+            </div>
+            <div class="space-row__extra">
+              <p class="specs-intro" data-i18n="fac.leg.adcs.vvt_h">The verification, validation and testing (VV&amp;T) capabilities of the ADCS + SIL/HIL labs are:</p>
+              <ul class="facility-list facility-list--cols">
+                <li data-i18n="fac.leg.adcs.vvt1">Magnetometer sensor &amp; magnetorquer actuator testing</li>
+                <li data-i18n="fac.leg.adcs.vvt2">Permanent magnet characterization</li>
+                <li data-i18n="fac.leg.adcs.vvt3">Recreation of constant &amp; varying mag-field using: Telemetry, user-input or simulated orbit</li>
+                <li data-i18n="fac.leg.adcs.vvt4">Automated DUT CoG estimation</li>
+                <li data-i18n="fac.leg.adcs.vvt5">Reaction Wheel &amp; CMG momentum desaturation / dumping</li>
+                <li data-i18n-html="fac.leg.adcs.vvt6">Attitude determination algorithm verification and validation <span class="fn-ref">*</span></li>
+                <li data-i18n-html="fac.leg.adcs.vvt7">Detumbling testing <span class="fn-ref">*</span></li>
+                <li data-i18n-html="fac.leg.adcs.vvt8">Nadir-pointing &amp; Agile maneuvering characterization &amp; testing <span class="fn-ref">*</span></li>
+              </ul>
+              <p class="footnote" data-i18n-html="fac.leg.adcs.vvt_note"><span class="fn-ref">*</span> It can be done only on ABT or complemented with MAG-field, Sun &amp; GNSS sensor excitation.</p>
+
+              <p class="specs-intro" data-i18n="fac.leg.adcs.specs_h">The equipment technical specs are as listed:</p>
+              <div class="spec-cards">
+                <div class="spec-card spec-card--wide">
+                  <h4 class="spec-card__title">Helmholtz Cage (HHC)</h4>
+                  <ul class="spec-list spec-list--cols">
+                    <li data-i18n="fac.spec.hhc.1">Cage dimension: 2.4 × 2.4 × 2.4 meters</li>
+                    <li data-i18n="fac.spec.hhc.2">Magnetic flux: ±200 µT (max. 374 µT)</li>
+                    <li data-i18n="fac.spec.hhc.3">Mag-testing area: ≥600 mm</li>
+                    <li data-i18n="fac.spec.hhc.4">Homogeneity: ≤1%</li>
+                    <li data-i18n="fac.spec.hhc.5">Orthogonality: 0.1°</li>
+                    <li data-i18n="fac.spec.hhc.6">Operating stability: ≥8 hours</li>
+                  </ul>
+                </div>
+                <div class="spec-card spec-card--wide">
+                  <h4 class="spec-card__title" data-i18n="fac.spec.abtl">Large Air-Bearing Table (ABT) – for minisatellites</h4>
+                  <div class="spec-groups spec-groups--2">
+                    <div class="spec-group">
+                      <ul class="spec-list">
+                        <li data-i18n="fac.spec.abtl.1">Square 60 × 60 cm 3-axis table with grid pattern M8/M10</li>
+                        <li data-i18n="fac.spec.abtl.2">For DUTs between 40-200 kg (depending on MCI)</li>
+                        <li data-i18n="fac.spec.abtl.3">3-DOF rotational motion: 360° Z-axis &amp; ±15° X/Y-axes</li>
+                        <li data-i18n="fac.spec.abtl.4">Disturbance moment: &lt; 1-3 Nm</li>
+                        <li data-i18n="fac.spec.abtl.5">Power for DUT: 36 V / 6 Ah, 192-240 Wh for 4.5 h @ 40 W</li>
+                        <li data-i18n="fac.spec.abtl.6">Automated CG balancing:</li>
+                        <li>
+                          <ul class="spec-sub">
+                            <li data-i18n="fac.spec.abtl.6a">Pitch: 2 mm</li>
+                            <li data-i18n="fac.spec.abtl.6b">Accuracy: repeat &lt; 2 µm, positioning &lt; 4 µm</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="spec-group">
+                      <ul class="spec-list">
+                        <li data-i18n="fac.spec.abtl.gyro">Gyro</li>
+                        <li>
+                          <ul class="spec-sub">
+                            <li data-i18n="fac.spec.abtl.g1">Output range: ±450 deg/s</li>
+                            <li data-i18n="fac.spec.abtl.g2">Misalignment: 0.01 deg</li>
+                            <li data-i18n="fac.spec.abtl.g3">Bias: instability 0.8 deg/h, ARW 0.6 deg/√h</li>
+                          </ul>
+                        </li>
+                        <li data-i18n="fac.spec.abtl.accel">Accel</li>
+                        <li>
+                          <ul class="spec-sub">
+                            <li data-i18n="fac.spec.abtl.a1">Output range: ±8G / ±16G</li>
+                            <li data-i18n="fac.spec.abtl.a2">Misalignment: 0.01 deg</li>
+                            <li data-i18n="fac.spec.abtl.a3">Bias: instability 24 µG, VRW 0.02 m/s/√h</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="spec-card">
+                  <h4 class="spec-card__title" data-i18n="fac.spec.abts">Small ABT – for CubeSats</h4>
+                  <ul class="spec-list">
+                    <li data-i18n="fac.spec.abts.1">Circular 25 cm (diam.) 3-axis table with grid pattern M8</li>
+                    <li data-i18n="fac.spec.abts.2">For DUT up to 40 kg (depending on MCI)</li>
+                    <li data-i18n="fac.spec.abts.3">3-DOF rotational motion: 360° Z-axis &amp; ±30° X/Y-axes</li>
+                    <li data-i18n="fac.spec.abts.4">Non-mechanical / non-powered</li>
+                    <li data-i18n="fac.spec.abts.5">Manual CG balancing</li>
+                  </ul>
+                </div>
+                <div class="spec-card">
+                  <h4 class="spec-card__title">Sun Simulator (SunSim)</h4>
+                  <ul class="spec-list">
+                    <li data-i18n="fac.spec.sun.1">LED-based lamp: 400 W nominal, 500 W maximum</li>
+                    <li data-i18n="fac.spec.sun.2">Up to 130,000 lux at 1 meter (AM1.5 = 1 Sun = 122k lux)</li>
+                    <li data-i18n="fac.spec.sun.3">Light modes: CCT, HIS, DMX, Sync…</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
         </div>
