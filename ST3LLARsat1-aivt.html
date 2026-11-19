@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <title>ST3LLARsat1 — AIVT — CSAT | UC3M</title>
+  <meta name="description" content="ST3LLARsat1 “Boira” assembly, integration, validation and testing: the four-model philosophy (mock-up, SM/STM, FlatSat/EM, PFM), the development plan and the environmental acceptance envelopes and test plan.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+  <link rel="stylesheet" href="css/pages/stellarsat.css">
+  <link rel="stylesheet" href="css/pages/st3llarsat1.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
+</head>
+<body data-page="stellarsat">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top mission-page">
+
+    <section class="page-hero program-hero mission-hero">
+      <div class="container">
+        <span class="eyebrow">ST3LLARsat1 “Boira”</span>
+        <h1 data-i18n="s1c.tab.aivt">AIVT</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="s1c.tag.aivt">Assembly, Integration, Validation, and Testing</p>
+      <nav class="mission-tabs" aria-label="ST3LLARsat1" data-i18n-attr="aria-label:s1c.tabs.label">
+        <div class="mission-tabs__list">
+          <a href="ST3LLARsat1.html" data-i18n="s1c.tab.overview">Overview</a>
+          <a href="ST3LLARsat1-mission.html" data-i18n="s1c.tab.mission">Mission</a>
+          <a href="ST3LLARsat1-spacecraft.html" data-i18n="s1c.tab.spacecraft">Spacecraft</a>
+          <a href="ST3LLARsat1-aivt.html" aria-current="page" data-i18n="s1c.tab.aivt">AIVT</a>
+          <a href="ST3LLARsat1-program.html" data-i18n="s1c.tab.program">Program</a>
+          <a href="ST3LLARsat1-documents.html" data-i18n="s1c.tab.documents">Documents</a>
+        </div>
+      </nav>
+      </div>
+    </section>
+
+    <!-- ===================== MODEL PHILOSOPHY ===================== -->
+    <section class="section program-section program-section--prose" id="model-philosophy" data-toc>
+      <div class="container">
+        <h2 data-i18n="s1a.phil.h">Model philosophy</h2>
+        <div class="project-body">
+          <p class="lead" data-i18n="s1a.phil.p1">ST3LLARsat1 model philosophy is defined to use the minimum set of physical models needed to qualify the CubeSat before proto-flight model (PFM) delivery, while protecting the flight hardware and building the AIVT knowledge and experience of the team in using the CSAT facilities.</p>
+          <p data-i18n="s1a.phil.p2">Each model is defined to mitigate identified risks and achieve specific objectives in a progressive and carefully considered manner, ultimately resulting in a PFM with the required confidence level for flight. In the next subsections, the development plan (which details the number of physical models and their representativeness), and the environmental acceptance envelopes (which defines the qualification and proto-flight levels required for the developed models) are described.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DEVELOPMENT PLAN ===================== -->
+    <section class="section program-section program-section--prose" id="development-plan" data-toc>
+      <div class="container">
+        <h2 data-i18n="s1a.dev.h">Development plan</h2>
+        <div class="project-body">
+          <p data-i18n-html="s1a.dev.p1">Four physical models are defined (Mock-up, SM/STM, FlatSat/EM, and PFM), but before describing each type of model below, the next table summarizes their representativeness with respect to flight-like (FL) hardware or with respect to ‘dummy’ models and/or ‘dummy’ mechanical interface (I/F) –i.e., the use of 3D-printed models for hardware components and/or non-flight cables and ports to recreate the flight harness/wiring.</p>
+        </div>
+
+        <figure class="table-fig" id="table-6">
+          <figcaption class="table-cap" data-i18n-html="s1a.t6.cap"><strong>Table 6.</strong> Summary of the four test models used in ST3LLARsat1</figcaption>
+          <div class="table-wrap">
+            <table class="data-table data-table--min">
+              <thead><tr><th data-i18n="s1a.t6.h0">Item</th><th>Mock-up</th><th>SM / STM</th><th>FlatSat / EM</th><th>PFM</th></tr></thead>
+              <tbody>
+                <tr><td data-i18n="s1a.t6.r1">Structure</td><td data-i18n="s1a.t6.r1c1">FL envelope</td><td>FL</td><td>N/A</td><td>FL</td></tr>
+                <tr><td>EPS</td><td data-i18n="s1a.t6.mech">Mech. I/F dummy</td><td data-i18n-html="s1a.t6.dum">Dummy <sup>(1)(2)</sup></td><td data-i18n="s1a.t6.fl.eps">FL*, not space grade (TBC)</td><td>FL</td></tr>
+                <tr><td data-i18n="s1a.t6.r3">Solar panels</td><td data-i18n="s1a.t6.mech">Mech. I/F dummy</td><td data-i18n-html="s1a.t6.dum">Dummy <sup>(1)(2)</sup></td><td data-i18n="s1a.t6.fl">FL, not space grade (TBC)</td><td>FL</td></tr>
+                <tr><td>OBC</td><td data-i18n="s1a.t6.mech">Mech. I/F dummy</td><td data-i18n-html="s1a.t6.dum">Dummy <sup>(1)(2)</sup></td><td data-i18n="s1a.t6.fl">FL, not space grade (TBC)</td><td>FL</td></tr>
+                <tr><td data-i18n="s1a.t6.r5">Payload spectrometer</td><td data-i18n="s1a.t6.mech">Mech. I/F dummy</td><td data-i18n="s1a.t6.r5c2">FL (1st unit)</td><td data-i18n="s1a.t6.r5c3">FL, same unit as STM</td><td data-i18n="s1a.t6.r5c4">FL (2nd unit)</td></tr>
+                <tr><td>AOCS</td><td data-i18n="s1a.t6.mech">Mech. I/F dummy</td><td data-i18n-html="s1a.t6.dum">Dummy <sup>(1)(2)</sup></td><td data-i18n="s1a.t6.fl">FL, not space grade (TBC)</td><td>FL</td></tr>
+                <tr><td data-i18n="s1a.t6.r7">In-house antenna</td><td data-i18n="s1a.t6.mech">Mech. I/F dummy</td><td>FL</td><td data-i18n="s1a.t6.r7c3">FL, same unit as STM</td><td>FL</td></tr>
+                <tr><td data-i18n="s1a.t6.r8">COTS antenna</td><td data-i18n="s1a.t6.mech">Mech. I/F dummy</td><td data-i18n-html="s1a.t6.dum">Dummy <sup>(1)(2)</sup></td><td data-i18n="s1a.t6.fl">FL, not space grade (TBC)</td><td>FL</td></tr>
+                <tr><td data-i18n="s1a.t6.r9">Harness</td><td data-i18n="s1a.t6.r9c1">FL connectors and routing</td><td data-i18n="s1a.t6.r9c2">Dummy; attach. points qualified (TBC)</td><td data-i18n="s1a.t6.r9c3">Representative connectors and wires, not lengths</td><td>FL</td></tr>
+                <tr><td data-i18n="s1a.t6.r10">Application software</td><td>N/A</td><td>N/A</td><td>FL v0.1</td><td>FL v0.2</td></tr>
+                <tr><td data-i18n="s1a.t6.r11">Other objectives</td><td data-i18n="s1a.t6.r11c1">Assembly procedure</td><td data-i18n="s1a.t6.r11c2">Environmental test procedures</td><td data-i18n="s1a.t6.r11c3">Integration procedures; ASW development</td><td data-i18n="s1a.t6.r11c4">Flight acceptance</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note" data-i18n="s1a.t6.n1">(1) Same mechanical interfaces, but mass-center of gravity-inertia (MCI) as the flight unit.</p>
+          <p class="table-note" style="margin-top:.2rem" data-i18n="s1a.t6.n2">(2) Same power dissipation.</p>
+        </figure>
+
+        <!-- Mock-up -->
+        <h3 class="sec-sub" id="mock-up" data-toc="sub" data-i18n="s1a.mock.h">Mock-up</h3>
+        <div class="project-body">
+          <p data-i18n-html="s1a.mock.p1">The mock-up model meets the procured flight system envelope, and it is made with 3D-printed dummies of every unit reproducing mechanical interfaces and connectors position, and a flight-like harness in connectors and routing. Its purpose is to refine the system assembly procedure: training of students, definition of the stacking sequence and of the harness lengths, identification of attachment points and bending radii, and rehearsal of the integration of the external panels. Several have been built in an increasing detail approach, see <a class="xref" href="#fig-18">Figure 18</a> for the initial and consolidated developments, and <a class="xref" href="#fig-19">Figure 19</a> for the latest mock-up model (right) together with the latest CAD model and the flight-HW structure.</p>
+        </div>
+        <figure class="figure figure--mid reveal" id="fig-18">
+          <div class="figure__frame figure__frame--photo">
+            <div class="photo-row">
+              <img style="--r:1.66" src="images/st3llarsat1/fig24-mockup-1.jpg" width="774" height="466" loading="lazy" decoding="async" alt="Initial mock-up of the structure used to test the assembly process." data-i18n-attr="alt:s1a.fig24a.alt">
+              <img style="--r:1.57" src="images/st3llarsat1/fig24-mockup-2.jpg" width="914" height="582" loading="lazy" decoding="async" alt="Consolidated 3D-printed mock-up with the harness and wiring model." data-i18n-attr="alt:s1a.fig24b.alt">
+            </div>
+          </div>
+          <figcaption data-i18n-html="s1a.fig24.cap"><strong>Figure 18.</strong> ST3LLARsat1: mock-up assembly process testing - initial (left) and consolidated (right)</figcaption>
+        </figure>
+        <figure class="figure figure--narrow reveal" id="fig-19" style="max-width:640px">
+          <div class="figure__frame figure__frame--paper">
+            <div class="photo-row">
+              <img style="--r:.697" src="images/st3llarsat1/fig25-cad.png" width="475" height="681" loading="lazy" decoding="async" alt="Current CAD model of the CubeSat." data-i18n-attr="alt:s1a.fig25a.alt">
+              <img style="--r:.693" src="images/st3llarsat1/fig25-sm02.jpg" width="440" height="635" loading="lazy" decoding="async" alt="SM02 2U structure." data-i18n-attr="alt:s1a.fig25b.alt">
+              <img style="--r:1.136" src="images/st3llarsat1/fig25-printed.jpg" width="310" height="273" loading="lazy" decoding="async" alt="3D-printed mock-up." data-i18n-attr="alt:s1a.fig25c.alt">
+            </div>
+          </div>
+          <figcaption data-i18n-html="s1a.fig25.cap"><strong>Figure 19.</strong> ST3LLARsat1: Current CAD version (left); SM02 2U structure (center); 3D printed mock-up (right)</figcaption>
+        </figure>
+
+        <!-- SM / STM -->
+        <h3 class="sec-sub" id="sm-stm" data-toc="sub" data-toc-label="SM / STM" data-i18n-attr="data-toc-label:toc.s1a.stm" data-i18n="s1a.stm.h">Structural Model (SM) upgraded to Structural and Thermal Model (STM)</h3>
+        <div class="project-body">
+          <p data-i18n="s1a.stm.p1">System units will be simulated by machined aluminum dummies with the same mechanical interfaces, mass, center of gravity and moments of inertia (MCI) as the flight units, mounted in the flight structure.</p>
+          <p data-i18n="s1a.stm.p2">First, the structural model (SM) is a purely mechanical model used for mass/dimension envelope checks and dispenser fit-check. This model is also used for the qualification vibration campaign described in the next subsection, so that the shaker procedures of the CSAT facility are developed using a model that contains no critical flight electronics.</p>
+          <p data-i18n="s1a.stm.p3">Second, the SM will be upgraded into a structural and thermal model (STM) that incorporates thermal representativeness. This will be achieved by fitting resistors into the appropriate dummies to reproduce each unit’s power consumption and thermal dissipation. This supports the thermal cycling and thermal balance tests that validate the ESATAN-TMS model described in the next subsection. The STM will also be used to environmentally qualify two of the items with no flight heritage (the in-house OBC-PCB and ADCS-PCB will be replaced by dummies as described): the in-house antenna (Tech.IOD-1) and the CubeSat payload (a COTS spectrometer). Both will be integrated as flight-like units so that the STM campaign qualifies them mechanically, and thermally, at system level. A second unit of the spectrometer will be procured and used for the PFM while the other will be used after the qualification tests for the next model (the FlatSat). The COTS deployable UHF antenna is represented by a dummy, since its qualification is covered by the supplier. A mass and length dummy harness will be used to mechanically qualify the attachment points in the same campaign.</p>
+        </div>
+
+        <!-- FlatSat / EM -->
+        <h3 class="sec-sub" id="flatsat" data-toc="sub" data-toc-label="FlatSat / EM" data-i18n-attr="data-toc-label:toc.s1a.flat" data-i18n="s1a.flat.h">FlatSat / Engineering Model (EM)</h3>
+        <div class="project-body">
+          <p data-i18n="s1a.flat.p1">The FlatSat is a fully functional engineering model (EM), assembled in a flat configuration (i.e., without the structure). The EPS, solar panels, OBC-PCB, ADCS-PCB and in-house antenna are flight-like units (i.e., where possible non-space-grade versions of the same design to contain cost). The payload unit will be the same spectrometer used in the STM, so that it can support the system integration activities in parallel before the PFM implementation. The COTS UHF antenna is represented by its electrical interfaces only, and the harness by representative connectors and wires without flight lengths. The FlatSat will run an application software (ASW) and will support its development through hardware-in-the-loop (HIL) testing in the CSAT SIL/HIL laboratory. Its other purposes are to support the integration procedures, the training of the operations team and, after launch, the ground replica for in-orbit anomaly investigation.</p>
+        </div>
+
+        <!-- PFM -->
+        <h3 class="sec-sub" id="pfm" data-toc="sub" data-toc-label="PFM" data-i18n-attr="data-toc-label:toc.s1a.pfm" data-i18n="s1a.pfm.h">Proto-flight model (PFM)</h3>
+        <div class="project-body">
+          <p data-i18n="s1a.pfm.p1">The proto-flight model (PFM) is the flight unit, with all subsystems flight-like and ASW. Because qualification levels are demonstrated on the SM/STM, the PFM is tested at proto-flight level (that is, qualification amplitudes but only at acceptance duration) to confirm workmanship and verify the design margins established by both detailed analyses and the STM campaign. Its objectives before launch are the verification of integration and functional performance, the validation of power, ADCS and OBC performance, the demonstration of the on-board software, the full functional test, and the flight qualification of the assembled satellite.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ENVIRONMENTAL ENVELOPES ===================== -->
+    <section class="section program-section program-section--prose" id="environmental" data-toc data-toc-label="Environment" data-i18n-attr="data-toc-label:toc.s1a.env">
+      <div class="container">
+        <h2 data-i18n="s1a.env.h">Environmental acceptance envelopes</h2>
+        <div class="project-body">
+          <p data-i18n-html="s1a.env.p1">Following the model philosophy of the previous subsection, the satellite structural assembly and internal payloads will be qualified at the CSAT facilities against the environmental envelopes described next (and summarized in <a class="xref" href="#table-7">Table 7</a>):</p>
+          <p data-i18n-html="s1a.env.p2"><strong>Structural verification</strong> by analysis relies on two independent finite element models. A first model, built in ANSYS from the CATIA assembly, was reviewed at the ESA-FYS! FDR (March 2024) against the Vega-C environment: rods were assumed as 1D beam elements, panels and boards as 2D shells, frame and standoffs as solids, with a free-free check (six rigid-body modes below 0.02 Hz against a first elastic mode at 483 Hz) preceding the constrained analyses. A second model was rebuilt in Abaqus (January 2025) against the environment of a second European launcher (whose user manual is not public and thus, no further details can be given) to remove the dependence on a single solver and to include a revised payload support. The CAD baseline has been moved from CATIA to SolidWorks and, for the AIV phase, to Solid Edge, from which mass properties and Abaqus geometry are exported. The environmental envelopes applied in both models are taken from the NASA General Environmental Verification Standard (GEVS, GSFC-STD-7000) and from the Vega-C Small Spacecraft Mission Service (SSMS) user manual. A comparison between the two specifications, and with those from the undisclosed launcher, showed that the Vega-C SSMS levels are the most severe, and therefore will be used to define the qualification envelope. Both models constrain the four rail ends on ±Z and apply a qualification factor of 2 on the 10 g design quasi-static load, since compliance has not yet been demonstrated by test.</p>
+          <p data-i18n-html="s1a.env.p3"><strong>Thermal verification</strong> uses the geometrical and thermal mathematical models built in ESATAN-TMS 2023 with the cyclic solver recommended by ESA, for hot (dawn–dusk, 5 °/s spin about Z) and cold (noon–midnight) cases, with albedo at 0.306, solar constant between 1323–1412 W/m², and an Earth effective temperature of 254.3 K. A MATLAB energy balance was used for the preliminary sizing. The STM undergoes, at qualification level, mass and center-of-gravity measurement, dispenser fit-check, low-level resonance survey, and sine and random vibration on the CSAT’s 11 kN shaker and slip-table, followed by thermal cycling and a thermal balance test once the CSAT thermal-vacuum chamber is commissioned (Q2-2027). The PFM repeats resonance survey, sine and random vibration and thermal cycling at proto-flight level, with a bake-out before thermal vacuum and reduced functional tests at each temperature plateau. The shock environment is verified by analysis only, since no shock test facility is available at the CSAT (indeed, this type of facility is seldom found, and it is believed that only 1 or 2 exist in Spain –at a national lab and a large testing company). Accelerometers will be placed at the locations of maximum response predicted by the finite element models (FEMs), and thermocouples and internal Pt100 sensors will be placed at the temperature reference points of the thermal analysis, so that the sine and random surveys correlate the structural model and the balance test correlates the thermal model before PFM acceptance. The expected tests and the rationale are summarized below.</p>
+        </div>
+
+        <h3 class="sec-sub" id="env-constraints" data-toc="sub" data-toc-label="Constraints" data-i18n-attr="data-toc-label:toc.s1a.cons" data-i18n="s1a.cons.h">Additional environmental constraints</h3>
+        <div class="project-body">
+          <p data-i18n="s1a.cons.p1">In accordance with FYS-FDS-v4.1, ST3LLARsat1 is being designed to comply with the additional environmental constraints beyond the baseline mechanical and thermal envelopes:</p>
+        </div>
+        <div class="note-card">
+          <h4 data-i18n="s1a.clean.h">Cleanliness &amp; contamination control</h4>
+          <p data-i18n="s1a.clean.p">All primary assembly, payload integration, and pre-encapsulation operations will be executed at UC3M’s CSAT facilities. The CSAT ISO-7 clean-room guarantees strict particulate and molecular contamination control, relative humidity regulation, and Electrostatic Discharge (ESD) protection throughout hardware handling and integration.</p>
+        </div>
+        <div class="note-card">
+          <h4 data-i18n="s1a.mag.h">Magnetic cleanliness</h4>
+          <p data-i18n="s1a.mag.p">ST3LLARsat1 has been designed considering magnetic cleanliness requirements such as using non-magnetic materials for structural and fastener components. Characterization of the spacecraft’s residual dipole will be conducted using CSAT’s in-house measurement setup for determining the residual magnetic dipole of small satellites. Furthermore, CSAT’s 3-axis Helmholtz cage setup will be used to isolate, calibrate, and compensate internal magnetic dipole moments prior to flight integration.</p>
+        </div>
+        <div class="note-card">
+          <h4 data-i18n="s1a.out.h">Outgassing environment</h4>
+          <p data-i18n="s1a.out.p">Material selection, structural adhesives, and wiring insulation used adhere to low outgassing criteria to prevent contamination of co-passenger spacecraft inside the deployer and test equipment during ground operations.</p>
+        </div>
+
+        <h3 class="sec-sub" id="env-tests" data-toc="sub" data-toc-label="Test plan" data-i18n-attr="data-toc-label:toc.s1a.t7" data-i18n="s1a.t7.h">Environmental test plan</h3>
+        <figure class="table-fig" id="table-7" style="margin-top:1rem">
+          <figcaption class="table-cap" data-i18n-html="s1a.t7.cap"><strong>Table 7.</strong> ST3LLARsat1 Environmental test plan</figcaption>
+          <div class="table-wrap">
+            <table class="data-table data-table--stack">
+              <thead><tr><th data-i18n="s1a.t7.h1">Environmental test</th><th data-i18n="s1a.t7.h2">Rationale &amp; justification for ST3LLARsat1 “Boira”</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td data-i18n="s1a.t7.r1.t">Stiffness and dynamic requirements</td>
+                  <td>
+                    <p data-i18n="s1a.t7.r1.p1">Finite element analysis demonstrates a first natural frequency of 361 Hz (Abaqus, undisclosed-launcher configuration) and 455 Hz (ANSYS, Vega-C configuration) with the four ±Z rail ends rigidly fixed, against the 130 Hz minimum adopted as design requirement, so that no coupling with the launcher fundamental modes can occur.</p>
+                    <p data-i18n="s1a.t7.r1.p2">Under the qualification quasi-static load of 20 g in any direction (10 g design load with a factor of 2), the minimum margin of safety is above 100 for all materials in the Abaqus model, with the worst case for the Z-axis load at the interface between the payload-support spacers and the frame. Sine vibration along the axial and lateral envelopes of the undisclosed launcher yields maximum stresses of 2.5 MPa and margins above 90. Compliance will be confirmed by applying the Vega profile, and experimentally with the low-level resonance survey and the sine sweep on the STM.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-i18n="s1a.t7.r2.t">Random and acoustic vibrations</td>
+                  <td>
+                    <p data-i18n="s1a.t7.r2.p1">Random vibration is analyzed with the Vega-C SSMS and GEVS power spectral density profiles, the most severe of the envelopes considered, in the three axes. The worst case is the X-axis input, with a minimum yield margin of 2.2 on the stainless-steel spacers and deformations below 0.4 mm. Random vibration will be tested on the STM at qualification level and on the PFM at proto-flight level on the CSAT shaker.</p>
+                    <p data-i18n="s1a.t7.r2.p2">The shock response spectrum gives a minimum margin of 3.9 on the same components as above. The shock environment is verified by analysis only.</p>
+                    <p data-i18n="s1a.t7.r2.p3">An acoustic test is not applicable since the CubeSat is enclosed in the dispenser during ascent, and the acoustic loading on a 2U body is enveloped by the random vibration specification.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-i18n="s1a.t7.r3.t">Thermal loads</td>
+                  <td data-i18n="s1a.t7.r3.p">Thermal analysis will be used to verify that the non-operational CubeSat remains within safe component survival temperatures when exposed to a direct thermal flux of 300 W/m² for up to 270 seconds. This conservative boundary evaluation excludes the additional thermal attenuation and shielding provided by the surrounding deployer container, which will further mitigate thermal fluxes during ascent.</td>
+                </tr>
+                <tr>
+                  <td data-i18n="s1a.t7.r4.t">Temperature environments</td>
+                  <td data-i18n="s1a.t7.r4.p">The system complies with ESA FYS-FDS-v4.1 requirement 4.10.7, which requires demonstrating survival during non-operation at a temperature range of −20 °C to +60 °C.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-pager">
+      <div class="container">
+      <nav class="pager" aria-label="ST3LLARsat1">
+        <a class="prev" href="ST3LLARsat1-spacecraft.html"><span class="pager__dir" data-i18n="s1c.prev">Previous</span><span class="pager__title" data-i18n="s1c.tab.spacecraft">Spacecraft</span></a>
+        <a class="next" href="ST3LLARsat1-program.html"><span class="pager__dir" data-i18n="s1c.next">Next</span><span class="pager__title" data-i18n="s1c.tab.program">Program</span></a>
+      </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-st3llarsat1.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/pages/st3llarsat1.js"></script>
+</body>
+</html>

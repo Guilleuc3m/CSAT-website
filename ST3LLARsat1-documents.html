@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <title>ST3LLARsat1 — Documents — CSAT | UC3M</title>
+  <meta name="description" content="ST3LLARsat1 “Boira” documentation: the 25 dissemination outputs, the 20 undergraduate and master theses and the 95 MISE student reports produced around the mission.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+  <link rel="stylesheet" href="css/pages/stellarsat.css">
+  <link rel="stylesheet" href="css/pages/st3llarsat1.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
+</head>
+<body data-page="stellarsat">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top mission-page">
+
+    <section class="page-hero program-hero mission-hero">
+      <div class="container">
+        <span class="eyebrow">ST3LLARsat1 “Boira”</span>
+        <h1 data-i18n="s1c.tab.documents">Documents</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="s1c.tag.documents">Dissemination, theses and student reports</p>
+      <nav class="mission-tabs" aria-label="ST3LLARsat1" data-i18n-attr="aria-label:s1c.tabs.label">
+        <div class="mission-tabs__list">
+          <a href="ST3LLARsat1.html" data-i18n="s1c.tab.overview">Overview</a>
+          <a href="ST3LLARsat1-mission.html" data-i18n="s1c.tab.mission">Mission</a>
+          <a href="ST3LLARsat1-spacecraft.html" data-i18n="s1c.tab.spacecraft">Spacecraft</a>
+          <a href="ST3LLARsat1-aivt.html" data-i18n="s1c.tab.aivt">AIVT</a>
+          <a href="ST3LLARsat1-program.html" data-i18n="s1c.tab.program">Program</a>
+          <a href="ST3LLARsat1-documents.html" aria-current="page" data-i18n="s1c.tab.documents">Documents</a>
+        </div>
+      </nav>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO ===================== -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="project-body docs-intro">
+          <p class="lead" data-i18n="s1d.intro">In this section, all the dissemination outputs (articles, presentations and posters), theses (undergraduate/master), and MISE reports (from 1st year “Space Pre-Design, MISE-SPD” and the 2nd year “Integral Project, MISE-IP”) are listed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DISSEMINATION ===================== -->
+    <section class="section program-section" id="dissemination" data-toc data-toc-label="Dissemination" data-i18n-attr="data-toc-label:toc.s1d.pub">
+      <div class="container">
+        <h2><span data-i18n="s1d.pub.h">Dissemination</span> <span class="h-count">(25)</span></h2>
+        <div data-filterable>
+          <p class="legend" data-i18n-html="s1d.pub.legend">The types are <b>Journal Article (AJ)</b>, <b>Conference Article (AC)</b>, <b>Presentation (PR)</b> and/or <b>Poster (PS)</b>.</p>
+          <div class="list-tools">
+            <label class="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <input type="search" placeholder="Search authors, titles, venues…" data-i18n-attr="placeholder:s1d.search,aria-label:s1d.search" aria-label="Search authors, titles, venues…">
+            </label>
+            <div class="chips" role="group" aria-label="Year" data-i18n-attr="aria-label:s1d.year">
+              <span class="chips__label" data-i18n="s1d.year">Year</span>
+              <button type="button" class="chip-btn" data-group="year" data-value="2023" aria-pressed="false">2023</button>
+              <button type="button" class="chip-btn" data-group="year" data-value="2024" aria-pressed="false">2024</button>
+              <button type="button" class="chip-btn" data-group="year" data-value="2025" aria-pressed="false">2025</button>
+              <button type="button" class="chip-btn" data-group="year" data-value="2026" aria-pressed="false">2026</button>
+            </div>
+            <div class="chips" role="group" aria-label="Type" data-i18n-attr="aria-label:s1d.type">
+              <span class="chips__label" data-i18n="s1d.type">Type</span>
+              <button type="button" class="chip-btn" data-group="type" data-value="AC" aria-pressed="false">AC</button>
+              <button type="button" class="chip-btn" data-group="type" data-value="PR" aria-pressed="false">PR</button>
+              <button type="button" class="chip-btn" data-group="type" data-value="PS" aria-pressed="false">PS</button>
+            </div>
+            <span class="list-count" data-count aria-live="polite"></span>
+          </div>
+          <ul class="pubs">
+          <li class="pub" data-year="2023" data-type="PR">
+            <span class="pub__n">1</span>
+            <div class="pub__body"><span class="pub__authors">Marcos, A., Ponche, A., Cuevas, S., Cruzat, M., Escamilla, B., Herrera, J.M., Mondragon, N., Train, L.,</span> <span class="pub__title">“ST3LLARsat1 BOIRA: an educational CubeSat mission to monitor climate change,”</span> <span class="pub__venue">Small Satellites &amp; Services International Forum (SSSIF’2023), Málaga, Spain, February 2023.</span></div>
+            <span class="pub__meta"><span class="tag-type">PR</span><span>2023</span></span>
+          </li>
+          <li class="pub" data-year="2023" data-type="AC">
+            <span class="pub__n">2</span>
+            <div class="pub__body"><span class="pub__authors">Marcos, A., Ponche, A.,</span> <span class="pub__title">“ST3LLARsat1 “BOIRA”: establishing the first student CubeSat program at UC3M,”</span> <span class="pub__venue">EDULEARN’2023, Palma de Mallorca, Spain, July 2023.</span></div>
+            <span class="pub__meta"><span class="tag-type">AC</span><span>2023</span></span>
+          </li>
+          <li class="pub" data-year="2023" data-type="PR">
+            <span class="pub__n">3</span>
+            <div class="pub__body"><span class="pub__authors">García, C., Cruzat, M., Ponche, A., Acosta, A., Marcos, A.,</span> <span class="pub__title">“UC3M’s ST3LLARsat1 Boira CubeSat: Thermal Control Subsystem evolution from concept to baseline design,”</span> <span class="pub__venue">13th CubeSat Conference, Belgium, Dec. 2023.</span></div>
+            <span class="pub__meta"><span class="tag-type">PR</span><span>2023</span></span>
+          </li>
+          <li class="pub" data-year="2023" data-type="PS">
+            <span class="pub__n">4</span>
+            <div class="pub__body"><span class="pub__authors">Herrera Martín, J.M., Santiago Mesas, S., Rodríguez Villar, M., García García, B., Ponche, A., Marcos, A., Segovia Vargas, D.,</span> <span class="pub__title">“Integration Study of a Novel UHF Compact Antenna in UC3M’s ST3LLARsat1 Boira 2U CubeSat,”</span> <span class="pub__venue">13th CubeSat Conference, Belgium, Dec. 2023.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2023</span></span>
+          </li>
+          <li class="pub" data-year="2023" data-type="PS">
+            <span class="pub__n">5</span>
+            <div class="pub__body"><span class="pub__authors">Sharifi, G., Cuevas, S., Train, L., Ponche, A., Sanchez-Arriaga, G., Marcos, A.,</span> <span class="pub__title">“UC3M’s ST3LLARsat1 BOIRA: Baseline Design Review study and analyses for the ADCS and OBC subsystems,”</span> <span class="pub__venue">13th CubeSat Conference, Belgium, Dec. 2023.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2023</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="PS">
+            <span class="pub__n">6</span>
+            <div class="pub__body"><span class="pub__authors">Marcos, A., Navarro-Tapia, D., Dessena, G., Moral, A., García, C., Jiménez, D., Cegarra, E.V., Rodríguez, M., Rabuñal, A., Solano, F., Ruiz, J., Hernández-Rodicio, A., García, B., Schieffer, J., Sharifi, G.,</span> <span class="pub__title">“ST3LLARsat1 BOIRA: from BDR to FDR, a successful university hand-over iteration,”</span> <span class="pub__venue">Small Satellites &amp; Services International Forum (SSSIF’2024), Málaga, Spain, February 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="PS">
+            <span class="pub__n">7</span>
+            <div class="pub__body"><span class="pub__authors">Hernández-Rodicio, A., Schieffer, J., Cegarra, E.V., Palacios, J., Navarro-Tapia, D., Marcos, A.,</span> <span class="pub__title">“ST3LLARsat1 BOIRA: OBC development by integrating On-Board Data Handling and Communications,”</span> <span class="pub__venue">SSSIF’2024, Málaga, Spain, February 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="PS">
+            <span class="pub__n">8</span>
+            <div class="pub__body"><span class="pub__authors">Villar, M.R., García, B., Dessena, G., Marcos, A.,</span> <span class="pub__title">“ST3LLARsat1 “BOIRA” CubeSat: Structural analysis and selection,”</span> <span class="pub__venue">SSSIF’2024, Málaga, Spain, February 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="PS">
+            <span class="pub__n">9</span>
+            <div class="pub__body"><span class="pub__authors">Solano, F., Infante, A., Sastre, V., Navarro-Tapia, D., Marcos, A.,</span> <span class="pub__title">“Mission Analysis of the ST3LLARsat1 “BOIRA” 2U CubeSat: from BDR to FDR,”</span> <span class="pub__venue">SSSIF’2024, Málaga, Spain, February 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="PR">
+            <span class="pub__n">10</span>
+            <div class="pub__body"><span class="pub__authors">Jiménez, D., Dessena, G., Marcos, A., Gómez, E., Nicolás, P.,</span> <span class="pub__title">“ST3LLARsat1 “BOIRA”: Design and Verification of the Electrical Power System,”</span> <span class="pub__venue">SSSIF’2024, Málaga, Spain, February 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">PR</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="AC">
+            <span class="pub__n">11</span>
+            <div class="pub__body"><span class="pub__authors">Sharifi, G., Rabuñal, A., Navarro-Tapia, D., Marcos, A.,</span> <span class="pub__title">“Development of an Attitude Determination and Control Strategy for the ST3LLARsat1 CubeSat Mission,”</span> <span class="pub__venue">Small Satellites Systems and Services Symposium (S4’2024), Palma de Mallorca, Spain, May 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">AC</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="PS">
+            <span class="pub__n">12</span>
+            <div class="pub__body"><span class="pub__authors">García, C., Dessena, G., Navarro-Tapia, D., Marcos, A.,</span> <span class="pub__title">“Thermal Control evolution of ST3LLARsat1 CubeSat: a methodological approach against configuration changes,”</span> <span class="pub__venue">Small Satellites Systems and Services Symposium (S4’2024), Palma de Mallorca, Spain, May 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="PS">
+            <span class="pub__n">13</span>
+            <div class="pub__body"><span class="pub__authors">Marcos, A., Dessena, G., Navarro-Tapia, D.,</span> <span class="pub__title">“ST3LLARsat1 BOIRA: The first CubeSat program at UC3M,”</span> <span class="pub__venue">I Conferencia Anual de la Plataforma Universitaria Nacional de Telemetría Orbital, UC3M (Puerta Toledo), November 2024.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2024</span></span>
+          </li>
+          <li class="pub" data-year="2025" data-type="PR">
+            <span class="pub__n">14</span>
+            <div class="pub__body"><span class="pub__authors">Suero Barrado, C., Marcos, A.,</span> <span class="pub__title">“UC3M ST3LLARsat1 “Boira” CubeSat: On-Board Computer Development,”</span> <span class="pub__venue">15th EASN International Conference, Madrid, 14-17 October 2025.</span></div>
+            <span class="pub__meta"><span class="tag-type">PR</span><span>2025</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PR">
+            <span class="pub__n">15</span>
+            <div class="pub__body"><span class="pub__authors">Marcos, A., Navarro-Tapia, D., Dessena, G.,</span> <span class="pub__title">“A 3-years’ status review on the progress of UC3M’s ST3LLARsat1 “Boira” CubeSat,”</span> <span class="pub__venue">SSSIF’2026, Málaga, Spain, February 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PR</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PR">
+            <span class="pub__n">16</span>
+            <div class="pub__body"><span class="pub__authors">Navarro-Tapia, D., Solano, F., Infante, A., Marcos, A.,</span> <span class="pub__title">“Effect of ESA’s Zero-Debris Policy for CubeSats,”</span> <span class="pub__venue">SSSIF’2026, Málaga, Spain, February 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PR</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="AC">
+            <span class="pub__n">17</span>
+            <div class="pub__body"><span class="pub__authors">Ilarraza-Zuazo, J., Marcos, A., Simplício, P.,</span> <span class="pub__title">“Machine Learning for Parameter Estimation in CubeSats: A preliminary study for ST3LLARsat1,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">AC</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="AC">
+            <span class="pub__n">18</span>
+            <div class="pub__body"><span class="pub__authors">Sharifi, G., Navarro-Tapia, D., Marcos, A.,</span> <span class="pub__title">“Attitude Determination and Control System Design and Validation for ST3LLARsat1 CubeSat Mission,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">AC</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="AC">
+            <span class="pub__n">19</span>
+            <div class="pub__body"><span class="pub__authors">Peiró, J., Infante, A., Sharifi, G., Vatankhahghadim, B., Marcos, A.,</span> <span class="pub__title">“Orbit Propagation Strategy for ST3LLARsat1 CubeSat Mission,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">AC</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PS">
+            <span class="pub__n">20</span>
+            <div class="pub__body"><span class="pub__authors">Suero, C., Torre, A., Marcos, A.,</span> <span class="pub__title">“ST3LLARsat1 “Boira” CubeSat: Evolution of the On-Board-Computer PCB,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PS">
+            <span class="pub__n">21</span>
+            <div class="pub__body"><span class="pub__authors">Cross, J., Marcos, A., Navarro-Tapia, D.,</span> <span class="pub__title">“Verification, Validation, and Testing of ST3LLARsat1’s GNSS onboard components,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PS">
+            <span class="pub__n">22</span>
+            <div class="pub__body"><span class="pub__authors">Arco, A., Marcos, A., Entrena, L.A.,</span> <span class="pub__title">“Development of the ADCS-PCB for UC3M’s ST3LLARsat1 “Boira” CubeSat,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PS">
+            <span class="pub__n">23</span>
+            <div class="pub__body"><span class="pub__authors">Alham, A., Dessena, G., Marcos, A.,</span> <span class="pub__title">“Finite Element Method-Based Structural Verification of a CubeSat Antenna for Flight Acceptance,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PS">
+            <span class="pub__n">24</span>
+            <div class="pub__body"><span class="pub__authors">Altmark, A., Sharifi, G., Sánchez-Arriaga, G., Marcos, A.,</span> <span class="pub__title">“Experimental Validation of a Photodiode-Based Sun Vector Estimation Method for CubeSat Attitude Determination,”</span> <span class="pub__venue">EuroGNC 2026, Madrid, May 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="PS">
+            <span class="pub__n">25</span>
+            <div class="pub__body"><span class="pub__authors">Marcos, A., Navarro-Tapia, D.,</span> <span class="pub__title">“Compressed Sensing for Launchers and Satellites’ Parameter and Fault Estimation,”</span> <span class="pub__venue">Euromech colloquium 665 “Data-driven active control in flows”, Paris, June 2026.</span></div>
+            <span class="pub__meta"><span class="tag-type">PS</span><span>2026</span></span>
+          </li>
+
+          </ul>
+          <p class="no-results" hidden data-i18n="s1d.none">No entries match your search.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== THESES ===================== -->
+    <section class="section program-section" id="theses" data-toc data-toc-label="Theses" data-i18n-attr="data-toc-label:toc.s1d.th">
+      <div class="container">
+        <h2><span data-i18n="s1d.th.h">Theses</span> <span class="h-count">(20)</span></h2>
+        <div data-filterable>
+          <p class="docs-intro project-body" style="margin-bottom:1rem"><span data-i18n="s1d.th.p1" style="color:var(--text-muted)">Here, the undergraduate and graduate theses defended at UC3M and related to the ST3LLARsat1 mission are listed (as of November 2026).</span></p>
+          <p class="legend" data-i18n-html="s1d.th.legend"><span><b>GIA</b> Aerospace Engineering degree</span> <span><b>GITT</b> Telecommunications Technology Engineering degree</span> <span><b>MISE</b> Master in Space Engineering</span> <span><b>MAE</b> Master in Aeronautical Engineering</span></p>
+          <p class="legend" data-i18n-html="s1d.th.advisors">The advisors are (see also the <a href="ST3LLARsat.html#team">ST3LLARsat team</a>): Andrés Marcos (<b>AME</b>), Andoni G. Moral (<b>AGM</b>), Gabriele Dessena (<b>GD</b>), Víctor Gil (<b>VG</b>), Antonio Acosta (<b>AA</b>), Almudena Lindoso (<b>AL</b>), Diego Navarro-Tapia (<b>DNT</b>), Behrad Vatankhahghadim (<b>BV</b>), Ghasem Sharifi (<b>GS</b>), and Gonzalo Sánchez-Arriaga (<b>GSA</b>).</p>
+          <div class="list-tools">
+            <label class="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <input type="search" placeholder="Search authors, advisors, titles…" data-i18n-attr="placeholder:s1d.search2,aria-label:s1d.search2" aria-label="Search authors, advisors, titles…">
+            </label>
+            <span class="list-count" data-count aria-live="polite"></span>
+          </div>
+          <h3 class="list-sub"><span data-i18n="s1d.th.u">Undergraduate</span> <span class="h-count">(7)</span></h3>
+          <ul class="pubs">
+          <li class="pub" data-year="2024" data-type="GIA">
+            <span class="pub__n">1</span>
+            <div class="pub__body"><span class="pub__title">“Application of Machine Learning for parameter estimation in CubeSats”</span><span class="pub__sub">Jorge Ilarraza Zuazo · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">GIA</span><span><span data-i18n="s1d.m.sep">September</span> 2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="GIA">
+            <span class="pub__n">2</span>
+            <div class="pub__body"><span class="pub__title">“ST3LLAR-sat1 BOIRA: TVAC test definition and preparation”</span><span class="pub__sub">Daniel Rivero Molina · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andoni G. Moral">AGM</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">GIA</span><span><span data-i18n="s1d.m.sep">September</span> 2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="GIA">
+            <span class="pub__n">3</span>
+            <div class="pub__body"><span class="pub__title">“ST3LLAR-sat1 BOIRA: Establishing the structure AIV testing process”</span><span class="pub__sub">Arturo García Martínez · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Gabriele Dessena">GD</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">GIA</span><span><span data-i18n="s1d.m.sep">September</span> 2024</span></span>
+          </li>
+          <li class="pub" data-year="2025" data-type="GITT">
+            <span class="pub__n">4</span>
+            <div class="pub__body"><span class="pub__title">“Análisis e implementación de la TTC para el cubesat Boira”</span><span class="pub__sub">Adrián Blanco de Paz · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Víctor Gil">VG</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">GITT</span><span>2025</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="GIA">
+            <span class="pub__n">5</span>
+            <div class="pub__body"><span class="pub__title">“Finite Element Method Analysis of a Deployment-Free CubeSat Antenna”</span><span class="pub__sub">Ahmed Alham · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Gabriele Dessena">GD</abbr>, <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">GIA</span><span><span data-i18n="s1d.m.sep">September</span> 2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="GIA">
+            <span class="pub__n">6</span>
+            <div class="pub__body"><span class="pub__title">“Device Under Test (DUT): validation and testing of ST3LLARsat1’s GNSS receiver”</span><span class="pub__sub">Marcos Duo · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">GIA</span><span><span data-i18n="s1d.m.sep">September</span> 2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="GITT">
+            <span class="pub__n">7</span>
+            <div class="pub__body"><span class="pub__title">“Adaptation of the TTC System for the BOIRA CubeSat”</span><span class="pub__sub">Ana Méndez Vírseda · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Víctor Gil">VG</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">GITT</span><span><span data-i18n="s1d.m.jun">June</span> 2026</span></span>
+          </li>
+
+          </ul>
+          <h3 class="list-sub"><span data-i18n="s1d.th.m">Master</span> <span class="h-count">(13)</span></h3>
+          <ul class="pubs">
+          <li class="pub" data-year="2024" data-type="MAE">
+            <span class="pub__n">1</span>
+            <div class="pub__body"><span class="pub__title">“A general DKE-AOCS simulator for CubeSats &amp; its verification with ST3LLAR Sat1 mission”</span><span class="pub__sub">Miguel García-Valenzuela · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MAE</span><span><span data-i18n="s1d.m.oct">October</span> 2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="MISE">
+            <span class="pub__n">2</span>
+            <div class="pub__body"><span class="pub__title">“ST3LLAR-sat1 BOIRA: Thermal system design and verification”</span><span class="pub__sub">Carlos García Gómez · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr>, <abbr title="Antonio Acosta">AA</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.jul">July</span> 2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="MISE">
+            <span class="pub__n">3</span>
+            <div class="pub__body"><span class="pub__title">“ST3LLAR-sat1 BOIRA: Design and verification of the Electrical Power System (EPS)”</span><span class="pub__sub">Daniel Jiménez Sánchez · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.sep">September</span> 2024</span></span>
+          </li>
+          <li class="pub" data-year="2024" data-type="MISE">
+            <span class="pub__n">4</span>
+            <div class="pub__body"><span class="pub__title">“ST3LLARsat1 - BOIRA: OBC software design and implementation”</span><span class="pub__sub">Vladick Cegarra Mauriz · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr>, <abbr title="Almudena Lindoso">AL</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.jul">July</span> 2024</span></span>
+          </li>
+          <li class="pub" data-year="2025" data-type="MISE">
+            <span class="pub__n">5</span>
+            <div class="pub__body"><span class="pub__title">“Legal and Telecommunications Coordination of UC3M CubeSat ST3LLAR ‘Boira’”</span><span class="pub__sub">Laura Pérez Navas · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr>, <abbr title="Diego Navarro-Tapia">DNT</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.feb">February</span> 2025</span></span>
+          </li>
+          <li class="pub" data-year="2025" data-type="MAE">
+            <span class="pub__n">6</span>
+            <div class="pub__body"><span class="pub__title">“ST3LLAR-sat1 BOIRA: Definition and Design of the On-Board-Computer PCB”</span><span class="pub__sub">Cristian Suero Barrado · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MAE</span><span><span data-i18n="s1d.m.jul">July</span> 2025</span></span>
+          </li>
+          <li class="pub" data-year="2025" data-type="MISE">
+            <span class="pub__n">7</span>
+            <div class="pub__body"><span class="pub__title">“Attitude Determination Approach for Boira StellarSat Using Gyroscope and Photodiodes”</span><span class="pub__sub">Javier Coves · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Behrad Vatankhahghadim">BV</abbr>, <abbr title="Ghasem Sharifi">GS</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.jun">June</span> 2025</span></span>
+          </li>
+          <li class="pub" data-year="2025" data-type="MISE">
+            <span class="pub__n">8</span>
+            <div class="pub__body"><span class="pub__title">“Boira’s CubeSat Spectrometer: Selection, AIV Plan Definition and Development of a Commercial Payload”</span><span class="pub__sub">Fatima Ezzahara Sadok · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andoni G. Moral">AGM</abbr>, <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.sep">September</span> 2025</span></span>
+          </li>
+          <li class="pub" data-year="2025" data-type="MISE">
+            <span class="pub__n">9</span>
+            <div class="pub__body"><span class="pub__title">“Thermal AIV of the ST3LLAR-sat1 BOIRA CubeSat”</span><span class="pub__sub">Elena Flores Calcerrada · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr>, <abbr title="Antonio Acosta">AA</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.sep">September</span> 2025</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="MISE">
+            <span class="pub__n">10</span>
+            <div class="pub__body"><span class="pub__title">“Design, Implementation, and Validation of a State Estimation Algorithm Using the SGP4 Orbit Propagator for CubeSat Applications”</span><span class="pub__sub">Josep Peiro · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Behrad Vatankhahghadim">BV</abbr>, <abbr title="Ghasem Sharifi">GS</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.jun">June</span> 2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="MISE">
+            <span class="pub__n">11</span>
+            <div class="pub__body"><span class="pub__title">“Experimental Validation of a Photodiode-Based Sun Vector Estimation Method for CubeSat Attitude Determination”</span><span class="pub__sub">Rodrigo Altmark · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Gonzalo Sánchez-Arriaga">GSA</abbr>, <abbr title="Ghasem Sharifi">GS</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.jun">June</span> 2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="MISE">
+            <span class="pub__n">12</span>
+            <div class="pub__body"><span class="pub__title">“ST3LLARsat-1 BOIRA Electrical Harness and Routing Definition”</span><span class="pub__sub">Tuerqizhati Abuduwayiti · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andoni G. Moral">AGM</abbr>, <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.sep">September</span> 2026</span></span>
+          </li>
+          <li class="pub" data-year="2026" data-type="MISE">
+            <span class="pub__n">13</span>
+            <div class="pub__body"><span class="pub__title">“Characterization, HIL Testing and Verification of ST3LLARsat1 On-Board GNSS equipment”</span><span class="pub__sub">John Cross · <span data-i18n="s1d.advisors">Advisors</span>: <abbr title="Andrés Marcos Esteban">AME</abbr></span></div>
+            <span class="pub__meta"><span class="tag-type">MISE</span><span><span data-i18n="s1d.m.sep">September</span> 2026</span></span>
+          </li>
+
+          </ul>
+          <p class="no-results" hidden data-i18n="s1d.none">No entries match your search.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== REPORTS ===================== -->
+    <section class="section program-section" id="reports" data-toc data-toc-label="Reports" data-i18n-attr="data-toc-label:toc.s1d.rep">
+      <div class="container">
+        <h2><span data-i18n="s1d.rep.h">Reports</span> <span class="h-count">(95)</span></h2>
+        <div data-filterable>
+          <p class="legend" data-i18n-html="s1d.rep.legend"><span><b>MISE-SPD</b> Space Pre-Design (1st year, mandatory)</span> <span><b>MISE-IP</b> Integral Project (2nd year, optional)</span></p>
+          <div class="list-tools">
+            <label class="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <input type="search" placeholder="Search authors or subsystems…" data-i18n-attr="placeholder:s1d.search3,aria-label:s1d.search3" aria-label="Search authors or subsystems…">
+            </label>
+            <button type="button" class="chip-btn" data-toggle-all data-i18n="s1d.expand">Expand all</button>
+            <span class="list-count" data-count aria-live="polite"></span>
+          </div>
+          <div class="reports">
+          <details class="year-group">
+            <summary><span>2021/22</span><span class="year-group__count">6</span></summary>
+            <div class="year-group__body">
+              <div class="course">
+                <h4>MISE-SPD · Team Boira</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">1</span><span class="rep__who">Miguel Cruzat Hurtado</span><span class="rep__what">System Engineering &amp; Requirements</span></li>
+                  <li class="rep"><span class="rep__n">2</span><span class="rep__who">Sergio Cuevas del Valle</span><span class="rep__what">MA</span></li>
+                  <li class="rep"><span class="rep__n">3</span><span class="rep__who">Ainhoa López Mayayo</span><span class="rep__what">Thermal &amp; Power</span></li>
+                  <li class="rep"><span class="rep__n">4</span><span class="rep__who">Juan María Herrera Martín</span><span class="rep__what">OBDH &amp; Payload</span></li>
+                  <li class="rep"><span class="rep__n">5</span><span class="rep__who">Carlos Caravaca Gallego</span><span class="rep__what">STR</span></li>
+                  <li class="rep"><span class="rep__n">6</span><span class="rep__who">Laura Train García</span><span class="rep__what">ADCS</span></li>
+                </ul>
+              </div>
+            </div>
+          </details>
+          <details class="year-group">
+            <summary><span>2022/23</span><span class="year-group__count">33</span></summary>
+            <div class="year-group__body">
+              <div class="course">
+                <h4>MISE-IP</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">7</span><span class="rep__who">Brandon Escamilla</span><span class="rep__what">MA</span></li>
+                  <li class="rep"><span class="rep__n">8</span><span class="rep__who">Laura Train García</span><span class="rep__what">ADCS</span></li>
+                  <li class="rep"><span class="rep__n">9</span><span class="rep__who">Miguel Cruzat Hurtado</span><span class="rep__what">Power &amp; Thermal</span></li>
+                  <li class="rep"><span class="rep__n">10</span><span class="rep__who">Sergio Cuevas del Valle</span><span class="rep__what">OBDH &amp; Comms</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team Alpha</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">11</span><span class="rep__who">Miguel Leiva</span><span class="rep__what">System Engineering</span></li>
+                  <li class="rep"><span class="rep__n">12</span><span class="rep__who">Fernando Solano Almena</span><span class="rep__what">MA</span></li>
+                  <li class="rep"><span class="rep__n">13</span><span class="rep__who">Antonio Hernández-Rodicio</span><span class="rep__what">ADCS</span></li>
+                  <li class="rep"><span class="rep__n">14</span><span class="rep__who">Jaime Ruiz Pardos</span><span class="rep__what">EPS</span></li>
+                  <li class="rep"><span class="rep__n">15</span><span class="rep__who">Adrián Calleja</span><span class="rep__what">OBDH</span></li>
+                  <li class="rep"><span class="rep__n">16</span><span class="rep__who">María Rodríguez Villar</span><span class="rep__what">STR</span></li>
+                  <li class="rep"><span class="rep__n">17</span><span class="rep__who">Miguel Alonso</span><span class="rep__what">Thermal</span></li>
+                  <li class="rep"><span class="rep__n">18</span><span class="rep__who">Brais García</span><span class="rep__what">Payload</span></li>
+                  <li class="rep"><span class="rep__n">19</span><span class="rep__who">Lourdes Lobera</span><span class="rep__what">AIV</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team Beta</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">20</span><span class="rep__who">María Sampietro Pou</span><span class="rep__what">System Engineering</span></li>
+                  <li class="rep"><span class="rep__n">21</span><span class="rep__who">Héctor Barreno Almazán</span><span class="rep__what">MA</span></li>
+                  <li class="rep"><span class="rep__n">22</span><span class="rep__who">Andrés Rabuñal Gayo</span><span class="rep__what">ADCS</span></li>
+                  <li class="rep"><span class="rep__n">23</span><span class="rep__who">Pablo Dieguez Quintana</span><span class="rep__what">EPS</span></li>
+                  <li class="rep"><span class="rep__n">24</span><span class="rep__who">Miguel Romero García</span><span class="rep__what">OBDH</span></li>
+                  <li class="rep"><span class="rep__n">25</span><span class="rep__who">Laura Pérez Navas</span><span class="rep__what">STR</span></li>
+                  <li class="rep"><span class="rep__n">26</span><span class="rep__who">Julia Schieffer</span><span class="rep__what">Thermal</span></li>
+                  <li class="rep"><span class="rep__n">27</span><span class="rep__who">Ashu Shingal</span><span class="rep__what">Payload</span></li>
+                  <li class="rep"><span class="rep__n">28</span><span class="rep__who">Alberto Ignacio Ruiz Méndez</span><span class="rep__what">AIV</span></li>
+                  <li class="rep"><span class="rep__n">29</span><span class="rep__who">Álvaro Sicilia Muñoz</span><span class="rep__what">TTC</span></li>
+                  <li class="rep"><span class="rep__n">30</span><span class="rep__who">Diego Manso Parajó</span><span class="rep__what">System Engineering</span></li>
+                  <li class="rep"><span class="rep__n">31</span><span class="rep__who">Diego I. Tirado Hernández</span><span class="rep__what">MA</span></li>
+                  <li class="rep"><span class="rep__n">32</span><span class="rep__who">Alex Cuenca Diáz</span><span class="rep__what">ADCS</span></li>
+                  <li class="rep"><span class="rep__n">33</span><span class="rep__who">Daniel Jiménez Sánchez</span><span class="rep__what">EPS</span></li>
+                  <li class="rep"><span class="rep__n">34</span><span class="rep__who">Sergi Escribano Undurraga</span><span class="rep__what">OBDH</span></li>
+                  <li class="rep"><span class="rep__n">35</span><span class="rep__who">Carlos Quintana Gómez</span><span class="rep__what">STR</span></li>
+                  <li class="rep"><span class="rep__n">36</span><span class="rep__who">Carlos García Gómez</span><span class="rep__what">Thermal</span></li>
+                  <li class="rep"><span class="rep__n">37</span><span class="rep__who">Eugenio V. Cegarra Mauriz</span><span class="rep__what">Payload</span></li>
+                  <li class="rep"><span class="rep__n">38</span><span class="rep__who">Jingjin Lin</span><span class="rep__what">AIV</span></li>
+                  <li class="rep"><span class="rep__n">39</span><span class="rep__who">Pau Fernández I Amaya</span><span class="rep__what">TTC</span></li>
+                </ul>
+              </div>
+            </div>
+          </details>
+          <details class="year-group">
+            <summary><span>2023/24</span><span class="year-group__count">44</span></summary>
+            <div class="year-group__body">
+              <div class="course">
+                <h4>MISE-IP</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">40</span><span class="rep__who">Jaime Ruiz Pardos</span><span class="rep__what">System Engineering</span></li>
+                  <li class="rep"><span class="rep__n">41</span><span class="rep__who">Fernando Solano Almena</span><span class="rep__what">MA</span></li>
+                  <li class="rep"><span class="rep__n">42</span><span class="rep__who">Andrés Rabuñal Gayo</span><span class="rep__what">ADCS</span></li>
+                  <li class="rep"><span class="rep__n">43</span><span class="rep__who">Daniel Jiménez Sánchez</span><span class="rep__what">EPS</span></li>
+                  <li class="rep"><span class="rep__n">44</span><span class="rep__who">Antonio Hernández-Rodicio</span><span class="rep__what">OBDH</span></li>
+                  <li class="rep"><span class="rep__n">45</span><span class="rep__who">María Rodríguez Villar</span><span class="rep__what">STR</span></li>
+                  <li class="rep"><span class="rep__n">46</span><span class="rep__who">Carlos García Gómez</span><span class="rep__what">Thermal</span></li>
+                  <li class="rep"><span class="rep__n">47</span><span class="rep__who">Brais García</span><span class="rep__what">Payload</span></li>
+                  <li class="rep"><span class="rep__n">48</span><span class="rep__who">Eugenio V. Cegarra Mauriz</span><span class="rep__what">OBSW</span></li>
+                  <li class="rep"><span class="rep__n">49</span><span class="rep__who">Julia Schieffer</span><span class="rep__what">TTC</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team 1</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">50</span><span class="rep__who">Arturo Pérez Castejón</span><span class="rep__what">CSOC: Architecture</span></li>
+                  <li class="rep"><span class="rep__n">51</span><span class="rep__who">Joaquín Molinos Úbeda</span><span class="rep__what">CSOC: GNU radio</span></li>
+                  <li class="rep"><span class="rep__n">52</span><span class="rep__who">Miguel A. Calvo Chueca</span><span class="rep__what">CSOC: HW chain</span></li>
+                  <li class="rep"><span class="rep__n">53</span><span class="rep__who">Víctor Manuel Gutierrez</span><span class="rep__what">CSOC: Link Budget</span></li>
+                  <li class="rep"><span class="rep__n">54</span><span class="rep__who">Claudia Llorente Pascual</span><span class="rep__what">CSOC: SatNOGS</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team 2</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">55</span><span class="rep__who">Andrei Marius Pop</span><span class="rep__what">Ground Tracking: Team Mngt &amp; TT&amp;C</span></li>
+                  <li class="rep"><span class="rep__n">56</span><span class="rep__who">Íñigo Alonso Ábalo</span><span class="rep__what">Ground Tracking: Architecture SW &amp; HW</span></li>
+                  <li class="rep"><span class="rep__n">57</span><span class="rep__who">Andrés Infante Adrián</span><span class="rep__what">Ground Tracking: Gpredict</span></li>
+                  <li class="rep"><span class="rep__n">58</span><span class="rep__who">Ekain Gómez Gonzalez</span><span class="rep__what">Ground Tracking: CubeSat ID - TUBIN &amp; STRF</span></li>
+                  <li class="rep"><span class="rep__n">59</span><span class="rep__who">Luis Barbero Benítez</span><span class="rep__what">Ground Tracking: Orbit Tracking</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team 3</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">60</span><span class="rep__who">Josep Peiró Pous</span><span class="rep__what">OBSW-Orbit Det.: Team Management</span></li>
+                  <li class="rep"><span class="rep__n">61</span><span class="rep__who">Alicia Rodríguez Asensio</span><span class="rep__what">OBSW-Orbit Det.: Matlab Embedded C-Code</span></li>
+                  <li class="rep"><span class="rep__n">62</span><span class="rep__who">Pablo Moreno Escolástico</span><span class="rep__what">OBSW-Orbit Det.: Autocoding II (PVT)</span></li>
+                  <li class="rep"><span class="rep__n">63</span><span class="rep__who">Livia Marciano</span><span class="rep__what">OBSW-Orbit Det.: Propagators (SGP4)</span></li>
+                  <li class="rep"><span class="rep__n">64</span><span class="rep__who">Javier Coves Toral</span><span class="rep__what">OBSW-Orbit Det.: TLE and GNSS</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team 4</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">65</span><span class="rep__who">Daniel Soto Pérez</span><span class="rep__what">OBSW-ADCS: Bdot I</span></li>
+                  <li class="rep"><span class="rep__n">66</span><span class="rep__who">Manuel Mendes Barbosa</span><span class="rep__what">OBSW-ADCS: Bdot II</span></li>
+                  <li class="rep"><span class="rep__n">67</span><span class="rep__who">Guillermo Alonso Beltrán</span><span class="rep__what">OBSW-ADCS: Modes and Models I</span></li>
+                  <li class="rep"><span class="rep__n">68</span><span class="rep__who">Pablo Nicolás Villalba</span><span class="rep__what">OBSW-ADCS: Modes and Models II</span></li>
+                  <li class="rep"><span class="rep__n">69</span><span class="rep__who">David Laborda Izquierdo</span><span class="rep__what">OBSW-ADCS: PID I</span></li>
+                  <li class="rep"><span class="rep__n">70</span><span class="rep__who">Manuel Ramos López</span><span class="rep__what">OBSW-ADCS: PID II</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team 6</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">71</span><span class="rep__who">María Montosa Luque</span><span class="rep__what">AIV-GNSS: Antenna &amp; Receiver Calibration</span></li>
+                  <li class="rep"><span class="rep__n">72</span><span class="rep__who">Daniel Torres Maceiras</span><span class="rep__what">AIV-GNSS: Integration</span></li>
+                  <li class="rep"><span class="rep__n">73</span><span class="rep__who">Carlos Salazar Martín</span><span class="rep__what">AIV-GNSS: Simulation Environment &amp; Testing</span></li>
+                  <li class="rep"><span class="rep__n">74</span><span class="rep__who">Yago Solá Chicote</span><span class="rep__what">AIV-Spectrometer: TVAC</span></li>
+                  <li class="rep"><span class="rep__n">75</span><span class="rep__who">David Machicado Fernández</span><span class="rep__what">AIV-Spectrometer: Vibration Testing</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team 7</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">76</span><span class="rep__who">Marjorie Vallejo Chamorro</span><span class="rep__what">AIV-ADCS: System level</span></li>
+                  <li class="rep"><span class="rep__n">77</span><span class="rep__who">María Rodríguez Fernández</span><span class="rep__what">AIV-ADCS: IMU</span></li>
+                  <li class="rep"><span class="rep__n">78</span><span class="rep__who">Elena Flores Calcerrada</span><span class="rep__what">AIV-ADCS: Magnetometer</span></li>
+                  <li class="rep"><span class="rep__n">79</span><span class="rep__who">Fátima Sadok Zarmouni</span><span class="rep__what">AIV-ADCS: Magnetorquer</span></li>
+                  <li class="rep"><span class="rep__n">80</span><span class="rep__who">Gonzalo Torres Lamas</span><span class="rep__what">AIV-ADCS: Photodiodes</span></li>
+                </ul>
+              </div>
+              <div class="course">
+                <h4>MISE-SPD · Team 8</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">81</span><span class="rep__who">Javier Palacios Calatayud</span><span class="rep__what">System Engineering I</span></li>
+                  <li class="rep"><span class="rep__n">82</span><span class="rep__who">Martí Negre García</span><span class="rep__what">System Engineering II</span></li>
+                  <li class="rep"><span class="rep__n">83</span><span class="rep__who">Marwa Chouikouk</span><span class="rep__what">System Engineering III</span></li>
+                </ul>
+              </div>
+            </div>
+          </details>
+          <details class="year-group">
+            <summary><span>2024/25</span><span class="year-group__count">9</span></summary>
+            <div class="year-group__body">
+              <div class="course">
+                <h4>MISE-IP</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">84</span><span class="rep__who">Marjorie Vallejo Chamorro</span><span class="rep__what">ADCS-SIM: Bdot &amp; Nadir Verification</span></li>
+                  <li class="rep"><span class="rep__n">85</span><span class="rep__who">María Rodríguez Fernández</span><span class="rep__what">ADCS-SIM: Validation &amp; Acceptance Protocols</span></li>
+                  <li class="rep"><span class="rep__n">86</span><span class="rep__who">Ekain Gómez Gonzalez</span><span class="rep__what">Power: EPS &amp; Solar Panel Validation</span></li>
+                  <li class="rep"><span class="rep__n">87</span><span class="rep__who">Andrés Infante Adrián</span><span class="rep__what">OBSW- GNSS Orbit Determination</span></li>
+                  <li class="rep"><span class="rep__n">88</span><span class="rep__who">Íñigo Alonso Ábalo</span><span class="rep__what">OBSW – Rate &amp; Ang. Velocity Estim. w/o GYR</span></li>
+                  <li class="rep"><span class="rep__n">89</span><span class="rep__who">Martí Negre García</span><span class="rep__what">STR-AIV: Electrical Harness &amp; Mock-Up Model</span></li>
+                  <li class="rep"><span class="rep__n">90</span><span class="rep__who">Gonzalo Torres Lamas</span><span class="rep__what">STR</span></li>
+                  <li class="rep"><span class="rep__n">91</span><span class="rep__who">Fátima Sadok Zarmouni</span><span class="rep__what">STR-Payload</span></li>
+                  <li class="rep"><span class="rep__n">92</span><span class="rep__who">Elena Flores Calcerrada</span><span class="rep__what">Thermal – Temp. Sensors &amp; Thermocouples</span></li>
+                </ul>
+              </div>
+            </div>
+          </details>
+          <details class="year-group">
+            <summary><span>2025/26</span><span class="year-group__count">3</span></summary>
+            <div class="year-group__body">
+              <div class="course">
+                <h4>MISE-IP</h4>
+                <ul class="rep-list">
+                  <li class="rep"><span class="rep__n">93</span><span class="rep__who">Rodrigo Altmark</span><span class="rep__what">AIVT: Coarse Sun Sensor Prototype</span></li>
+                  <li class="rep"><span class="rep__n">94</span><span class="rep__who">Félix Sánchez</span><span class="rep__what">AIVT: Flight HW EPS &amp; Solar Panel Testing</span></li>
+                  <li class="rep"><span class="rep__n">95</span><span class="rep__who">Victoriano Fernández</span><span class="rep__what">OBSW: MPLAB-SAMv71 + MMT/PHDs HW</span></li>
+                </ul>
+              </div>
+            </div>
+          </details>
+          </div>
+          <p class="no-results" hidden data-i18n="s1d.none">No entries match your search.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pager">
+      <div class="container">
+      <nav class="pager" aria-label="ST3LLARsat1">
+        <a class="prev" href="ST3LLARsat1-program.html"><span class="pager__dir" data-i18n="s1c.prev">Previous</span><span class="pager__title" data-i18n="s1c.tab.program">Program</span></a>
+      </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-st3llarsat1.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/pages/st3llarsat1.js"></script>
+</body>
+</html>

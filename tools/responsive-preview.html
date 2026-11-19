@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Vista responsive — CSAT</title>
+  <!--
+    HERRAMIENTA DE TRABAJO — no forma parte de la web pública.
+    No hace falta subir la carpeta tools/ al bucket.
+
+    Cómo se usa: abre esta página desde el servidor local
+    (http://localhost:5502/tools/responsive-preview.html). La web se carga en un
+    marco cuyo ANCHO es el que eliges, así que los estilos responsive (@media)
+    reaccionan exactamente igual que en una pantalla de ese tamaño.
+    Con file:// (doble clic) también se ve, pero los botones de tema/idioma y las
+    marcas de puntos de corte necesitan el servidor local.
+  -->
+  <style>
+    :root {
+      --bg: #0e1220; --panel: #161c2e; --panel-2: #1d2540; --line: #2b3558;
+      --text: #e9eefb; --muted: #94a2c4; --accent: #3b82f6; --accent-2: #60a5fa;
+      --ok: #34d399;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; overflow: hidden; }
+    button, select, input { font: inherit; color: inherit; }
+
+    /* ---------------------------------------------------------- toolbar */
+    .bar { background: var(--panel); border-bottom: 1px solid var(--line); padding: .6rem 1rem .5rem; display: grid; gap: .55rem; }
+    .row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }
+    .brand { font-weight: 700; letter-spacing: .02em; font-size: .95rem; display: flex; align-items: center; gap: .5rem; }
+    .brand small { color: var(--muted); font-weight: 500; }
+    .seg { display: inline-flex; background: var(--panel-2); border: 1px solid var(--line); border-radius: 12px; padding: 3px; gap: 2px; }
+    .seg button {
+      display: inline-flex; align-items: center; gap: .45rem; padding: .45rem .85rem;
+      border: 0; border-radius: 9px; background: transparent; color: var(--muted); cursor: pointer; font-weight: 600; font-size: .88rem;
+    }
+    .seg button svg { width: 18px; height: 18px; flex: none; }
+    .seg button small { font-weight: 500; opacity: .75; font-size: .75rem; }
+    .seg button:hover { color: var(--text); }
+    .seg button[aria-pressed="true"] { background: var(--accent); color: #fff; box-shadow: 0 2px 10px rgba(59,130,246,.45); }
+    .field { display: inline-flex; align-items: center; gap: .45rem; color: var(--muted); font-size: .82rem; }
+    .field input[type="number"], .field select {
+      background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: .35rem .5rem; color: var(--text); font-size: .88rem;
+    }
+    .field input[type="number"] { width: 5.2rem; }
+    .field select { max-width: 17rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .7rem; font-size: .84rem; font-weight: 600;
+      background: var(--panel-2); border: 1px solid var(--line); border-radius: 9px; color: var(--text); cursor: pointer; text-decoration: none;
+    }
+    .btn:hover { border-color: var(--accent-2); }
+    .btn[aria-pressed="true"] { background: rgba(59,130,246,.2); border-color: var(--accent); }
+    .btn svg { width: 16px; height: 16px; }
+    .spacer { flex: 1 1 0; }
+
+    /* ---------------------------------------------------------- width slider */
+    .slider { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: .8rem; }
+    .slider > label { font-size: .82rem; color: var(--muted); padding-top: .15rem; }
+    .track { position: relative; padding-bottom: 2.7rem; }
+    .track input[type="range"] { width: 100%; margin: .35rem 0 0; accent-color: var(--accent); height: 22px; cursor: ew-resize; }
+    .ticks { position: absolute; left: 0; right: 0; top: 1.7rem; height: 1.6rem; pointer-events: none; }
+    .tick {
+      position: absolute; transform: translateX(-50%); pointer-events: auto; cursor: pointer;
+      background: none; border: 0; padding: 0; color: var(--muted); font-size: .66rem; line-height: 1; white-space: nowrap;
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .tick::before { content: ""; width: 1px; height: var(--stem, 6px); background: var(--muted); opacity: .7; }
+    .tick:hover { color: var(--text); }
+    .tick.on { color: var(--accent-2); font-weight: 700; }
+    .readout { font-variant-numeric: tabular-nums; font-weight: 700; font-size: .95rem; min-width: 7.2rem; text-align: right; }
+
+    /* ---------------------------------------------------------- stage */
+    .stage {
+      flex: 1 1 auto; min-height: 0; overflow: auto; position: relative; padding: 14px 24px 28px;
+      background:
+        linear-gradient(45deg, rgba(255,255,255,.025) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.025) 75%) 0 0 / 24px 24px,
+        linear-gradient(45deg, rgba(255,255,255,.025) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.025) 75%) 12px 12px / 24px 24px,
+        var(--bg);
+    }
+    .info { text-align: center; font-size: .8rem; color: var(--muted); margin-bottom: 8px; min-height: 1.2em; font-variant-numeric: tabular-nums; }
+    .info b { color: var(--text); }
+    .info .rng { color: var(--ok); }
+    .wrap { position: relative; margin: 0 auto; flex: none; }
+    .device { position: absolute; left: 0; top: 0; transform-origin: 0 0; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.55), 0 0 0 1px var(--line); }
+    .device iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
+    .handle {
+      position: absolute; left: 100%; top: 50%; width: 14px; height: 64px; margin: -32px 0 0 8px;
+      border-radius: 8px; background: var(--panel-2); border: 1px solid var(--line); cursor: ew-resize; touch-action: none;
+      display: grid; place-items: center;
+    }
+    .handle::before { content: ""; width: 3px; height: 28px; border-left: 1px solid var(--muted); border-right: 1px solid var(--muted); }
+    .handle:hover, .handle.drag { border-color: var(--accent-2); background: rgba(59,130,246,.25); }
+    body.dragging { cursor: ew-resize; user-select: none; }
+    body.dragging .device iframe { pointer-events: none; }
+
+    .hint { color: var(--muted); font-size: .76rem; }
+    .toast { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: .5rem .9rem; font-size: .82rem; opacity: 0; transition: opacity .25s; pointer-events: none; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="row">
+      <div class="brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        Vista responsive <small>CSAT</small>
+      </div>
+
+      <div class="seg" role="group" aria-label="Tamaño estándar">
+        <button type="button" data-preset="desktop" aria-pressed="false" title="Ordenador · 1440 × 900">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Ordenador <small>1440</small>
+        </button>
+        <button type="button" data-preset="tablet" aria-pressed="false" title="Tablet · 768 × 1024">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          Tablet <small>768</small>
+        </button>
+        <button type="button" data-preset="mobile" aria-pressed="false" title="Móvil · 375 × 812">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          Móvil <small>375</small>
+        </button>
+      </div>
+
+      <label class="field">Página
+        <select id="page" aria-label="Página a visualizar">
+          <optgroup label="Sitio principal">
+            <option value="index.html">Inicio</option>
+            <option value="team.html">Equipo</option>
+            <option value="location.html">Ubicación</option>
+            <option value="contact.html">Contacto</option>
+            <option value="blog.html">Noticias</option>
+            <option value="outreach.html">Divulgación</option>
+          </optgroup>
+          <optgroup label="Instalaciones">
+            <option value="facilities-leganes.html">CSAT — Leganés</option>
+            <option value="facilities-colmenarejo.html">CSAT — Colmenarejo</option>
+            <option value="facilities-ptl.html">CSAT — PTL</option>
+          </optgroup>
+          <optgroup label="ST3LLARsat">
+            <option value="ST3LLARsat.html">Programa ST3LLARsat</option>
+            <option value="ST3LLARsat1.html">ST3LLARsat1 · Resumen</option>
+            <option value="ST3LLARsat1-mission.html">ST3LLARsat1 · Misión</option>
+            <option value="ST3LLARsat1-spacecraft.html">ST3LLARsat1 · Satélite</option>
+            <option value="ST3LLARsat1-aivt.html">ST3LLARsat1 · AIVT</option>
+            <option value="ST3LLARsat1-program.html">ST3LLARsat1 · Programa</option>
+            <option value="ST3LLARsat1-documents.html">ST3LLARsat1 · Documentos</option>
+          </optgroup>
+          <optgroup label="Proyectos">
+            <option value="INTACT.html">INTACT</option>
+            <option value="IPFI.html">IPFI</option>
+            <option value="MLPLUS.html">MLPLUS</option>
+          </optgroup>
+        </select>
+      </label>
+
+      <label class="field">Alto <input type="number" id="h" min="300" max="3000" step="10" aria-label="Alto en píxeles"> px</label>
+      <button class="btn" type="button" id="rotate" title="Girar (intercambia ancho y alto)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Girar
+      </button>
+
+      <span class="spacer"></span>
+
+      <button class="btn" type="button" id="fit" aria-pressed="true" title="Reducir la escala para que el dispositivo quepa entero en la ventana">Ajustar a la ventana</button>
+      <button class="btn" type="button" id="theme" title="Alternar modo claro / oscuro de la web">◐ Tema</button>
+      <button class="btn" type="button" id="lang" title="Alternar idioma ES / EN de la web">ES / EN</button>
+      <button class="btn" type="button" id="reload" title="Recargar la página mostrada">↻</button>
+      <a class="btn" id="open" href="../index.html" target="_blank" rel="noopener" title="Abrir esta página en una pestaña normal">↗ Abrir</a>
+    </div>
+
+    <div class="slider">
+      <label for="range">Ancho</label>
+      <div class="track">
+        <input type="range" id="range" min="280" max="1920" step="1" value="1440" aria-label="Ancho de pantalla en píxeles">
+        <div class="ticks" id="ticks" aria-label="Puntos de corte de la web"></div>
+      </div>
+      <div class="readout" id="readout">1440 px</div>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="info" id="info"></div>
+    <div class="wrap" id="wrap">
+      <div class="device" id="device"><iframe id="frame" title="Vista previa de la web" src="about:blank"></iframe></div>
+      <div class="handle" id="handle" role="separator" aria-label="Arrastra para cambiar el ancho" title="Arrastra para cambiar el ancho"></div>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var PRESETS = { desktop: [1440, 900], tablet: [768, 1024], mobile: [375, 812] };
+  var MIN_W = 280, MAX_W = 1920, MIN_H = 300, MAX_H = 3000;
+  var KEY = "csat-responsive-preview";
+
+  var $ = function (id) { return document.getElementById(id); };
+  var stage = $("stage"), wrap = $("wrap"), device = $("device"), frame = $("frame"), handle = $("handle");
+  var range = $("range"), readout = $("readout"), hIn = $("h"), pageSel = $("page"), info = $("info");
+  var ticksEl = $("ticks");
+  var presetBtns = document.querySelectorAll("[data-preset]");
+
+  var state = { w: 1440, h: 900, page: "index.html", fit: true };
+  var scale = 1, dragScale = null, breakpoints = [];
+
+  /* ------------------------------------------------------------ persistence */
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) Object.keys(state).forEach(function (k) { if (saved[k] !== undefined) state[k] = saved[k]; }); } catch (e) {}
+  var qs = new URLSearchParams(location.search);
+  if (qs.get("page")) state.page = qs.get("page");
+  if (qs.get("w")) state.w = +qs.get("w");
+  if (qs.get("h")) state.h = +qs.get("h");
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function toast(msg) { var t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(function () { t.classList.remove("show"); }, 2600); }
+
+  /* ------------------------------------------------------------ layout */
+  function computeScale() {
+    if (!state.fit) return 1;
+    var availW = stage.clientWidth - 48;
+    var availH = stage.clientHeight - 14 - 28 - info.offsetHeight - 14;
+    return Math.min(1, availW / state.w, availH / state.h);
+  }
+
+  function render(opts) {
+    opts = opts || {};
+    state.w = clamp(Math.round(state.w), MIN_W, MAX_W);
+    state.h = clamp(Math.round(state.h), MIN_H, MAX_H);
+    scale = dragScale !== null ? dragScale : computeScale();
+
+    device.style.width = state.w + "px";
+    device.style.height = state.h + "px";
+    device.style.transform = "scale(" + scale + ")";
+    wrap.style.width = Math.round(state.w * scale) + "px";
+    wrap.style.height = Math.round(state.h * scale) + "px";
+
+    if (!opts.fromRange) range.value = state.w;
+    if (document.activeElement !== hIn) hIn.value = state.h;
+    readout.textContent = state.w + " px";
+
+    presetBtns.forEach(function (b) {
+      var p = PRESETS[b.getAttribute("data-preset")];
+      b.setAttribute("aria-pressed", String(p[0] === state.w && p[1] === state.h));
+    });
+    updateInfo();
+    save();
+  }
+
+  function updateInfo() {
+    var txt = "<b>" + state.w + " × " + state.h + " px</b> · escala " + Math.round(scale * 100) + " %";
+    var lo = null, hi = null;
+    breakpoints.forEach(function (b) {
+      if (b.at <= state.w) lo = b.at; // largest threshold already crossed
+    });
+    for (var i = 0; i < breakpoints.length; i++) { if (breakpoints[i].at > state.w) { hi = breakpoints[i].at; break; } }
+    if (breakpoints.length) {
+      txt += ' · <span class="rng">entre puntos de corte ' + (lo === null ? "0" : lo) + " y " + (hi === null ? "∞" : hi) + " px</span>";
+    }
+    info.innerHTML = txt;
+    ticksEl.querySelectorAll(".tick").forEach(function (t) {
+      var at = +t.getAttribute("data-at");
+      t.classList.toggle("on", lo !== null && at === lo);
+    });
+  }
+
+  /* ------------------------------------------------------------ width / presets */
+  range.addEventListener("input", function () { state.w = +range.value; render({ fromRange: true }); });
+  hIn.addEventListener("input", function () { var v = +hIn.value; if (v >= MIN_H) { state.h = v; render(); } });
+  hIn.addEventListener("change", function () { state.h = clamp(+hIn.value || state.h, MIN_H, MAX_H); hIn.value = state.h; render(); });
+
+  presetBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var p = PRESETS[b.getAttribute("data-preset")];
+      state.w = p[0]; state.h = p[1]; render();
+    });
+  });
+  $("rotate").addEventListener("click", function () { var t = state.w; state.w = clamp(state.h, MIN_W, MAX_W); state.h = clamp(t, MIN_H, MAX_H); render(); });
+  $("fit").addEventListener("click", function () { state.fit = !state.fit; this.setAttribute("aria-pressed", String(state.fit)); render(); });
+  window.addEventListener("resize", function () { render(); });
+
+  /* ------------------------------------------------------------ drag handle */
+  var startX = 0, startW = 0;
+  handle.addEventListener("pointerdown", function (e) {
+    handle.setPointerCapture(e.pointerId);
+    startX = e.clientX; startW = state.w; dragScale = scale;
+    handle.classList.add("drag"); document.body.classList.add("dragging");
+    e.preventDefault();
+  });
+  handle.addEventListener("pointermove", function (e) {
+    if (dragScale === null) return;
+    // the device is centred, so one edge moving by dx means the width changes by 2·dx
+    state.w = clamp(startW + 2 * (e.clientX - startX) / dragScale, MIN_W, MAX_W);
+    render();
+  });
+  function endDrag(e) {
+    if (dragScale === null) return;
+    dragScale = null; handle.classList.remove("drag"); document.body.classList.remove("dragging");
+    try { handle.releasePointerCapture(e.pointerId); } catch (err) {}
+    render();
+  }
+  handle.addEventListener("pointerup", endDrag);
+  handle.addEventListener("pointercancel", endDrag);
+
+  /* ------------------------------------------------------------ page + frame */
+  function load(page) {
+    state.page = page; pageSel.value = page;
+    frame.src = "../" + page;
+    $("open").href = "../" + page;
+    save();
+  }
+  pageSel.addEventListener("change", function () { load(pageSel.value); });
+  $("reload").addEventListener("click", function () { try { frame.contentWindow.location.reload(); } catch (e) { frame.src = frame.src; } });
+
+  function frameDoc() { try { var d = frame.contentDocument; return d && d.documentElement ? d : null; } catch (e) { return null; } }
+
+  frame.addEventListener("load", function () {
+    var d = frameDoc();
+    if (!d) { buildTicks([]); toast("Para ver puntos de corte y usar tema/idioma, abre esta herramienta desde el servidor local (localhost)."); return; }
+    // keep the page selector in sync when the user follows links inside the frame
+    try {
+      var name = frame.contentWindow.location.pathname.split("/").pop() || "index.html";
+      if (pageSel.querySelector('option[value="' + name + '"]')) { pageSel.value = name; state.page = name; $("open").href = "../" + name; save(); }
+    } catch (e) {}
+    buildTicks(readBreakpoints(d));
+  });
+
+  /* ------------------------------------------------------------ breakpoints read from the site's own CSS */
+  function readBreakpoints(doc) {
+    var map = {};
+    function add(at, label) { (map[at] = map[at] || {}).label = ((map[at].label ? map[at].label + " " : "") + label).trim(); }
+    function walk(rules) {
+      for (var i = 0; i < rules.length; i++) {
+        var r = rules[i];
+        if (r.media) {
+          var text = r.conditionText || r.media.mediaText || "";
+          var re = /\((min|max)-width:\s*([\d.]+)px\)/g, m;
+          while ((m = re.exec(text))) { add(+m[2], (m[1] === "min" ? "≥" : "≤") + m[2]); }
+        }
+        if (r.cssRules && r.cssRules.length && !r.selectorText) walk(r.cssRules);
+      }
+    }
+    for (var s = 0; s < doc.styleSheets.length; s++) {
+      var rules; try { rules = doc.styleSheets[s].cssRules; } catch (e) { continue; }
+      if (rules) walk(rules);
+    }
+    return Object.keys(map).map(function (k) { return { at: +k, label: map[k].label.split(" ")[0].replace(/[≤≥]/, "") }; })
+      .filter(function (b) { return b.at >= MIN_W && b.at <= MAX_W; })
+      .sort(function (a, b) { return a.at - b.at; });
+  }
+
+  function buildTicks(list) {
+    breakpoints = list;
+    ticksEl.innerHTML = "";
+    list.forEach(function (b, i) {
+      var t = document.createElement("button");
+      t.type = "button"; t.className = "tick"; t.style.setProperty("--stem", (6 + (i % 3) * 11) + "px"); t.setAttribute("data-at", b.at);
+      t.style.left = ((b.at - MIN_W) / (MAX_W - MIN_W) * 100) + "%";
+      t.textContent = b.at;
+      t.title = "Punto de corte a " + b.at + " px — clic para ir a ese ancho";
+      t.addEventListener("click", function () { state.w = b.at; render(); });
+      ticksEl.appendChild(t);
+    });
+    updateInfo();
+  }
+
+  /* ------------------------------------------------------------ theme / language of the framed site */
+  function poke(selector, what) {
+    var d = frameDoc(); var el = d && d.querySelector(selector);
+    if (!el) { toast("No se puede cambiar " + what + " (¿abierto sin servidor local?)."); return; }
+    el.click();
+  }
+  $("theme").addEventListener("click", function () { poke(".theme-toggle", "el tema"); });
+  $("lang").addEventListener("click", function () { poke(".lang-toggle", "el idioma"); });
+
+  /* ------------------------------------------------------------ keyboard: [ and ] nudge the width */
+  document.addEventListener("keydown", function (e) {
+    if (/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)) return;
+    var step = e.shiftKey ? 10 : 1;
+    if (e.key === "[") { state.w -= step; render(); }
+    if (e.key === "]") { state.w += step; render(); }
+  });
+
+  /* ------------------------------------------------------------ go */
+  range.min = MIN_W; range.max = MAX_W;
+  if (!pageSel.querySelector('option[value="' + state.page + '"]')) state.page = "index.html";
+  load(state.page);
+  $("fit").setAttribute("aria-pressed", String(state.fit));
+  render();
+})();
+</script>
+</body>
+</html>

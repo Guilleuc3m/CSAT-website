@@ -24,6 +24,9 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/pages/projects.css">
   <link rel="stylesheet" href="css/pages/stellarsat.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
 </head>
 <body data-page="stellarsat">
 
@@ -61,9 +64,11 @@
             <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="dropdown">
-            <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
-            <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
-            <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
           </div>
         </div>
         <div class="nav-item has-dropdown" data-nav="projects">
@@ -167,7 +172,7 @@
     </section>
 
     <!-- ===================== METRICS ===================== -->
-    <section class="section-tight" id="numbers" data-toc>
+    <section class="section-tight" id="numbers" data-toc data-toc-label="In numbers" data-i18n-attr="data-toc-label:toc.st.numbers">
       <div class="container">
         <div class="metrics-head">
           <h2 data-i18n="st.metrics.h">The program in numbers</h2>
@@ -226,7 +231,7 @@
     </section>
 
     <!-- ===================== CUBESATS ===================== -->
-    <section class="section program-section program-section--prose" id="cubesats" data-toc>
+    <section class="section program-section program-section--prose" id="cubesats" data-toc data-toc-label="CubeSats" data-i18n-attr="data-toc-label:toc.st.cubesats">
       <div class="container">
         <h2 data-i18n="st.cubesats.h">Brief introduction to CubeSats</h2>
         <div class="project-body">
@@ -269,7 +274,7 @@
     </section>
 
     <!-- ===================== MISE INTEGRATION ===================== -->
-    <section class="section program-section program-section--prose" id="mise" data-toc>
+    <section class="section program-section program-section--prose" id="mise" data-toc data-toc-label="MISE integration" data-i18n-attr="data-toc-label:toc.st.mise">
       <div class="container">
         <h2 data-i18n="st.mise.h">ST3LLARsat educational integration in the Master in Space Engineering (MISE)</h2>
         <div class="project-body">
@@ -302,7 +307,7 @@
     </section>
 
     <!-- ===================== ESA FYS! ===================== -->
-    <section class="section program-section program-section--prose" id="esa" data-toc>
+    <section class="section program-section program-section--prose" id="esa" data-toc data-toc-label="ESA FYS!" data-i18n-attr="data-toc-label:toc.st.esa">
       <div class="container">
         <h2 data-i18n="st.esa.h">Participation in ESA FYS! Design Booster program</h2>
         <div class="project-body">
@@ -337,10 +342,6 @@
             <p data-i18n-html="st.ack4">For providing free of charge their <strong>thermal modeling software</strong>.</p>
           </div>
           <div class="ack">
-            <div class="ack__logos"><img src="images/st3llarsat_overview/Ack_5.png" alt="Ansys STK"></div>
-            <p data-i18n-html="st.ack5">For providing free of charge their <strong>Mission Analysis software</strong>.</p>
-          </div>
-          <div class="ack">
             <div class="ack__logos"><img src="images/st3llarsat_overview/Ack_6.png" alt="UC3-BASE"></div>
             <p data-i18n-html="st.ack6">To UC3M's radio-amateur certified student society, for our joint <strong>Ground-Station development</strong>.</p>
           </div>
@@ -349,7 +350,7 @@
     </section>
 
     <!-- ===================== TEAM ===================== -->
-    <section class="section program-section" id="team" data-toc>
+    <section class="section program-section" id="team" data-toc data-toc-label="Team" data-i18n-attr="data-toc-label:toc.st.team">
       <div class="container">
         <h2 data-i18n="st.team.h">ST3LLAR &amp; ST3LLARsat1 team</h2>
 
@@ -471,7 +472,7 @@
         </div>
 
         <!-- Key to the department acronyms used across the page -->
-        <div class="dept-key" id="departments" data-toc="sub">
+        <div class="dept-key" id="departments" data-toc="sub" data-toc-label="Departments" data-i18n-attr="data-toc-label:toc.st.dept">
           <h3 class="dept-key__title" data-i18n="st.dept.h">UC3M department acronyms</h3>
           <dl class="dept-list">
             <div class="dept-item">
@@ -527,7 +528,7 @@
     <div class="footer-bottom">
       <div class="container">
         <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
-        <span>csat.uc3m.es</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
       </div>
     </div>
   </footer>

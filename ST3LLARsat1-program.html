@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <title>ST3LLARsat1 — Program — CSAT | UC3M</title>
+  <meta name="description" content="ST3LLARsat1 “Boira” program: project phases and current status, the ESA Fly Your Satellite! Design Booster pilot program, the knowledge hand-over strategy between student cohorts, and funding acknowledgements.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+  <link rel="stylesheet" href="css/pages/stellarsat.css">
+  <link rel="stylesheet" href="css/pages/st3llarsat1.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
+</head>
+<body data-page="stellarsat">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top mission-page">
+
+    <section class="page-hero program-hero mission-hero">
+      <div class="container">
+        <span class="eyebrow">ST3LLARsat1 “Boira”</span>
+        <h1 data-i18n="s1c.tab.program">Program</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="s1c.tag.program">Phases, ESA Fly Your Satellite! Design Booster, knowledge hand-over and funding</p>
+      <nav class="mission-tabs" aria-label="ST3LLARsat1" data-i18n-attr="aria-label:s1c.tabs.label">
+        <div class="mission-tabs__list">
+          <a href="ST3LLARsat1.html" data-i18n="s1c.tab.overview">Overview</a>
+          <a href="ST3LLARsat1-mission.html" data-i18n="s1c.tab.mission">Mission</a>
+          <a href="ST3LLARsat1-spacecraft.html" data-i18n="s1c.tab.spacecraft">Spacecraft</a>
+          <a href="ST3LLARsat1-aivt.html" data-i18n="s1c.tab.aivt">AIVT</a>
+          <a href="ST3LLARsat1-program.html" aria-current="page" data-i18n="s1c.tab.program">Program</a>
+          <a href="ST3LLARsat1-documents.html" data-i18n="s1c.tab.documents">Documents</a>
+        </div>
+      </nav>
+      </div>
+    </section>
+
+    <!-- ===================== PHASES ===================== -->
+    <section class="section program-section program-section--prose" id="phases" data-toc data-toc-label="Phases &amp; status" data-i18n-attr="data-toc-label:toc.s1p.ph">
+      <div class="container">
+        <h2 data-i18n="s1p.ph.h">Project phases &amp; current status</h2>
+        <div class="project-body">
+          <p class="lead" data-i18n-html="s1p.ph.p1">ST3LLARsat1 has been organized in phases covering academic years (from September to June) and roughly aligned with those used for a space project, see <a class="xref" href="#fig-20">Figure 20</a>. Note that most space projects (from nano/cube-sats in universities to micro/large scientific/commercial satellites) follow the listed 7 phases: from definition (phase 0) to disposal (phase F). Note also that each phase has an associated type of model: from mock-up (generally 3D printed models to check assembly, dimensions…) through development models (DM) such as structural and thermal (STM) and up to engineering qualification models (EQM) and proto-flight / flight-models (PFM/FM).</p>
+          <p data-i18n="s1p.ph.p2">In general, for a first nano/cube-satellite project at a university, the average development time is 5-7 years from definition (phase 0) to launch and operation (phase E).</p>
+        </div>
+
+        <figure class="figure figure--mid reveal" id="fig-20">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/phases-models-en.png" width="1560" height="1326" loading="lazy" decoding="async" alt="Typical development phases of a space project (0, A to F) and the type of model built in each: basic mock-up models in phase 0, 3D mock-up models in B, development models in C, and engineering qualification and flight models in D. Phases D and E contain sub-phases: D1 build and D2 test, E1 launch and E2 nominal operation." data-i18n-attr="src:s1p.fig2.src, alt:s1p.fig2.alt">
+          </div>
+          <figcaption data-i18n-html="s1p.fig2.cap"><strong>Figure 20.</strong> Typical development phases in a space project</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="s1p.ph.p3">The phases of ST3LLARsat1 have been adapted due to the fact that it has a main educational objective (and therefore of high turnover of the student team involved, and very fixed calendars in terms of their availability) and to the fact that having participated in the ESA FYS!-DB program brought around its own time-line.</p>
+          <p data-i18n="s1p.ph.p4">As of October 2026, we have had 4 phases:</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="tl">
+            <div class="tl__dates" data-i18n="s1p.tl1.d">Sept ’22 – Jun ’23</div>
+            <p class="tl__title" data-i18n="s1p.tl1.t">Phase 1: Feasibility &amp; ESA FYS!-DB program Baseline Design Review (BDR)</p>
+          </li>
+          <li class="tl">
+            <div class="tl__dates" data-i18n="s1p.tl2.d">Sept ’23 – Jun ’24</div>
+            <p class="tl__title" data-i18n="s1p.tl2.t">Phase 2: ESA FYS!-DB program Final Design Review (FDR)</p>
+          </li>
+          <li class="tl">
+            <div class="tl__dates" data-i18n="s1p.tl3.d">Sept ’24 – Jun ’25</div>
+            <p class="tl__title" data-i18n="s1p.tl3.t">Phase 3-A: Design consolidation</p>
+          </li>
+          <li class="tl">
+            <div class="tl__dates" data-i18n="s1p.tl4.d">Jun ’25 – Jun ’26</div>
+            <p class="tl__title" data-i18n="s1p.tl4.t">Phase 3-B: Preliminary AIVT activities</p>
+          </li>
+          <li class="tl is-current">
+            <div class="tl__dates" data-i18n="s1p.tl5.d">Sept ’26 – Jun ’27</div>
+            <p class="tl__title"><span data-i18n="s1p.tl5.t">Phase 4: Consolidation of AIVT’s activities</span><span class="tl__status" data-i18n="s1p.tl.now">Current</span></p>
+          </li>
+        </ol>
+
+        <div class="project-body">
+          <p data-i18n-html="s1p.ph.p5">With respect to the phases shown in <a class="xref" href="#fig-20">Figure 20</a>, during phases 1, 2 &amp; 3-A the design of the mission and Nanosatellite were performed, while our phase 3-B would correspond to phase C in <a class="xref" href="#fig-20">Figure 20</a> (i.e. detailed design) and our phase 4 to phase D1 (build and (preliminary) test).</p>
+        </div>
+
+        <h3 class="sec-sub" id="current-status" data-toc="sub" data-i18n="s1p.cs.h">Current status</h3>
+        <div class="project-body">
+          <p data-i18n="s1p.cs.p1">As shown before, currently, we have started phase 4, which is the consolidation of AIVT activities (see the two figures below showing examples of students’ AIVT activities and results). Within this phase, we are going to develop the set of test models (from STM to PFM) and start the environmental qualification tests. The AIVT phase is undertaken along the consolidation of the OBSW/OBDH and the finalization of the ground segment (we already have an active tracking &amp; downlink chain between our UHF/VHF antenna and our CubeSat Operation Center, CSOC).</p>
+        </div>
+
+        <figure class="figure figure--mid reveal" id="fig-21">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig04-flighthw.jpg" width="1500" height="696" loading="lazy" decoding="async" alt="Flight hardware and its characterization: CubeSpace magnetorquers in their transport case, a student characterizing a magnetorquer and its measured magnetic field map (top row); flight hardware unpacked in its protective case and the Z+ solar panel under characterization and lit during the electrical test (bottom row)." data-i18n-attr="alt:s1p.fig4.alt">
+          </div>
+          <figcaption data-i18n-html="s1p.fig4.cap"><strong>Figure 21.</strong> ST3LLARsat1 flight-HW &amp; characterization: magnetorquers (top-row) &amp; Z+ solar panel (bottom-row)</figcaption>
+        </figure>
+
+        <figure class="figure figure--mid reveal" id="fig-22">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig05-aivt.jpg" width="1700" height="1170" loading="lazy" decoding="async" alt="Students carrying out preliminary AIVT activities in the CSAT laboratory: working at an electronics bench, testing a board with a laptop and a development kit, preparing the harness and mock-up, handling flight hardware in the clean working area and soldering at a workstation with a microscope." data-i18n-attr="alt:s1p.fig5.alt">
+          </div>
+          <figcaption data-i18n-html="s1p.fig5.cap"><strong>Figure 22.</strong> ST3LLARsat1 preliminary AIVT activities at the CSAT by UC3M master students (phase 3-B, 2025/26)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== THE BEGINNING ===================== -->
+    <section class="section program-section program-section--prose" id="beginning" data-toc data-toc-label="The beginning" data-i18n-attr="data-toc-label:toc.s1p.beg">
+      <div class="container">
+        <h2 data-i18n="s1p.beg.h">The beginning: ESA FYS! Design Booster pilot program &amp; knowledge hand-over</h2>
+        <div class="project-body">
+          <p class="lead" data-i18n="s1p.beg.p1">Although officially, the ST3LLARsat program started in September 2022, earlier that year the space mission challenge for the mandatory (team-design) MISE “Space Pre-Design, MISE-SPD” course was set for the student teams to propose a 1U nanosatellite with a scientific and/or technological mission of their choice. The idea of the ST3LLARsat director, and MISE-SPD coordinator, was to use the resulting feasibility studies as the inception of the 1st mission of the program.</p>
+          <p data-i18n-html="s1p.beg.p2">As is detailed in the <a href="ST3LLARsat.html#esa">last section of the ST3LLARsat program page</a>, the start of the CubeSat activities in the MISE (geared towards the start of the program and a 1st mission) was timed to align with ESA FYS! call of its pilot program “Design Booster (DB)”, which initially was announced to open in Spring 2022. The aim of ESA-FYS! DB was to help European student teams reach a Final Design Review stage as soon as possible and with the guarantees provided by the support of ESA experts. The program was to last for 1.5 years and would entail continuous oversight by ESA FYS! personnel and a rigorous adherence to ESA and CubeSat regulations.</p>
+          <p data-i18n-html="s1p.beg.p3">The ESA-FYS! DB call opened in September 2022 as a two-stage proposal. By the end of that October, European teams had to send a detailed proposal of their mission concept and status and, if pre-selected, several members would be invited to attend a one-week training workshop at ESA-ESTEC in November and would then have another month to improve the proposal. Our ST3LLARsat1 “Boira” proposal was written and consolidated during the optional 12 ECTS MISE “Integral Project (MISE-IP)” course, which ran from September to December, and was intentionally created to support the development of the CubeSat activities. The MISE-IP was attended by most of the original team from the MISE-SPD class that proposed the “Boira” concept. The dimension of the nanosat was changed to 2U for the reasons described in the <a href="ST3LLARsat1-spacecraft.html#design-summary">design summary</a>, but otherwise the scientific aim and mission concept remained the same.</p>
+          <p data-i18n="s1p.beg.p4">It was with immense pride for the work of our students that we learnt in December 2022 that UC3M ST3LLARsat1 had been selected (along with 4 other teams out of 12 candidates –some from universities that had already launched a nanosat or had a program for over 10 years). Further, ours was the 1st nano/cube-sat in the Community of Madrid chosen by ESA for its FYS! program.</p>
+          <p data-i18n-html="s1p.beg.p5">The pilot ESA-FYS! DB program started in January 2023 and lasted until June 2024, and as is typical for ESA projects, it required very intense documentation and evaluation of progress and requirements (typically having videoconferences with ESA every 2 weeks, and almost monthly documents delivery and/or presentations –see also the <a href="ST3LLARsat.html#esa">last section of the ST3LLARsat program page</a>). <a class="xref" href="#fig-23">Figure 23</a> shows the timeline of the full program as experienced by ST3LLARsat1 team.</p>
+          <p data-i18n-html="s1p.beg.p6">Participation in ESA FYS!-DB was a great motivator and allowed us to advance the design of ST3LLARsat1 faster, with more confidence, and a greater understanding of the problems and decisions than would have been possible on our own (especially noting it was our first ‘rodeo’). Although challenging, the ESA program offered support and also offered our students the possibility to interact directly with ESA experts, learn about European space standards and processes, and even travel to ESA facilities for training. Indeed, before the ST3LLARsat program was initiated, there have been only a couple of students accepted to ESA training workshops (another ESA Academy program to prepare European students for the space domain by funding their attendance to workshops lasting from 1 to 5 days at their facilities). After our participation in the ESA-FYS! DB program, and motivated by ST3LLARsat1 needs and progress, since September 2022 and until now (October 2026), more than 38 of our students have been selected for these ESA training opportunities –which represent over 1,100 hours of training given by ESA experts to our students (see also the <a href="ST3LLARsat1.html#numbers">metrics of the overview page</a>).</p>
+        </div>
+
+        <figure class="figure figure--wide reveal" id="fig-23">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig06-fys-timeline.jpg" width="1283" height="718" loading="lazy" decoding="async" alt="Timeline of the activities performed within the ESA FYS Design Booster program, from the proposal in 2022 to the Final Design Review in 2024." data-i18n-attr="alt:s1p.fig6.alt">
+          </div>
+          <figcaption data-i18n-html="s1p.fig6.cap"><strong>Figure 23.</strong> ST3LLARsat1 “BOIRA”: temporal line of activities performed within ESA-FYS! Design Booster program</figcaption>
+        </figure>
+
+        <h3 class="sec-sub" id="handover" data-toc="sub" data-toc-label="Hand-over" data-i18n-attr="data-toc-label:toc.s1p.ho" data-i18n="s1p.ho.h">Knowledge hand-over between student cohorts</h3>
+        <div class="project-body">
+          <p data-i18n-html="s1p.ho.p1">An important consideration in university CubeSat programs is the hand-over of experience and knowledge across the student cohorts, since every few (in the MISE case, two) years there is a complete renewal of most of the student team. A strategy was devised during the October proposal to the ESA-FYS! DB call, see <a class="xref" href="#fig-24">Figure 24</a>, based on the sequential timing of the MISE-IP (Sept-Dec) and MISE-SPD (Jan-Jun) courses. Recall that the MISE-IP course is a 2nd year optional class, while the MISE-SPD a mandatory 1st year class. Thus, it was thought ideal to have the 2nd year students in the MISE-IP take over the role of subsystem team-leads of a team of 1st year volunteers that would then (together with the rest of the 1st year cohort) work on the MISE-SPD course and, critically, hopefully many of these volunteers would register for the 2nd year MISE-IP when their time came (and then be supported by the new batch of volunteers from the new 1st year cohort).</p>
+        </div>
+        <figure class="figure figure--wide reveal" id="fig-24">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig07-handover-plan.jpg" width="1800" height="744" loading="lazy" decoding="async" alt="High-level planning of the ST3LLARsat1 team project and the hand-over between Phase I and Phase II." data-i18n-attr="alt:s1p.fig7.alt">
+          </div>
+          <figcaption data-i18n-html="s1p.fig7.cap"><strong>Figure 24.</strong> ST3LLARsat1 “BOIRA”: high-level planning and hand-over strategy for ESA-FYS! DB proposal</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n-html="s1p.ho.p2">For ST3LLARsat1 Phase I (Sept’22-Jun’23), 7 second-year MISE students (5 enrolled in MISE-IP) took the lead and performed the bulk of the work for BDR phase of ESA-FYS! DB. They were supported by 15 first-year MISE volunteers from the 2022/24 cohort that started that September (see left-side of <a class="xref" href="#fig-25">Figure 25</a> below). As aforementioned, the expectation was that part of these 15 first-year MISE volunteers would take over during Phase II (Sept’23-Jun’24) –coinciding with the ESA-FYS! DB’s FDR phase, by registering to the 2023-24 MISE-IP course, and in turn be supported by first-year MISE volunteers from the new 2023/25 cohort. And then the cycle would repeat. This worked well with 12 second-year MISE students (10 registered to MISE-IP) and 21 first-year MISE volunteers, see right-side of <a class="xref" href="#fig-25">Figure 25</a>, and has worked similarly well after that (see <a class="xref" href="ST3LLARsat1-mission.html#fig-2">Figure 2</a>).</p>
+          <p data-i18n-html="s1p.ho.p3">In addition, students are encouraged to perform their master theses in topics related to ST3LLARsat1. For the first year, it was too late to have any TFMs since students typically choose their topics during the end of the previous year, but for phase-2 four MISE students did their TFM and three undergraduate students (TFGs). As of November 2026, see section on <a href="ST3LLARsat1-documents.html#theses">Dissemination, Theses &amp; Reports</a>, 20 theses have been defended during the first 4 years of the ST3LLARsat program.</p>
+        </div>
+        <figure class="figure figure--wide reveal" id="fig-25">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig08-handover-years.jpg" width="1800" height="1017" loading="lazy" decoding="async" alt="Knowledge hand-over during the first two years: Phase I and Phase II teams, with the volunteers who stayed on as team leads." data-i18n-attr="alt:s1p.fig8.alt">
+          </div>
+          <figcaption data-i18n-html="s1p.fig8.cap"><strong>Figure 25.</strong> ST3LLARsat1 “BOIRA”: Knowledge hand-over during the first 2 years (Phase-I to Phase-II)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== FUNDING ===================== -->
+    <section class="section program-section program-section--prose" id="funding" data-toc data-toc-label="Funding" data-i18n-attr="data-toc-label:toc.s1p.fund">
+      <div class="container">
+        <h2 data-i18n="s1p.fund.h">Funding acknowledgement</h2>
+        <div class="project-body">
+          <p data-i18n-html="s1p.fund.p1">Here, we acknowledge and thank all the funding obtained to make ST3LLARsat1 a reality. This covers from funding specifically used to procure components, projects that allowed the program/mission director to devote time to this activity and/or hire supporting staff members, and people/teams/organizations that provided expertise and support (see also <a class="xref" href="#fig-26">Figure 26</a>):</p>
+        </div>
+
+        <div class="funding">
+          <div class="note-card">
+            <div class="note-card__tag" data-i18n="s1p.fund1.tag">Initial funding (2022-2024)</div>
+            <p data-i18n-html="s1p.fund1.p">The names of the program and first mission come from <a href="https://st3llar.uc3m.es/" target="_blank" rel="noopener">ST3LLAR</a>, an academic-industrial aerospace chair established in March 2018 between UC3M and SENER (one of the leading space technological companies in Spain). SENER provided between 15–30 K€ per year, from the time the ST3LLARsat program started (Sept’22) and until end of the chair (March’24). This funding was used to procure most of ST3LLARsat1’s components and provide student “Young Investigator” awards to selected students to perform their thesis on a ST3LLARsat1 subsystem.</p>
+          </div>
+          <div class="note-card">
+            <div class="note-card__tag" data-i18n="s1p.fund2.tag">Consolidation funding (2024-2026)</div>
+            <p data-i18n="s1p.fund2.p">Prof. Marcos received in 2021 a personal five-year 450 K€ “Beatriz Galindo Senior Distinguished Investigator” award by the Spanish Government that enabled him to devote up to 30% of his time to ST3LLARsat1 until June’26. In addition, he also received that year another award of 190 K€ (this time by the Comunidad de Madrid, CAM) to form his research team. Both these awards allowed prof. Marcos to start ST3LLARsat1 and hire a senior postdoctoral researcher and master students to support the critical, work-intensive early phases, as well as complement ST3LLAR’s funding into 2026.</p>
+          </div>
+          <div class="note-card">
+            <div class="note-card__tag" data-i18n="s1p.fund3.tag">Future funding (2026)</div>
+            <p data-i18n="s1p.fund3.p">The Department of Aerospace Engineering (DAE) at UC3M received in January 2026 the prestigious Spanish government “María de Maeztu (MdM)” Seal of Excellence. This award comes with 2.5 M€ of funding plus additional funding for 7 PhD students and a 4-year lab technician contract. UC3M has rewarded this achievement by adding additional funding to the MdM funding, and as an indication part of the funding has been assigned to CSAT/ST3LLARsat to complete the CSAT by procuring a TVAC with at least 600×600 mm internal space, which will allow us to environmentally test CubeSats up to 27U, and thus be able to perform the environmental qualification tests for ST3LLARsat1.</p>
+          </div>
+        </div>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="s1p.fund.p2">In addition, during the course of the program/mission, several other agreements were established with other UC3M professors and organizations. Most of these did not result in funding for ST3LLARsat1, but contributed with time, expertise, and/or components:</p>
+        </div>
+        <ul class="link-list">
+          <li data-i18n-html="s1p.agr1"><strong><a href="https://education.esa.int/esa-academy/" target="_blank" rel="noopener">ESA Academy</a></strong>, for their support during ESA-FYS! Design Booster program –special thanks to: Dr. Loris Franchi and Mr. David Palma.</li>
+          <li data-i18n-html="s1p.agr2"><strong><a href="https://etpack.eu/e-t-pack-f/" target="_blank" rel="noopener">E.T.PACK-Fly</a></strong>, an EIC Transition Project funded in September 2022 with 2.5 M€ to prepare a Ready-to-Fly (TRL 8) deorbit device based on Electro-Dynamic Tether (EDT) technology. It was coordinated by prof. Gonzalo Sánchez-Arriaga from DAE, and they purchased and made available specific hardware components for the ground station.</li>
+          <li data-i18n-html="s1p.agr3"><strong><a href="https://uc3-base.github.io/" target="_blank" rel="noopener">UC3-BASE</a></strong>, a UC3M Telecommunications’ student association that is supporting ST3LLARsat with the ground segment/CSOC definition and installation.</li>
+          <li data-i18n-html="s1p.agr4"><strong><a href="https://www.esatan-tms.com/" target="_blank" rel="noopener">ESATAN-TMS</a></strong>, for providing their thermal modeling software.</li>
+          <li data-i18n-html="s1p.agr5"><strong><a href="https://aero.uc3m.es/research-areas/aeroelastic-and-structural-design-lab/" target="_blank" rel="noopener">ASD Lab</a></strong>, the aeroelastic and structural design lab at the department, for their support on structural machining for the in-house antenna.</li>
+        </ul>
+
+        <figure class="figure figure--wide reveal" id="fig-26">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig26-sponsors.jpg" width="1800" height="945" loading="lazy" decoding="async" alt="Acknowledgements: Spanish Government and Comunidad de Madrid, ST3LLAR-SENER chair, ESA, ASD Lab, E.T.PACK-F, UC3-BASE and ESATAN-TMS." data-i18n-attr="alt:s1p.fig26.alt">
+          </div>
+          <figcaption data-i18n-html="s1p.fig26.cap"><strong>Figure 26.</strong> ST3LLARsat1 “BOIRA”: Acknowledgement (and thanks) to our sponsors</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-pager">
+      <div class="container">
+      <nav class="pager" aria-label="ST3LLARsat1">
+        <a class="prev" href="ST3LLARsat1-aivt.html"><span class="pager__dir" data-i18n="s1c.prev">Previous</span><span class="pager__title" data-i18n="s1c.tab.aivt">AIVT</span></a>
+        <a class="next" href="ST3LLARsat1-documents.html"><span class="pager__dir" data-i18n="s1c.next">Next</span><span class="pager__title" data-i18n="s1c.tab.documents">Documents</span></a>
+      </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-st3llarsat1.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/pages/st3llarsat1.js"></script>
+</body>
+</html>

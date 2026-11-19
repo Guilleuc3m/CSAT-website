@@ -20,6 +20,25 @@
     return (I18N && I18N.t) ? I18N.t(key, lang) : fallback;
   }
 
+  // Arriving from the Outreach page (contact.html?topic=visit | talk): fill the
+  // Subject in the visitor's language. It follows a language switch for as long
+  // as the visitor has not edited it, and never overwrites what they typed.
+  var TOPIC_KEYS = { visit: "contact.topic.visit", talk: "contact.topic.talk" };
+  var topic = "";
+  try { topic = new URLSearchParams(window.location.search).get("topic") || ""; } catch (e) {}
+  var topicKey = TOPIC_KEYS[topic];
+  var subjectField = form.elements["subject"];
+  if (topicKey && subjectField) {
+    var autoSubject = "";
+    var fillSubject = function () {
+      if (subjectField.value !== "" && subjectField.value !== autoSubject) return;
+      autoSubject = msg(topicKey, "");
+      subjectField.value = autoSubject;
+    };
+    fillSubject();
+    document.addEventListener("csat:langchange", fillSubject);
+  }
+
   // Required fields, in visual order, each paired with the i18n key of its label
   // so validation messages can name exactly what is missing (localised).
   var REQUIRED = [

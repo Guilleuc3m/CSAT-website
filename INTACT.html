@@ -23,6 +23,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/pages/projects.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
 </head>
 <body data-page="projects">
 
@@ -60,9 +63,11 @@
             <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="dropdown">
-            <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
-            <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
-            <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
           </div>
         </div>
         <div class="nav-item has-dropdown" data-nav="projects">
@@ -182,6 +187,16 @@
         <p data-i18n="intact.app2.p1">This application focuses on precise retro-propulsive landing and targets highly robust solutions for terminal flight under severe constraints. The proposed framework aims at developing a control strategy that divides control authority optimally among actuators (clustered engine, RCS, aerodynamic surfaces) during one of the most demanding mission segments — the descent and landing phase. The highly demanding nature of the task comes from the need to simultaneously satisfy numerous stringent constraints to ensure safe and successful touchdown, such as near-zero velocity and vertical attitude for the vehicle. The conventional paradigm of designing independent controllers for each axis is highly disadvantaged in this phase, where tight coupling between translational and rotational movement exists and there is little to no time for corrective manoeuvres. Additionally, external factor such as winds or engine plume can potentially affect the realized trajectory and how well the constraints are respected in a realistic environment. The engine plume impingement and other proximity to the ground related phenomena constitute a fundamental motivation for developing an adaptive control allocation strategy, considering the altitude-dependent nature of the problem. Moreover, the reduced combustion stability, plume impingement and/or potential debris ingestion are among the numerous risk factors that steer the design toward a fault-tolerant approach. It is deemed essential that the control solution is developed in conjunction with a dedicated or integrated Fault Detection, Isolation and Recovery (FDIR) logic to account for any potential faults into the system.</p>
         <p data-i18n="intact.app2.p2">AGILE’s OTIS reusable Orbital Transfer Vehicle, which is currently under development, will be used as the benchmark for this application.</p>
       </div>
+
+      <div class="container">
+        <p class="muted" style="max-width:70ch;margin-top:clamp(1.8rem,4vw,2.6rem)" data-i18n="intact.fig.intro">A visual summary of the project is given in the following figure:</p>
+        <figure class="figure figure--wide">
+          <div class="figure__frame">
+            <img src="images/projects/intact-overview.jpg" alt="INTACT project overview: ascent phase and descent and landing phase study cases, their dedicated flight execution simulators, and the expected benefits.">
+          </div>
+          <figcaption data-i18n-html="intact.fig.cap"><strong>Figure 1.</strong> INTACT project.</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
@@ -214,7 +229,7 @@
     <div class="footer-bottom">
       <div class="container">
         <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
-        <span>csat.uc3m.es</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
       </div>
     </div>
   </footer>

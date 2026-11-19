@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <title>ST3LLARsat1 — Mission — CSAT | UC3M</title>
+  <meta name="description" content="ST3LLARsat1 “Boira” mission: objectives (educational, scientific, technological), concept of operations, mission analysis, orbit flexibility under ESA's Zero Debris policy, and de-orbiting.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+  <link rel="stylesheet" href="css/pages/stellarsat.css">
+  <link rel="stylesheet" href="css/pages/st3llarsat1.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
+</head>
+<body data-page="stellarsat">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top mission-page">
+
+    <section class="page-hero program-hero mission-hero">
+      <div class="container">
+        <span class="eyebrow">ST3LLARsat1 “Boira”</span>
+        <h1 data-i18n="s1c.tab.mission">Mission</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="s1c.tag.mission">Objectives, concept of operations, mission analysis and orbit</p>
+      <nav class="mission-tabs" aria-label="ST3LLARsat1" data-i18n-attr="aria-label:s1c.tabs.label">
+        <div class="mission-tabs__list">
+          <a href="ST3LLARsat1.html" data-i18n="s1c.tab.overview">Overview</a>
+          <a href="ST3LLARsat1-mission.html" aria-current="page" data-i18n="s1c.tab.mission">Mission</a>
+          <a href="ST3LLARsat1-spacecraft.html" data-i18n="s1c.tab.spacecraft">Spacecraft</a>
+          <a href="ST3LLARsat1-aivt.html" data-i18n="s1c.tab.aivt">AIVT</a>
+          <a href="ST3LLARsat1-program.html" data-i18n="s1c.tab.program">Program</a>
+          <a href="ST3LLARsat1-documents.html" data-i18n="s1c.tab.documents">Documents</a>
+        </div>
+      </nav>
+      </div>
+    </section>
+
+    <!-- ===================== MISSION OBJECTIVES ===================== -->
+    <section class="section program-section program-section--prose" id="objectives" data-toc data-toc-label="Objectives" data-i18n-attr="data-toc-label:toc.s1m.obj">
+      <div class="container">
+        <h2 data-i18n="s1m.obj.h">Mission objectives</h2>
+        <div class="project-body">
+          <p data-i18n="s1m.obj.p1">The main ST3LLARsat1 mission objectives are formalized in the table below and discussed next:</p>
+        </div>
+
+        <figure class="table-fig table-fig--narrow" id="table-1">
+          <figcaption class="table-cap" data-i18n-html="s1m.t2.cap"><strong>Table 1.</strong> ST3LLARsat1 “Boira” main mission objectives</figcaption>
+          <div class="table-wrap">
+            <table class="data-table data-table--min">
+              <thead><tr><th data-i18n="s1m.t2.h1">Req. ID</th><th data-i18n="s1m.t2.h2">Title</th><th data-i18n="s1m.t2.h3">Requirement</th></tr></thead>
+              <tbody>
+                <tr><td class="id">MO-1</td><td data-i18n="s1m.t2.r1.t">Educational</td><td data-i18n="s1m.t2.r1.d">To provide UC3M MISE students with hands-on experience in a real space project</td></tr>
+                <tr><td class="id">MO-2</td><td data-i18n="s1m.t2.r2.t">Scientific</td><td data-i18n="s1m.t2.r2.d">To monitor local climate change by measuring atmospheric water vapor (WV)</td></tr>
+                <tr><td class="id">MO-3</td><td data-i18n="s1m.t2.r3.t">Technological</td><td data-i18n="s1m.t2.r3.d">To design, build, launch, and operate a 2U CubeSat</td></tr>
+                <tr><td class="id">MO-4</td><td data-i18n="s1m.t2.r4.t">Technological</td><td data-i18n="s1m.t2.r4.d">To perform in-orbit demonstration of in-house technologies</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+
+        <!-- MO-1 -->
+        <h3 class="sec-sub" id="mo-1" data-toc="sub"><span class="code">MO-1</span> <span data-i18n="s1m.mo1.h">Educational</span></h3>
+        <div class="project-body">
+          <p data-i18n-html="s1m.mo1.p1">The integration of the ST3LLARsat program, and its missions, within UC3M’s Master in Space Engineering (MISE) serves to fulfill this first objective. As indicated in the <a href="ST3LLARsat1.html#numbers">metrics of the overview page</a>, this objective has been amply achieved already within the first 5 years of the program since over 190 students have participated, resulting by November 2026 in 20 theses defended and 25 dissemination outputs –plus over 38 students having been selected and funded by ESA to attend one of their training opportunities within ESA Academy during these 5 years. More details on the integration of the ST3LLARsat program (and ST3LLARsat1 mission) in the MISE are given in the <a href="ST3LLARsat.html">ST3LLARsat program page</a>.</p>
+        </div>
+        <figure class="figure figure--wide reveal" id="fig-2">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig09-student-centered.jpg" width="1800" height="1050" loading="lazy" decoding="async" alt="A truly student-centered CubeSat: students involved in each phase, dissemination outputs, ESA training opportunities and the team organization." data-i18n-attr="alt:s1m.fig9.alt">
+          </div>
+          <figcaption data-i18n-html="s1m.fig9.cap"><strong>Figure 2.</strong> ST3LLARsat1 “Boira” MO-1: a truly student-centered CubeSat program and mission (as of October’26)</figcaption>
+        </figure>
+
+        <!-- MO-2 -->
+        <h3 class="sec-sub" id="mo-2" data-toc="sub"><span class="code">MO-2</span> <span data-i18n="s1m.mo2.h">Scientific</span></h3>
+        <div class="project-body">
+          <p data-i18n="s1m.mo2.p1">This objective is addressed by carrying a scientific payload (PAY-1), a small (~1U) COTS spectrometer selected to measure water vapor (WV). Its successful demonstration (i.e. taking and transmitting a valid WV measurement) will pave the way to release constellations of low-cost climate change ‘sensors’, which despite low-accuracy have a much faster revisit and will complement high-cost/high-accuracy, but sparse in time, measurements from, for example, Sentinel satellites. This will enable in the future to emulate in space the impact that deployment of a multitude of low-cost weather stations on Earth had on weather forecasting.</p>
+          <p data-i18n-html="s1m.mo2.p2">It is highlighted that the state-of-the-art technologies for measuring WV from Space have to do mostly with the retrieval of a spectrum in the specific wavelengths at which this component can be extracted. From the existing types of instruments to perform this task, the team performed a study (see <a class="xref" href="#fig-3">Figure 3</a>) looking at the possible orbits, resulting ground-tracks, and coverage of the latter with ground weather stations in Madrid, Spain and Europe to ensure that the optical spectrometers’ characteristics were scientifically viable. From this study, technical and scientific requirements were derived such as that the selected optical spectrometer shall only take measurements during daytime to improve the quality of the scientific data. This is because this type of scientific technology absorbs the light coming from the observed field-of-view and using a collimating lens, it shows its intensity as a function of the wavelength. The spectrum values in which WV is displayed are well known and characterized by several experiments. The wavelength range measured by the optical spectrometer must match at least one of the different channels at which is centered the WV. This is one of the reasons why Near-Infrared (NIR) was the spectral band selected to meet the needs of this mission.</p>
+        </div>
+        <figure class="figure figure--wide reveal" id="fig-3">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig10-water-vapor.jpg" width="1800" height="1012" loading="lazy" decoding="async" alt="Science objective: orbit, ground track and weather-station coverage studies used to confirm that the water-vapor measurement is feasible." data-i18n-attr="alt:s1m.fig10.alt">
+          </div>
+          <figcaption data-i18n-html="s1m.fig10.cap"><strong>Figure 3.</strong> ST3LLARsat1 “Boira” MO-2: measuring water vapor for climate change monitoring</figcaption>
+        </figure>
+
+        <!-- MO-3 -->
+        <h3 class="sec-sub" id="mo-3" data-toc="sub"><span class="code">MO-3</span> <span data-i18n="s1m.mo3.h">Technological</span></h3>
+        <div class="project-body">
+          <p data-i18n-html="s1m.mo3.p1">This objective structures the full mission development, and will be achieved once ST3LLARsat1 is completed, launched, and operated by our students from the CubeSat Operation Center (CSOC) at our <a href="facilities-leganes.html">center for space technology and nano/micro-satellites (CSAT)</a>.</p>
+        </div>
+
+        <!-- MO-4 -->
+        <h3 class="sec-sub" id="mo-4" data-toc="sub" data-toc-label="MO-4 In-orbit demo" data-i18n-attr="data-toc-label:toc.s1m.mo4"><span class="code">MO-4</span> <span data-i18n="s1m.mo4.h">In-orbit demonstration of in-house technologies</span></h3>
+        <div class="project-body">
+          <p data-i18n="s1m.mo4.p1">With respect to this last objective, it is clear that achieving MO-3 will allow demonstrating in-orbit all (or some) of the four in-house technologies aforementioned, which are described in more detail next:</p>
+        </div>
+
+        <div class="note-card">
+          <div class="note-card__tag">Tech.IOD-1</div>
+          <h4 data-i18n="s1m.iod1.h">Payload 2 – a non-deployable, dual-circular antenna</h4>
+          <p data-i18n="s1m.iod1.p1">This is a robust, non-deployable CubeSat antenna designed by UC3M PhD students from the department of Telecommunications to eliminate the single point of failure caused in CubeSats by deployable antennas. Distinctive features of this design include its low directivity (ensuring extensive coverage of the Earth's surface from orbit), its size (fitting in less than a 1U face), and more importantly, it does not need to be deployed (mitigating the risk of a single-point failure in any Space mission). The last aspect is paramount since antenna deployment operations add design complexity and a potential point of failure due to malfunctioning of the antenna deployment mechanisms. This, together with deployable appendages such as solar panels, is one of the main causes of small-satellite mission failures. Since communication is critical for mission success, and this payload is experimental, we also carry a flight-heritage, COTS, deployable antenna.</p>
+        </div>
+        <figure class="figure figure--large reveal" id="fig-4">
+          <div class="figure__frame figure__frame--paper">
+            <div class="figure-grid" style="--cols:2">
+              <img src="images/st3llarsat1/fig11-antenna-1.jpg" width="1500" height="972" loading="lazy" decoding="async" alt="Poster on the finite element structural verification of the in-house CubeSat antenna: background and objectives." data-i18n-attr="alt:s1m.fig11a.alt">
+              <img src="images/st3llarsat1/fig11-antenna-2.jpg" width="1500" height="1159" loading="lazy" decoding="async" alt="Poster on the finite element structural verification of the in-house CubeSat antenna: methodology and results." data-i18n-attr="alt:s1m.fig11b.alt">
+            </div>
+          </div>
+          <figcaption data-i18n-html="s1m.fig11.cap"><strong>Figure 4.</strong> ST3LLARsat1 “Boira” MO-4/IOD-1: in-house non-deployable antenna (PAY 2) [Alham-EuroGNC26]</figcaption>
+        </figure>
+
+        <div class="note-card">
+          <div class="note-card__tag">Tech.IOD-2 &amp; 3</div>
+          <h4 data-i18n="s1m.iod2.h">In-house OBC &amp; ADCS PCBs</h4>
+          <p data-i18n-html="s1m.iod2.p1">With the help of aeronautical and electronics UC3M master students (and using as baseline open-source schematic and Gerber files from a space OBC-PCB project from the LibreCube community, see <a class="xref" href="#fig-5">Figure 5</a>), ST3LLARsat1 is developing the PCBs for the two ‘brains’ of our CubeSat: the onboard-computer (OBC) and the attitude determination and control system (ADCS). Each has a dedicated processor (MCU) and memory in order to provide redundancy and capability for future deployment of more advanced algorithms (including FDIR and onboard estimation).</p>
+        </div>
+        <figure class="figure figure--large reveal" id="fig-5">
+          <div class="figure__frame figure__frame--paper">
+            <div class="figure-grid" style="--cols:2">
+              <img src="images/st3llarsat1/fig12-obc-1.jpg" width="1286" height="1224" loading="lazy" decoding="async" alt="Poster on the design and evolution of the on-board computer PCB: mission, objectives and design steps." data-i18n-attr="alt:s1m.fig12a.alt">
+              <img src="images/st3llarsat1/fig12-obc-2.jpg" width="1700" height="885" loading="lazy" decoding="async" alt="OBC-PCB version 1.0 and version 2.0 compared, with the list of changes." data-i18n-attr="alt:s1m.fig12b.alt">
+            </div>
+          </div>
+          <figcaption data-i18n-html="s1m.fig12.cap"><strong>Figure 5.</strong> ST3LLARsat1 “Boira” MO-4/IOD-2: in-house OBC-PCB [Suero-EuroGNC26]</figcaption>
+        </figure>
+
+        <div class="note-card">
+          <div class="note-card__tag">Tech.IOD-4</div>
+          <h4 data-i18n="s1m.iod4.h">ADCS algorithms</h4>
+          <p data-i18n="s1m.iod4.p1">Finally, we are developing the ADCS algorithms, from the standard TRIAD and Bdot to advanced EKF algorithms. A coarse Sun Sensor (CSS) is also being developed in-house, and its development includes selection of the photodiodes, defining their placement along the solar panels, and coding the algorithm to determine the attitude with respect to the Sun position. The algorithms are always validated starting with simulations and then progressing to SIL and HIL tests using CSAT's V&amp;V testbenches (some, specifically developed to test our CubeSat).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONOPS ===================== -->
+    <section class="section program-section program-section--prose" id="conops" data-toc data-toc-label="ConOps" data-i18n-attr="data-toc-label:toc.s1m.ops">
+      <div class="container">
+        <h2 data-i18n="s1m.ops.h">Concept of Operations (ConOps): mission phases and timeline</h2>
+        <div class="project-body">
+          <p data-i18n="s1m.ops.p1">Once ST3LLARsat1 is fully assembled and ready for integration, it will be inserted into a picosatellite orbital deployer (POD), or similar CubeSat ejector, to be mounted in the chosen launch vehicle. Typically, the launch vehicle will have a main payload to be released at a particular orbit, and CubeSats piggyback this payload and are ejected subsequently after enough time has passed to avoid any interferences.</p>
+          <p data-i18n-html="s1m.ops.p2">The minimum nominal mission lifetime for ST3LLARsat1 is 6 months from T<sub>0</sub> (as per ESA-FYS Design Specification<sup class="fnref"><a href="#fn-1" id="fnref-1">1</a></sup> FDS-VCD 4.9.1), and after passivation for deorbiting, a natural decay within 5 years should occur in order to comply with new “Zero Debris” requirements (FDS-VCD 4.11.1). A priori, it is not possible to know the exact mission lifetime since it is highly dependent on the deployment orbit, but the minimum lifetime and maximum deorbiting must be satisfied.</p>
+          <p data-i18n-html="s1m.ops.p3">From the moment of integration with the POD and while a CubeSat is within the launch vehicle, every system must be OFF (FDS-VCD 4.9.2). Once the CubeSat leaves the POD, that time is marked as T<sub>0</sub> and the LEOP (Launch and Early Operations Phase) begins, see <a class="xref" href="#fig-6">Figure 6</a> for the mission phases and the threshold conditions to switch between them.</p>
+          <p data-i18n-html="s1m.ops.p4">Operations can only start 30 minutes after T<sub>0</sub> (as per FDS-VCD 4.9.). These operations involve functional checks of EPS, OBC, ADCS and TTC components. Then, a detumbling procedure starts to slow down the rotation rate of the CubeSat. The Design specifications also determine a threshold for being allowed to transmit: 45 minutes after T<sub>0</sub> (as per FDS-VCD 4.9.5). Uplink and downlink tests will be carried out between ST3LLARsat1 and the ground station at UC3M. Upon successful completion, the NOMINAL phase starts, and all the subsystems are turned ON except for the spectrometer, which follows a scientific operation plan based on location (priority is to take measurements first over Spain, then Europe, and then over the World), time (active only for an established duration required to take from 1 to n scientific measurements), and operational status (e.g. not to be used during low-power and/or eclipses). In case of an issue during the nominal mode or as commanded by direct ground intervention, ST3LLARsat1 can enter SAFE mode.</p>
+        </div>
+
+        <figure class="figure figure--wide reveal" id="fig-6">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig13-modes.png" width="1800" height="1009" loading="lazy" decoding="async" alt="State diagram: OFF, LEOP, NOMINAL and SAFE modes and the conditions that trigger each transition." data-i18n-attr="alt:s1m.fig13.alt">
+          </div>
+          <figcaption data-i18n-html="s1m.fig13.cap"><strong>Figure 6.</strong> ST3LLARsat1 “BOIRA”: operational modes and definition of transitions</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="s1m.ops.p5">The OFF mode is not counted as an operational mode since it refers to the configuration of the CubeSat prior to launch and orbit deployment, which is mandated to have all subsystems off, and all energy/communication inhibited by remove-before-flight (RBF) and by deployment switches. Thus, the actual operational modes of ST3LLARsat1 are three (LEOP, NOMINAL, SAFE):</p>
+        </div>
+
+        <div class="modes">
+          <div class="mode mode--leop">
+            <div class="mode__tag">LEOP</div>
+            <h4 data-i18n="s1m.leop.h">Launch and Early Orbit Phase (LEOP)</h4>
+            <p data-i18n-html="s1m.leop.p1">Manages automated subsystem initialization immediately post-ejection. LEOP initiates after mandatory 30-minute silent window by performing internal checks, deploying the primary UHF antenna, and executing the B-dot detumbling algorithm to reduce the angular rates (&lt; 0.5°/s). Finally, it will attempt to establish communication with ground by sending the first beacon telemetry from T<sub>0</sub>+45mins.</p>
+            <p data-i18n-html="s1m.leop.p2">If ST3LLARsat1 stays for too long in this mode (T &gt; T<sub>0</sub> + η<sub>t-LEOP</sub>), or if there is a health issue in any of the components (υ<sub>Health-i</sub> ≠ 0 with i=1,2…n), or if any of several no-fault conditions occur (from no reception of ground commands, increased tumbling, or no proper charge while low power), then the system is designed to automatically engage the SAFE mode.</p>
+            <p data-i18n-html="s1m.leop.p3">From the SAFE mode is possible to come back to LEOP by ground-station command (GS-TC) or autonomously by an “auto-reboot”. The latter is a safety feature implemented based on KRAKsat’s lessons-learnt<sup class="fnref"><a href="#fn-2" id="fnref-2">2</a></sup> and ESA-FYS requirement FDS-VCD 4.9.8<sup class="fnref"><a href="#fn-1" id="fnref-1b">1</a></sup>. It consists of having a number of allowed reboots (based on a reboot-counter zeroed-out when “auto-reboot” is engaged or SAFE is entered) that when the counter is surpassed, deactivates specific components prior to the reboot and restart of LEOP.</p>
+          </div>
+          <div class="mode mode--nominal">
+            <div class="mode__tag">NOMINAL</div>
+            <h4 data-i18n="s1m.nom.h">Nominal</h4>
+            <p data-i18n="s1m.nom.p1">Governs primary scientific (PAY-1) and platform operation (tech.IOD-2/3/4). In this mode, performs internal health checks, optimizes solar array power generation, maintains attitude pointing, executes spectroradiometer (scientific) data acquisition cycles, handles the on-board data and memory exchanges, manages routine telemetry downlinks and uplink during ground-station passes, and finally repeats the latter using the non-deployable experimental antenna (PAY-2).</p>
+          </div>
+          <div class="mode mode--safe">
+            <div class="mode__tag">SAFE</div>
+            <h4 data-i18n="s1m.safe.h">Safe</h4>
+            <p data-i18n="s1m.safe.p1">Serves as the automated fallback state triggered by on-board Fault Detection, Isolation, and Recovery (FDIR) algorithms (e.g., thermal anomalies, internal component health checks) or by any of the no-fault or time-based conditions described before. Safe mode deactivates non-essential payload and equipment, aligns solar panels for maximum power generation, configures the UHF transceiver to beacon “emergency” mode, and performs internal health checks to obtain the “emergency” information and send it to ground until ground-station intervenes (GS-TC) or an “auto-reboot” occurs. GS-TC can command the system to go back to LEOP or directly to Nominal, while “auto-reboot” will always go back to LEOP. System recovery, that is, the solution of any health indicator, will not automatically return ST3LLARsat1 to the original mode from which it entered SAFE.</p>
+          </div>
+        </div>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="s1m.ops.p6">The specific values for the thresholds indicated above and in the figure will be defined during the final AIVT activities. The definition of the main time and health indicators are:</p>
+        </div>
+        <dl class="defs">
+          <div><dt>η<sub>t-LEOP</sub></dt><dd data-i18n="s1m.def1">maximum time at LEOP</dd></div>
+          <div><dt>η<sub>P-min</sub></dt><dd data-i18n="s1m.def2">minimum power for Nominal operations</dd></div>
+          <div><dt>η<sub>B-min</sub></dt><dd data-i18n="s1m.def3">minimum battery charge for Nominal operations</dd></div>
+          <div><dt>υ<sub>Health-i</sub></dt><dd data-i18n="s1m.def4">i-th component (i=1,2…n) health indicator [0=healthy / 1=faulty]</dd></div>
+        </dl>
+
+        <ol class="fn-list">
+          <li id="fn-1"><span data-i18n="s1m.fn1">Document: “Fly Your Satellite!” Design Specification v4.1 / Sept 2023, reference: ESA-TEC-XT-2023-2102</span> <a href="#fnref-1" aria-label="Back to text" data-i18n-attr="aria-label:s1c.fn.back">↩</a></li>
+          <li id="fn-2"><span data-i18n="s1m.fn2">Alicja Kubera, Dominik Markowski, Jan Zyczkowski, “KRAKsat Lessons Learned,” Technical Report, December 2019</span> <a href="#fnref-2" aria-label="Back to text" data-i18n-attr="aria-label:s1c.fn.back">↩</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== MISSION ANALYSIS ===================== -->
+    <section class="section program-section program-section--prose" id="mission-analysis" data-toc>
+      <div class="container">
+        <h2 data-i18n="s1m.ma.h">Mission analysis</h2>
+        <div class="project-body">
+          <p data-i18n="s1m.ma.p1">As a first step, a thorough review of the orbital regime of past CubeSat programs (especially those belonging to ESA-FYS! program) was performed, considering orbital parameters such as altitude, inclination, and Local Time of the Ascending Node (LTAN). Most of the previous ESA-FYS! missions had been launched to Sun-Synchronous Orbits (SSO) due to their advantageous characteristics (i.e., constant illumination conditions). In addition, most Low Earth Orbit (LEO) launchers often target SSO as suggested by the inclination parameter, which is in the range of 96-98 degrees (depending on the altitude). Regarding the LTAN, most of them employ a Dawn-Dusk or 10:30 LTAN, the latter being more suitable for Earth Observation due to avoidance of Sun glint.</p>
+          <p data-i18n="s1m.ma.p2">Next, the most relevant aspects relating the mission objectives to the orbit were studied. The main scientific goal of ST3LLARsat1 (MO-2) is to take water vapor measurements during daylight hours (primarily over Spain first, then Europe, and finally across the World), for at least a 6-month mission time. In order to target latitudes of Spain and Europe, this objective imposes constraints on the inclination, altitude and LTAN of the orbit. Furthermore, a bit over a year into the project, a more restrictive requirement for the MA team appeared, that of considering the 5-year re-entry restriction enforced by ESA in their new (late October 2023) “Zero Debris approach” policy. See for more details the next subsection “Orbit flexibility”.</p>
+          <p data-i18n-html="s1m.ma.p3">Regarding launch opportunities for CubeSats, initially several launch providers were contacted, but the estimated prices for logistics and launch services were prohibitive in terms of monetary cost for a university program. Therefore, the only option was to apply to any of the free opportunities for launch that appear from time to time (typically, from the ESA-FYS! Program, other national European programs, and/or international competitions). Since these opportunities force to launch at the orbits they consider, it was decided to analyze for ST3LLARsat1 an entire range of orbits, instead of just focusing on a “nominal” one. In particular, we focused on SSO orbits, but with a wide altitude, inclination, and LTAN range, see <a class="xref" href="#table-2">Table 2</a>:</p>
+        </div>
+
+        <figure class="table-fig table-fig--narrow" id="table-2">
+          <figcaption class="table-cap" data-i18n-html="s1m.t3.cap"><strong>Table 2.</strong> ST3LLARsat1 “BOIRA”: initial orbit ranges for analysis (phase 1 – 25 years re-entry scenario)</figcaption>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th data-i18n="s1m.t3.h1">Parameter</th><th data-i18n="s1m.t3.h2">Range</th></tr></thead>
+              <tbody>
+                <tr><td data-i18n="s1m.t3.r1">Altitude</td><td>350–600 km</td></tr>
+                <tr><td data-i18n="s1m.t3.r2">Inclination</td><td data-i18n="s1m.t3.r2v">96–98 degrees</td></tr>
+                <tr><td>LTAN</td><td data-i18n="s1m.t3.r3v">Dawn-Dusk, Noon-Midnight &amp; 10:30 hours</td></tr>
+                <tr><td data-i18n="s1m.t3.r4">Orbit type</td><td>SSO</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n-html="s1m.ma.p4">An incremental set of analyses, see <a class="xref" href="#fig-7">Figure 7</a>, was performed during the first two phases of the project (ESA-FYS! BDR and FDR phases) using different software tools (ESA’s DRAMA, a.i. Solutions’ FreeFlyer, CNES’ STELA, and CNES’ OMERE) to ensure that ST3LLARsat1 fulfilled all mission analysis’ requirements. In a first iteration (phase 1), 9 orbits (3 altitudes x 3 inclinations) were studied for: (i) lifetime, (ii) coverage of Spain, (iii) ground station contact (with 3 stations), (iv) daytime contact in Spain, and (v) eclipses. This first set considered the 25 years re-entry limitation. Subsequently, during phase 2, and given the new 5 years re-entry limitation, a focused altitude range (415-500 km) was used to study 8 orbits, and the analyses expanded to: (i) Monte Carlo for the lifetime, (ii) Europe coverage, (iii) 17 ground stations in the SatNOGS network, (iv) radiation analyses, plus 3 debris mitigation analyses: (v) collision risk, (vi) vulnerability to impacts, and (vii) safe reentry &amp; casualty risk assessment.</p>
+        </div>
+        <figure class="figure figure--wide reveal" id="fig-7">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig14-mission-analysis.jpg" width="1800" height="1006" loading="lazy" decoding="async" alt="Evolution of the mission analysis from the beginning to the Final Design Review: orbit ranges, analyses performed and ground-station coverage." data-i18n-attr="alt:s1m.fig14.alt">
+          </div>
+          <figcaption data-i18n-html="s1m.fig14.cap"><strong>Figure 7.</strong> ST3LLARsat1 “BOIRA”: Mission Analysis evolution from beginning to FDR (phases 1 &amp; 2)</figcaption>
+        </figure>
+
+        <!-- Orbit flexibility -->
+        <h3 class="sec-sub" id="orbit-flexibility" data-toc="sub" data-i18n="s1m.flex.h">Orbit flexibility</h3>
+        <div class="project-body">
+          <p data-i18n="s1m.flex.p1">ST3LLARsat1 will operate in a Sun-Synchronous Orbit (SSO) to take advantage of the constant illumination conditions offered by this type of orbits as well as to cover all the European region (the main area of interest in the mission), since lower inclination poses a limit on the latitudes that can be visited by the spacecraft.</p>
+          <p data-i18n-html="s1m.flex.p2">During our participation in ESA FYS!-DB program (Jan’23-Jul’24), the mission analysis (MA) team analyzed a wide range of possible scenarios in terms of altitude, LTAN, and inclination (see again <a class="xref" href="#table-2">Table 2</a>). A methodological MA process was established to calculate orbits and their impact, using always nominal and worst-cases (for power, science, thermal…). This process proved to be very effective when at the end of 2023, only a few months before FDR, ESA asked to consider the new ‘Zero Debris’ regulations. Among other requirements, this regulation limits the orbit lifetime of satellites in the LEO protected region from 25 to 5 years (starting from the orbit injection epoch). This substantial change significantly decreases the range of altitudes in which ST3LLARsat1 was compliant since it does not have propulsion. The new analyses included the effect of performing special maneuvers with the CubeSat (such as controlled tumbling at high angular rates or attitudes resulting in increased ballistic coefficient). Ultimately, the ranges presented in <a class="xref" href="#table-3">Table 3</a> demonstrate ST3LLARsat1 operational orbit flexibility.</p>
+        </div>
+        <figure class="table-fig" id="table-3">
+          <figcaption class="table-cap" data-i18n-html="s1m.t4.cap"><strong>Table 3.</strong> ST3LLARsat1 “Boira”: post-‘Zero Debris’ regulation – acceptable orbital ranges</figcaption>
+          <div class="table-wrap">
+            <table class="data-table data-table--min">
+              <thead><tr><th data-i18n="s1m.t4.h1">Orbit type</th><th data-i18n="s1m.t4.h2">Altitude</th><th data-i18n="s1m.t4.h3">Inclination</th><th>LTAN</th></tr></thead>
+              <tbody>
+                <tr><td>SSO</td><td>415–500 km</td><td data-i18n="s1m.t4.incl">96–98 deg</td><td data-i18n="s1m.t4.ltan">Noon-Midnight (12:00h) / Dawn-Dusk (18:00h)* / 10:30h</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note" data-i18n="s1m.t4.note">* Preferred LTAN.</p>
+        </figure>
+
+        <!-- De-orbiting -->
+        <h3 class="sec-sub" id="deorbiting" data-toc="sub" data-i18n="s1m.deorb.h">De-orbiting</h3>
+        <div class="project-body">
+          <p data-i18n="s1m.deorb.p1">The de-orbiting phase of the mission needs to be carefully assessed in order to attain complete fulfillment of the re-entry of the spacecraft. Moreover, with the more stringent requirements defined by the new “Zero Debris approach”, this task becomes necessary to be able to operate within the European Space sector. In particular, as aforementioned, the maximum allowed time for re-entry for a spacecraft with no propulsion has now been reduced by ESA to 5 years. This restricts the range of altitudes at which such a spacecraft can fulfill the restriction. For ST3LLARsat1, this meant that we must aim for an uncontrolled re-entry into Earth’s atmosphere in less than 5 years since launch. In addition, there are plenty of Space Debris Mitigation (SDM) requirements dealing with other aspects than lifetime, such as collision risk, passivation, and fragmentation to name a few.</p>
+          <p data-i18n-html="s1m.deorb.p2">This subsection briefly summarizes the main outcomes of the analysis performed with respect to ST3LLARsat1’s lifetime, see Figures <a class="xref" href="#fig-8">8</a> and <a class="xref" href="#fig-9">9</a>. The former figure shows three cases (nominal, worst, and detumbling -specified in terms of drag area) in terms of days until re-entry versus orbital altitude, considering for each case a different LTAN. As summarized before in <a class="xref" href="#table-3">Table 3</a>, the altitude range that is compliant with both the 5-year restriction and the 6-month lower limit for the operational lifetime is from 415 to 500 km. The latter figure extends this first analysis via a Monte Carlo approach to show the percentage of individuals (out of 1,000 random runs) which are compliant with the 5-year requirement. As the altitude increases, the compliance decreases drastically. For instance, there is a substantial difference between a nominal altitude of 425 km and 450 km. However, focusing on the 415-450 km range (the cases shown in <a class="xref" href="#fig-9">Figure 9</a>), all of the individuals are above the required 90% successful re-entry mark. Thus, according to this analysis, achieving a successful de-orbit into Earth’s atmosphere should be attainable for ST3LLARsat1. Further analyses related to fragmentation, collision risk and other SDM measures were considered, but are not presented here for the sake of conciseness.</p>
+        </div>
+        <div class="figure-grid" style="--cols:2; max-width:1000px; margin:2rem auto 0; align-items:start">
+          <figure class="figure" id="fig-8" style="margin:0">
+            <div class="figure__frame figure__frame--paper">
+              <img src="images/st3llarsat1/fig15-lifetime-drama.png" width="1500" height="857" loading="lazy" decoding="async" alt="Orbital altitude versus days until re-entry for the nominal, worst and tumbling cases and three LTAN values." data-i18n-attr="alt:s1m.fig15.alt">
+            </div>
+            <figcaption data-i18n-html="s1m.fig15.cap"><strong>Figure 8.</strong> ST3LLARsat1: Lifetime analysis with DRAMA</figcaption>
+          </figure>
+          <figure class="figure" id="fig-9" style="margin:0">
+            <div class="figure__frame figure__frame--paper">
+              <img src="images/st3llarsat1/fig16-lifetime-mc.png" width="1500" height="836" loading="lazy" decoding="async" alt="Percentage of compliant individuals out of 1,000 Monte Carlo runs versus altitude, with detail for 410-450 km." data-i18n-attr="alt:s1m.fig16.alt">
+            </div>
+            <figcaption data-i18n-html="s1m.fig16.cap"><strong>Figure 9.</strong> ST3LLARsat1: Lifetime MC (410-450km)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pager">
+      <div class="container">
+      <nav class="pager" aria-label="ST3LLARsat1">
+        <a class="prev" href="ST3LLARsat1.html"><span class="pager__dir" data-i18n="s1c.prev">Previous</span><span class="pager__title" data-i18n="s1c.tab.overview">Overview</span></a>
+        <a class="next" href="ST3LLARsat1-spacecraft.html"><span class="pager__dir" data-i18n="s1c.next">Next</span><span class="pager__title" data-i18n="s1c.tab.spacecraft">Spacecraft</span></a>
+      </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-st3llarsat1.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/pages/st3llarsat1.js"></script>
+</body>
+</html>

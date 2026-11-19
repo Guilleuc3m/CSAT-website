@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
   <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
   <title>Outreach — CSAT | UC3M</title>
-  <meta name="description" content="CSAT — Center for Space Technology and nano/micro SATellites at UC3M.">
+  <meta name="description" content="Outreach at CSAT (UC3M): free educational material on CubeSats and space technology, school visits, talks and DIY activities.">
   <script>
     (function () {
       try {
@@ -22,6 +22,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/outreach.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
 </head>
 <body data-page="outreach">
 
@@ -59,9 +63,11 @@
             <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="dropdown">
-            <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
-            <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
-            <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
           </div>
         </div>
         <div class="nav-item has-dropdown" data-nav="projects">
@@ -101,17 +107,537 @@
   </header>
 
   <main class="page-top">
-    <section class="page-hero" style="min-height:52vh;display:grid;place-items:center">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="page-hero">
       <div class="container">
-        <span class="eyebrow" data-i18n="soon.eyebrow">Coming soon</span>
+        <span class="eyebrow" data-i18n="out.eyebrow">Bringing space to society</span>
         <h1 data-i18n="nav.outreach">Outreach</h1>
-        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="soon.body">This section is being prepared and will be available shortly.</p>
-        <div class="hero__cta" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem">
-          <a class="btn btn-primary" href="index.html" data-i18n="soon.home">Back to home</a>
-          <a class="btn btn-ghost" href="contact.html" data-i18n="soon.contact">Contact us</a>
+        <p class="lead mx-auto ou-lead" data-i18n="out.lead">In addition to our standard responsibilities as academic staff (teaching, supervising students, and performing research and development), the faculty team at the CSAT aims to bring our work to the general public via presentations, workshops, organization of visits (to CSAT or at schools), and Do-It-Yourself (DIY) activities.</p>
+        <div class="ou-hero-cta">
+          <a class="btn btn-primary" href="#materials" data-i18n="out.cta.materials">Educational material</a>
+          <a class="btn btn-ghost" href="#offer" data-i18n="out.cta.visit">Visits and talks</a>
         </div>
       </div>
     </section>
+
+    <!-- ===================== INTRO + NUMBERS ===================== -->
+    <section class="section-tight">
+      <div class="container">
+        <p class="ou-intro" data-i18n="out.intro">In this webpage you will find educational material (free to use if properly cited) that we have created, plus a list of the activities we have been involved in the past few years. These activities cover anything that is not a technical presentation at a conference or seminar and that was aimed at a non-specialized audience (from the general public and non-engineering university students, up to stakeholders –including members of scientific and/or policy-making organizations).</p>
+        <!-- The first two figures are recomputed from the activity list below (all activities listed, up to 29/11/2026); the values written here are the fallback if scripts are off. -->
+        <ul class="ou-stats">
+          <li class="ou-stat reveal"><span class="ou-stat__v" data-stat="activities">12</span><span class="ou-stat__l" data-i18n="out.stat.act">activities since 2021</span></li>
+          <li class="ou-stat reveal d1"><span class="ou-stat__v" data-stat="people">560+</span><span class="ou-stat__l" data-i18n="out.stat.people">participants reached</span></li>
+          <li class="ou-stat reveal d2"><span class="ou-stat__v">6</span><span class="ou-stat__l" data-i18n="out.stat.mat">free educational materials</span></li>
+        </ul>
+        <p class="ou-note" data-i18n="out.stat.note">Includes the activities scheduled up to 29 November 2026. Participants are added up from the figures reported for each activity; activities without a reported figure are not included.</p>
+      </div>
+    </section>
+
+    <!-- ===================== VISIT US / INVITE US ===================== -->
+    <section class="section ou-section" id="offer" data-toc data-toc-label="Visits &amp; talks" data-i18n-attr="data-toc-label:toc.out.offer">
+      <div class="container">
+        <h2 data-i18n="out.offer.h">Visits and talks</h2>
+        <p class="lead" data-i18n-html="out.offer.lead">If you are a school, university, or public/private organization and are interested in visiting the CSAT or us visiting you and providing an outreach event, do not hesitate to contact us at:<br><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></p>
+
+        <div class="grid grid-2 ou-offer">
+          <article class="card ou-offer__card reveal">
+            <span class="ou-offer__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-7h6v7"/></svg></span>
+            <h3 data-i18n="out.offer.visit.t">Visit the CSAT</h3>
+            <p data-i18n="out.offer.visit.p">Come to our laboratories at the UC3M Leganés campus: a short presentation, a tour of the CSAT and a hands-on DIY activity.</p>
+            <a class="btn btn-primary" href="contact.html?topic=visit" data-i18n="out.offer.visit.b">Request a visit</a>
+          </article>
+          <article class="card ou-offer__card reveal d1">
+            <span class="ou-offer__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3 data-i18n="out.offer.talk.t">Talks and workshops at your center</h3>
+            <p data-i18n="out.offer.talk.p">We can come to your school, university or organization to give a talk, join a round table or run a DIY workshop.</p>
+            <a class="btn btn-primary" href="contact.html?topic=talk" data-i18n="out.offer.talk.b">Request a talk</a>
+          </article>
+        </div>
+
+        <div class="ou-formats" id="formats" data-toc="sub" data-toc-label="Formats" data-i18n-attr="data-toc-label:toc.out.formats">
+          <h3 data-i18n="out.fmt.h">Formats we have delivered</h3>
+          <p class="muted" data-i18n="out.fmt.sub">Based on our past activities. Other formats can be arranged: just ask.</p>
+          <div class="ou-fmt-grid">
+            <article class="ou-fmt reveal">
+              <h4 data-i18n="out.fmt.short">Short talk</h4>
+              <div class="ou-tags"><span class="ou-tag ou-tag--strong">15 min</span><span class="ou-tag" data-i18n="out.where.you">At your venue</span></div>
+              <p data-i18n-html="out.fmt.short.ex">“Lanzadores de satélites” for the general public at the I Feria del Espacio de Madrid 2026. Materials <a href="#mat-1">#1</a> and <a href="#mat-4">#4</a>.</p>
+            </article>
+            <article class="ou-fmt reveal d1">
+              <h4 data-i18n="out.fmt.pres">Presentation</h4>
+              <div class="ou-tags"><span class="ou-tag ou-tag--strong">60 min</span><span class="ou-tag" data-i18n="out.where.you">At your venue</span></div>
+              <p data-i18n-html="out.fmt.pres.ex">Ready-made presentations in English: <a href="#mat-2">#2</a> “The CubeSat Revolution” and <a href="#mat-3">#3</a> “ST3LLARsat1 ‘Boira’”.</p>
+            </article>
+            <article class="ou-fmt reveal d2">
+              <h4 data-i18n="out.fmt.lect">Non-technical lecture</h4>
+              <div class="ou-tags"><span class="ou-tag ou-tag--strong" data-i18n="out.fmt.lect.d">2 hours</span><span class="ou-tag" data-i18n="out.where.you">At your venue</span></div>
+              <p data-i18n="out.fmt.lect.ex">Introduction to space exploration courses at the Universidad Complutense de Madrid (2024, 2025 and 2026): between 15 and 38 undergraduate students per edition.</p>
+            </article>
+            <article class="ou-fmt reveal">
+              <h4 data-i18n="out.fmt.visit">Visit + talk + DIY</h4>
+              <div class="ou-tags"><span class="ou-tag ou-tag--strong" data-i18n="out.fmt.visit.d">30 min – 1.5 h per group</span><span class="ou-tag" data-i18n="out.where.csat">At the CSAT, Leganés</span></div>
+              <p data-i18n="out.fmt.visit.ex">Semana de la Ciencia e Innovación 2025 and 2026: a presentation, a tour of the labs and the DIY activity “How to make a magnetorquer”.</p>
+            </article>
+            <article class="ou-fmt reveal d1">
+              <h4 data-i18n="out.fmt.rt">Round table</h4>
+              <div class="ou-tags"><span class="ou-tag ou-tag--strong" data-i18n="out.fmt.rt.d">Per event</span><span class="ou-tag" data-i18n="out.where.you">At your venue</span></div>
+              <p data-i18n="out.fmt.rt.ex">HRS4R Workshop (UC3M), UCM Summer School and the FITEA forum.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATIONAL MATERIAL ===================== -->
+    <section class="section ou-section" id="materials" data-toc data-toc-label="Materials" data-i18n-attr="data-toc-label:toc.out.mat">
+      <div class="container">
+        <h2 data-i18n="out.mat.h">Educational material</h2>
+
+        <!-- License: the official CC BY badge, with the plain-language explanation beside it -->
+        <div class="ou-licence reveal">
+          <a class="ou-cc" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" data-i18n-attr="href:out.lic.url"><img class="no-zoom" src="images/outreach/by.png" alt="CC BY 4.0: Creative Commons Attribution 4.0 International" width="403" height="141" loading="lazy"></a>
+          <div>
+            <p class="ou-licence__main" data-i18n-html="out.lic.main"><strong>Free to use as long as the source is acknowledged.</strong> You can copy, share and adapt this material at no cost (in class, in your own activities or anywhere else) as long as you credit the CSAT (UC3M) as the source and say whether you changed it.</p>
+            <p class="ou-licence__sub" data-i18n-html="out.lic.sub">Formally, our own content is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International license (CC BY 4.0)</a>. Logos and third-party images keep their own rights. Suggested credit: “CSAT — Universidad Carlos III de Madrid (csat.uc3m.es)”.</p>
+          </div>
+        </div>
+
+        <!-- HOW TO TURN A "Coming soon" BUTTON INTO A DOWNLOAD
+             1. Put the file in downloads/outreach/ (e.g. 01-controlando-cubesats-es.pdf).
+             2. Replace the <span class="ou-dl is-soon">…</span> with:
+                <a class="ou-dl" href="downloads/outreach/01-controlando-cubesats-es.pdf" download>
+                  <svg …same icon…/> <span data-i18n="out.dl">Download</span> <small>PDF · 2.4 MB</small></a> -->
+        <div class="ou-mats">
+
+          <article class="card ou-mat reveal" id="mat-1">
+            <header class="ou-mat__head">
+              <span class="ou-mat__n">#1</span>
+              <div class="ou-tags">
+                <span class="ou-tag" data-i18n="out.k.pres">Presentation</span>
+                <span class="ou-tag"><b>15</b> min</span>
+                <span class="ou-tag"><b>18</b> <span data-i18n="out.k.slides">slides</span></span>
+                <span class="ou-tag ou-tag--diy" data-i18n="out.k.diy">+ DIY activity</span>
+              </div>
+            </header>
+            <ul class="ou-vers">
+              <li class="ou-ver">
+                <span class="ou-ver__lang">Español</span>
+                <p class="ou-ver__title">“Controlando CubeSats: los pequeños satélites que usan la tierra para observar la tierra”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+            </ul>
+            <footer class="ou-mat__foot"><span><span class="ou-mat__k" data-i18n="out.mat.author">Author</span> A. Marcos</span></footer>
+          </article>
+
+          <article class="card ou-mat reveal d1" id="mat-2">
+            <header class="ou-mat__head">
+              <span class="ou-mat__n">#2</span>
+              <div class="ou-tags">
+                <span class="ou-tag" data-i18n="out.k.pres">Presentation</span>
+                <span class="ou-tag"><b>60</b> min</span>
+                <span class="ou-tag"><b>37</b> <span data-i18n="out.k.slides">slides</span></span>
+              </div>
+            </header>
+            <ul class="ou-vers">
+              <li class="ou-ver">
+                <span class="ou-ver__lang">English</span>
+                <p class="ou-ver__title">“The CubeSat Revolution”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+            </ul>
+            <footer class="ou-mat__foot"><span><span class="ou-mat__k" data-i18n="out.mat.author">Author</span> A. Marcos</span></footer>
+          </article>
+
+          <article class="card ou-mat reveal d2" id="mat-3">
+            <header class="ou-mat__head">
+              <span class="ou-mat__n">#3</span>
+              <div class="ou-tags">
+                <span class="ou-tag" data-i18n="out.k.pres">Presentation</span>
+                <span class="ou-tag"><b>60</b> min</span>
+                <span class="ou-tag"><b>26</b> <span data-i18n="out.k.slides">slides</span></span>
+              </div>
+            </header>
+            <ul class="ou-vers">
+              <li class="ou-ver">
+                <span class="ou-ver__lang">English</span>
+                <p class="ou-ver__title">“ST3LLARsat1 ‘Boira’: The first CubeSat at UC3M”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+            </ul>
+            <footer class="ou-mat__foot"><span><span class="ou-mat__k" data-i18n="out.mat.author">Author</span> A. Marcos</span></footer>
+          </article>
+
+          <article class="card ou-mat reveal" id="mat-4">
+            <header class="ou-mat__head">
+              <span class="ou-mat__n">#4</span>
+              <div class="ou-tags">
+                <span class="ou-tag" data-i18n="out.k.pres">Presentation</span>
+                <span class="ou-tag"><b>15</b> min</span>
+                <span class="ou-tag"><b>14</b> <span data-i18n="out.k.slides">slides</span></span>
+                <span class="ou-tag ou-tag--diy" data-i18n="out.k.diy">+ DIY activity</span>
+              </div>
+            </header>
+            <ul class="ou-vers">
+              <li class="ou-ver">
+                <span class="ou-ver__lang">Español</span>
+                <p class="ou-ver__title">“Lanzadores de satélites – ¿Qué son y cómo se controlan?”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+              <li class="ou-ver">
+                <span class="ou-ver__lang">English</span>
+                <p class="ou-ver__title">“Launchers – What are they? And how are they controlled?”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+            </ul>
+            <footer class="ou-mat__foot">
+              <span><span class="ou-mat__k" data-i18n="out.mat.author">Author</span> A. Marcos</span>
+              <span class="ou-mat__fund"><span class="ou-mat__k" data-i18n="out.mat.funder">Funder</span><span class="ou-logo ou-logo--sm"><img class="no-zoom" src="images/outreach/logo-citt-espacio.png" alt="CITT-Espacio" width="283" height="112" loading="lazy"></span></span>
+            </footer>
+          </article>
+
+          <article class="card ou-mat reveal d1" id="mat-5">
+            <header class="ou-mat__head">
+              <span class="ou-mat__n">#5</span>
+              <div class="ou-tags">
+                <span class="ou-tag" data-i18n="out.k.pamph">Pamphlet</span>
+                <span class="ou-tag ou-tag--diy" data-i18n="out.k.diy">+ DIY activity</span>
+              </div>
+            </header>
+            <ul class="ou-vers">
+              <li class="ou-ver">
+                <span class="ou-ver__lang">Español</span>
+                <p class="ou-ver__title">“CubeSats – Magnetopares: Aprende cómo se controlan”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+              <li class="ou-ver">
+                <span class="ou-ver__lang">English</span>
+                <p class="ou-ver__title">“CubeSats – MTQs: Learn how they are controlled”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+            </ul>
+            <footer class="ou-mat__foot">
+              <span><span class="ou-mat__k" data-i18n="out.mat.author">Author</span> A. Marcos</span>
+              <span class="ou-mat__fund"><span class="ou-mat__k" data-i18n="out.mat.funder">Funder</span><span class="ou-logo ou-logo--sm"><img class="no-zoom" src="images/outreach/logo-citt-espacio.png" alt="CITT-Espacio" width="283" height="112" loading="lazy"></span></span>
+            </footer>
+          </article>
+
+          <article class="card ou-mat reveal d2" id="mat-6">
+            <header class="ou-mat__head">
+              <span class="ou-mat__n">#6</span>
+              <div class="ou-tags">
+                <span class="ou-tag" data-i18n="out.k.pamph">Pamphlet</span>
+                <span class="ou-tag ou-tag--diy" data-i18n="out.k.diy">+ DIY activity</span>
+              </div>
+            </header>
+            <ul class="ou-vers">
+              <li class="ou-ver">
+                <span class="ou-ver__lang">Español</span>
+                <p class="ou-ver__title">“CubeSats – EPS: Aprende cómo se ‘alimentan’”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+              <li class="ou-ver">
+                <span class="ou-ver__lang">English</span>
+                <p class="ou-ver__title">“CubeSats – EPS: Learn how they are charged”</p>
+                <span class="ou-dl is-soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="out.soon">Coming soon</span></span>
+              </li>
+            </ul>
+            <footer class="ou-mat__foot">
+              <span><span class="ou-mat__k" data-i18n="out.mat.author">Author</span> A. Marcos</span>
+              <span class="ou-mat__fund"><span class="ou-mat__k" data-i18n="out.mat.funder">Funder</span><span class="ou-logo ou-logo--sm"><img class="no-zoom" src="images/outreach/logo-citt-espacio.png" alt="CITT-Espacio" width="283" height="112" loading="lazy"></span></span>
+            </footer>
+          </article>
+
+        </div>
+
+        <!-- Funding acknowledgement -->
+        <div class="ou-funder reveal">
+          <p data-i18n="out.funder.text">This outreach webpage and the educational material #4 to #6 were created with funding by the CITT-Espacio (“Clúster de Innovación Tecnológica y Talento en tecnologías del Espacio”) from the Comunidad de Madrid (CAM).</p>
+          <div class="ou-funder__logos">
+            <span class="ou-logo"><img class="no-zoom" src="images/outreach/logo-citt-espacio.png" alt="CITT-Espacio — Clúster de Innovación Tecnológica y Talento en tecnologías del Espacio" width="283" height="112" loading="lazy"></span>
+            <span class="ou-logo"><img class="no-zoom" src="images/outreach/logo-fundacion-madrimasd.png" alt="Fundación para el Conocimiento madri+d — Comunidad de Madrid" width="544" height="173" loading="lazy"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACTIVITIES ===================== -->
+    <section class="section ou-section" id="activities" data-toc data-toc-label="Activities" data-i18n-attr="data-toc-label:toc.out.act">
+      <div class="container">
+        <h2 data-i18n="out.act.h">Activities</h2>
+        <p class="lead" data-i18n-html="out.act.lead">Contact us if you want to visit the CSAT or for us to visit your school: see <a href="#offer">Visits and talks</a>.</p>
+
+        <div class="ou-tools" data-filterable>
+          <div class="ou-chips" role="group" aria-label="Type" data-i18n-attr="aria-label:out.f.type">
+            <span class="ou-chips__label" data-i18n="out.f.type">Type</span>
+            <button type="button" class="ou-chip" data-group="type" data-value="roundtable" aria-pressed="false" data-i18n="out.type.rt">Round table</button>
+            <button type="button" class="ou-chip" data-group="type" data-value="presentation" aria-pressed="false" data-i18n="out.type.pres">Presentation</button>
+            <button type="button" class="ou-chip" data-group="type" data-value="visit" aria-pressed="false" data-i18n="out.type.visit.s">Visit + DIY</button>
+          </div>
+          <div class="ou-chips" role="group" aria-label="Year" data-i18n-attr="aria-label:out.f.year">
+            <span class="ou-chips__label" data-i18n="out.f.year">Year</span>
+            <button type="button" class="ou-chip" data-group="year" data-value="2026" aria-pressed="false">2026</button>
+            <button type="button" class="ou-chip" data-group="year" data-value="2025" aria-pressed="false">2025</button>
+            <button type="button" class="ou-chip" data-group="year" data-value="2024" aria-pressed="false">2024</button>
+            <button type="button" class="ou-chip" data-group="year" data-value="2023" aria-pressed="false">2023</button>
+            <button type="button" class="ou-chip" data-group="year" data-value="2021" aria-pressed="false">2021</button>
+          </div>
+          <span class="ou-count" data-count aria-live="polite"></span>
+        </div>
+
+        <ol class="ou-acts">
+
+          <li class="ou-act" data-type="presentation" data-year="2026" data-date="2026-11-29">
+            <div class="ou-act__date">29/11/2026</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--presentation" data-i18n="out.type.pres">Presentation</span>
+              <h3 class="ou-act__title"><a href="https://www.feriadelespacio.com/" target="_blank" rel="noopener">I Feria del Espacio de Madrid 2026</a></h3>
+              <p class="ou-act__where">Kinépolis, Madrid (<span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“Lanzadores de satélites – ¿qué son y cómo se controlan?”</dd></div>
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+                <div><dt data-i18n="out.f.part">Participants</dt><dd data-people="400" data-i18n="out.p.feria">400+ general public (families)</dd></div>
+              </dl>
+              <p class="ou-act__desc" data-i18n="out.d.feria">15-minute talk presenting to the general public what launchers are and how they are controlled.</p>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2026-11-29-1-t.jpg" data-full="images/outreach/events/2026-11-29-1.jpg" width="333" height="224" loading="lazy" decoding="async" alt="Webpage of the I Feria del Espacio de Madrid, Kinépolis, 29 November 2026." data-i18n-attr="alt:out.i.22">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="visit" data-year="2026" data-date="2026-11-21">
+            <div class="ou-act__date">21/11/2026</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--visit" data-i18n="out.type.visit">Visit to the CSAT + presentation + DIY activity</span>
+              <h3 class="ou-act__title">Semana de la Ciencia e Innovación 2026</h3>
+              <p class="ou-act__where">UC3M-CSAT, Leganés (Madrid, <span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“Controlando CubeSats: los pequeños satélites que usan la tierra para observar la tierra”</dd></div>
+                <div><dt data-i18n="out.f.staff">Staff</dt><dd>A. Marcos (<span data-i18n="out.organizer">organizer</span>), Gabriele Dessena, Guillermo Toledo</dd></div>
+                <div><dt data-i18n="out.f.part">Participants</dt><dd data-people="20" data-i18n="out.p.sc26">20+ people</dd></div>
+              </dl>
+              <p class="ou-act__desc" data-i18n="out.d.sc26">Two groups × 1.5 hours: 20-minute presentation on “Earth and magnetosphere, magnetism and electricity, and CubeSats” + 30-minute visit to the CSAT + 30-minute DIY activity “How to make a magnetorquer”.</p>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2026-11-21-1-t.jpg" data-full="images/outreach/events/2026-11-21-1.jpg" width="260" height="224" loading="lazy" decoding="async" alt="Webpage of the Semana de la Ciencia e Innovación 2026 activity “Controlando CubeSats: los pequeños satélites que usan la tierra para observar la tierra”." data-i18n-attr="alt:out.i.20">
+                <img class="ou-thumb" src="images/outreach/events/2026-11-21-2-t.jpg" data-full="images/outreach/events/2026-11-21-2.jpg" width="155" height="224" loading="lazy" decoding="async" alt="Poster of the Semana de la Ciencia y la Innovación 2026, 16–29 November 2026." data-i18n-attr="alt:out.i.21">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="presentation" data-year="2026" data-date="2026-11-18">
+            <div class="ou-act__date">18/11/2026</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--presentation" data-i18n="out.type.pres">Presentation</span>
+              <h3 class="ou-act__title"><a href="https://jcuvac.ucm.es/ESH-CURSO-ESPACIO-2026/" target="_blank" rel="noopener">IV Curso Complutense de Introducción a la Exploración Espacial y su Utilización</a>, <span data-i18n="out.r.2026">16–27 November 2026</span></h3>
+              <p class="ou-act__where">Universidad Complutense de Madrid (UCM), Madrid (<span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“La revolución CubeSat y la exploración espacial”</dd></div>
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+                <div><dt data-i18n="out.f.part">Participants</dt><dd data-people="38" data-i18n="out.p.c26">38 undergraduate students from humanities and science</dd></div>
+              </dl>
+              <p class="ou-act__desc" data-i18n="out.d.course">2-hour non-technical lecture on CubeSats and UC3M’s student-based, professor-led ST3LLARsat1 “Boira” CubeSat.</p>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2026-11-18-1-t.jpg" data-full="images/outreach/events/2026-11-18-1.jpg" width="331" height="224" loading="lazy" decoding="async" alt="Title slide “La revolución CubeSat y la exploración espacial”." data-i18n-attr="alt:out.i.18">
+                <img class="ou-thumb" src="images/outreach/events/2026-11-18-2-t.jpg" data-full="images/outreach/events/2026-11-18-2.jpg" width="340" height="191" loading="lazy" decoding="async" alt="Slide “ST3LLARsat1 BOIRA: The first CubeSat program at UC3M”." data-i18n-attr="alt:out.i.19">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="presentation" data-year="2025" data-date="2025-11-19">
+            <div class="ou-act__date">19/11/2025</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--presentation" data-i18n="out.type.pres">Presentation</span>
+              <h3 class="ou-act__title"><a href="https://jcuvac.ucm.es/ESH-CURSO-ESPACIO-2025/" target="_blank" rel="noopener">III Curso Complutense de Introducción a la Exploración Espacial y su Utilización</a>, <span data-i18n="out.r.2025">17 November – 5 December 2025</span></h3>
+              <p class="ou-act__where">Universidad Complutense de Madrid (UCM), Madrid (<span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“La revolución CubeSat y la exploración espacial”</dd></div>
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+                <div><dt data-i18n="out.f.part">Participants</dt><dd data-people="27" data-i18n="out.p.c25">27 undergraduate students from humanities and science</dd></div>
+              </dl>
+              <p class="ou-act__desc" data-i18n="out.d.course">2-hour non-technical lecture on CubeSats and UC3M’s student-based, professor-led ST3LLARsat1 “Boira” CubeSat.</p>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2025-11-19-1-t.jpg" data-full="images/outreach/events/2025-11-19-1.jpg" width="323" height="224" loading="lazy" decoding="async" alt="Title slide “La revolución CubeSat y la exploración espacial”, 19 November 2025." data-i18n-attr="alt:out.i.14">
+                <img class="ou-thumb" src="images/outreach/events/2025-11-19-2-t.jpg" data-full="images/outreach/events/2025-11-19-2.jpg" width="162" height="224" loading="lazy" decoding="async" alt="Poster of the III Curso Complutense de Introducción a la Exploración Espacial y su Utilización, 17 November – 5 December 2025." data-i18n-attr="alt:out.i.15">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="visit" data-year="2025" data-date="2025-11-17">
+            <div class="ou-act__date">17/11/2025</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--visit" data-i18n="out.type.visit">Visit to the CSAT + presentation + DIY activity</span>
+              <h3 class="ou-act__title"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7396448519177420800/" target="_blank" rel="noopener">Semana de la Ciencia e Innovación 2025</a></h3>
+              <p class="ou-act__where">UC3M-CSAT, Leganés (Madrid, <span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“Controlando CubeSats: los pequeños satélites que usan la tierra para observar la tierra”</dd></div>
+                <div><dt data-i18n="out.f.staff">Staff</dt><dd>A. Marcos (<span data-i18n="out.organizer">organizer</span>), Gabriele Dessena, Víctor Gil</dd></div>
+                <div><dt data-i18n="out.f.part">Participants</dt><dd data-people="39" data-i18n="out.p.sc25">39 people, about 50% between 7 and 16 years old</dd></div>
+              </dl>
+              <p class="ou-act__desc" data-i18n="out.d.sc25">19 kids + 20 parents divided in 3 groups × 30 minutes: 10-minute presentation on “Earth and magnetosphere, magnetism and electricity, and CubeSats” + 10-minute visit to the CSAT + 10-minute DIY activity “How to make a magnetorquer”.</p>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2025-11-17-1-t.jpg" data-full="images/outreach/events/2025-11-17-1.jpg" width="182" height="224" loading="lazy" decoding="async" alt="Image of the Semana de la Ciencia e Innovación 2025 activity at the CSAT, with children taking part and thermal-camera images." data-i18n-attr="alt:out.i.16">
+                <img class="ou-thumb" src="images/outreach/events/2025-11-17-2-t.jpg" data-full="images/outreach/events/2025-11-17-2.jpg" width="252" height="224" loading="lazy" decoding="async" alt="Webpage of the Semana de la Ciencia e Innovación 2025 activity “Controlando CubeSats: los pequeños satélites que usan la tierra para observar la tierra”." data-i18n-attr="alt:out.i.17">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="roundtable" data-year="2025" data-date="2025-10-29">
+            <div class="ou-act__date">29/10/2025</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--roundtable" data-i18n="out.type.rt">Round table</span>
+              <h3 class="ou-act__title"><a href="https://fitea.org/" target="_blank" rel="noopener">Forum de Innovación, Talento y Educación Aeroespacial (FITEA)</a></h3>
+              <p class="ou-act__what"><span data-i18n="out.type.rt">Round table</span> “Del aula a la órbita: Educación y talento para la nueva economía espacial”</p>
+              <p class="ou-act__where">IMDEA, Getafe (Madrid, <span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+              </dl>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2025-10-29-1-t.jpg" data-full="images/outreach/events/2025-10-29-1.jpg" width="303" height="224" loading="lazy" decoding="async" alt="Webpage of the FITEA forum, IMDEA Materials, Getafe, 29–31 October 2025." data-i18n-attr="alt:out.i.12">
+                <img class="ou-thumb" src="images/outreach/events/2025-10-29-2-t.jpg" data-full="images/outreach/events/2025-10-29-2.jpg" width="113" height="224" loading="lazy" decoding="async" alt="Speaker card of Andrés Marcos Esteban, director of the Master in Space Engineering (MISE) and of the ST3LLARsat CubeSat program." data-i18n-attr="alt:out.i.13">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="presentation" data-year="2025" data-date="2025-03-03">
+            <div class="ou-act__date">03/03/2025</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--presentation" data-i18n="out.type.pres">Presentation</span>
+              <h3 class="ou-act__title"><a href="https://eventos.uc3m.es/131119/detail/la-voz-de-la-industria-de-la-observacion-de-la-tierra.html" target="_blank" rel="noopener" data-i18n="out.t.delft1">The voice of Earth Observation Industry</a><span data-i18n="out.t.delft2">, Master Orientation Study Trip of TU Delft’s</span> <a href="https://mv.tudelft.nl/" target="_blank" rel="noopener">‘Mijnbouwkundige Vereeniging’</a></h3>
+              <p class="ou-act__where">Parque Científico UC3M, Leganés (Madrid, <span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“La revolución CubeSat y la exploración espacial”</dd></div>
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+              </dl>
+              <p class="ou-act__desc" data-people="28" data-i18n="out.d.delft">Presentation of Earth Observation themes at the Master in Space Engineering (MISE) to 28 students from the study association for BSc Applied Earth Sciences, MSc and PhD students.</p>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2025-03-03-1-t.jpg" data-full="images/outreach/events/2025-03-03-1.jpg" width="340" height="191" loading="lazy" decoding="async" alt="Slide welcoming TU Delft students to the Master in Space Engineering (MISE)." data-i18n-attr="alt:out.i.07">
+                <img class="ou-thumb" src="images/outreach/events/2025-03-03-2-t.jpg" data-full="images/outreach/events/2025-03-03-2.jpg" width="288" height="224" loading="lazy" decoding="async" alt="Event page “La voz de la industria de la observación de la Tierra”, 3 March 2025, Parque Científico UC3M." data-i18n-attr="alt:out.i.08">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="presentation" data-year="2025" data-date="2025-02-05">
+            <div class="ou-act__date">05/02/2025</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--presentation" data-i18n="out.type.pres">Presentation</span>
+              <h3 class="ou-act__title"><a href="https://www.aee.gob.es/Noticias/2025/febrero/presentaciones-jornada-ciencia-industria.html" target="_blank" rel="noopener">Jornada de Ciencia e Industria, Agencia Espacial Española (AEE)</a></h3>
+              <p class="ou-act__where">Facultad de Derecho, Universidad de Alcalá (Madrid, <span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“Actividades del dept. de Ingeniería Aeroespacial de UC3M”</dd></div>
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos (&amp; G. Carpintero)</dd></div>
+              </dl>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2025-02-05-1-t.jpg" data-full="images/outreach/events/2025-02-05-1.jpg" width="340" height="144" loading="lazy" decoding="async" alt="Webpage of the Spanish Space Agency with the presentations of the Science and Industry Day, 5 February 2025, Universidad de Alcalá." data-i18n-attr="alt:out.i.05">
+                <img class="ou-thumb" src="images/outreach/events/2025-02-05-2-t.jpg" data-full="images/outreach/events/2025-02-05-2.jpg" width="340" height="190" loading="lazy" decoding="async" alt="Title slide with the UC3M Escuela Politécnica Superior building and the departments involved: Aerospace Engineering, Electronic Technology, Signal Theory and Telematics." data-i18n-attr="alt:out.i.06">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="presentation" data-year="2024" data-date="2024-11-13">
+            <div class="ou-act__date">13/11/2024</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--presentation" data-i18n="out.type.pres">Presentation</span>
+              <h3 class="ou-act__title"><a href="https://jcuvac.ucm.es/ESH-CURSO-ESPACIO-2024/" target="_blank" rel="noopener">II Curso Complutense de Introducción a la Exploración Espacial y su Utilización</a>, <span data-i18n="out.r.2024">11–29 November 2024</span></h3>
+              <p class="ou-act__where">Universidad Complutense de Madrid (UCM), Madrid (<span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“La revolución CubeSat y la exploración espacial”</dd></div>
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+                <div><dt data-i18n="out.f.part">Participants</dt><dd data-people="15" data-i18n="out.p.c24">15 undergraduate students from humanities and science</dd></div>
+              </dl>
+              <p class="ou-act__desc" data-i18n="out.d.course">2-hour non-technical lecture on CubeSats and UC3M’s student-based, professor-led ST3LLARsat1 “Boira” CubeSat.</p>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2024-11-13-1-t.jpg" data-full="images/outreach/events/2024-11-13-1.jpg" width="223" height="224" loading="lazy" decoding="async" alt="A. Marcos giving the lecture “La revolución CubeSat y la exploración espacial”." data-i18n-attr="alt:out.i.10">
+                <img class="ou-thumb" src="images/outreach/events/2024-11-13-2-t.jpg" data-full="images/outreach/events/2024-11-13-2.jpg" width="161" height="224" loading="lazy" decoding="async" alt="Poster of the II Curso Complutense de Introducción a la Exploración Espacial y su Utilización, 11–29 November 2024." data-i18n-attr="alt:out.i.11">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="roundtable" data-year="2024" data-date="2024-07-24">
+            <div class="ou-act__date">24/07/2024</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--roundtable" data-i18n="out.type.rt">Round table</span>
+              <h3 class="ou-act__title"><a href="https://tribuna.ucm.es/news/los-cursos-de-verano-presentan-la-programacion-de-su-trigesimo-septima-edicion" target="_blank" rel="noopener">XXIII Curso de Verano Universidad Complutense, San Lorenzo del Escorial</a> “El Universo a Nuestro Alcance: el auge de las ciencias del espacio en España”</h3>
+              <p class="ou-act__what"><span data-i18n="out.type.rt">Round table</span> “Presentación de másteres de espacio en la CAM”</p>
+              <p class="ou-act__where">Universidad Complutense de Madrid (UCM), El Escorial (Madrid)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+              </dl>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2024-07-24-1-t.jpg" data-full="images/outreach/events/2024-07-24-1.jpg" width="340" height="183" loading="lazy" decoding="async" alt="Poster of the Universidad Complutense summer courses at San Lorenzo de El Escorial, July 2024." data-i18n-attr="alt:out.i.09">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="presentation" data-year="2023" data-date="2023-04-18">
+            <div class="ou-act__date">18/04/2023</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--presentation" data-i18n="out.type.pres">Presentation</span>
+              <h3 class="ou-act__title"><a href="https://www.redpoliticasidi.es/es/agenda/sesion-plenaria-2023-red-politicas-idi" target="_blank" rel="noopener">Red de Políticas de I+D+I, Sesión Plenaria 2023</a>. <a href="https://www.redpoliticasidi.es/es/system/files?file=repositorio-archivos/Agenda%20Sesi%C3%B3n%20Plenaria_Red%20IDI_20230419%20y%2018_0.pdf" target="_blank" rel="noopener">Programa</a></h3>
+              <p class="ou-act__where">Parque Científico UC3M, Leganés (Madrid, <span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.title">Title</dt><dd>“Proyecto Madrid Flight-On-Chip (MFOC)”</dd></div>
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+              </dl>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2023-04-18-1-t.jpg" data-full="images/outreach/events/2023-04-18-1.jpg" width="159" height="224" loading="lazy" decoding="async" alt="Cover of the program of the Red de Políticas de I+D+I plenary session, 18–19 April 2023." data-i18n-attr="alt:out.i.03">
+                <img class="ou-thumb" src="images/outreach/events/2023-04-18-2-t.jpg" data-full="images/outreach/events/2023-04-18-2.jpg" width="340" height="186" loading="lazy" decoding="async" alt="Slide of the Madrid Flight-On-Chip (MFOC) event of the Red IDI, Parque Tecnológico de Leganés, 18 April 2023." data-i18n-attr="alt:out.i.04">
+              </div>
+            </div>
+          </li>
+
+          <li class="ou-act" data-type="roundtable" data-year="2021" data-date="2021-11-16">
+            <div class="ou-act__date">16/11/2021</div>
+            <div class="ou-act__body">
+              <span class="ou-type ou-type--roundtable" data-i18n="out.type.rt">Round table</span>
+              <h3 class="ou-act__title"><a href="https://www.uc3m.es/ss/Satellite/LogoHRS4R/es/Detalle/Ficha_C/1371310358839/1371298483200/Workshop_VI:_Internacionalizar_la_carrera_investigadora:_apostando_por_el_futuro" target="_blank" rel="noopener">HRS4R Workshop VI: “Internacionalizar la carrera investigadora: apostando por el futuro”</a></h3>
+              <p class="ou-act__what"><span data-i18n="out.type.rt">Round table</span> “Retos económicos, académicos y vitales en la internacionalización”</p>
+              <p class="ou-act__where">Universidad Carlos III de Madrid (UC3M), Leganés (Madrid, <span data-i18n="out.spain">Spain</span>)</p>
+              <dl class="ou-facts">
+                <div><dt data-i18n="out.f.speaker">Speaker</dt><dd>A. Marcos</dd></div>
+              </dl>
+              <div class="ou-act__media">
+                <img class="ou-thumb" src="images/outreach/events/2021-11-16-1-t.jpg" data-full="images/outreach/events/2021-11-16-1.jpg" width="340" height="182" loading="lazy" decoding="async" alt="Summary of the HRS4R seminar “Internacionalizar la carrera investigadora: apostando por el futuro”, 16 November 2021." data-i18n-attr="alt:out.i.01">
+                <img class="ou-thumb" src="images/outreach/events/2021-11-16-2-t.jpg" data-full="images/outreach/events/2021-11-16-2.jpg" width="292" height="224" loading="lazy" decoding="async" alt="A. Marcos moderating the round table, in a video-call screenshot." data-i18n-attr="alt:out.i.02">
+              </div>
+            </div>
+          </li>
+
+        </ol>
+        <p class="ou-empty" hidden data-i18n="out.f.none">No activities match these filters.</p>
+      </div>
+    </section>
+
+    <!-- ===================== KEEP EXPLORING ===================== -->
+    <section class="section ou-section" id="links" data-toc data-toc-label="Explore more" data-i18n-attr="data-toc-label:toc.out.links">
+      <div class="container">
+        <h2 data-i18n="out.links.h">Keep exploring</h2>
+        <p class="lead" data-i18n="out.links.lead">Other places to learn about space, for students and teachers.</p>
+        <div class="ou-links">
+          <a class="ou-link reveal" href="https://esero.es/" target="_blank" rel="noopener">
+            <h3>ESERO Spain</h3>
+            <p data-i18n="out.links.esero">The European Space Education Resource Office in Spain (ESA): teacher training, classroom resources and student challenges.</p>
+            <span class="ou-link__go" data-i18n="out.links.visit">Visit website</span>
+          </a>
+          <a class="ou-link reveal d1" href="https://esero.es/desafios/cansat/" target="_blank" rel="noopener">
+            <h3>CanSat Spain</h3>
+            <p data-i18n="out.links.cansat">A student challenge to design and build a can-sized satellite. Working on CanSat or CubeSats with your students? Get in touch with us.</p>
+            <span class="ou-link__go" data-i18n="out.links.visit">Visit website</span>
+          </a>
+          <a class="ou-link reveal d2" href="https://education.esa.int/category/teachers_corner/" target="_blank" rel="noopener">
+            <h3 data-i18n="out.links.tc.t">ESA Education: Teachers’ Corner</h3>
+            <p data-i18n="out.links.tc">Space-themed classroom activities and teaching resources from the European Space Agency.</p>
+            <span class="ou-link__go" data-i18n="out.links.visit">Visit website</span>
+          </a>
+          <a class="ou-link reveal d3" href="ST3LLARsat1.html">
+            <h3>ST3LLARsat1 “Boira”</h3>
+            <p data-i18n="out.links.boira">Follow the story of the first CubeSat of the Universidad Carlos III de Madrid.</p>
+            <span class="ou-link__go" data-i18n="out.links.more">Read more</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -143,12 +669,14 @@
     <div class="footer-bottom">
       <div class="container">
         <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
-        <span>csat.uc3m.es</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
       </div>
     </div>
   </footer>
 
   <script src="js/i18n.js"></script>
+  <script src="js/i18n-outreach.js"></script>
   <script src="js/global.js"></script>
+  <script src="js/pages/outreach.js"></script>
 </body>
 </html>

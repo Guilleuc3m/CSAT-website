@@ -40,6 +40,9 @@
   overflow: hidden;
 }
 .member:hover .member__photo { border-color: var(--accent); transform: scale(1.04); }
+/* Photo still to come: dashed circle with a neutral silhouette */
+.member__photo--ph { border-style: dashed; }
+.member__photo--ph svg { width: 56%; height: 56%; opacity: .5; }
 .member__photo img { width: 100%; height: 100%; object-fit: cover; }
 .member__name { font-size: 1.15rem; font-weight: 700; margin-bottom: .15rem; position: relative; }
 /* Subtle hint that the name is a link (faint underline), reinforced on hover */

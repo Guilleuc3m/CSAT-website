@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <title>ST3LLARsat1 — Spacecraft — CSAT | UC3M</title>
+  <meta name="description" content="ST3LLARsat1 “Boira” spacecraft: design summary, engineering drawings, design definition, electrical and data architecture, OBC and ADCS PCBs, mechanical interfaces and launcher interfaces of the 2U CubeSat.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+  <link rel="stylesheet" href="css/pages/stellarsat.css">
+  <link rel="stylesheet" href="css/pages/st3llarsat1.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
+</head>
+<body data-page="stellarsat">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top mission-page">
+
+    <section class="page-hero program-hero mission-hero">
+      <div class="container">
+        <span class="eyebrow">ST3LLARsat1 “Boira”</span>
+        <h1 data-i18n="s1c.tab.spacecraft">Spacecraft</h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="s1c.tag.spacecraft">Design definition, architecture and interfaces</p>
+      <nav class="mission-tabs" aria-label="ST3LLARsat1" data-i18n-attr="aria-label:s1c.tabs.label">
+        <div class="mission-tabs__list">
+          <a href="ST3LLARsat1.html" data-i18n="s1c.tab.overview">Overview</a>
+          <a href="ST3LLARsat1-mission.html" data-i18n="s1c.tab.mission">Mission</a>
+          <a href="ST3LLARsat1-spacecraft.html" aria-current="page" data-i18n="s1c.tab.spacecraft">Spacecraft</a>
+          <a href="ST3LLARsat1-aivt.html" data-i18n="s1c.tab.aivt">AIVT</a>
+          <a href="ST3LLARsat1-program.html" data-i18n="s1c.tab.program">Program</a>
+          <a href="ST3LLARsat1-documents.html" data-i18n="s1c.tab.documents">Documents</a>
+        </div>
+      </nav>
+      </div>
+    </section>
+
+    <!-- ===================== DESIGN SUMMARY ===================== -->
+    <section class="section program-section program-section--prose" id="design-summary" data-toc>
+      <div class="container">
+        <h2 data-i18n="s1s.sum.h">Design summary</h2>
+        <div class="project-body">
+          <p class="lead" data-i18n-html="s1s.sum.p1">With the design consolidation concluded, and 90% of the components procured, ST3LLARsat1 “Boira” is (see also <a class="xref" href="#fig-10">Figure 10</a> and <a class="xref" href="#table-4">Table 4</a>) a 2U nanosatellite of dimension 10×10×20 cm and weight 2.083 kg (including a 20% margin), with no propulsion, powered by 8 fixed solar panels (3 full 2U faces + 1U panel on the fourth 2U side + 1U panel on the top face) each with 2 solar cells that produce an average 2.32 W and a maximum 4.87 W (plus 2 batteries that can produce 10.2 Wh). The nominal orbit is an SSO at LEO (from 415–500 km) with an inclination range of 96–98° resulting in an average orbit of 90 minutes and around 2.7 passes a day. The ADCS has been sized to provide a Line-Of-Sight (LoS) Average Pointing Error (APE) of less than 10° given an Average Knowledge Error (AKE) of less than 5°.</p>
+          <p data-i18n="s1s.sum.p2">Since the idea of the ST3LLARsat program was to use a first mission to prove that we could develop a ‘simple’ CubeSat and learn the system- and component-level knowledge required to undertake in the future more complex in-orbit-demonstration (IOD) missions, the dimension of the first mission was chosen to be 2U since it provided an ideal trade-off between HW costs (&lt;100 k€), development time (5-7 years), and acquisition of system-level knowledge (a 1U would not have enabled us to acquire the wiring/harness know-how required for 2U+ missions).</p>
+          <p data-i18n="s1s.sum.p3">Based on the above rationale, it was decided at the beginning of the project to:</p>
+          <ul class="result-list">
+            <li data-i18n="s1s.sum.i1">Purchase commercial off-the-shelf (COTS) components for those subsystems for which we had no experience in developing them, or whose development cost/time far exceeded the cost of purchasing them (i.e., the structure, EPS, and solar panels),</li>
+            <li data-i18n-html="s1s.sum.i2">Favor flight-proven components (“flight heritage”, marked with an asterisk ‘*’ in <a class="xref" href="#fig-10">Figure 10</a>)</li>
+            <li data-i18n-html="s1s.sum.i3">Focus the efforts on the development of the attitude determination and control system (ADCS) algorithms and of the three in-house HW components produced at UC3M: (i) the compact, non-deployable antenna (Payload 2); (ii) the on-board computer avionics (OBC-PCB), including the software and a coarse sun sensor based on 13 COTS photodiodes; and (iii) the ADCS-PCB – all the in-house development marked in green in <a class="xref" href="#fig-10">Figure 10</a>.</li>
+          </ul>
+        </div>
+
+        <figure class="figure figure--mid reveal" id="fig-10">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig03-components.jpg" width="1257" height="713" loading="lazy" decoding="async" alt="Summary of the ST3LLARsat1 components: 2U configuration, exploded view and the subsystem-by-subsystem list of models and manufacturers, colored by procurement status." data-i18n-attr="alt:s1s.fig3.alt">
+          </div>
+          <figcaption data-i18n-html="s1s.fig3.cap"><strong>Figure 10.</strong> Snapshot summary of ST3LLARsat1 “Boira” components (as of 1st October 2026)</figcaption>
+        </figure>
+
+        <figure class="table-fig" id="table-4">
+          <figcaption class="table-cap" data-i18n-html="s1s.t1.cap"><strong>Table 4.</strong> Summary of main orbit, MCI, power &amp; telecommunication of ST3LLARsat1 “Boira”</figcaption>
+          <div class="spec-sheet">
+            <div class="spec-group">
+              <h4 class="spec-group__title" data-i18n="s1s.t1.orbit">Orbit, SSO</h4>
+              <dl>
+                <div><dt data-i18n="s1s.t1.alt">Altitude</dt><dd>415–500 km</dd></div>
+                <div><dt data-i18n="s1s.t1.inc">Inclination</dt><dd>96–98°</dd></div>
+                <div><dt data-i18n="s1s.t1.avgorbit">Avg. orbit</dt><dd data-i18n="s1s.t1.avgorbit.v">90 mins</dd></div>
+                <div><dt data-i18n="s1s.t1.passes">Avg. passes per day</dt><dd data-i18n="s1s.t1.passes.v">2.7</dd></div>
+                <div><dt data-i18n="s1s.t1.contact">Avg. contact time/pass</dt><dd data-i18n="s1s.t1.contact.v">4.7 mins</dd></div>
+              </dl>
+            </div>
+            <div class="spec-group">
+              <h4 class="spec-group__title">MCI</h4>
+              <dl>
+                <div><dt>CoM X/Y/Z (m)</dt><dd data-i18n="s1s.t1.com.v">0.26 / 0.5 / 0.12</dd></div>
+                <div><dt>MoI XX/YY/ZZ (kg·m²)</dt><dd data-i18n="s1s.t1.moi.v">0.00460 / 0.00460 / 0.00145</dd></div>
+              </dl>
+            </div>
+            <div class="spec-group">
+              <h4 class="spec-group__title" data-i18n="s1s.t1.power">Power</h4>
+              <dl>
+                <div><dt data-i18n="s1s.t1.power.w">Power (W)</dt><dd data-i18n="s1s.t1.power.v">Avg: 2.32 / Max: 4.87</dd></div>
+                <div><dt data-i18n="s1s.t1.batt">Batteries</dt><dd data-i18n="s1s.t1.batt.v">2 cells / 10.2 Wh / 3.7 V</dd></div>
+              </dl>
+            </div>
+            <div class="spec-group">
+              <h4 class="spec-group__title" data-i18n="s1s.t1.telecom">Telecommunications</h4>
+              <dl>
+                <div><dt data-i18n="s1s.t1.freq">Frequency (MHz)</dt><dd>435–438 (UHF)</dd></div>
+                <div><dt data-i18n="s1s.t1.mod">Modulation</dt><dd>GMSK</dd></div>
+                <div><dt data-i18n="s1s.t1.call">Station call sign</dt><dd>EA4URI</dd></div>
+                <div><dt>EIRP (dBm)</dt><dd data-i18n="s1s.t1.eirp.v">10.83</dd></div>
+              </dl>
+            </div>
+            <div class="spec-group">
+              <h4 class="spec-group__title" data-i18n="s1s.t1.adcs">ADCS performance</h4>
+              <dl>
+                <div><dt>LoS APE</dt><dd>&lt; 10°</dd></div>
+                <div><dt>LoS AKE</dt><dd>&lt; 5°</dd></div>
+                <div><dt data-i18n="s1s.t1.detumb">Detumbling</dt><dd data-i18n="s1s.t1.detumb.v">Bdot &lt; 3 orbits</dd></div>
+              </dl>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== ENGINEERING DRAWINGS ===================== -->
+    <section class="section program-section program-section--prose" id="engineering-drawings" data-toc data-toc-label="Drawings" data-i18n-attr="data-toc-label:toc.s1s.drw">
+      <div class="container">
+        <h2 data-i18n="s1s.drw.h">Engineering drawings</h2>
+        <div class="project-body">
+          <p data-i18n="s1s.drw.p1">ST3LLARsat1 adheres to the physical dimensional and envelope requirements for 2U small satellite platforms. The spacecraft design fully complies with key physical standards, including: stowed launch volume and envelope, protrusion limits and appendages, deployer interface and rails, and mass and center of gravity, among others. Full structural compliance was verified against ESA Fly Your Satellite! Design Specification (FYS-FDS-v4.1). This ensures compatibility across major European orbital deployers.</p>
+          <p data-i18n="s1s.drw.p2">Detailed 3D assembly models and engineering drawings across all six main faces (±X, ±Y, ±Z) are given in the next 2 figures:</p>
+        </div>
+
+        <figure class="figure figure--mid reveal" id="fig-11">
+          <div class="figure__frame figure__frame--paper">
+            <div class="figure-grid" style="--cols:2">
+              <img src="images/st3llarsat1/fig17-ext-1.png" width="1056" height="758" loading="lazy" decoding="async" alt="Engineering drawing of the external views of the structure (Y+, Z−, X+)." data-i18n-attr="alt:s1s.fig17a.alt">
+              <img src="images/st3llarsat1/fig17-ext-2.png" width="1056" height="759" loading="lazy" decoding="async" alt="Engineering drawing of the external views of the structure (X−, Y−, Z+)." data-i18n-attr="alt:s1s.fig17b.alt">
+            </div>
+          </div>
+          <figcaption data-i18n-html="s1s.fig17.cap"><strong>Figure 11.</strong> ST3LLARsat1 “Boira”: engineering drawings – external</figcaption>
+        </figure>
+
+        <figure class="figure figure--narrow reveal" id="fig-12" style="max-width:560px">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig18-int.png" width="1056" height="761" loading="lazy" decoding="async" alt="Engineering drawing of the internal configuration with the numbered list of components." data-i18n-attr="alt:s1s.fig18.alt">
+          </div>
+          <figcaption data-i18n-html="s1s.fig18.cap"><strong>Figure 12.</strong> ST3LLARsat1 “Boira”: engineering drawings – internal</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== DESIGN DEFINITION ===================== -->
+    <section class="section program-section program-section--prose" id="design-definition" data-toc>
+      <div class="container">
+        <h2 data-i18n="s1s.def.h">Design definition</h2>
+        <div class="project-body">
+          <p data-i18n-html="s1s.def.p1">At the beginning of this page, in <a class="xref" href="#fig-10">Figure 10</a>, the list of components and internal configuration (including a blow-up) was shown. In the previous section, the external configuration (<a class="xref" href="#fig-11">Figure 11</a>) and again internal (<a class="xref" href="#fig-12">Figure 12</a>) are given by means of precise engineering drawings. To arrive at this design definition several iterations of its configuration were necessary, see <a class="xref" href="#fig-13">Figure 13</a>.</p>
+        </div>
+        <figure class="figure figure--wide reveal" id="fig-13">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig19-config-evolution.jpg" width="1800" height="1019" loading="lazy" decoding="async" alt="Evolution of the internal configuration from the ESA proposal (Dec 2022) through the Baseline Design Review (March 2023) to the Final Design Review (Feb 2024)." data-i18n-attr="alt:s1s.fig19.alt">
+          </div>
+          <figcaption data-i18n-html="s1s.fig19.cap"><strong>Figure 13.</strong> ST3LLARsat1 “Boira”: evolution of internal configuration during ESA-FYS! DB program</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n-html="s1s.def.p2">Associated with each configuration, structural and thermal analyses were performed to ensure that all the requirements were fulfilled. <a class="xref" href="#fig-14">Figure 14</a> shows the sequential increase in detail of the analyses for the structure (top) and the thermal (bottom).</p>
+        </div>
+        <figure class="figure figure--mid reveal" id="fig-14" style="max-width:640px">
+          <div class="figure__frame figure__frame--paper">
+            <div class="figure-grid" style="--cols:1">
+              <img src="images/st3llarsat1/fig20-structural.jpg" width="1600" height="862" loading="lazy" decoding="async" alt="Evolution of the structural analyses during the ESA FYS Design Booster program." data-i18n-attr="alt:s1s.fig20a.alt">
+              <img src="images/st3llarsat1/fig20-thermal.jpg" width="1600" height="896" loading="lazy" decoding="async" alt="Evolution of the thermal control subsystem and its analyses during the ESA FYS Design Booster program." data-i18n-attr="alt:s1s.fig20b.alt">
+            </div>
+          </div>
+          <figcaption data-i18n-html="s1s.fig20.cap"><strong>Figure 14.</strong> ST3LLARsat1 “Boira”: structural (top) &amp; thermal (bottom) analyses during ESA-FYS! DB program</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="s1s.def.p3">In the remainder of the section, the electrical/data/port connection architecture is presented in more detail since it was part of the in-house developments (MO-4 /Tech-IOD-2 &amp;3), but also we present the structure &amp; mechanical interfaces, and the launcher interfaces –since they are always explicitly asked to be described by the launch responsible prior to considering a CubeSat for launch.</p>
+        </div>
+
+        <!-- Electrical architecture -->
+        <h3 class="sec-sub" id="electrical-architecture" data-toc="sub" data-toc-label="Electrical architecture" data-i18n-attr="data-toc-label:toc.s1s.el" data-i18n="s1s.el.h">Electrical/data/port connection architecture</h3>
+        <div class="project-body">
+          <p data-i18n-html="s1s.el.p1"><a class="xref" href="#fig-15">Figure 15</a> shows the electrical/data connection architecture of ST3LLARsat1. It is physically structured around two Printed Circuit Boards (PCB), one for the On-Board Computer (OBC) and the other for the Attitude Determination and Control System (ADCS) –each with its own micro computer unit (MCU) and external memory. The figure also shows the EPS module, the scientific COTS payload (spectrometer), the GNSS antenna, and the UHF antennas (the primary COTS one, and the in-house non-deployable one, which is named payload 2). The different hardware components are interconnected through data and power lines, which are identified with different colors (see legend in the figure’s bottom-right corner). Note that both PCBs are designed to comply with the PC/104 standard, which is used to allow the connection between them and with the EPS in a stack mode (EPS → OBC-PCB → ADCS-PCB).</p>
+        </div>
+        <figure class="figure figure--narrow reveal" id="fig-15" style="max-width:580px">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig15-architecture.png" width="1265" height="1162" loading="lazy" decoding="async" alt="Physical architecture of ST3LLARsat1: OBC-PCB and ADCS-PCB with their MCU, memory and watchdog, the EPS, payloads, antennas and the data and power lines between them." data-i18n-attr="alt:s1s.fig21.alt">
+          </div>
+          <figcaption>
+            <span data-i18n-html="s1s.fig21.cap"><strong>Figure 15.</strong> ST3LLARsat1 “Boira” physical architecture</span>
+          </figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n-html="s1s.el.p2">In more detail, looking at <a class="xref" href="#fig-16">Figure 16</a>, the OBC-PCB hosts the mission-critical core peripherals and high-throughput memory, with the MCU (SAMV71Q21) connecting directly with an external non-volatile memory MRAM (MR5A16ACYS35) via an External Bus Interface (EBI) for rapid logging. In addition, for high-reliability protection an external Watchdog timer (MAX6320PUK30DZ+T) is wired directly to reset lines on the central MCU.</p>
+          <p data-i18n="s1s.el.p3">With respect to the peripherals, the OBC-PCB directly interfaces using three distinct UART lines with the power EPS (Endurosat EPS-1), navigation GNSS Rx (Orion B16-C1 receiver), and the scientific payload PAY 1 (Avantes Nexos spectrometer), and with an analog-to-digital converter (ADC) channel to the thermal monitoring subsystem THR. Finally, serial peripheral interface (SPI) lines are used to connect with the TT&amp;C transceiver (SX1276) and with the microcontroller in the other board, the ADCS-MCU (also a SAMV71Q21). The TT&amp;C transceiver connects to two distinct antennas over dedicated RF lines: the primary (deployable, COTS) Endurosat Antenna, and the secondary (in-house, non-deployable) PAY 2 Antenna.</p>
+        </div>
+        <figure class="figure figure--narrow reveal" id="fig-16" style="max-width:720px">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig22-obc-interconnection.png" width="987" height="635" loading="lazy" decoding="async" alt="Functional interconnection of the OBC-PCB: MCU, MRAM, watchdog, EPS, GNSS receiver, spectrometer, thermal monitoring, TT&amp;C transceiver, ADCS-MCU and the two antennas." data-i18n-attr="alt:s1s.fig22.alt">
+          </div>
+          <figcaption data-i18n-html="s1s.fig22.cap"><strong>Figure 16.</strong> ST3LLARsat1 OBC-PCB functional interconnection</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="s1s.el.p4">By June 2026, two versions of the OBC-PCB have been designed, see figure below. Version v01 (designed in 2024/25 during a Master in Aerospace Engineering thesis, TFM-MAE) was manufactured in the Summer of 2026 and served to identify several issues corrected in v02 (ongoing design within a Master in Electronic System Engineering thesis, TFM-MISAE), which is expected to be manufactured and tested during Q1-2027.</p>
+        </div>
+        <figure class="figure figure--wide reveal" id="fig-17">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig23-obc-versions.jpg" width="1800" height="770" loading="lazy" decoding="async" alt="OBC-PCB version 1.0 (2024/25) and version 2.0 (2025/26) with the changes introduced in the second version." data-i18n-attr="alt:s1s.fig23.alt">
+          </div>
+          <figcaption data-i18n-html="s1s.fig23.cap"><strong>Figure 17.</strong> ST3LLARsat1 OBC-PCB: version 01 (Sep’25, left) &amp; version 02 (Jun’26, right) [Suero-EuroGNC26]</figcaption>
+        </figure>
+
+        <div class="project-body" style="margin-top:2rem">
+          <p data-i18n="s1s.el.p5">The ADCS-PCB offloads the attitude determination and control processing to a dedicated MCU (SAMV71Q21) and integrates the main ADCS sensors (IMU ADIS16500 and MMT RM3100) and actuators (CubeSpace MTQs: 2 rods + 1 coil), plus it incorporates a custom design, radiation-hardened H-bridge. Otherwise, it has a similar layout rationale as the OBC-PCB in terms of dividing the components into MCU + MRAM-memory + watchdog on the upper-left corner below the PC/104 ports and use the rest of the board to position the specific peripherals.</p>
+        </div>
+
+        <!-- Structure & mechanical interfaces -->
+        <h3 class="sec-sub" id="structure-interfaces" data-toc="sub" data-toc-label="Structure" data-i18n-attr="data-toc-label:toc.s1s.str" data-i18n="s1s.str.h">Structure &amp; mechanical interfaces</h3>
+        <div class="project-body">
+          <p data-i18n="s1s.str.p1">Primary structural dimensions, mass margins, rail configurations, and surface treatment specifications for ST3LLARsat1 “Boira” comply fully with standard 2U CubeSat requirements.</p>
+          <p data-i18n="s1s.str.p2">The physical mechanical interface between ST3LLARsat1 and the dispenser relies on three (3) core functional hardware systems: the separation spring mechanism, the physical mechanical inhibitor switches, and the hold-down release mechanisms (HDRM) for deployable elements.</p>
+        </div>
+
+        <div class="note-card">
+          <div class="note-card__tag">1</div>
+          <h4 data-i18n="s1s.spr.h">Separation springs</h4>
+          <p data-i18n="s1s.spr.p1">Separation from the neighboring CubeSat in the dispenser is provided by two (2) separation springs (as required by the CubeSat Design Specification CDS 3.2.17.3), centered on the −Z end faces of a diagonal pair of rails, that is opposite to the +Z ejection direction. For ST3LLARsat1, each spring is a stainless-steel (A2) plunger integrated in the −Z standoffs of the Spacemind SM02 frame. The plungers must respect the CDS-given limits of a maximum force of 6.7 N and a stroke of at least 2.5 mm, and must sit flush with the standoff when compressed, so that the stowed envelope is unchanged.</p>
+          <p data-i18n="s1s.spr.p2">Spring force and stroke will be measured at the CSAT facility for the STM and PFM models using a calibrated force gauge; while the compressed position will be verified during the dispenser fit-check, which also closes the rail-contact requirement (CDS 3.2.9: at least 75 % of the rail length in contact with the deployer rails).</p>
+        </div>
+        <div class="note-card">
+          <div class="note-card__tag">2</div>
+          <h4 data-i18n="s1s.sw.h">Mechanical inhibitor switches</h4>
+          <p data-i18n="s1s.sw.p1">The SM02 frame will be delivered with six (6) kill switches given by: four (4) lever rail switches (12.6 × 10.4 × 5.6 mm, rated 3 A) mounted one per rail near the +Z end with the lever pointing opposite to the exit direction, and two (2) standoff switches (10 × 7.5 × 2.5 mm, rated 100 mA at 30 V DC) actuated by the −Z spring plungers described above. Inside the dispenser, every switch is held in the stored position by the deployer rails or by the neighboring CubeSat; while on release, the actuators travel to the deployed position and open the CubeSat load circuit.</p>
+          <p data-i18n="s1s.sw.p2">Two of the four rail lever switches, one on each rail of a diagonally opposite pair, are the flight deployment switches, and together with the remove-before-flight (RBF) pin they form the three electrical inhibits required as per regulations for any CubeSat. Lever switches are preferred to standoff switches because their 3 A rating and positive lever actuation against the deployer rail give a larger contact margin than the 100 mA spring-pin switches, which remain mechanically actuated by the separation plungers but are left unwired.</p>
+          <p data-i18n-html="s1s.sw.p3">All three inhibits (lines 1 to 3 in <a class="xref" href="#table-5">Table 5</a>) are peripheral circuits of the EnduroSat EPS I component that are implemented so that no power therefore reaches any load from either the batteries or the solar arrays –which satisfies the no-electronics-active condition stated under RF emissions. Once the EPS starts after ejection, a self-lock function prevents a transient re-closure of a switch from powering the CubeSat down. On the ground, the self-lock is disabled through a jumper JMP1 for test resets. The inhibit chain will be verified at the CSAT by a functional test on the FlatSat and by an end-to-end test on the PFM in the test dispenser.</p>
+        </div>
+        <div class="note-card">
+          <div class="note-card__tag">3</div>
+          <h4 data-i18n="s1s.hd.h">Hold-down release mechanisms (HDRM) for the deployable antenna</h4>
+          <p data-i18n="s1s.hd.p1">The only deployable element of ST3LLARsat1 “Boira” is the COTS EnduroSat UHF Antenna III (435–438 MHz, 85 g), mounted on the +Z face, since the in-house dual-circular antenna (Tech.IOD-1), mounted on the −Z face, is non-deployable and thus, requires no release mechanism.</p>
+          <p data-i18n="s1s.hd.p2">In stowed configuration, four (4) shape-memory-alloy rods are rolled inside a hard-anodized aluminum frame and retained by four (4) doors, so that the antenna stays within the 6.5 mm protrusion allowance of CDS 3.2.6. Each door is released by a burn-wire mechanism with two independent burn resistors (primary and back-up), which the module microcontroller activates in sequence according to two selectable algorithms. Each rod draws about 250 mA at 5 V during release. Once free, the rods straighten to a deployed span of 396.4 mm tip to tip.</p>
+          <p data-i18n="s1s.hd.p3">This mechanism has flight heritage on EnduroSat platforms and is qualified by the supplier to operate from −35 °C to +85 °C, and tests included vibration, shock and thermal-vacuum testing at unit level.</p>
+          <p data-i18n="s1s.hd.p4">Because the burn-wire release is a one-shot mechanism whose wires cannot be re-armed by the user, deployment will not be demonstrated on the STM or the PFM. Verification at system level is limited to checking the electrical continuity of the primary and back-up burn-resistor chains, the I2C command, and door-status feedback exercised in test mode with the jumper mounted, and the confirmation after the vibration and thermal-vacuum campaigns that all four doors report closed. This approach also preserves the supplier warranty, which lapses if the rods are deployed before dispenser integration.</p>
+        </div>
+
+        <!-- Launcher interfaces -->
+        <h3 class="sec-sub" id="launcher-interfaces" data-toc="sub" data-i18n="s1s.lau.h">Launcher interfaces</h3>
+        <div class="project-body">
+          <p data-i18n-html="s1s.lau.p1"><strong>Umbilical &amp; external access interfaces.</strong> ST3LLARsat1 provides physical umbilical connectivity for pre-launch checks, battery charging, and Remove-Before-Flight (RBF) operations. These are divided between internal deployer window cutouts (operational during launchpad integration) and offboard access interfaces (utilized prior to container encapsulation), see <a class="xref" href="#table-5">Table 5</a>:</p>
+        </div>
+        <figure class="table-fig" id="table-5">
+          <figcaption class="table-cap" data-i18n-html="s1s.t5.cap"><strong>Table 5.</strong> ST3LLARsat1 Accessibility versus Remove-Before-Flight &amp; deployment/kill switches list</figcaption>
+          <div class="table-wrap">
+            <table class="data-table data-table--min">
+              <thead><tr><th data-i18n="s1s.t5.h1">Interface line</th><th data-i18n="s1s.t5.h2">Operational function</th><th data-i18n="s1s.t5.h3">Pinout &amp; connector specifications</th><th data-i18n="s1s.t5.h4">Accessibility</th></tr></thead>
+              <tbody>
+                <tr><td>Line 1 (RBF-1)</td><td data-i18n="s1s.t5.r1.f">RBF enable mechanism</td><td data-i18n="s1s.t5.r1.p">Molex Pico-Blade 2-pin connector</td><td data-i18n="s1s.t5.r1.a">Accessible within deployer via side window cutouts</td></tr>
+                <tr><td>Line 2 (RBF-2)</td><td data-i18n="s1s.t5.r2.f">RBF enable mechanism</td><td data-i18n="s1s.t5.r2.p">Jumper pin</td><td data-i18n="s1s.t5.r2.a">Accessible within deployer via side window cutouts</td></tr>
+                <tr><td>Line 3 (EPS)</td><td data-i18n="s1s.t5.r3.f">Pre-flight battery charging &amp; EPS diagnostic monitoring</td><td data-i18n="s1s.t5.r3.p">USB Type-C interface</td><td data-i18n="s1s.t5.r3.a">Offboard access only (pre-integration into deployer)</td></tr>
+                <tr><td>Line 4 (OBC)</td><td data-i18n="s1s.t5.r4.f">Send/receive to/from OBC, ON/OFF</td><td data-i18n="s1s.t5.r4.p">Alternate USB via SCIC / Molex Pico-Blade 4-pin</td><td data-i18n="s1s.t5.r4.a">Offboard access only (pre-integration into deployer)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+
+        <div class="note-card">
+          <div class="note-card__tag" data-i18n="s1s.rf.tag">RF emissions</div>
+          <p data-i18n="s1s.rf.p1">No electronics shall be active from the time the CubeSat is loaded into the deployer, during launch, and until deployment to prevent any electrical or RF interference with the launch vehicle, or other payloads on board the launch vehicle. ST3LLARsat1 will power its primary flight computer immediately following mechanical deployment from the dispenser.</p>
+          <p data-i18n="s1s.rf.p2">In addition, to comply strictly with ESA FYS-FDS-v4.1 Compliance Matrix, a mandatory 30-minute operational delay is maintained before activating the burn-wire release mechanism for the COTS deployable UHF antenna module. Furthermore, a mandatory 45-minute radio frequency transmission inhibit is enforced after container separation before any radio frequency power amplifiers are energized or radio signals are emitted.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pager">
+      <div class="container">
+      <nav class="pager" aria-label="ST3LLARsat1">
+        <a class="prev" href="ST3LLARsat1-mission.html"><span class="pager__dir" data-i18n="s1c.prev">Previous</span><span class="pager__title" data-i18n="s1c.tab.mission">Mission</span></a>
+        <a class="next" href="ST3LLARsat1-aivt.html"><span class="pager__dir" data-i18n="s1c.next">Next</span><span class="pager__title" data-i18n="s1c.tab.aivt">AIVT</span></a>
+      </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-st3llarsat1.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/pages/st3llarsat1.js"></script>
+</body>
+</html>

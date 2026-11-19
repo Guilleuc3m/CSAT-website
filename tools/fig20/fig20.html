@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+  SOURCE OF FIGURE 20 (ST3LLARsat1-program.html) — not part of the website.
+  The figure on the site is a PNG rendered from this page, one per language:
+    fig20.html#en  ->  images/st3llarsat1/fig20-phases-models-en.png
+    fig20.html#es  ->  images/st3llarsat1/fig20-phases-models-es.png
+  To regenerate (Chrome headless, 2x pixel density):
+    chrome --headless=new --hide-scrollbars --force-device-scale-factor=2
+           --window-size=780,<height shown by the page's console> --screenshot=<out.png>
+           file:///.../tools/fig20/fig20.html#en
+  Edit the texts in T below, never the PNG.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=780">
+<title>Figure 20 source</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { font-family: "Inter", system-ui, "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .pm {
+    --ink: #141a26; --line: #4a5568;
+    --cream: #fdefd0; --blue: #d3e4f2; --grey: #dedede; --grey-line: #8c8c8c;
+    --acr: #0a86c4;
+    --stem: 1.3rem; --indent: 2.9rem; --row: 2.6rem;
+    width: 780px; box-sizing: border-box; padding: 6px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) 2.4rem minmax(0, 1fr);
+    gap: .38rem 0;
+    align-items: start;
+    color: var(--ink);
+    font-size: 1rem; line-height: 1.3;
+    text-align: left;
+  }
+  .pm__title {
+    grid-column: 1 / -1; margin-bottom: .2rem; padding: .5rem .8rem;
+    text-align: center; font-size: 1.1rem; font-weight: 800;
+    background: var(--grey); border: 1px solid var(--grey-line);
+  }
+  .pm__head {
+    padding: .32rem .8rem; font-size: .8rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    background: var(--grey); border: 1px solid var(--grey-line);
+  }
+  .pm__phase {
+    display: flex; align-items: center; gap: .6rem;
+    min-height: var(--row); padding: .35rem .8rem;
+    background: var(--cream);
+  }
+  .pm__id { flex: none; min-width: 1.7rem; font-weight: 800; }
+  .pm__name { font-weight: 600; }
+  .pm__group { background: var(--cream); padding-bottom: .6rem; }
+  .pm__group > .pm__phase { min-height: var(--row); }
+  .pm__subs { list-style: none; margin: 0; padding: 0 .8rem 0 var(--indent); display: grid; gap: .32rem; }
+  .pm__subs li {
+    position: relative; display: flex; align-items: baseline; gap: .55rem;
+    padding: .32rem .75rem; font-size: .95rem; font-weight: 600;
+    background: var(--blue);
+  }
+  .pm__subs .pm__id { min-width: 1.5rem; }
+  .pm__subs li::before {
+    content: ""; position: absolute; top: 50%;
+    left: calc(var(--stem) - var(--indent)); width: calc(var(--indent) - var(--stem));
+    border-top: 1.5px solid var(--line);
+  }
+  .pm__subs li::after {
+    content: ""; position: absolute; top: -.32rem; height: calc(100% + .32rem);
+    left: calc(var(--stem) - var(--indent));
+    border-left: 1.5px solid var(--line);
+  }
+  .pm__subs li:first-child::after { top: -.38rem; height: calc(50% + .38rem); }
+  .pm__subs li:not(:first-child):not(:last-child)::after { height: calc(100% + .32rem); }
+  .pm__subs li:last-child::after { height: calc(50% + .32rem); }
+  .pm__subs li:first-child:last-child::after { height: calc(50% + .38rem); }
+  .pm__link { align-self: start; margin-top: calc(var(--row) / 2); position: relative; height: 1.5px; background: var(--line); }
+  .pm__link::after {
+    content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
+    border: 5px solid transparent; border-left: 8px solid var(--line); border-right: 0;
+  }
+  .pm__model { display: block; min-height: var(--row); padding: .66rem .8rem; font-weight: 600; background: var(--cream); box-sizing: border-box; }
+  .pm .acr { color: var(--acr); font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="pm" id="pm">
+  <div class="pm__title" data-k="t"></div>
+  <div class="pm__head" data-k="hp"></div>
+  <span></span>
+  <div class="pm__head" data-k="hm"></div>
+
+  <div class="pm__phase"><b class="pm__id">0</b><span class="pm__name" data-k="p0"></span></div>
+  <span class="pm__link"></span>
+  <div class="pm__model" data-k="m0"></div>
+
+  <div class="pm__phase"><b class="pm__id">A</b><span class="pm__name" data-k="a"></span></div>
+  <span></span><span></span>
+
+  <div class="pm__phase"><b class="pm__id">B</b><span class="pm__name" data-k="b"></span></div>
+  <span class="pm__link"></span>
+  <div class="pm__model" data-k="mb"></div>
+
+  <div class="pm__phase"><b class="pm__id">C</b><span class="pm__name" data-k="c"></span></div>
+  <span class="pm__link"></span>
+  <div class="pm__model" data-k="mc"></div>
+
+  <div class="pm__group">
+    <div class="pm__phase"><b class="pm__id">D</b><span class="pm__name" data-k="d"></span></div>
+    <ul class="pm__subs">
+      <li><b class="pm__id">D1</b> <span data-k="d1"></span></li>
+      <li><b class="pm__id">D2</b> <span data-k="d2"></span></li>
+    </ul>
+  </div>
+  <span class="pm__link"></span>
+  <div class="pm__model" data-k="md"></div>
+
+  <div class="pm__group">
+    <div class="pm__phase"><b class="pm__id">E</b><span class="pm__name" data-k="e"></span></div>
+    <ul class="pm__subs">
+      <li><b class="pm__id">E1</b> <span data-k="e1"></span></li>
+      <li><b class="pm__id">E2</b> <span data-k="e2"></span></li>
+    </ul>
+  </div>
+  <span></span><span></span>
+
+  <div class="pm__phase"><b class="pm__id">F</b><span class="pm__name" data-k="f"></span></div>
+  <span></span><span></span>
+</div>
+<script>
+  var T = {
+    en: {
+      t: "Space project development phases &amp; models", hp: "Phases", hm: "Models",
+      p0: "Mission definition &amp; analysis", m0: "Basic (<b class='acr'>PR</b>) mock-up models",
+      a: "Feasibility", b: "Preliminary design",
+      mb: "<b class='acr'>3D mock-up models</b> of spacecraft &amp; components",
+      c: "Detailed design", mc: "Development (<b class='acr'>DM</b>) models",
+      d: "Qualification &amp; production", d1: "Build", d2: "Test",
+      md: "Engineering Qualification (<b class='acr'>EQM</b>) &amp; Flight (<b class='acr'>FM</b>) models",
+      e: "Operations", e1: "Launch", e2: "Nominal operation", f: "Disposal"
+    },
+    es: {
+      t: "Fases y modelos de desarrollo de un proyecto espacial", hp: "Fases", hm: "Modelos",
+      p0: "Definición y análisis de misión", m0: "Modelos de maqueta básicos (<b class='acr'>PR</b>)",
+      a: "Viabilidad", b: "Diseño preliminar",
+      mb: "<b class='acr'>Modelos de maqueta 3D</b> de la nave y de los componentes",
+      c: "Diseño detallado", mc: "Modelos de desarrollo (<b class='acr'>DM</b>)",
+      d: "Cualificación y producción", d1: "Construcción", d2: "Ensayo",
+      md: "Modelos de cualificación de ingeniería (<b class='acr'>EQM</b>) y de vuelo (<b class='acr'>FM</b>)",
+      e: "Operaciones", e1: "Lanzamiento", e2: "Operación nominal", f: "Retirada"
+    }
+  };
+  var lang = location.hash === "#es" ? "es" : "en";
+  document.documentElement.lang = lang;
+  Array.prototype.forEach.call(document.querySelectorAll("[data-k]"), function (el) {
+    el.innerHTML = T[lang][el.getAttribute("data-k")];
+  });
+  document.fonts.ready.then(function () {
+    var r = document.getElementById("pm").getBoundingClientRect();
+    document.title = "size " + Math.ceil(r.width) + "x" + Math.ceil(r.height);
+  });
+</script>
+</body>
+</html>

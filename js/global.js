@@ -71,20 +71,33 @@
     }
 
     // Dropdowns: hover on desktop (CSS), click/tap toggle on mobile
+    var isMobileNav = function () { return window.matchMedia("(max-width: 1024px)").matches; };
     document.querySelectorAll(".nav-item.has-dropdown > .nav-link").forEach(function (link) {
       link.addEventListener("click", function (e) {
-        if (window.matchMedia("(max-width: 1024px)").matches) {
+        if (isMobileNav()) {
           e.preventDefault();
-          link.parentElement.classList.toggle("open");
+          var open = link.parentElement.classList.toggle("open");
+          link.setAttribute("aria-expanded", open ? "true" : "false");
         }
       });
     });
 
-    // Close mobile menu when a real link is tapped
+    // Close the mobile menu when a real link is tapped. The dropdown parents
+    // ("About Us", "Facilities"...) carry href="#" and only expand their list on
+    // mobile, so they must NOT close the menu.
     document.querySelectorAll(".nav a[href]").forEach(function (a) {
       a.addEventListener("click", function () {
+        if (isMobileNav() && a.matches(".nav-item.has-dropdown > .nav-link")) return;
         document.body.classList.remove("nav-open");
       });
+    });
+
+    // Leaving the mobile layout (resize / rotate) resets the menu state.
+    window.addEventListener("resize", function () {
+      if (!isMobileNav()) {
+        document.body.classList.remove("nav-open");
+        document.querySelectorAll(".nav-item.open").forEach(function (i) { i.classList.remove("open"); });
+      }
     });
 
     // St3llarsat external link: activate it only once STELLARSAT_URL is set
@@ -188,7 +201,8 @@
     });
 
     // Lightbox: click any content image inside <main> to enlarge it.
-    // Opt out with class "no-zoom" on the <img>.
+    // Opt out with class "no-zoom" on the <img>. A thumbnail can point at its
+    // full-size file with data-full="...".
     var main = document.querySelector("main");
     if (main) {
       var lb = document.createElement("div");
@@ -214,7 +228,7 @@
       main.addEventListener("click", function (e) {
         var t = e.target;
         if (t && t.tagName === "IMG" && !t.classList.contains("no-zoom")) {
-          openLb(t.currentSrc || t.src, t.alt);
+          openLb(t.getAttribute("data-full") || t.currentSrc || t.src, t.alt);
         }
       });
       lb.addEventListener("click", closeLb); // click anywhere (incl. image/close) dismisses
@@ -224,11 +238,13 @@
     }
 
     // On-this-page index. Built at runtime from the elements a page tags with
-    // data-toc, so the labels are the headings themselves: they follow the
-    // EN/ES switch with no second list to keep in sync. Wide screens get a
-    // rail parked in the left margin — it is fixed to the viewport, not part
-    // of the layout, so the content stays exactly where it was. Narrow ones
-    // get a sticky strip of pills under the header instead.
+    // data-toc. The label is the heading itself unless the element carries a
+    // shorter data-toc-label (translated through data-i18n-attr), so it follows
+    // the EN/ES switch with no second list to keep in sync.
+    // One shape at every width: a slim rail of dots parked against the left edge
+    // that widens into a panel on hover / tap, with a single capsule that slides
+    // to the section you are reading. On very wide screens the panel is simply
+    // always open in the margin.
     var tocMain = document.querySelector("main");
     var tocTargets = tocMain ? tocMain.querySelectorAll("[data-toc][id]") : [];
     if (tocTargets.length > 2) {
@@ -239,8 +255,19 @@
         return (i18n && i18n.t) ? i18n.t("toc.label", getLang()) : "On this page";
       };
       toc.setAttribute("aria-label", tocLabel());
+      var track = document.createElement("div");
+      track.className = "toc__track";
+      var thumb = document.createElement("span");
+      thumb.className = "toc__thumb";
+      thumb.setAttribute("aria-hidden", "true");
       var list = document.createElement("ul");
       list.className = "toc__list";
+      track.appendChild(thumb);
+      track.appendChild(list);
+
+      var tocText = function (target, heading) {
+        return (target.getAttribute("data-toc-label") || heading.textContent).trim();
+      };
 
       var links = [];
       Array.prototype.forEach.call(tocTargets, function (target) {
@@ -252,8 +279,8 @@
         var a = document.createElement("a");
         a.className = "toc__link";
         a.href = "#" + target.id;
-        a.innerHTML = '<span class="toc__tick" aria-hidden="true"></span><span class="toc__text"></span>';
-        a.querySelector(".toc__text").textContent = heading.textContent.trim();
+        a.innerHTML = '<span class="toc__dot" aria-hidden="true"></span><span class="toc__text"></span>';
+        a.querySelector(".toc__text").textContent = tocText(target, heading);
         li.appendChild(a);
         list.appendChild(li);
         links.push({ a: a, target: target, heading: heading });
@@ -263,24 +290,58 @@
         tocHead.className = "toc__label";
         tocHead.textContent = tocLabel();
         toc.appendChild(tocHead);
-        toc.appendChild(list);
-        // Dropped in after the page hero, so the narrow-screen pill strip
-        // starts below the title block instead of on top of it.
+        toc.appendChild(track);
+        // Dropped in after the page hero.
         var tocHero = tocMain.querySelector(".page-hero");
         tocMain.insertBefore(toc, tocHero ? tocHero.nextSibling : tocMain.firstChild);
         document.body.classList.add("has-toc");
 
-        // Re-read the headings after a language switch.
+        var current = links[0];
+
+        // The capsule: its position and height come from the active row, which
+        // is the same height whether the panel is open or closed (labels never
+        // wrap), so it only needs placing when the active row or the text changes.
+        var placeThumb = function () {
+          if (!current) return;
+          thumb.style.setProperty("--ty", current.a.offsetTop + "px");
+          thumb.style.setProperty("--th", current.a.offsetHeight + "px");
+          thumb.style.opacity = "1";
+        };
+        // Keeps the active row inside a panel taller than the window.
+        var keepInView = function () {
+          if (toc.scrollHeight <= toc.clientHeight + 1) return;
+          var tr = toc.getBoundingClientRect(), ar = current.a.getBoundingClientRect();
+          if (ar.top < tr.top + 4) toc.scrollTop -= tr.top + 4 - ar.top;
+          else if (ar.bottom > tr.bottom - 4) toc.scrollTop += ar.bottom - (tr.bottom - 4);
+        };
+
+        // Re-read the labels after a language switch.
         document.addEventListener("csat:langchange", function () {
           toc.setAttribute("aria-label", tocLabel());
           tocHead.textContent = tocLabel();
           links.forEach(function (l) {
-            l.a.querySelector(".toc__text").textContent = l.heading.textContent.trim();
+            l.a.querySelector(".toc__text").textContent = tocText(l.target, l.heading);
           });
+          placeThumb();
         });
 
-        // Clicking scrolls with the sticky header accounted for, and keeps the
-        // pill strip from jumping by writing the hash without a second jump.
+        // Touch: the first tap on the closed rail opens it instead of jumping to
+        // whatever dot the finger landed on; a tap elsewhere closes it again.
+        var noHover = window.matchMedia("(hover: none)");
+        var alwaysOpen = window.matchMedia("(min-width: 1600px)");
+        toc.addEventListener("click", function (e) {
+          if (!noHover.matches || alwaysOpen.matches) return;
+          if (!toc.classList.contains("is-open")) {
+            e.preventDefault();
+            e.stopPropagation();
+            toc.classList.add("is-open");
+          }
+        }, true);
+        document.addEventListener("click", function (e) {
+          if (!toc.contains(e.target)) toc.classList.remove("is-open");
+        });
+
+        // Clicking scrolls with the sticky header accounted for.
         links.forEach(function (l) {
           l.a.addEventListener("click", function (e) {
             e.preventDefault();
@@ -289,6 +350,7 @@
             var y = l.target.getBoundingClientRect().top + window.scrollY - offset - 18;
             window.scrollTo({ top: y, behavior: "smooth" });
             history.replaceState(null, "", "#" + l.target.id);
+            toc.classList.remove("is-open");
           });
         });
 
@@ -299,35 +361,38 @@
           ticking = false;
           var headerH = parseInt(getComputedStyle(document.documentElement)
             .getPropertyValue("--header-h"), 10) || 68;
-          // The margin panel only appears once the hero is out of the way.
+          // The panel only appears once the hero is out of the way.
           toc.classList.toggle("is-visible",
             !tocHero || tocHero.getBoundingClientRect().bottom <= headerH + 18);
           var line = window.scrollY + headerH + 90;
-          var current = links[0];
+          var next = links[0];
           links.forEach(function (l) {
-            if (l.target.getBoundingClientRect().top + window.scrollY <= line) current = l;
+            if (l.target.getBoundingClientRect().top + window.scrollY <= line) next = l;
           });
           // At the very bottom the last entry wins, even if its top is above.
           if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
-            current = links[links.length - 1];
+            next = links[links.length - 1];
           }
-          links.forEach(function (l) {
-            l.a.classList.toggle("is-active", l === current);
-          });
-          var activeEl = current && current.a;
-          if (activeEl && toc.scrollWidth > toc.clientWidth) {
-            // keep the active pill in view on the narrow strip
-            var ar = activeEl.getBoundingClientRect(), tr = toc.getBoundingClientRect();
-            if (ar.left < tr.left + 8 || ar.right > tr.right - 8) {
-              toc.scrollLeft += ar.left - tr.left - 16;
-            }
+          if (next !== current || !thumb.style.getPropertyValue("--th")) {
+            current = next;
+            links.forEach(function (l) {
+              var on = l === current;
+              l.a.classList.toggle("is-active", on);
+              if (on) l.a.setAttribute("aria-current", "location");
+              else l.a.removeAttribute("aria-current");
+            });
+            placeThumb();
+            keepInView();
           }
         };
         markActive();
         window.addEventListener("scroll", function () {
           if (!ticking) { ticking = true; requestAnimationFrame(markActive); }
         }, { passive: true });
-        window.addEventListener("resize", markActive);
+        window.addEventListener("resize", function () { placeThumb(); markActive(); });
+        // Web fonts changing the row heights after first paint.
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeThumb);
+        window.addEventListener("load", placeThumb);
       }
     }
   });

@@ -63,6 +63,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/pages/home.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
 </head>
 <body data-page="home">
 
@@ -101,9 +104,11 @@
             <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="dropdown">
-            <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
-            <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
-            <a id="stellarsat-external" class="nav-external" href="#" target="_blank" rel="noopener" data-i18n="nav.stellarsat_site">Project website</a>
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
           </div>
         </div>
         <div class="nav-item has-dropdown" data-nav="projects">
@@ -272,7 +277,7 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-    <!-- Funding acknowledgement banner — main page only -->
+    <!-- Funding acknowledgement banner — home page and facilities pages -->
     <div class="footer-funding">
       <img src="images/funding-logo.jpeg" alt="This equipment was procured with Spanish Government infrastructure award EQC2021-007562-P, funded by the Spanish AEI/10.13039/501100011033 and the European Union's NextGenerationEU/PRTR">
     </div>
@@ -311,7 +316,7 @@
     <div class="footer-bottom">
       <div class="container">
         <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
-        <span>csat.uc3m.es</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
       </div>
     </div>
   </footer>

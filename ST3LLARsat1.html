@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <title>ST3LLARsat1 “Boira” — CSAT | UC3M</title>
+  <meta name="description" content="ST3LLARsat1 “Boira”, the first CubeSat mission of UC3M's student-based ST3LLARsat program: a 2U CubeSat for LEO designed, integrated, validated and operated by students, selected by ESA for its Fly Your Satellite! Design Booster.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('csat-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+  <link rel="stylesheet" href="css/pages/stellarsat.css">
+  <link rel="stylesheet" href="css/pages/st3llarsat1.css">
+  <!-- UC3M web analytics + cookie banner (Google Tag Manager / Didomi), provided by UC3M -->
+  <script src="https://adv-web-svc.uc3m.es/uc3m_install.js"></script>
+  <link rel="stylesheet" href="https://adv-web-svc.uc3m.es/uc3m_install.css">
+</head>
+<body data-page="stellarsat">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CSAT — Home">
+        <img src="images/logo/csat-logo.png" alt="CSAT">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-item has-dropdown" data-nav="about">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.about">About Us</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="team.html" data-i18n="nav.team">Team</a>
+            <a href="location.html" data-i18n="nav.location">Location</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="facilities">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.facilities">Facilities</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="facilities-leganes.html" data-i18n="nav.fac_leganes">CSAT — Leganés</a>
+            <a href="facilities-ptl.html" data-i18n="nav.fac_ptl">CSAT — PTL</a>
+            <a href="facilities-colmenarejo.html" data-i18n="nav.fac_colmenarejo">CSAT — Colmenarejo</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="stellarsat">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.stellarsat">ST3LLARsat</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-group">
+              <a href="ST3LLARsat.html" data-i18n="nav.stellarsat_overview">Program overview</a>
+              <a class="dropdown-sub" href="ST3LLARsat.html#team" data-i18n="nav.stellarsat_team">ST3LLARsat team</a>
+            </div>
+            <a href="ST3LLARsat1.html">ST3LLARsat1</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" data-nav="projects">
+          <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.projects">Projects</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="MLPLUS.html">MLPLUS</a>
+            <a href="IPFI.html">IPFI</a>
+            <a href="INTACT.html">INTACT</a>
+          </div>
+        </div>
+        <div class="nav-item" data-nav="outreach">
+          <a class="nav-link" href="outreach.html" data-i18n="nav.outreach">Outreach</a>
+        </div>
+        <div class="nav-item" data-nav="contact">
+          <a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-item" data-nav="blog">
+          <a class="nav-link" href="blog.html" data-i18n="nav.blog">News</a>
+        </div>
+      </nav>
+      <div class="header-controls">
+        <button class="icon-btn lang-toggle" type="button" data-i18n-attr="aria-label:lang.label" aria-label="Switch language">
+          <span data-i18n="lang.toggle">ES</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-i18n-attr="aria-label:theme.label" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" data-i18n-attr="aria-label:menu.label" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top mission-page">
+
+    <section class="page-hero program-hero mission-hero">
+      <div class="container">
+        <span class="eyebrow" data-i18n="s1h.eyebrow">ST3LLARsat program · 1st mission</span>
+        <h1>ST3LLARsat1 <span class="q">“Boira”</span></h1>
+        <p class="lead mx-auto" style="margin-inline:auto" data-i18n="s1c.tag.overview">Our 1st CubeSat mission</p>
+      <nav class="mission-tabs" aria-label="ST3LLARsat1" data-i18n-attr="aria-label:s1c.tabs.label">
+        <div class="mission-tabs__list">
+          <a href="ST3LLARsat1.html" aria-current="page" data-i18n="s1c.tab.overview">Overview</a>
+          <a href="ST3LLARsat1-mission.html" data-i18n="s1c.tab.mission">Mission</a>
+          <a href="ST3LLARsat1-spacecraft.html" data-i18n="s1c.tab.spacecraft">Spacecraft</a>
+          <a href="ST3LLARsat1-aivt.html" data-i18n="s1c.tab.aivt">AIVT</a>
+          <a href="ST3LLARsat1-program.html" data-i18n="s1c.tab.program">Program</a>
+          <a href="ST3LLARsat1-documents.html" data-i18n="s1c.tab.documents">Documents</a>
+        </div>
+      </nav>
+      </div>
+    </section>
+
+    <!-- ===================== FACT SHEET ===================== -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="project-facts mission-facts reveal">
+
+          <div class="mission-facts__main">
+            <div class="board">
+              <div class="board-member">
+                <img class="board-member__photo no-zoom" src="images/team/andres.jpg" alt="Andrés Marcos Esteban">
+                <div class="board-member__meta">
+                  <span class="board-member__role" data-i18n="st.role.director">Director</span>
+                  <span class="board-member__name"><a href="https://aero.uc3m.es/people/andres-marcos-esteban/" target="_blank" rel="noopener">Prof. Andrés Marcos Esteban</a></span>
+                </div>
+              </div>
+              <div class="board-member">
+                <img class="board-member__photo no-zoom" src="images/team/diego.jpg" alt="Diego Navarro-Tapia">
+                <div class="board-member__meta">
+                  <span class="board-member__role" data-i18n="st.role.codirector">Co-Director</span>
+                  <span class="board-member__name">Dr. Diego Navarro-Tapia</span>
+                </div>
+              </div>
+              <div class="board-member">
+                <img class="board-member__photo no-zoom" src="images/team/gabriele.jpg" alt="Gabriele Dessena">
+                <div class="board-member__meta">
+                  <span class="board-member__role" data-i18n="st.role.codirector">Co-Director</span>
+                  <span class="board-member__name">Prof. Gabriele Dessena</span>
+                </div>
+              </div>
+              <div class="board-member">
+                <div class="board-member__photo board-member__photo--ph" aria-hidden="true">AM</div>
+                <div class="board-member__meta">
+                  <span class="board-member__role" data-i18n="s1h.role.aivt">AIVT manager</span>
+                  <span class="board-member__name">Dr. Andoni G. Moral</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="facts">
+              <div class="fact">
+                <span class="fact__label" data-i18n="st.fact.duration">Duration</span>
+                <span class="fact__value" data-i18n="st.duration">Started in September 2022 — ongoing</span>
+              </div>
+              <div class="fact">
+                <span class="fact__label" data-i18n="s1h.fact.phase">Current phase</span>
+                <span class="fact__value"><a href="ST3LLARsat1-program.html#phases" data-i18n="s1h.phase.value">Phase 4 · AIVT consolidation</a></span>
+              </div>
+              <div class="fact">
+                <span class="fact__label" data-i18n="st.fact.webpages">External webpages</span>
+                <span class="fact__value"><a href="https://aero.uc3m.es/?s=st3llar+boira" target="_blank" rel="noopener">aero.uc3m.es</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-badges">
+            <figure class="badge-item">
+              <img class="no-zoom" src="images/st3llarsat1/badge-original.png" width="256" height="256" alt="ST3LLARsat1 original mission badge" data-i18n-attr="alt:s1h.badge1.alt">
+              <figcaption>
+                <span class="badge-item__label" data-i18n="s1h.badge.old">Original badge</span>
+                <span class="badge-item__dates" data-i18n="s1h.badge.old.dates" style="display:block">Sept '22 – Sept '23</span>
+              </figcaption>
+            </figure>
+            <figure class="badge-item">
+              <img class="no-zoom" src="images/st3llarsat1/badge-current.png" width="256" height="256" alt="ST3LLARsat1 current mission badge" data-i18n-attr="alt:s1h.badge2.alt">
+              <figcaption>
+                <span class="badge-item__label" data-i18n="s1h.badge.new">Current badge</span>
+              </figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTRODUCTION ===================== -->
+    <section class="section program-section program-section--prose" id="introduction" data-toc>
+      <div class="container">
+        <h2 data-i18n="s1h.intro.h">Introduction</h2>
+        <div class="project-body">
+          <p class="lead" data-i18n-html="s1h.intro.p1"><strong>ST3LLARsat1 &ldquo;Boira&rdquo;</strong> is the 1st mission of UC3M student-based / professor-led CubeSat program <a href="ST3LLARsat.html">ST3LLARsat</a>. The ST3LLAR program started in September 2022 within UC3M’s <a href="https://www.uc3m.es/master/space-engineering" target="_blank" rel="noopener">Master in Space Engineering (MISE)</a>, and our 1st mission was <a href="https://www.esa.int/Education/Educational_Satellites/Fly_Your_Satellite_Design_Booster_1_Meet_the_Teams" target="_blank" rel="noopener">selected by the European Space Agency (ESA) in December 2022</a> for its 1.5-years Fly Your Satellite! Design Booster (FYS-DB) pilot program. ESA’s support enabled us to ‘boost’ our design development and to successfully pass ESA Academy’s Final Design Review in June 2024, which was fundamental to continue our activities subsequently.</p>
+          <p data-i18n-html="s1h.intro.p2">The aim of ST3LLARsat1 &ldquo;Boira&rdquo; is to design, integrate, validate and operate a 2U CubeSat in LEO (415–500 km, 96–98° inclination) by students with the primary goal being educational and secondary goals related to science and technological in-orbit demonstration (IOD).</p>
+          <p data-i18n-html="s1h.intro.p3">The <strong>educational goal</strong> is achieved by providing our students with hands-on experience in a real space project via a hybrid approach of formal learning and practical application. The former is structured around the MISE, see more details in the &ldquo;<a href="ST3LLARsat.html">program overview</a>&rdquo;, where the students are exposed to lectures &amp; seminars as well as team projects &amp; individual theses related to space. The practical component comes from the fact that it is our students who are responsible for the study, design, and development of all the tasks (guided and supported by MISE academic staff).</p>
+          <p data-i18n-html="s1h.intro.p4">The <strong>scientific goal</strong> is to demonstrate that valid atmospheric water vapor (WV) measurements can be taken in such a small CubeSat and with a commercial-off-the-shelf (COTS) scientific instrument. The measurement of atmospheric water vapor (WV) was chosen as it is one of the main indicators used for climate change monitoring. Indeed, two thirds of the greenhouse effect is caused by WV, while in comparison to other contributor gases it has a much higher temporal and spatial variability. It is noted that &ldquo;boira&rdquo; means fog in two of the official languages in Spain: Catalan and Galician.</p>
+          <p data-i18n-html="s1h.intro.p5">The main <strong>technological goal</strong> is to prove that we are capable of designing, building, launching, and operating a CubeSat of dimension 2U. This dimension was chosen as a trade-off between cost/complexity (smaller size better for both) and available volume (the larger the better to incorporate all equipment). As part of the more specific technological IOD objectives, ST3LLARsat1 plans to demonstrate four (4) in-house technologies: (i) a novel, compact, dual-circular, non-deployable antenna; (ii) an on-board computer (OBC) PCB, including the software and a coarse sun sensor (CSS); (iii) an attitude determination and control system (ADCS) PCB; and (iv) the ADCS algorithms.</p>
+          <p data-i18n="s1h.intro.p6">A snapshot of ST3LLARsat1 “Boira” is given in the next figure:</p>
+        </div>
+
+        <figure class="figure figure--large reveal" id="fig-1">
+          <div class="figure__frame figure__frame--paper">
+            <img src="images/st3llarsat1/fig01-overview.jpg" width="1800" height="1013" loading="lazy" decoding="async" alt="Snapshot of the ST3LLARsat1 mission: education, science and technology objectives, with the 2U structure and its internal configuration." data-i18n-attr="alt:s1h.fig1.alt">
+          </div>
+          <figcaption data-i18n-html="s1h.fig1.cap"><strong>Figure 1.</strong> ST3LLARsat1 “Boira”: mission objectives</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== AT A GLANCE ===================== -->
+    <section class="section-tight program-section" id="glance" data-toc data-toc-label="At a glance" data-i18n-attr="data-toc-label:toc.s1h.glance">
+      <div class="container">
+        <div class="metrics-head">
+          <h2 data-i18n="s1h.glance.h">ST3LLARsat1 at a glance</h2>
+          <span class="as-of" data-i18n="s1h.glance.sub">Main characteristics of the spacecraft and its orbit</span>
+        </div>
+        <div class="glance reveal">
+          <div class="glance__item">
+            <div class="glance__v">2U</div>
+            <div class="glance__l" data-i18n="s1h.g1.l">CubeSat format</div>
+            <div class="glance__n" data-i18n="s1h.g1.n">10 × 10 × 20 cm, no propulsion</div>
+          </div>
+          <div class="glance__item">
+            <div class="glance__v" data-i18n="s1h.g2.v">2.083 kg</div>
+            <div class="glance__l" data-i18n="s1h.g2.l">Total mass</div>
+            <div class="glance__n" data-i18n="s1h.g2.n">Including a 20% margin</div>
+          </div>
+          <div class="glance__item">
+            <div class="glance__v">415–500 km</div>
+            <div class="glance__l" data-i18n="s1h.g3.l">Sun-synchronous orbit</div>
+            <div class="glance__n" data-i18n="s1h.g3.n">Inclination 96–98°, ~90 min orbit</div>
+          </div>
+          <div class="glance__item">
+            <div class="glance__v" data-i18n="s1h.g4.v">2.32 W</div>
+            <div class="glance__l" data-i18n="s1h.g4.l">Average power</div>
+            <div class="glance__n" data-i18n="s1h.g4.n">Max. 4.87 W · 8 solar panels</div>
+          </div>
+          <div class="glance__item">
+            <div class="glance__v">UHF</div>
+            <div class="glance__l" data-i18n="s1h.g5.l">435–438 MHz</div>
+            <div class="glance__n" data-i18n="s1h.g5.n">GMSK · call sign EA4URI</div>
+          </div>
+          <div class="glance__item">
+            <div class="glance__v">&lt; 10°</div>
+            <div class="glance__l" data-i18n="s1h.g6.l">Pointing error (APE)</div>
+            <div class="glance__n" data-i18n="s1h.g6.n">Knowledge error (AKE) &lt; 5°</div>
+          </div>
+        </div>
+        <p class="glance-more"><a href="ST3LLARsat1-spacecraft.html#table-4" data-i18n="s1h.glance.more">See the full data sheet</a></p>
+      </div>
+    </section>
+
+    <!-- ===================== METRICS ===================== -->
+    <section class="section-tight program-section" id="numbers" data-toc data-toc-label="In numbers" data-i18n-attr="data-toc-label:toc.s1h.numbers">
+      <div class="container">
+        <div class="metrics-head">
+          <h2 data-i18n="s1h.metrics.h">The mission in numbers</h2>
+          <span class="as-of" data-i18n="s1h.metrics.asof">As of November 2026</span>
+        </div>
+        <div class="metrics reveal">
+          <div class="metric">
+            <div class="metric__n">193</div>
+            <div class="metric__label" data-i18n="st.metric1.label">Students involved</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">828</div>
+            <div class="metric__label" data-i18n="st.metric2.label">ECTS credits obtained by the students</div>
+            <div class="metric__note" data-i18n="s1h.metric2.note">= 20,700 hours (1 ECTS = 25 hours)</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">20</div>
+            <div class="metric__label" data-i18n="st.metric3.label">Theses defended</div>
+            <div class="metric__note" data-i18n="s1h.metric3.note">7 undergraduate, 13 master (+ 1 master ongoing)</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">25</div>
+            <div class="metric__label" data-i18n="st.metric4.label">Dissemination outputs</div>
+            <div class="metric__note" data-i18n="s1h.metric4.note">14 posters, 6 presentations, 5 conference articles</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">38</div>
+            <div class="metric__label" data-i18n="st.metric5.label">Students accepted to ESA training courses</div>
+          </div>
+          <div class="metric">
+            <div class="metric__n">1,108</div>
+            <div class="metric__label" data-i18n="st.metric6.label">Teaching hours received in ESA training courses</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPLORE ===================== -->
+    <section class="section program-section" id="explore" data-toc data-toc-label="Explore" data-i18n-attr="data-toc-label:toc.s1h.explore">
+      <div class="container">
+        <h2 data-i18n="s1h.explore.h">Explore the mission</h2>
+        <div class="explore reveal">
+          <a class="explore-card" href="ST3LLARsat1-mission.html">
+            <span class="explore-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></svg></span>
+            <h3 data-i18n="s1c.tab.mission">Mission</h3>
+            <p data-i18n="s1h.ex1.p">Mission objectives, concept of operations, mission analysis, orbit flexibility and de-orbiting.</p>
+            <span class="explore-card__go" data-i18n="s1h.ex.go">Read more</span>
+          </a>
+          <a class="explore-card" href="ST3LLARsat1-spacecraft.html">
+            <span class="explore-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></span>
+            <h3 data-i18n="s1c.tab.spacecraft">Spacecraft</h3>
+            <p data-i18n="s1h.ex2.p">Design summary, engineering drawings, electrical and data architecture, structure and launcher interfaces.</p>
+            <span class="explore-card__go" data-i18n="s1h.ex.go">Read more</span>
+          </a>
+          <a class="explore-card" href="ST3LLARsat1-aivt.html">
+            <span class="explore-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 19a1.6 1.6 0 0 0 1.4 2.4h12.2a1.6 1.6 0 0 0 1.4-2.4L14 9V3"/><path d="M7.5 15h9"/></svg></span>
+            <h3 data-i18n="s1c.tab.aivt">AIVT</h3>
+            <p data-i18n="s1h.ex3.p">Model philosophy, development plan and environmental acceptance envelopes.</p>
+            <span class="explore-card__go" data-i18n="s1h.ex.go">Read more</span>
+          </a>
+          <a class="explore-card" href="ST3LLARsat1-program.html">
+            <span class="explore-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <h3 data-i18n="s1c.tab.program">Program</h3>
+            <p data-i18n="s1h.ex4.p">Project phases and current status, ESA Fly Your Satellite! Design Booster, knowledge hand-over and funding.</p>
+            <span class="explore-card__go" data-i18n="s1h.ex.go">Read more</span>
+          </a>
+          <a class="explore-card" href="ST3LLARsat1-documents.html">
+            <span class="explore-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></span>
+            <h3 data-i18n="s1c.tab.documents">Documents</h3>
+            <p data-i18n="s1h.ex5.p">Dissemination outputs, theses and student reports.</p>
+            <span class="explore-card__go" data-i18n="s1h.ex.go">Read more</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pager">
+      <div class="container">
+      <nav class="pager" aria-label="ST3LLARsat1">
+        <a class="next" href="ST3LLARsat1-mission.html"><span class="pager__dir" data-i18n="s1c.next">Next</span><span class="pager__title" data-i18n="s1c.tab.mission">Mission</span></a>
+      </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo/csat-logo.png" alt="CSAT">
+          <p data-i18n="footer.tagline">Center for space technology &amp; nano/micro SATellites</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="team.html" data-i18n="nav.team">Team</a></li>
+            <li><a href="location.html" data-i18n="nav.location">Location</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:csat@uc3m.es">csat@uc3m.es</a></li>
+            <li><span data-i18n="footer.address">Universidad Carlos III de Madrid · Leganés, Spain</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 Universidad Carlos III de Madrid — CSAT. All rights reserved.</span>
+        <span class="footer-legal"><a href="https://uc3m.es/inicio/informacion-legal/politica-cookies" target="_blank" rel="noopener" data-i18n="footer.cookies">Cookie policy</a> · csat.uc3m.es</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-st3llarsat1.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/pages/st3llarsat1.js"></script>
+</body>
+</html>
