@@ -27,7 +27,7 @@
     "out.lead": "Además de nuestras responsabilidades habituales como personal académico (docencia, tutorización de estudiantes e investigación y desarrollo), el equipo docente del CSAT quiere acercar su trabajo al público general mediante presentaciones, talleres, visitas (al CSAT o a los centros educativos) y actividades «Hazlo tú mismo» (DIY, por sus siglas en inglés).",
     "out.cta.materials": "Material educativo",
     "out.cta.visit": "Visitas y charlas",
-    "out.intro": "En esta página encontrarás material educativo (de uso libre si se cita correctamente la fuente) que hemos creado, además de una lista de las actividades en las que hemos participado en los últimos años. Estas actividades abarcan todo lo que no es una presentación técnica en un congreso o seminario y que iba dirigido a un público no especializado (desde el público general y estudiantes universitarios ajenos a la ingeniería hasta partes interesadas, incluidos miembros de organizaciones científicas y/o de formulación de políticas).",
+    "out.intro": "En esta página encontrarás material educativo (de uso libre si se cita correctamente la fuente) que hemos creado, además de una lista de las actividades en las que hemos participado en los últimos años. Estas actividades abarcan todo lo que no es una presentación técnica en un congreso o seminario, y tenían como objetivo presentar nuestras actividades técnicas y el espacio a un público no especializado (desde el público general y estudiantes universitarios ajenos a la ingeniería hasta partes interesadas, incluidos miembros de organizaciones científicas y/o de formulación de políticas).",
 
     /* ---------------------------------------------------------------- numbers */
     "out.stat.act": "actividades desde 2021",
