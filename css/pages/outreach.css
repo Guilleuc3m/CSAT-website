@@ -11,7 +11,8 @@
 /* Section rhythm and headings */
 .ou-section { scroll-margin-top: calc(var(--header-h) + 12px); }
 .ou-section h2 { margin-bottom: .6rem; }
-.ou-section > .container > .lead { margin-bottom: 1.8rem; }
+/* Intro line of each section: as wide as the content below it (not a narrow column hugging the left edge) */
+.ou-section > .container > .lead { margin-bottom: 1.8rem; max-width: none; }
 .ou-section + .ou-section { border-top: 1px solid var(--border); }
 
 /* ---------------------------------------------------------- intro + figures */
@@ -119,15 +120,15 @@
   display: inline-flex; align-items: center; gap: .5rem;
   padding: .45rem .95rem; border-radius: 999px;
   font-size: .85rem; font-weight: 600; line-height: 1.3; text-decoration: none;
-  color: #fff; background: linear-gradient(135deg, var(--brand-blue), var(--accent-strong));
-  box-shadow: 0 6px 18px rgba(47, 123, 255, .3);
-  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+  color: var(--accent); background: transparent;
+  border: 1px solid var(--border);
+  transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
 }
 .ou-dl svg { width: 16px; height: 16px; flex: none; }
-.ou-dl small { font-size: .72rem; font-weight: 500; opacity: .85; }
-a.ou-dl:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(47, 123, 255, .42); }
+.ou-dl small { font-size: .72rem; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+a.ou-dl:hover { text-decoration: none; background: var(--surface-2); border-color: var(--accent); }
 .ou-dl.is-soon {
-  color: var(--text-muted); background: transparent; box-shadow: none;
+  color: var(--text-muted); background: transparent;
   border: 1px dashed var(--border); cursor: default;
 }
 
@@ -141,7 +142,8 @@ a.ou-dl:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 
 
 .ou-funder {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem 2rem;
-  margin-top: 1.8rem; padding: 1.3rem 1.5rem;
+  /* Sits under the page title (hero): centred block, text kept left-aligned */
+  max-width: 900px; margin: 1.5rem auto 1.9rem; padding: 1.3rem 1.5rem; text-align: left;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
 }
 .ou-funder p { flex: 1 1 320px; margin: 0; font-size: .92rem; color: var(--text-muted); }

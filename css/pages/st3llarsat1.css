@@ -313,6 +313,20 @@ sup.fnref a { font-weight: 700; padding: 0 .1em; text-decoration: none; }
 .note-card p:last-child { margin-bottom: 0; }
 .note-card strong { color: var(--text); font-weight: 600; }
 
+/* Funder logos at the foot of a funding card (drawn on white, in both themes) */
+.note-card__logos {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .7rem;
+  margin-top: 1rem; padding-top: .95rem; border-top: 1px solid var(--border);
+}
+.note-card p + .note-card__logos { margin-top: .3rem; }
+.fund-logo {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: .45rem .8rem; background: #fff; border: 1px solid #e3e8f2; border-radius: 10px;
+}
+.fund-logo img { display: block; height: 72px; width: auto; max-width: 100%; }
+.fund-logo--wide img { height: 46px; }
+.fund-logo--sm img { height: 40px; }
+
 /* ConOps operational modes */
 .modes { display: grid; gap: 1.1rem; max-width: var(--prose-w); margin: 1.4rem auto 0; }
 .mode {
@@ -378,7 +392,8 @@ sup.fnref a { font-weight: 700; padding: 0 .1em; text-decoration: none; }
 .link-list strong { color: var(--text); font-weight: 600; }
 
 /* ================================================= Documents & lists ====== */
-.docs-intro { max-width: var(--prose-w); margin: 0 auto; text-align: left; }
+.docs-intro { max-width: none; margin: 0 auto; text-align: left; } /* as wide as the lists below it */
+.docs-intro .lead { max-width: none; }
 .legend { max-width: 1000px; margin: 0 auto 1rem; font-size: .84rem; line-height: 1.8; color: var(--text-muted); }
 .legend > span { display: inline-block; margin-right: 1.3rem; }
 .legend b { color: var(--text); font-weight: 700; }

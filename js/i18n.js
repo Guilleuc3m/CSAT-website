@@ -429,6 +429,27 @@
       "intact.fig.intro": "A continuación se presenta un resumen visual del proyecto:",
       "intact.fig.cap": "<strong>Figura 1.</strong> Proyecto INTACT.",
 
+      /* ---- TCG² ---- */
+      "tcg.fullname": "Guiado con restricción de tiempo para múltiples vehículos no tripulados con garantías de convergencia",
+      "tcg.role.pi": "Investigador/a principal",
+      "tcg.funding": "10.000 €",
+      "tcg.summary": "Este proyecto desarrolla métodos de guiado fiables y computacionalmente eficientes que permiten a múltiples vehículos no tripulados alcanzar sus destinos en un instante de llegada común especificado. Combinando la conformación de trayectorias, el control óptimo geométrico y un análisis riguroso de convergencia, el proyecto busca cerrar la brecha entre las garantías teóricas de guiado y las operaciones prácticas con múltiples UAV.",
+      "tcg.ctx.h": "Contexto y motivación",
+      "tcg.ctx.p": "Las misiones coordinadas con varios vehículos no tripulados, como la vigilancia cooperativa, el ensamblaje de formaciones y las operaciones sincronizadas, suelen requerir tanto una temporización precisa como un control de movimiento exacto. Por ejemplo, tres UAV de ala fija pueden partir de posiciones y rumbos distintos y, aun así, necesitar llegar simultáneamente a tres vértices diferentes de una formación triangular. Las técnicas de guiado existentes presentan compromisos importantes. Los métodos basados en linealización son computacionalmente atractivos, pero pueden no capturar plenamente la dinámica no lineal de los vehículos. Los enfoques de control no lineal pueden tener en cuenta esa dinámica, pero pueden exigir un esfuerzo de control excesivo o estimaciones del tiempo restante (time-to-go) difíciles de obtener. Los métodos basados en aprendizaje pueden ser eficaces, pero suelen ofrecer una interpretabilidad y unas garantías formales de convergencia limitadas. Este proyecto aborda esas limitaciones mediante un marco de conformación de trayectorias diseñado para la coordinación con restricción de tiempo.",
+      "tcg.approach.h": "Nuestro enfoque",
+      "tcg.approach.p": "La investigación representa las trayectorias de los vehículos mediante un pequeño conjunto de parámetros de guiado, de modo que un problema de guiado no lineal se reduce a resolver ecuaciones algebraicas, sin recurrir a modelos de movimiento linealizados. Se emplean principios de control óptimo geométrico para identificar estructuras de trayectoria energéticamente eficientes, mientras que el análisis matemático del espacio de soluciones de los parámetros sienta las bases de las garantías de convergencia y de la evaluación de la viabilidad de la misión antes de su ejecución.",
+      "tcg.lines.h": "Tres líneas de investigación",
+      "tcg.lines.sub": "El plan de investigación se organiza en tres paquetes de trabajo (WP) complementarios.",
+      "tcg.wp1.h": "Conformación de trayectorias eficiente en energía",
+      "tcg.wp1.p": "<strong>WP1.</strong> Formular modelos cinemáticos con restricciones no holónomas y de tiempo de llegada, derivar condiciones necesarias de optimalidad e incorporar criterios geométricos, como la curvatura de la trayectoria y el esfuerzo de control, en leyes de guiado parametrizadas. El objetivo es obtener soluciones subóptimas computacionalmente tratables y eficientes en energía.",
+      "tcg.wp2.h": "Garantías de convergencia y algoritmos en tiempo real",
+      "tcg.wp2.p": "<strong>WP2.</strong> Caracterizar el espacio de soluciones de los parámetros de guiado, estudiar su existencia y unicidad y derivar cotas explícitas de dichos parámetros. Estos resultados respaldarán el análisis formal de convergencia, la comprobación a priori de las condiciones de llegada factibles y algoritmos eficientes adecuados para su implementación en tiempo real.",
+      "tcg.wp3.h": "Simulación y validación en vuelo",
+      "tcg.wp3.p": "<strong>WP3.</strong> Evaluar los algoritmos de guiado mediante simulaciones numéricas y de Monte Carlo que incorporen la dinámica de los vehículos, las perturbaciones y el ruido de los sensores, seguidas de demostraciones en 3D con Unity 3D o FlightGear. Se están realizando experimentos en vuelo para evaluar el rendimiento práctico en plataformas UAV de ala fija.",
+      "tcg.out.h": "Resultados e impacto",
+      "tcg.out.p": "Se espera que el proyecto produzca resultados matemáticos de convergencia, algoritmos de guiado en tiempo real, estudios comparativos de simulación y demostraciones experimentales con UAV. En términos más generales, la investigación pretende mejorar la fiabilidad, la precisión temporal y la eficiencia energética de las misiones coordinadas de vehículos autónomos en ingeniería aeroespacial y robótica.",
+      "tcg.pub.lead": "Los resultados de la investigación incluyen:",
+
       /* ---- ST3LLARsat: program overview ---- */
       "st.eyebrow": "Programa CSAT",
       "st.tagline": "El programa CubeSat estudiantil de la UC3M",

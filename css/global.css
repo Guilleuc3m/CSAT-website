@@ -283,12 +283,14 @@ body[data-page="home"] .site-header:not(.scrolled):hover .nav-toggle span { back
   color: var(--text);
   font-weight: 500;
 }
+.dropdown:has(.dropdown-sub) { min-width: 270px; }   /* room for the indented sub-entry in both languages */
 .dropdown a:hover { background: var(--surface-2); color: var(--accent); text-decoration: none; }
 /* A dropdown entry that is a section *within* the item above it, not a page of
    its own: indented under its parent, with a corner glyph and lighter weight
    so the hierarchy is visible at a glance. */
 .dropdown a.dropdown-sub {
-  padding-left: 1.9rem;
+  padding-left: 3rem;
+  white-space: nowrap;              /* longer ES label must not wrap and get clipped by the fold */
   font-weight: 400;
   font-size: .93rem;
   color: var(--text-muted);
@@ -297,16 +299,18 @@ body[data-page="home"] .site-header:not(.scrolled):hover .nav-toggle span { back
 .dropdown a.dropdown-sub::before {
   content: "\21B3";                 /* ↳ */
   position: absolute;
-  left: .85rem;
+  left: 1.65rem;
   opacity: .55;
   font-size: .95em;
 }
 .dropdown a.dropdown-sub:hover { color: var(--accent); }
 .dropdown a.dropdown-sub:hover::before { opacity: 1; }
 
-/* On desktop the sub-entry stays folded away and slides open only while the
-   pointer (or keyboard focus) is on its parent entry. On touch / the mobile
-   menu there is no hover, so it is simply always listed. */
+/* On desktop the sub-entry starts folded away and slides open when the pointer
+   (or keyboard focus) reaches its parent entry. Once open it STAYS open (class
+   .is-revealed, set by global.js) until the whole dropdown closes, so the entry
+   below it does not jump away from the pointer. On touch / the mobile menu
+   there is no hover, so it is simply always listed. */
 .dropdown-group { display: grid; gap: 2px; }
 @media (min-width: 1025px) and (hover: hover) {
   .dropdown-group > a.dropdown-sub {
@@ -318,7 +322,8 @@ body[data-page="home"] .site-header:not(.scrolled):hover .nav-toggle span { back
     transition: max-height .22s var(--ease), padding .22s var(--ease), opacity .18s var(--ease), color .15s;
   }
   .dropdown-group:hover > a.dropdown-sub,
-  .dropdown-group:focus-within > a.dropdown-sub {
+  .dropdown-group:focus-within > a.dropdown-sub,
+  .dropdown-group.is-revealed > a.dropdown-sub {
     max-height: 44px;
     padding-top: .6rem;
     padding-bottom: .6rem;

@@ -82,6 +82,26 @@
       });
     });
 
+    // Folded sub-entries (e.g. "ST3LLARsat team" under "Program overview"): once
+    // the pointer has reached the parent entry the sub-entry stays unfolded
+    // (class .is-revealed) until the dropdown itself closes. The reset waits
+    // for the dropdown's fade-out so nothing visibly folds back while leaving.
+    document.querySelectorAll(".nav-item.has-dropdown").forEach(function (item) {
+      var groups = item.querySelectorAll(".dropdown-group");
+      if (!groups.length) return;
+      var timer = null;
+      groups.forEach(function (g) {
+        g.addEventListener("mouseenter", function () { g.classList.add("is-revealed"); });
+      });
+      item.addEventListener("mouseenter", function () { clearTimeout(timer); });
+      item.addEventListener("mouseleave", function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          groups.forEach(function (g) { g.classList.remove("is-revealed"); });
+        }, 260);
+      });
+    });
+
     // Close the mobile menu when a real link is tapped. The dropdown parents
     // ("About Us", "Facilities"...) carry href="#" and only expand their list on
     // mobile, so they must NOT close the menu.

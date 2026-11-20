@@ -33,7 +33,7 @@
     "out.stat.act": "actividades desde 2021",
     "out.stat.people": "participantes alcanzados",
     "out.stat.mat": "materiales educativos gratuitos",
-    "out.stat.note": "Incluye las actividades previstas hasta el 29 de noviembre de 2026. Los participantes se suman a partir de las cifras comunicadas en cada actividad; las actividades sin cifra no se incluyen.",
+    "out.stat.note": "Los participantes se suman a partir de las cifras comunicadas en cada actividad; las actividades sin cifra no se incluyen.",
 
     /* ---------------------------------------------------- visit us / invite us */
     "out.offer.h": "Visitas y charlas",
